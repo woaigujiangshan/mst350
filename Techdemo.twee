@@ -8,41 +8,79 @@ Techdemo
   "format": "Harlowe",
   "format-version": "3.3.7",
   "start": "Untitled Passage",
+  "tag-colors": {
+    "no_sidebar": "red"
+  },
   "zoom": 1
 }
 
 
-:: \ save {"position":"675,700","size":"100,100"}
-Which slot to save?
+:: \ ask {"position":"700,925","size":"100,100"}
+Something white catchs your eyes.
+That shouldn't belong here, in the woods.
 
-(link:"Save A")[
-  (if:(save-game:"Slot A"))[
-  (if: (saved-games:) contains "Slot A")[
-    Game saved!
-  ]
-  (link: "Load Slot A?" )[
-      (load-game: "Slot A")
-  ]
-  ](else: )[
-    Sorry, I couldn't save your game.
-  ]
+[[Go closer and Take a look]]
+
+
+:: \ inventory {"position":"425,200","size":"100,100"}
+(for: each _item, ...$inventory)[
+  (print: _item)
 ]
 
+
+:: \ save {"position":"300,200","size":"100,100"}
+(font:'Permanent Marker')[
+
+
+(link:"Save A")[
+	(if: (saved-games:) contains "SlotA")[
+    	There is already a story in this slot, do you want to rewrite the game?
+        (link: "Yes" )[
+        	{(if:(save-game:"SlotA"))[
+            	(if: (saved-games:) contains "SlotA")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+        ]
+    ](else:)[
+    	{(if:(save-game:"SlotA"))[
+            	(if: (saved-games:) contains "SlotA")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+    ]
+]
+
+
 (link:"Save B")[
-  (if:(save-game:"Slot B"))[
-  (if: (saved-games:) contains "Slot B")[
-    Game saved!
-  ]
-  (link: "Load Slot B?" )[
-      (load-game: "Slot B")
-  ]
-  ](else: )[
-    Sorry, I couldn't save your game.
-  ]
+	(if: (saved-games:) contains "SlotB")[
+    	There is already a story in this slot, do you want to rewrite the game?
+        (link: "Yes" )[
+        	{(if:(save-game:"SlotB"))[
+            	(if: (saved-games:) contains "SlotB")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+        ]
+    ](else:)[
+    	{(if:(save-game:"SlotB"))[
+            	(if: (saved-games:) contains "SlotB")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+    ]
 ]
 
 Back(click-undo: "Back")
-
+]
 
 
 :: ABOUT {"position":"575,425","size":"100,100"}
@@ -53,9 +91,51 @@ XXXX
 XXX
 
 
-:: HERE {"position":"600,550","size":"100,100"}
-[[Save game -> save]] 
+:: Go closer and Take a look {"position":"700,1050","size":"100,100"}
+Look what you found!
+A //newspaper//!
+(link:"Take a look")[
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[Rubellite Today]
+xxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxx]
 
+(click:"Rubellite")[
+Well.
+This should be the name of this city.
+(set:$location to "Somewhere in Rubellite")
+Wait, there is a flashlight beside the newspaper.
+What happened to it's last owner?
+[[Take it]]
+]
+]
+
+
+:: I don't know. {"position":"500,800","size":"100,100"}
+(set:$calm to $calm + 1)
+That is the reason why you need to ask.
+[[Find someone to ask -> ask]]
+
+
+:: I don't remember. {"position":"500,600","size":"100,100"}
+(set:$calm to $calm + 1)
+Honesty is always one of the best traits in humans, right?
+Let's keep your good trait.
+So, where is this place?
+[[I don't know.]]
+[[Leave me alone.]]
+
+
+:: I'm a rock star! {"position":"700,600","size":"100,100"}
+(set:$rockstar to $rockstar + 1)
+Yes, yes, yes.
+You are a rock star.
+You should be standing on the stage or being surrounded by your huge fans, should you?
+But why are you here, rock star?
+[[I don't know.]] 
+[[Rock stars never argue the places they are at!]] 
+[[Leave me alone.]] 
 
 
 :: LOAD {"position":"825,425","size":"100,100"}
@@ -64,38 +144,131 @@ XXX
 Back (click-undo: "Back")
 
 (click: ?loada)[
-  (if:(saved-games: ) contains "File A")[
-      (load-game: "FileA")
+  (if:(saved-games: ) contains "SlotA")[
+      (load-game: "SlotA")
   ](else:)[
       There is no files saved in this slot.
   ]
 ]
 
 (click: ?loadb)[
-  (if:(saved-games: ) contains "File B")[
-      (load-game: "FileB")
+  (if:(saved-games: ) contains "SlotB")[
+      (load-game: "SlotB")
   ](else:)[
       There is no files saved in this slot.
   ]
 ]
 
 
-:: START {"position":"700,425","size":"100,100"}
-OK
-[[HERE]]
-[[THERE]]
+:: Leave me alone. {"position":"900,800","size":"100,100"}
+(set:$anger to $anger + 1)
+Calm down, angry one.
+You need to find somewhere to stay after all, right.
+You have no foods or water.
+[[...Find someone to ask -> ask]] 
 
 
+:: Rock stars never argue the places they are at! {"position":"700,800","size":"100,100"}
+(set:$rockstar to $rockstar + 1)
+Okay, rockstar.
+The thing is, rockstars also need to find a place to stay.
+[[OK, I'll go find someone to ask. -> ask]] 
 
 
-:: THERE {"position":"800,550","size":"100,100"}
+:: START THE JOURNEY {"position":"700,425","size":"100,100"}
+(set:$inventory to (ds:))
+(set:$ambition to 0)
+(set:$empathy to 0)
+(set:$anger to 0)
+(set:$calm to 0)
+(set:$rockstar to 0)
+Dark.
+With Neon lights shining in somewhere far away.
+Where is this place?
+More importantly...
+''Who'' are you?
+[[I don't remember.]]
+[[I'm a rock star!]]
+[[Why do you ask? Why should I care?]]
+
+
+:: Sidebar [footer] {"position":"0,0","size":"100,100"}
+(append: ?SideBar)[\
+Version: 0.1
+Name: $name
+Location: $location
 [[Save game -> save]] 
+[[Inventory -> inventory]]
+]
 
 
-:: Untitled Passage {"position":"700,300","size":"100,100"}
-Rubellite
+:: Take it {"position":"700,1175","size":"100,100"}
+(set: $inventory to $inventory +(ds:"flashlight"))
+(set: $inventory to $inventory +(ds:"newspaper"))
 
-[[START]]
+
+:: Untitled Passage [no_sidebar] {"position":"700,300","size":"100,100"}
+
+(set: $name to "Unknown")
+(set: $location to "Unknown")
+
+
+
+
+(align: "=><=")[(size:4)+(font:'Russo One')[RUBELLITE]
+
+
+
+
+(font:'Permanent Marker')[
+[[START THE JOURNEY]]
+
 [[LOAD]]
-[[ABOUT]]
 
+[[ABOUT]]
+]
+]
+
+
+:: Why do you ask? Why should I care? {"position":"900,600","size":"100,100"}
+(set:$anger to $anger + 1)
+Looks like we get a potential sociopath!
+Good, good.
+So, sociopath, where are you now?
+[[I don't know.]] 
+[[Leave me alone.]] 
+
+
+:: StoryStylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css?family=Russo One');
+@import url('https://fonts.googleapis.com/css?family=Permanent Marker');
+
+tw-story {
+  text-align: center;
+}
+
+tw-passage {
+   
+}
+
+tw-story[tags="no_sidebar"] tw-sidebar {
+	display: none;
+}
+
+tw-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%; /* padding-right of the tw-story element. */
+  max-height: 100%;
+  margin-top: 5%; /* padding-top of the tw-story element. */
+  padding: 0 0.5em 0.5em 0.5em;
+  text-align: right;
+  background-color: transparent;
+  font-family: 'Permanent Marker';
+}
+
+tw-icon {
+  text-align: right;
+  padding-right: 0.75em;
+}
