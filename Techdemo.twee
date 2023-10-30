@@ -1,0 +1,101 @@
+:: StoryTitle
+Techdemo
+
+
+:: StoryData
+{
+  "ifid": "313A08AD-81FA-4BBC-BCB9-FA03E5D1A601",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Untitled Passage",
+  "zoom": 1
+}
+
+
+:: \ save {"position":"675,700","size":"100,100"}
+Which slot to save?
+
+(link:"Save A")[
+  (if:(save-game:"Slot A"))[
+  (if: (saved-games:) contains "Slot A")[
+    Game saved!
+  ]
+  (link: "Load Slot A?" )[
+      (load-game: "Slot A")
+  ]
+  ](else: )[
+    Sorry, I couldn't save your game.
+  ]
+]
+
+(link:"Save B")[
+  (if:(save-game:"Slot B"))[
+  (if: (saved-games:) contains "Slot B")[
+    Game saved!
+  ]
+  (link: "Load Slot B?" )[
+      (load-game: "Slot B")
+  ]
+  ](else: )[
+    Sorry, I couldn't save your game.
+  ]
+]
+
+Back(click-undo: "Back")
+
+
+
+:: ABOUT {"position":"575,425","size":"100,100"}
+Credits:
+XXXX
+XXX
+XXXX
+XXX
+
+
+:: HERE {"position":"600,550","size":"100,100"}
+[[Save game -> save]] 
+
+
+
+:: LOAD {"position":"825,425","size":"100,100"}
+[Slot A]<loada|
+[Slot B]<loadb|
+Back (click-undo: "Back")
+
+(click: ?loada)[
+  (if:(saved-games: ) contains "File A")[
+      (load-game: "FileA")
+  ](else:)[
+      There is no files saved in this slot.
+  ]
+]
+
+(click: ?loadb)[
+  (if:(saved-games: ) contains "File B")[
+      (load-game: "FileB")
+  ](else:)[
+      There is no files saved in this slot.
+  ]
+]
+
+
+:: START {"position":"700,425","size":"100,100"}
+OK
+[[HERE]]
+[[THERE]]
+
+
+
+
+:: THERE {"position":"800,550","size":"100,100"}
+[[Save game -> save]] 
+
+
+:: Untitled Passage {"position":"700,300","size":"100,100"}
+Rubellite
+
+[[START]]
+[[LOAD]]
+[[ABOUT]]
+
