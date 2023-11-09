@@ -1,0 +1,699 @@
+:: StoryTitle
+Prototype 1
+
+
+:: StoryData
+{
+  "ifid": "dd7ef9d7-4ebc-415c-a25b-32dc37cb02ce",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "menu",
+  "tag-colors": {
+    "no_sidebar": "green",
+    "info": "orange",
+    "dumor": "blue",
+    "rubellite": "red",
+    "alleyway": "purple"
+  },
+  "zoom": 1
+}
+
+
+:: \ info {"position":"50,200","size":"100,100"}
+|1>[[The Guard]]
+|2>[[Child]]
+|3>[[HER]]
+
+
+Back (click-undo: "Back")
+
+{(if:$meet_her is 0)[
+	(replace: ?3)[???]]
+(if: $meet_guard is 0)[
+	(replace: ?1)[???]]
+(if: $meet_child is 0)[
+	(replace: ?2)[???]]}
+
+
+:: \ inventory {"position":"425,200","size":"100,100"}
+(for: each _item, ...$inventory)[
+  (print: _item)
+]
+{(click:"flashlight")[
+This seems to be left by some travellers.]
+(click:"newspaper")[
+Weirdly appeared in the woods. But at least told you where you are.]}
+
+Back (click-undo: "Back")
+
+
+:: \ save {"position":"300,200","size":"100,100"}
+(font:'Permanent Marker')[
+
+
+(link:"Save A")[
+	(if: (saved-games:) contains "SlotA")[
+    	There is already a story in this slot, do you want to rewrite the game?
+        (link: "Yes" )[
+        	{(if:(save-game:"SlotA"))[
+            	(if: (saved-games:) contains "SlotA")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+        ]
+    ](else:)[
+    	{(if:(save-game:"SlotA"))[
+            	(if: (saved-games:) contains "SlotA")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+    ]
+]
+
+
+(link:"Save B")[
+	(if: (saved-games:) contains "SlotB")[
+    	There is already a story in this slot, do you want to rewrite the game?
+        (link: "Yes" )[
+        	{(if:(save-game:"SlotB"))[
+            	(if: (saved-games:) contains "SlotB")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+        ]
+    ](else:)[
+    	{(if:(save-game:"SlotB"))[
+            	(if: (saved-games:) contains "SlotB")[
+                	Game saved!
+                ]
+            ](else:)[
+            	Sorry, I couldn't save your game.
+            ]}
+    ]
+]
+
+
+Back(click-undo: "Back")
+]
+
+
+:: \ trait {"position":"175,200","size":"100,100"}
+Calm: $calm
+Angry: $angry
+Kind: $kind
+
+
+Back (click-undo: "Back")
+
+
+:: ABOUT [no_sidebar] {"position":"575,425","size":"100,100"}
+Credits:
+XXXX
+XXX
+XXXX
+XXX
+
+
+Back (click-undo: "Back")
+
+
+:: Alley [dumor] {"position":"700,675","size":"100,100"}
+{(if:$try is 2)[Okay, now you are back.
+Do you want to get into that alley this time?]
+
+(if:$try is 3)[Let's see how stubborn you are.]
+
+(if:$try is 4)[OKAY, OKAY]
+
+(if:$try is 5)[That's it. 
+Enough.
+Get in there.
+(after: 2s)[(go-to: "Get into that alleyway")]]
+
+}
+|1>[You notice an alleyway you have never seen before,
+and something is telling you to explore. 
+
+"What will you do next? 
+Do you inspect this new area? 
+Or do you ignore the dangerous curiosity, and just continue home? 
+The choice is up to you."
+
+
+[[Go home]]
+
+[[Get into that alleyway]]]
+
+{(if: $try is 5)[
+(hide: ?1)]
+}
+
+
+:: Child {"position":"200,350","size":"100,100"}
+Name: 
+Age: xxx
+Gender: xxx
+Personality: xxx
+Infos: xxx
+
+
+Back (click-undo: "Back")
+
+
+:: Enter [alleyway] {"position":"775,925","size":"100,100"}
+As you enter the alleyway, 
+you feel a sense of dread spread through your veins. 
+Your senses begin to fail, 
+the deafening silence and complete darkness around you makes you feel as though you’re drowning. 
+
+You are not supposed to be here.
+
+Escape.
+
+(click:"Escape.")[When you turn to escape home, you can’t see the exit. 
+
+(click:"can’t see the exit")[Anxiety builds in your chest, 
+your heart skipping beats while your breath hitches. 
+
+(click:"Anxiety")[These feelings are all so unfamiliar to you, 
+and you’re not sure how to handle any of them. 
+
+Just as the overwhelming emotions bubble up your throat, a voice sounds [[behind you]].
+]]]
+
+
+:: Familiar [dumor] {"position":"825,675","size":"100,100"}
+It seems that you learned by heart every turn, 
+every movement, 
+together with the flawless smoothness of the road underneath your boots. 
+
+
+But tonight is somehow… different.
+
+
+What's wrong? (click:"What's wrong?")[
+
+
+You can almost smell it in the air: 
+Something is at odds. 
+
+
+(seq-link:"You startle and turn your head. ", "You squint your eyes. ")]
+{(click-goto: "You squint your eyes.", 'Alley')}
+
+
+:: Follow their lead [alleyway] {"position":"900,1675","size":"100,100"}
+Another strange turn in your life. 
+
+You can feel the stranger’s grip on your hand.
+They slowly lead you through some dark and narrow space.
+It must be a maze, you realize.
+
+How many more turns are there? 
+Where will you end up? 
+(link:"......?")[
+There are so many questions, 
+and this mysterious one gives almost no answers. 
+You feel like Alice in Wonderland. 
+
+Will your destination point be a Wonderland? 
+Or a Horrorland? 
+
+
+|1>[Can you tell me about where we are? Where we’re going? I don’t understand…] <!--kind-->
+
+|2>[How long will we take?] <!--calm-->
+
+|3>[How long is this going to take? Why are we moving so damn slow?]<!--angry-->]
+{(click:?1)[(set:$kind to $kind+1)(go-to:"continue")]
+(click:?2)[(set:$calm to $calm+1)(go-to:"continue")]
+(click:?3)[(set:$angry to $angry+1)(go-to:"continue")]}
+
+
+:: Get into that alleyway [dumor] {"position":"775,800","size":"100,100"}
+Here you are! 
+Let's begin the journey to an unknown universe… 
+
+[[Enter]]
+
+
+:: Get off of me! You’re not making any sense! [alleyway] {"position":"650,1425","size":"100,100"}
+{(set:$angry to $angry +1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again.
+
+“Woah, so you //do// have some emotion in you? 
+Alright, well, let’s take a breather. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[Yes, I was on my way home. Where am I if not in Dumor?]] <!--Calm choice-->
+
+[[What do you think? Stop stalling and tell me what’s going on!]] <!--Angry choice-->
+
+[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] <!--Kind choice-->
+
+
+
+:: Go home [dumor] {"position":"625,800","size":"100,100"}
+You return home from work, 
+eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
+
+
+[[What's next?]]
+
+
+:: HER {"position":"0,350","size":"100,100"}
+Name: xxx
+Age: xxx
+Gender: xxx
+Personality: xxx
+Infos: xxx
+
+
+Back (click-undo: "Back")
+
+
+:: Here? [alleyway] {"position":"900,1925","size":"100,100"}
+''"Here"'' means where exactly?
+
+The maze suddenly ends.
+
+[[Look to the front]]
+
+
+:: I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit… [alleyway] {"position":"775,1550","size":"100,100"}
+{(set:$kind to $kind+1)}
+“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated,
+which fills you with something that makes your fingers tremble ever so slightly.
+
+Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+
+(link:"!")[You stumble, unable to see in front of you. 
+It startles you, but you recover quickly, 
+instinctively moving closer to the body. 
+You feel as though you can trust them, but you’re not sure why. 
+
+Moments later, the voice comments, 
+
+“I’ll explain later, but we need to get going. 
+Just come with me, we have a long way to go.
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]]
+
+
+:: I don’t understand what you mean…I don’t understand anything…Are you going to hurt me? [alleyway] {"position":"900,1425","size":"100,100"}
+{(set:$kind to $kind+1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again. 
+
+“Hurt you? 
+I have no reason to do that, let’s calm down a bit. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[Yes, I was on my way home. Where am I if not in Dumor?]] <!--Calm choice-->
+
+[[What do you think? Stop stalling and tell me what’s going on!]] <!--Angry choice-->
+
+[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] <!--Kind choice-->
+
+
+
+:: LOAD [no_sidebar] {"position":"825,425","size":"100,100"}
+[Slot A]<loada|
+
+[Slot B]<loadb|
+
+Back (click-undo: "Back")
+{(click: ?loada)[
+  (if:(saved-games: ) contains "SlotA")[
+      (load-game: "SlotA")
+  ](else:)[
+      There is no files saved in this slot.
+  ]
+]
+
+(click: ?loadb)[
+  (if:(saved-games: ) contains "SlotB")[
+      (load-game: "SlotB")
+  ](else:)[
+      There is no files saved in this slot.
+  ]
+]}
+
+
+:: Look to the front [rubellite] {"position":"900,2050","size":"100,100"}
+<img src="image\Rubellite.jpg", width="858px" height="550px">
+The world in front of you is bathed in an unbelievably bright light you can't stand looking at for long. 
+
+[[You finally realize how far from home you really are.]]
+
+
+:: START THE JOURNEY [dumor] {"position":"700,425","size":"100,100"}
+{(set:$inventory to (ds:))
+(set:$kind to 0)
+(set:$angry to 0)
+(set:$calm to 0)
+(set:$try to 1)
+}
+
+
+Everything around you is familiarly, even soothingly, blue. 
+You always loved this colour. 
+
+Why?(click: "Why?")[
+
+You never thought of the rational reasons,
+just living your life among the endless, perfect blue patience and orderliness,
+like everyone else here.
+
+
+[[Walk home]]]
+
+
+:: Sidebar [footer] {"position":"0,0","size":"100,100"}
+(append: ?SideBar)[\
+{(if:$speaking is "guard")[<img src="image\guard_transparent_head.png",width="100px", height="177px">]}
+Name: $name
+Location: $location
+[[Save game -> save]] 
+[[Inventory -> inventory]]
+[[Information -> info]]
+]
+
+
+:: The Guard {"position":"100,350","size":"100,100"}
+Name: ???
+Age: ???
+Personality: ???
+Infos: xxx
+
+
+Back (click-undo: "Back")
+
+
+:: The end of Prototype {"position":"900,2300","size":"100,100"}
+(text-size:1.5)[Thank you for playing.
+
+Here is your personality traits at this point!
+
+Calm: $calm
+Angry: $angry
+Kind: $kind
+
+Please provide any comments or advises.
+
+We will do better in the next version!]
+
+(link-goto:"Go back to the menu.", "menu")
+
+
+:: Walk home [dumor] {"position":"700,550","size":"100,100"}
+<img src="image\Dumor.jpg", width="858px" height="550px">
+You walk home from work, 
+following the exact same route you take every other night. 
+
+[[Familiar]]
+
+
+:: What do you think? Stop stalling and tell me what’s going on! [alleyway] {"position":"1025,1550","size":"100,100"}
+{(set:$angry to $angry+1)}
+“Okay, well, now that’s too much emotion. 
+Calm down, I don’t have time to explain right now.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated, 
+which fills you with something unlike the burning red feeling resting below your skin.
+
+Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+
+(link:"!")[You stumble, unable to see in front of you. 
+You move to pull your hand away, but the grip tightens, locking you in place. 
+
+Moments later, the voice comments, 
+
+“I’m not going to hurt you, you’re fine. 
+Just come with me, we have a long way to go.
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]]
+
+
+:: What's next? [dumor] {"position":"625,925","size":"100,100"}
+{(set:$try to $try+1)}
+Oops! Nothing next.
+The game is over. 
+
+"Aren't you at least a little curious?! 
+Take a risk, get to know what is at the end of that strange alleyway. 
+
+Promise, you won't regret it…
+
+This is the first choice you make.
+Let's give you another chance."
+
+[[Go back to the entrance ->Alley]]
+
+
+
+:: Where am I? [alleyway] {"position":"775,1175","size":"100,100"}
+“You entered an alleyway, where do you think you are? 
+Do they not teach common sense over in the city of Dumor?” 
+
+The voice let out a sigh, but didn’t seem to move any closer. 
+The stubbornness of the mysterious figure breeds a red hot emotion within you that you can’t decipher. 
+
+Nothing in this dark alleyway is following the script you were given at birth, nothing is going the way it’s supposed to...
+
+(seq-link:"//Nothing is right.//","//Nothing is right...//", "//Nothing is right......//", "//Nothing is r-//")
+
+(click:"Nothing is r-")[You feel a warm hand land on your upper arm,
+which rips you from the drowning ''panic'' that had completely consumed you. 
+
+You feel yourself stop breathing, waiting for the stranger to [[speak]].]
+
+
+
+:: Yes, I was on my way home. Where am I if not in Dumor? [alleyway] {"position":"900,1550","size":"100,100"}
+{(set:$calm to $calm+1)}
+“How is it possible for one to speak with so little feeling?
+Your monotony is exhausting me.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated, 
+which fills you with something you choose not to think too deeply about.
+
+Suddenly, the stranger's warm hand wraps around your own, 
+and they pull you forward. 
+
+(link:"!")[You stumble, unable to see in front of you. 
+It startles you, but you recover quickly. 
+
+Moments later, you hear the voice comments, 
+
+“Barely even a flinch, I’ll never get used to how robotic you people really are. 
+Just come with me, we have a long way to go. 
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]
+]
+
+
+:: You finally realize how far from home you really are. [rubellite] {"position":"900,2175","size":"100,100"}
+What you see in front of you is clearly the outskirts of the city.
+
+The metal rubbish and some mechanical parts are all over the place. 
+The stranger tells you that this world is called Rubellite, 
+and you understand why. 
+
+You are surrounded by Rubel red.
+
+(click: "Rubel red")[Similarly to jewellery stones, Rubellite shows you all possible shades of its colour.
+You can distinguish cheerful red, aggressive red, friendly red, angry red…
+The list can go on for hours, but you don't have time for it.
+
+Everything is mysterious and unknown.
+You crave learning more about this world. 
+
+But even more so, you are desperate to learn how to escape. 
+
+[[The end of Prototype]]]
+
+
+
+:: behind you [alleyway] {"position":"775,1050","size":"100,100"}
+“Again?! You ''people'' never learn! 
+Just a bunch of brain-dead, soulless, robotic imbeciles.”
+
+Turn around.
+
+(click:"Turn around.")[You flinch, 
+turning your body in an attempt to find the owner of the voice. 
+You see nothing.
+
+Huh? Are you talking to me?
+
+(click: "Huh? Are you talking to me?")[“Well, yeah! Who else would I be talking to, idiot?”
+
+The voice sounds irritated, but you can’t quite understand why. 
+You can’t understand anything at the moment.
+
+(text-color:blue)[~~Where the hell am I? Where are you? What is going on? ~~]<!--angry-->
+
+(text-color:blue)[~~Can you tell me what’s going on? Where are you standing? I can’t see you…~~] <!--kind-->
+
+[[Where am I?]]
+]]
+
+
+:: continue [alleyway] {"position":"900,1800","size":"100,100"}
+No response.
+
+(link:"......")[You are overwhelmed and confused.
+You want your ordinary routine back.
+
+(seq-link:"Everything used to be decided for you in advance.", "Everything used to be calm and familiar.", "Everything used to be…")
+
+(click:"Everything used to be…")[Your thoughts are interrupted by another turn in the maze. 
+
+"We're almost here." 
+the figure in front of you says. 
+
+[[Here?]]]]
+
+
+:: menu [no_sidebar] {"position":"700,300","size":"100,100"}
+{(set: $name to "Unknown")
+(set: $location to "Dumor")
+(set: $meet_her to 0)
+(set: $meet_guard to 0)
+(set: $meet_child to 0)}
+
+
+
+
+
+
+
+
+(align: "=><=")[(size:4)+(font:'Russo One')[RUBELLITE]
+
+
+
+
+(font:'Permanent Marker')[
+[[START THE JOURNEY]]
+
+[[LOAD]]
+
+[[ABOUT]]
+]
+]
+
+
+:: speak [alleyway] {"position":"775,1300","size":"100,100"}
+“Alright, let’s get you out of that brain of yours. 
+Probably freaking out about the lack of a script here, huh? 
+That’s what you people all say,
+you can hear something in their voice, but not sure what exactly it is."
+
+
+[[Get off of me! You’re not making any sense!]]
+
+[[I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?]]
+
+[[“I’m not sure what you’re talking about.”]]
+
+
+:: “I’m not sure what you’re talking about.” [alleyway] {"position":"775,1425","size":"100,100"}
+{(set:$calm to $calm+1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again. 
+
+“Of course you don’t. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[Yes, I was on my way home. Where am I if not in Dumor?]] <!--Calm choice-->
+
+[[What do you think? Stop stalling and tell me what’s going on!]] <!--Angry choice-->
+
+[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] <!--Kind choice-->
+
+
+
+:: StoryStylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css?family=Russo One');
+@import url('https://fonts.googleapis.com/css?family=Permanent Marker');
+
+tw-story {
+  text-align: center;
+}
+
+tw-passage {
+   
+}
+
+tw-story[tags~="no_sidebar"] tw-sidebar {
+	display: none;
+}
+
+tw-story[tags~="dumor"] {
+  background-color: #091833;
+  font-family: 'Russo One';
+  color: white;
+}
+
+tw-story[tags~="rubellite"] {
+  background-color: #510707;
+  font-family: 'Russo One';
+  color: white;
+}
+
+tw-story[tags~="alleyway"] {
+  background-color: #2c093b;
+  font-family: 'Russo One';
+}
+
+tw-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%; /* padding-right of the tw-story element. */
+  max-height: 100%;
+  margin-top: 5%; /* padding-top of the tw-story element. */
+  padding: 0 0.5em 0.5em 0.5em;
+  text-align: right;
+  color: white;
+  background-color: transparent;
+  font-family: 'Permanent Marker';
+}
+
+tw-icon {
+  text-align: right;
+  padding-right: 0.75em;
+}
+
+tw-icon[title="Undo"], tw-icon[title="Redo"] {
+    display: none;
+}
