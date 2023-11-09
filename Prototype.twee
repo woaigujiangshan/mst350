@@ -1,10 +1,10 @@
 :: StoryTitle
-Prototype 1
+Prototype 2
 
 
 :: StoryData
 {
-  "ifid": "dd7ef9d7-4ebc-415c-a25b-32dc37cb02ce",
+  "ifid": "bec23951-1e09-4142-9697-da7dccabae17",
   "format": "Harlowe",
   "format-version": "3.3.7",
   "start": "menu",
@@ -20,19 +20,23 @@ Prototype 1
 
 
 :: \ info {"position":"50,200","size":"100,100"}
-|1>[[The Guard]]
-|2>[[Child]]
-|3>[[HER]]
+|1>[The Guard]
+|2>[Child]
+|3>[HER]
 
 
 Back (click-undo: "Back")
 
-{(if:$meet_her is 0)[
-	(replace: ?3)[???]]
-(if: $meet_guard is 0)[
-	(replace: ?1)[???]]
-(if: $meet_child is 0)[
-	(replace: ?2)[???]]}
+{(if:$meet_guard is not 0)[(click-goto:?1, "guard")]
+(if:$meet_child is not 0)[(click-goto:?2, "child")]
+(if:$meet_her  is not 0)[(click-goto:?3, "her")]
+
+
+
+(if:$meet_guard is 0)[(replace:?1)[???]]
+(if:$meet_guard is 1)[(replace:?1)[Strange person]]
+(if:$meet_child is 0)[(replace:?2)[???]]
+(if:$meet_her is 0)[(replace:?3)[???]]}
 
 
 :: \ inventory {"position":"425,200","size":"100,100"}
@@ -155,18 +159,8 @@ The choice is up to you."
 }
 
 
-:: Child {"position":"200,350","size":"100,100"}
-Name: 
-Age: xxx
-Gender: xxx
-Personality: xxx
-Infos: xxx
-
-
-Back (click-undo: "Back")
-
-
 :: Enter [alleyway] {"position":"775,925","size":"100,100"}
+{(set:$location to "Alleyway")}
 As you enter the alleyway, 
 you feel a sense of dread spread through your veins. 
 Your senses begin to fail, 
@@ -271,17 +265,6 @@ eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed
 [[What's next?]]
 
 
-:: HER {"position":"0,350","size":"100,100"}
-Name: xxx
-Age: xxx
-Gender: xxx
-Personality: xxx
-Infos: xxx
-
-
-Back (click-undo: "Back")
-
-
 :: Here? [alleyway] {"position":"900,1925","size":"100,100"}
 ''"Here"'' means where exactly?
 
@@ -359,21 +342,16 @@ Back (click-undo: "Back")
 
 
 :: Look to the front [rubellite] {"position":"900,2050","size":"100,100"}
+{(set:$speaking to "none")
+(set:$guardnote to $guardnote+1)
+(set:$location to "A red world?")}
 <img src="image\Rubellite.jpg", width="858px" height="550px">
 The world in front of you is bathed in an unbelievably bright light you can't stand looking at for long. 
 
 [[You finally realize how far from home you really are.]]
 
 
-:: START THE JOURNEY [dumor] {"position":"700,425","size":"100,100"}
-{(set:$inventory to (ds:))
-(set:$kind to 0)
-(set:$angry to 0)
-(set:$calm to 0)
-(set:$try to 1)
-}
-
-
+:: START [dumor] {"position":"700,425","size":"100,100"}
 Everything around you is familiarly, even soothingly, blue. 
 You always loved this colour. 
 
@@ -389,23 +367,13 @@ like everyone else here.
 
 :: Sidebar [footer] {"position":"0,0","size":"100,100"}
 (append: ?SideBar)[\
-{(if:$speaking is "guard")[<img src="image\guard_transparent_head.png",width="100px", height="177px">]}
+{(if:$speaking is "guard_dark")[<img src="image\guard_silhouette_transparent_half.png",width="100px", height="177px">]}
 Name: $name
 Location: $location
 [[Save game -> save]] 
 [[Inventory -> inventory]]
-[[Information -> info]]
+[[Profile -> info]]
 ]
-
-
-:: The Guard {"position":"100,350","size":"100,100"}
-Name: ???
-Age: ???
-Personality: ???
-Infos: xxx
-
-
-Back (click-undo: "Back")
 
 
 :: The end of Prototype {"position":"900,2300","size":"100,100"}
@@ -474,6 +442,7 @@ Let's give you another chance."
 
 
 :: Where am I? [alleyway] {"position":"775,1175","size":"100,100"}
+{(set:$guardi to "A stranger in the alleyway")}
 “You entered an alleyway, where do you think you are? 
 Do they not teach common sense over in the city of Dumor?” 
 
@@ -540,6 +509,12 @@ But even more so, you are desperate to learn how to escape.
 
 
 :: behind you [alleyway] {"position":"775,1050","size":"100,100"}
+{
+(set:$meet_guard to 1)
+(set:$guardname to "???")
+(set:$guardage to "???")
+(set:$guardi to "???")
+(set:$guardnote to 0)}
 “Again?! You ''people'' never learn! 
 Just a bunch of brain-dead, soulless, robotic imbeciles.”
 
@@ -564,6 +539,17 @@ You can’t understand anything at the moment.
 ]]
 
 
+:: child {"position":"200,350","size":"100,100"}
+Name: 
+Age: xxx
+Gender: xxx
+Personality: xxx
+Infos: xxx
+
+
+Back (click-undo: "Back")
+
+
 :: continue [alleyway] {"position":"900,1800","size":"100,100"}
 No response.
 
@@ -580,12 +566,44 @@ the figure in front of you says.
 [[Here?]]]]
 
 
+:: guard {"position":"100,350","size":"100,100"}
+(if:$meet_guard is not 3)[<img src="image\guard_silhouette.png", width="200px" height="250px">]
+Name: $guardname
+Age: $guardage
+Identity: $guardi
+Personality: ???
+
+Notes:
+(if:$guardnote is >= 1)[- Mysterious individual met in the alleyway]
+(if:$guardnote is >= 2)[- Won't reveal anything, but seems to be helping]
+
+
+Back (click-undo: "Back")
+
+
+:: her {"position":"0,350","size":"100,100"}
+Name: xxx
+Age: xxx
+Gender: xxx
+Personality: xxx
+Infos: xxx
+
+
+Back (click-undo: "Back")
+
+
 :: menu [no_sidebar] {"position":"700,300","size":"100,100"}
-{(set: $name to "Unknown")
+{(set: $name to "unknown")
 (set: $location to "Dumor")
 (set: $meet_her to 0)
 (set: $meet_guard to 0)
-(set: $meet_child to 0)}
+(set: $meet_child to 0)
+(set:$inventory to (ds:))
+(set:$kind to 0)
+(set:$angry to 0)
+(set:$calm to 0)
+(set:$try to 1)
+}
 
 
 
@@ -593,23 +611,22 @@ the figure in front of you says.
 
 
 
-
-(align: "=><=")[(size:4)+(font:'Russo One')[RUBELLITE]
-
-
-
-
+(align: "=><=")+(font:'Russo One')[(size:3)[BRIDGE]
+TO
+(size:3)[RUBELLITE]]
 (font:'Permanent Marker')[
-[[START THE JOURNEY]]
+[[START]]
 
 [[LOAD]]
 
 [[ABOUT]]
 ]
-]
+
 
 
 :: speak [alleyway] {"position":"775,1300","size":"100,100"}
+{(set:$speaking to "guard_dark")
+(set:$guardnote to $guardnote+1)}
 “Alright, let’s get you out of that brain of yours. 
 Probably freaking out about the lack of a script here, huh? 
 That’s what you people all say,
@@ -655,7 +672,7 @@ tw-passage {
 }
 
 tw-story[tags~="no_sidebar"] tw-sidebar {
-	display: none;
+  display: none;
 }
 
 tw-story[tags~="dumor"] {
@@ -668,6 +685,22 @@ tw-story[tags~="rubellite"] {
   background-color: #510707;
   font-family: 'Russo One';
   color: white;
+}
+
+tw-story[tags~="rubellite"] tw-link {
+    color: #db7073;
+}
+
+tw-story[tags~="alleyway"] tw-link {
+    color: #8266ba;
+}
+
+tw-passage[tags~="rubellite"] tw-link:hover {
+    color: #ebc0d0;
+}
+
+tw-passage[tags~="alleyway"] tw-link:hover {
+    color: #c3b0eb;
 }
 
 tw-story[tags~="alleyway"] {
