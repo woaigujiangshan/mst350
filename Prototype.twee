@@ -291,7 +291,7 @@ Back (click-undo: "Back")
 {(set:$speaking to "none")
 (set:$guardnote to $guardnote+1)
 (set:$location to "A red world?")}
-<img src="D:\Github_repos\mst350\image\Rubellite.jpg", width="858px" height="550px">
+<image\Rubellite.jpg", width="858px" height="550px">
 The world in front of you is bathed in an unbelievably bright light you can't stand looking at for long. 
 
 [[You finally realize how far from home you really are.]]
@@ -325,7 +325,7 @@ like everyone else here.
 
 :: Sidebar [footer] {"position":"0,0","size":"100,100"}
 (append: ?SideBar)[\
-{(if:$speaking is "A weird guy in the alleyway")[<img src="D:\Github_repos\mst350\image\guard_silhouette_transparent_half.png",width="100px", height="177px">]}
+{(if:$speaking is "A weird guy in the alleyway")[<img src="image\guard_silhouette_transparent_half.png",width="100px", height="177px">]}
 Location: $location
 [[Save Game ->save]]
 [[Inventory -> inventory]]
@@ -357,7 +357,7 @@ We will do better in the next version!]
 
 
 :: Walk home [dumor] {"position":"700,550","size":"100,100"}
-<img src="D:\Github_repos\mst350\image\Dumor.jpg", width="858px" height="550px">
+<image\Dumor.jpg", width="858px" height="550px">
 You walk home from work, 
 following the exact same route you take every other night. 
 
