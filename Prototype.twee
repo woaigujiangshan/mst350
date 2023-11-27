@@ -13,13 +13,14 @@ Prototype
     "info": "orange",
     "dumor": "blue",
     "rubellite": "red",
-    "alleyway": "purple"
+    "alleyway": "purple",
+    "russo": "orange"
   },
   "zoom": 1
 }
 
 
-:: \ info [no_sidebar] {"position":"50,200","size":"100,100"}
+:: \ info [no_sidebar russo] {"position":"50,200","size":"100,100"}
 |1>[The Guard]
 |2>[Child]
 |3>[HER]
@@ -39,7 +40,7 @@ Back (click-undo: "Back")
 (if:$meet_her is 0)[(replace:?3)[???]]}
 
 
-:: \ inventory [no_sidebar] {"position":"425,200","size":"100,100"}
+:: \ inventory [no_sidebar russo] {"position":"425,200","size":"100,100"}
 (for: each _item, ...$inventory)[
   (print: _item)
 ]
@@ -53,7 +54,7 @@ Weirdly appeared in the woods. But at least told you where you are.]}
 Back (click-undo: "Back")
 
 
-:: \ trait [no_sidebar] {"position":"175,200","size":"100,100"}
+:: \ trait [no_sidebar russo] {"position":"175,200","size":"100,100"}
 Calm: $calm
 Angry: $angry
 Kind: $kind
@@ -264,27 +265,42 @@ Well, as you can see, you are no longer in Dumor.”
 
 
 
-:: LOAD [no_sidebar] {"position":"825,425","size":"100,100"}
-[Slot A]<loada|
+:: LOAD [no_sidebar russo] {"position":"825,425","size":"100,100"}
+(font:"Russo One")[Which slot do you want to load?
 
-[Slot B]<loadb|
 
-Back (click-undo: "Back")
-{(click: ?loada)[
-  (if:(saved-games: ) contains "SlotA")[
-      (load-game: "SlotA")
-  ](else:)[
-      There is no files saved in this slot.
-  ]
+(set: _saves to (saved-games:))\
+{
+	(if: _saves contains "Slot 1")[
+		(link: (_saves's "Slot 1"))[
+			(loadgame: "Slot 1")
+		]
+	]
+	(else:)[Slot 1]
+}
+
+
+{
+	(if: _saves contains "Slot 2")[
+		(link: (_saves's "Slot 2"))[
+			(loadgame: "Slot 2")
+		]
+	]
+	(else:)[Slot 2]
+}
+
+
+{
+	(if: _saves contains "Slot 3")[
+		(link: (_saves's "Slot 3"))[
+			(loadgame: "Slot 3")
+		]
+	]
+	(else:)[Slot 3]
+}
 ]
 
-(click: ?loadb)[
-  (if:(saved-games: ) contains "SlotB")[
-      (load-game: "SlotB")
-  ](else:)[
-      There is no files saved in this slot.
-  ]
-]}
+Back (click-undo: "Back")
 
 
 :: Look to the front [rubellite] {"position":"900,2050","size":"100,100"}
@@ -325,14 +341,25 @@ like everyone else here.
 
 :: Sidebar [footer] {"position":"0,0","size":"100,100"}
 (append: ?SideBar)[\
-{(if: $speaking is 0)[<img src="image\empty.png",width="100px", height="177px">]
+(font:"Russo One")[{(if: $speaking is 0)[<img src="image\empty.png",width="100px", height="177px">]
 
 (if:$speaking is "A weird guy in the alleyway")[<img src="image\guard_silhouette_transparent_half.png",width="100px", height="177px">]}
-Location: $location
+
+Location: 
+(b4r:"none","none","solid")+(b4r-colour:white)[$location]
+
+
 [[Save Game ->save]]
+
+
 [[Inventory -> inventory]]
+
+
 [[Profile -> info]]
+
+
 [[Main Menu->menu]]
+]
 ]
 
 
@@ -505,7 +532,7 @@ You can’t understand anything at the moment.
 ]]
 
 
-:: child [no_sidebar] {"position":"200,350","size":"100,100"}
+:: child [no_sidebar russo] {"position":"200,350","size":"100,100"}
 Name: 
 Age: xxx
 Gender: xxx
@@ -532,7 +559,7 @@ the figure in front of you says.
 [[Here?]]]]
 
 
-:: guard [no_sidebar] {"position":"100,350","size":"100,100"}
+:: guard [no_sidebar russo] {"position":"100,350","size":"100,100"}
 (if:$meet_guard is not 3)[<img src="image\guard_silhouette.png", width="200px" height="250px">]
 Name: $guardname
 Age: $guardage
@@ -547,7 +574,7 @@ Notes:
 Back (click-undo: "Back")
 
 
-:: her [no_sidebar] {"position":"0,350","size":"100,100"}
+:: her [no_sidebar russo] {"position":"0,350","size":"100,100"}
 Name: xxx
 Age: xxx
 Gender: xxx
@@ -558,7 +585,8 @@ Infos: xxx
 Back (click-undo: "Back")
 
 
-:: menu [no_sidebar] {"position":"700,300","size":"100,100"}
+:: menu [no_sidebar russo] {"position":"700,300","size":"100,100"}
+
 
 
 
@@ -566,69 +594,37 @@ Back (click-undo: "Back")
 
 <img src="image\GameLogo.png", width="900px" height="330px">
 
-(font:'Permanent Marker')[
+
 [[START]]
 
 [[LOAD]]
 
 [[ABOUT]]
-]
 
 
-:: save [no_sidebar] {"position":"300,200","size":"100,100"}
-(font:'Permanent Marker')[
 
+:: save [no_sidebar russo] {"position":"300,200","size":"100,100"}
+(link-replace: "Slot 1")[{
+		(savegame: "Slot 1", $location)
+		You saved the game.
+	}]
+    
+    
+	(link-replace: "Slot 2")[{
+		(savegame: "Slot 2", $location)
+		You saved the game.
+	}]
+    
+    
+	(link-replace: "Slot 3")[{
+		(savegame: "Slot 2", $location)
+		You saved the game.
+	}]
 
-(link:"Save A")[
-	(if: (saved-games:) contains "SlotA")[
-    	There is already a story in this slot, do you want to rewrite the game?
-        (link: "Yes" )[
-        	{(if:(save-game:"SlotA"))[
-            	(if: (saved-games:) contains "SlotA")[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn't save your game.
-            ]}
-        ]
-    ](else:)[
-    	{(if:(save-game:"SlotA"))[
-            	(if: (saved-games:) contains "SlotA")[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn't save your game.
-            ]}
-    ]
-]
-
-
-(link:"Save B")[
-	(if: (saved-games:) contains "SlotB")[
-    	There is already a story in this slot, do you want to rewrite the game?
-        (link: "Yes" )[
-        	{(if:(save-game:"SlotB"))[
-            	(if: (saved-games:) contains "SlotB")[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn't save your game.
-            ]}
-        ]
-    ](else:)[
-    	{(if:(save-game:"SlotB"))[
-            	(if: (saved-games:) contains "SlotB")[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn't save your game.
-            ]}
-    ]
-]
 
 
 Back(click-undo: "Back")
-]
+
 
 
 :: speak [alleyway] {"position":"775,1300","size":"100,100"}
@@ -668,12 +664,13 @@ Well, as you can see, you are no longer in Dumor.”
 
 :: StoryStylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css?family=Russo One');
-@import url('https://fonts.googleapis.com/css?family=Permanent Marker');
+@import url('https://fonts.googleapis.com/css?family=Spectral');
 
 tw-story {
   text-align: center;
+  font-family: 'Spectral';
+  
 }
-
 
 tw-story[tags~="no_sidebar"] tw-sidebar {
   display: none;
@@ -682,13 +679,11 @@ tw-story[tags~="no_sidebar"] tw-sidebar {
 
 tw-story[tags~="dumor"] {
   background-color: #091833;
-  font-family: 'Russo One';
   color: white;
 }
 
 tw-story[tags~="rubellite"] {
   background-color: #510707;
-  font-family: 'Russo One';
   color: white;
 }
 
@@ -710,7 +705,6 @@ tw-story[tags~="rubellite"] tw-enchantment.link:hover {
 
 tw-story[tags~="alleyway"] {
   background-color: #2c093b;
-  font-family: 'Russo One';
 }
 
 tw-story[tags~="alleyway"] tw-link {
@@ -729,6 +723,10 @@ tw-story[tags~="alleyway"] tw-enchantment.link:hover {
 	color: #c3b0eb;
 }
 
+tw-story[tags~="russo"] {
+  font-family: 'Russo One';
+}
+  
 
 tw-sidebar {
   position: fixed;

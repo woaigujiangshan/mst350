@@ -10,12 +10,13 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Prototype.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Prototype" startnode="6" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="e879253f-d76a-4913-9d5d-145bf9a57cad" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=Russo One');
-@import url('https://fonts.googleapis.com/css?family=Permanent Marker');
+@import url('https://fonts.googleapis.com/css?family=Spectral');
 
 tw-story {
   text-align: center;
+  font-family: 'Spectral';
+  
 }
-
 
 tw-story[tags~="no_sidebar"] tw-sidebar {
   display: none;
@@ -24,13 +25,11 @@ tw-story[tags~="no_sidebar"] tw-sidebar {
 
 tw-story[tags~="dumor"] {
   background-color: #091833;
-  font-family: 'Russo One';
   color: white;
 }
 
 tw-story[tags~="rubellite"] {
   background-color: #510707;
-  font-family: 'Russo One';
   color: white;
 }
 
@@ -52,7 +51,6 @@ tw-story[tags~="rubellite"] tw-enchantment.link:hover {
 
 tw-story[tags~="alleyway"] {
   background-color: #2c093b;
-  font-family: 'Russo One';
 }
 
 tw-story[tags~="alleyway"] tw-link {
@@ -71,6 +69,10 @@ tw-story[tags~="alleyway"] tw-enchantment.link:hover {
 	color: #c3b0eb;
 }
 
+tw-story[tags~="russo"] {
+  font-family: 'Russo One';
+}
+  
 
 tw-sidebar {
   position: fixed;
@@ -120,85 +122,68 @@ tw-hook[name="tip"] tw-hook[name="tiptext"] {
 /* Show the tooltip text when you mouse over the tooltip container */
 tw-hook[name="tip"]:hover tw-hook[name="tiptext"] {
 	visibility: visible;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="no_sidebar" color="green"></tw-tag><tw-tag name="info" color="orange"></tw-tag><tw-tag name="dumor" color="blue"></tw-tag><tw-tag name="rubellite" color="red"></tw-tag><tw-tag name="alleyway" color="purple"></tw-tag><tw-passagedata pid="1" name="save" tags="no_sidebar" position="300,200" size="100,100">(font:&#39;Permanent Marker&#39;)[
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="no_sidebar" color="green"></tw-tag><tw-tag name="info" color="orange"></tw-tag><tw-tag name="dumor" color="blue"></tw-tag><tw-tag name="rubellite" color="red"></tw-tag><tw-tag name="alleyway" color="purple"></tw-tag><tw-tag name="russo" color="orange"></tw-tag><tw-passagedata pid="1" name="save" tags="no_sidebar russo" position="300,200" size="100,100">(link-replace: &quot;Slot 1&quot;)[{
+		(savegame: &quot;Slot 1&quot;, $location)
+		You saved the game.
+	}]
+    
+    
+	(link-replace: &quot;Slot 2&quot;)[{
+		(savegame: &quot;Slot 2&quot;, $location)
+		You saved the game.
+	}]
+    
+    
+	(link-replace: &quot;Slot 3&quot;)[{
+		(savegame: &quot;Slot 2&quot;, $location)
+		You saved the game.
+	}]
 
-
-(link:&quot;Save A&quot;)[
-	(if: (saved-games:) contains &quot;SlotA&quot;)[
-    	There is already a story in this slot, do you want to rewrite the game?
-        (link: &quot;Yes&quot; )[
-        	{(if:(save-game:&quot;SlotA&quot;))[
-            	(if: (saved-games:) contains &quot;SlotA&quot;)[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn&#39;t save your game.
-            ]}
-        ]
-    ](else:)[
-    	{(if:(save-game:&quot;SlotA&quot;))[
-            	(if: (saved-games:) contains &quot;SlotA&quot;)[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn&#39;t save your game.
-            ]}
-    ]
-]
-
-
-(link:&quot;Save B&quot;)[
-	(if: (saved-games:) contains &quot;SlotB&quot;)[
-    	There is already a story in this slot, do you want to rewrite the game?
-        (link: &quot;Yes&quot; )[
-        	{(if:(save-game:&quot;SlotB&quot;))[
-            	(if: (saved-games:) contains &quot;SlotB&quot;)[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn&#39;t save your game.
-            ]}
-        ]
-    ](else:)[
-    	{(if:(save-game:&quot;SlotB&quot;))[
-            	(if: (saved-games:) contains &quot;SlotB&quot;)[
-                	Game saved!
-                ]
-            ](else:)[
-            	Sorry, I couldn&#39;t save your game.
-            ]}
-    ]
-]
 
 
 Back(click-undo: &quot;Back&quot;)
-]</tw-passagedata><tw-passagedata pid="2" name="ABOUT" tags="no_sidebar" position="575,425" size="100,100">Credits:
+</tw-passagedata><tw-passagedata pid="2" name="ABOUT" tags="no_sidebar" position="575,425" size="100,100">Credits:
 XXXX
 XXX
 XXXX
 XXX
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="3" name="LOAD" tags="no_sidebar" position="825,425" size="100,100">[Slot A]&lt;loada|
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="3" name="LOAD" tags="no_sidebar russo" position="825,425" size="100,100">(font:&quot;Russo One&quot;)[Which slot do you want to load?
 
-[Slot B]&lt;loadb|
 
-Back (click-undo: &quot;Back&quot;)
-{(click: ?loada)[
-  (if:(saved-games: ) contains &quot;SlotA&quot;)[
-      (load-game: &quot;SlotA&quot;)
-  ](else:)[
-      There is no files saved in this slot.
-  ]
+(set: _saves to (saved-games:))\
+{
+	(if: _saves contains &quot;Slot 1&quot;)[
+		(link: (_saves&#39;s &quot;Slot 1&quot;))[
+			(loadgame: &quot;Slot 1&quot;)
+		]
+	]
+	(else:)[Slot 1]
+}
+
+
+{
+	(if: _saves contains &quot;Slot 2&quot;)[
+		(link: (_saves&#39;s &quot;Slot 2&quot;))[
+			(loadgame: &quot;Slot 2&quot;)
+		]
+	]
+	(else:)[Slot 2]
+}
+
+
+{
+	(if: _saves contains &quot;Slot 3&quot;)[
+		(link: (_saves&#39;s &quot;Slot 3&quot;))[
+			(loadgame: &quot;Slot 3&quot;)
+		]
+	]
+	(else:)[Slot 3]
+}
 ]
 
-(click: ?loadb)[
-  (if:(saved-games: ) contains &quot;SlotB&quot;)[
-      (load-game: &quot;SlotB&quot;)
-  ](else:)[
-      There is no files saved in this slot.
-  ]
-]}</tw-passagedata><tw-passagedata pid="4" name="START" tags="dumor" position="700,425" size="100,100">{(set: $name to &quot;unknown&quot;)
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="4" name="START" tags="dumor" position="700,425" size="100,100">{(set: $name to &quot;unknown&quot;)
 (set: $location to &quot;Dumor&quot;)
 (set: $meet_her to 0)
 (set: $meet_guard to 0)
@@ -221,28 +206,40 @@ like everyone else here.
 
 
 [[Walk home]]]</tw-passagedata><tw-passagedata pid="5" name="Sidebar" tags="footer" position="0,0" size="100,100">(append: ?SideBar)[\
-{(if: $speaking is 0)[&lt;img src=&quot;image\empty.png&quot;,width=&quot;100px&quot;, height=&quot;177px&quot;&gt;]
+(font:&quot;Russo One&quot;)[{(if: $speaking is 0)[&lt;img src=&quot;image\empty.png&quot;,width=&quot;100px&quot;, height=&quot;177px&quot;&gt;]
 
 (if:$speaking is &quot;A weird guy in the alleyway&quot;)[&lt;img src=&quot;image\guard_silhouette_transparent_half.png&quot;,width=&quot;100px&quot;, height=&quot;177px&quot;&gt;]}
-Location: $location
+
+Location: 
+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white)[$location]
+
+
 [[Save Game -&gt;save]]
+
+
 [[Inventory -&gt; inventory]]
+
+
 [[Profile -&gt; info]]
+
+
 [[Main Menu-&gt;menu]]
-]</tw-passagedata><tw-passagedata pid="6" name="menu" tags="no_sidebar" position="700,300" size="100,100">
+]
+]</tw-passagedata><tw-passagedata pid="6" name="menu" tags="no_sidebar russo" position="700,300" size="100,100">
+
 
 
 
 
 &lt;img src=&quot;image\GameLogo.png&quot;, width=&quot;900px&quot; height=&quot;330px&quot;&gt;
 
-(font:&#39;Permanent Marker&#39;)[
+
 [[START]]
 
 [[LOAD]]
 
 [[ABOUT]]
-]</tw-passagedata><tw-passagedata pid="7" name=" inventory" tags="no_sidebar" position="425,200" size="100,100">(for: each _item, ...$inventory)[
+</tw-passagedata><tw-passagedata pid="7" name=" inventory" tags="no_sidebar russo" position="425,200" size="100,100">(for: each _item, ...$inventory)[
   (print: _item)
 ]
 {(click:&quot;flashlight&quot;)[
@@ -252,12 +249,12 @@ Weirdly appeared in the woods. But at least told you where you are.]}
 {(if: $inventory&#39;s length is 0)[You have nothing yet.]}
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="8" name=" trait" tags="no_sidebar" position="175,200" size="100,100">Calm: $calm
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="8" name=" trait" tags="no_sidebar russo" position="175,200" size="100,100">Calm: $calm
 Angry: $angry
 Kind: $kind
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="9" name=" info" tags="no_sidebar" position="50,200" size="100,100">|1&gt;[The Guard]
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="9" name=" info" tags="no_sidebar russo" position="50,200" size="100,100">|1&gt;[The Guard]
 |2&gt;[Child]
 |3&gt;[HER]
 
@@ -273,7 +270,7 @@ Back (click-undo: &quot;Back&quot;)
 (if:$meet_guard is 0)[(replace:?1)[???]]
 (if:$meet_guard is 1)[(replace:?1)[Strange person]]
 (if:$meet_child is 0)[(replace:?2)[???]]
-(if:$meet_her is 0)[(replace:?3)[???]]}</tw-passagedata><tw-passagedata pid="10" name="guard" tags="no_sidebar" position="100,350" size="100,100">(if:$meet_guard is not 3)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
+(if:$meet_her is 0)[(replace:?3)[???]]}</tw-passagedata><tw-passagedata pid="10" name="guard" tags="no_sidebar russo" position="100,350" size="100,100">(if:$meet_guard is not 3)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
 Name: $guardname
 Age: $guardage
 Identity: $guardi
@@ -284,14 +281,14 @@ Notes:
 (if:$guardnote is &gt;= 2)[- Won&#39;t reveal anything, but seems to be helping]
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="11" name="child" tags="no_sidebar" position="200,350" size="100,100">Name: 
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="11" name="child" tags="no_sidebar russo" position="200,350" size="100,100">Name: 
 Age: xxx
 Gender: xxx
 Personality: xxx
 Infos: xxx
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="12" name="her" tags="no_sidebar" position="0,350" size="100,100">Name: xxx
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="12" name="her" tags="no_sidebar russo" position="0,350" size="100,100">Name: xxx
 Age: xxx
 Gender: xxx
 Personality: xxx
