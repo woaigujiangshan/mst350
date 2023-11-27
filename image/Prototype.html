@@ -120,7 +120,7 @@ tw-hook[name="tip"] tw-hook[name="tiptext"] {
 /* Show the tooltip text when you mouse over the tooltip container */
 tw-hook[name="tip"]:hover tw-hook[name="tiptext"] {
 	visibility: visible;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="no_sidebar" color="green"></tw-tag><tw-tag name="info" color="orange"></tw-tag><tw-tag name="dumor" color="blue"></tw-tag><tw-tag name="rubellite" color="red"></tw-tag><tw-tag name="alleyway" color="purple"></tw-tag><tw-passagedata pid="1" name="save" tags="no_sidebar" position="300,200" size="100,100">(font:&#39;Permanent Marker&#39;)[
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="no_sidebar" color="green"></tw-tag><tw-tag name="info" color="orange"></tw-tag><tw-tag name="dumor" color="blue"></tw-tag><tw-tag name="rubellite" color="red"></tw-tag><tw-tag name="alleyway" color="purple"></tw-tag><tw-passagedata pid="1" name="save" tags="" position="300,200" size="100,100">(font:&#39;Permanent Marker&#39;)[
 
 
 (link:&quot;Save A&quot;)[
@@ -234,6 +234,7 @@ Location: $location
 
 
 
+
 &lt;img src=&quot;image\GameLogo.png&quot;, width=&quot;900px&quot; height=&quot;330px&quot;&gt;
 
 (font:&#39;Permanent Marker&#39;)[
@@ -242,7 +243,8 @@ Location: $location
 [[LOAD]]
 
 [[ABOUT]]
-]</tw-passagedata><tw-passagedata pid="7" name=" inventory" tags="no_sidebar" position="425,200" size="100,100">(for: each _item, ...$inventory)[
+]
+</tw-passagedata><tw-passagedata pid="7" name=" inventory" tags="" position="425,200" size="100,100">(for: each _item, ...$inventory)[
   (print: _item)
 ]
 {(click:&quot;flashlight&quot;)[
@@ -252,12 +254,12 @@ Weirdly appeared in the woods. But at least told you where you are.]}
 {(if: $inventory&#39;s length is 0)[You have nothing yet.]}
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="8" name=" trait" tags="no_sidebar" position="175,200" size="100,100">Calm: $calm
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="8" name=" trait" tags="" position="175,200" size="100,100">Calm: $calm
 Angry: $angry
 Kind: $kind
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="9" name=" info" tags="no_sidebar" position="50,200" size="100,100">|1&gt;[The Guard]
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="9" name=" info" tags="" position="50,200" size="100,100">|1&gt;[The Guard]
 |2&gt;[Child]
 |3&gt;[HER]
 
@@ -273,7 +275,7 @@ Back (click-undo: &quot;Back&quot;)
 (if:$meet_guard is 0)[(replace:?1)[???]]
 (if:$meet_guard is 1)[(replace:?1)[Strange person]]
 (if:$meet_child is 0)[(replace:?2)[???]]
-(if:$meet_her is 0)[(replace:?3)[???]]}</tw-passagedata><tw-passagedata pid="10" name="guard" tags="no_sidebar" position="100,350" size="100,100">(if:$meet_guard is not 3)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
+(if:$meet_her is 0)[(replace:?3)[???]]}</tw-passagedata><tw-passagedata pid="10" name="guard" tags="" position="100,350" size="100,100">(if:$meet_guard is not 3)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
 Name: $guardname
 Age: $guardage
 Identity: $guardi
@@ -284,14 +286,14 @@ Notes:
 (if:$guardnote is &gt;= 2)[- Won&#39;t reveal anything, but seems to be helping]
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="11" name="child" tags="no_sidebar" position="200,350" size="100,100">Name: 
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="11" name="child" tags="" position="200,350" size="100,100">Name: 
 Age: xxx
 Gender: xxx
 Personality: xxx
 Infos: xxx
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="12" name="her" tags="no_sidebar" position="0,350" size="100,100">Name: xxx
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="12" name="her" tags="" position="0,350" size="100,100">Name: xxx
 Age: xxx
 Gender: xxx
 Personality: xxx

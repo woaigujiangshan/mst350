@@ -19,7 +19,7 @@ Prototype
 }
 
 
-:: \ info {"position":"50,200","size":"100,100"}
+:: \ info [no_sidebar] {"position":"50,200","size":"100,100"}
 |1>[The Guard]
 |2>[Child]
 |3>[HER]
@@ -39,7 +39,7 @@ Back (click-undo: "Back")
 (if:$meet_her is 0)[(replace:?3)[???]]}
 
 
-:: \ inventory {"position":"425,200","size":"100,100"}
+:: \ inventory [no_sidebar] {"position":"425,200","size":"100,100"}
 (for: each _item, ...$inventory)[
   (print: _item)
 ]
@@ -53,7 +53,7 @@ Weirdly appeared in the woods. But at least told you where you are.]}
 Back (click-undo: "Back")
 
 
-:: \ trait {"position":"175,200","size":"100,100"}
+:: \ trait [no_sidebar] {"position":"175,200","size":"100,100"}
 Calm: $calm
 Angry: $angry
 Kind: $kind
@@ -291,7 +291,7 @@ Back (click-undo: "Back")
 {(set:$speaking to "none")
 (set:$guardnote to $guardnote+1)
 (set:$location to "A red world?")}
-<image\Rubellite.jpg", width="858px" height="550px">
+<img src="image\Rubellite.jpg", width="858px" height="550px">
 The world in front of you is bathed in an unbelievably bright light you can't stand looking at for long. 
 
 [[You finally realize how far from home you really are.]]
@@ -325,7 +325,9 @@ like everyone else here.
 
 :: Sidebar [footer] {"position":"0,0","size":"100,100"}
 (append: ?SideBar)[\
-{(if:$speaking is "A weird guy in the alleyway")[<img src="image\guard_silhouette_transparent_half.png",width="100px", height="177px">]}
+{(if: $speaking is 0)[<img src="image\empty.png",width="100px", height="177px">]
+
+(if:$speaking is "A weird guy in the alleyway")[<img src="image\guard_silhouette_transparent_half.png",width="100px", height="177px">]}
 Location: $location
 [[Save Game ->save]]
 [[Inventory -> inventory]]
@@ -357,7 +359,7 @@ We will do better in the next version!]
 
 
 :: Walk home [dumor] {"position":"700,550","size":"100,100"}
-<image\Dumor.jpg", width="858px" height="550px">
+<img src="image\Dumor.jpg", width="858px" height="550px">
 You walk home from work, 
 following the exact same route you take every other night. 
 
@@ -503,7 +505,7 @@ You can’t understand anything at the moment.
 ]]
 
 
-:: child {"position":"200,350","size":"100,100"}
+:: child [no_sidebar] {"position":"200,350","size":"100,100"}
 Name: 
 Age: xxx
 Gender: xxx
@@ -530,8 +532,8 @@ the figure in front of you says.
 [[Here?]]]]
 
 
-:: guard {"position":"100,350","size":"100,100"}
-(if:$meet_guard is not 3)[<img src="C:\Users\marin\OneDrive\MST 350\guard_silhouette.png", width="200px" height="250px">]
+:: guard [no_sidebar] {"position":"100,350","size":"100,100"}
+(if:$meet_guard is not 3)[<img src="image\guard_silhouette.png", width="200px" height="250px">]
 Name: $guardname
 Age: $guardage
 Identity: $guardi
@@ -545,7 +547,7 @@ Notes:
 Back (click-undo: "Back")
 
 
-:: her {"position":"0,350","size":"100,100"}
+:: her [no_sidebar] {"position":"0,350","size":"100,100"}
 Name: xxx
 Age: xxx
 Gender: xxx
@@ -562,12 +564,8 @@ Back (click-undo: "Back")
 
 
 
+<img src="image\GameLogo.png", width="900px" height="330px">
 
-
-
-(align: "=><=")+(font:'Russo One')[(size:3)[BRIDGE]
-TO
-(size:3)[RUBELLITE]]
 (font:'Permanent Marker')[
 [[START]]
 
@@ -577,8 +575,7 @@ TO
 ]
 
 
-
-:: save {"position":"300,200","size":"100,100"}
+:: save [no_sidebar] {"position":"300,200","size":"100,100"}
 (font:'Permanent Marker')[
 
 
@@ -745,6 +742,7 @@ tw-sidebar {
   color: white;
   background-color: transparent;
   font-family: 'Permanent Marker';
+  border-right: double;
 }
 
 tw-icon {
