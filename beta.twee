@@ -558,7 +558,7 @@ But even more so, you are desperate to learn how to escape.
 
 
 :: behind you [alleyway] {"position":"775,1050","size":"100,100"}
-{(set:$meet_guard to 1) `meet the guard`
+{(set:$meet_guard to 1) 
 (set:$guardname to "???")
 (set:$guardage to "???")
 (set:$guard_identity to "???")
