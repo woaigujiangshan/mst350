@@ -176,19 +176,17 @@ XXXX
 XXX
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="5" name="Alley" tags="dumor" position="700,675" size="100,100">{(if:$try is 2)[Okay, now you are back.
-Do you want to get into that alley this time?]
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="5" name="Alley" tags="dumor" position="700,675" size="100,100">(if:$try is 2)[Okay, now you are back.
+Do you want to get into that alley this time?
 
-(if:$try is 3)[Let&#39;s see how stubborn you are.]
+](if:$try is 3)[Let&#39;s see how stubborn you are.
 
-(if:$try is 4)[OKAY, OKAY]
+](if:$try is 4)[OKAY, OKAY.
 
-(if:$try is 5)[That&#39;s it. 
+](if:$try is 5)[That&#39;s it. 
 Enough.
 Get in there.
 (after: 2s)[(go-to: &quot;Get into that alleyway&quot;)]]
-
-}
 |1&gt;[You notice an |tip&gt;[alleyway|tiptext&gt;[A dark and narrow alleyway, looks unusual]] you have never seen before,
 and something is telling you to explore. 
 
@@ -204,23 +202,23 @@ The choice is up to you.&quot;
 
 {(if: $try is 5)[
 (hide: ?1)]
-}</tw-passagedata><tw-passagedata pid="6" name="Collection" tags="no_sidebar" position="825,300" size="100,100">(if:$newspapers contains 0)[(link-goto:&quot;Newspaper #0&quot;, &quot;newspaper0&quot;)]
-(else:)[???]
+}</tw-passagedata><tw-passagedata pid="6" name="Collection" tags="no_sidebar" position="825,300" size="100,100">{(if:$newspapers contains 0)[(link-goto:&quot;Newspaper #0&quot;, &quot;newspaper0&quot;)]
+(else:)[???]}
 
-(if:$newspapers contains 1)[(link-goto:&quot;Newspaper #1&quot;, &quot;newspaper1&quot;)]
-(else:)[???]
+{(if:$newspapers contains 1)[(link-goto:&quot;Newspaper #1&quot;, &quot;newspaper1&quot;)]
+(else:)[???]}
 
-(if:$newspapers contains 2)[(link-goto:&quot;Newspaper #2&quot;, &quot;newspaper2&quot;)]
-(else:)[???]
+{(if:$newspapers contains 2)[(link-goto:&quot;Newspaper #2&quot;, &quot;newspaper2&quot;)]
+(else:)[???]}
 
-(if:$newspapers contains 3)[(link-goto:&quot;Newspaper #3&quot;, &quot;newspaper3&quot;)]
-(else:)[???]
+{(if:$newspapers contains 3)[(link-goto:&quot;Newspaper #3&quot;, &quot;newspaper3&quot;)]
+(else:)[???]}
 
-(if:$newspapers contains 4)[(link-goto:&quot;Newspaper #4&quot;, &quot;newspaper4&quot;)]
-(else:)[???]
+{(if:$newspapers contains 4)[(link-goto:&quot;Newspaper #4&quot;, &quot;newspaper4&quot;)]
+(else:)[???]}
 
-(if:$newspapers contains 5)[(link-goto:&quot;Newspaper #5&quot;, &quot;newspaper5&quot;)]
-(else:)[???]
+{(if:$newspapers contains 5)[(link-goto:&quot;Newspaper #5&quot;, &quot;newspaper5&quot;)]
+(else:)[???]}
 
 
 
@@ -279,17 +277,17 @@ Will your destination point be a Wonderland?
 Or a Horrorland? 
 
 
-|1&gt;[Can you tell me about where we are? Where we’re going? I don’t understand…] &lt;!--kind--&gt;
+|1&gt;[&quot;Can you tell me about where we are? Where we’re going? I don’t understand…&quot;] &lt;!--kind--&gt;
 
-|2&gt;[How long will we take?] &lt;!--calm--&gt;
+|2&gt;[&quot;How long will we take?&quot;] &lt;!--calm--&gt;
 
-|3&gt;[How long is this going to take? Why are we moving so damn slow?]&lt;!--angry--&gt;]
+|3&gt;[&quot;How long is this going to take? Why are we moving so damn slow?&quot;]&lt;!--angry--&gt;]
 {(click:?1)[(set:$kind to $kind+1)(go-to:&quot;continue&quot;)]
 (click:?2)[(set:$calm to $calm+1)(go-to:&quot;continue&quot;)]
 (click:?3)[(set:$angry to $angry+1)(go-to:&quot;continue&quot;)]}</tw-passagedata><tw-passagedata pid="10" name="Get into that alleyway" tags="dumor" position="775,800" size="100,100">Here you are! 
 Let&#39;s begin the journey to an unknown universe… 
 
-[[Enter]]</tw-passagedata><tw-passagedata pid="11" name="Get off of me! You’re not making any sense!" tags="alleyway" position="650,1425" size="100,100">{(set:$angry to $angry +1)}
+[[Enter]]</tw-passagedata><tw-passagedata pid="11" name="&quot;Get off of me! You’re not making any sense!&quot;" tags="alleyway" position="650,1425" size="100,100">{(set:$angry to $angry +1)}
 The stranger removes their hand and backs away. 
 As the warmth of their hand disappears, 
 you feel cold enveloping your body once again.
@@ -300,19 +298,22 @@ You came from Dumor, right?
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[Yes, I was on my way home. Where am I if not in Dumor?]] &lt;!--Calm choice--&gt;
+[[”Yes, I was on my way home. Where am I if not in Dumor?“]] &lt;!--Calm choice--&gt;
 
-[[What do you think? Stop stalling and tell me what’s going on!]] &lt;!--Angry choice--&gt;
+[[“What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
 
-[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="12" name="Go home" tags="dumor" position="625,800" size="100,100">You return home from work, 
-eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
+[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="12" name="Go home" tags="dumor" position="625,800" size="100,100">(if:$newspapers contains 0)[(go-to: &quot;home&quot;)
+](else:)[You notice something on your way home.
+It is a newspaper
 
-
-[[What&#39;s next?]]</tw-passagedata><tw-passagedata pid="13" name="Here?" tags="alleyway" position="900,1925" size="100,100">&#39;&#39;&quot;Here&quot;&#39;&#39; means where exactly?
+|1&gt;[Pick it up and go home]
+{(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to: &quot;home&quot;)]}
+]
+</tw-passagedata><tw-passagedata pid="13" name="Here?" tags="alleyway" position="900,1925" size="100,100">&#39;&#39;&quot;Here&quot;&#39;&#39; means where exactly?
 
 The maze suddenly ends.
 
-[[Look to the front]]</tw-passagedata><tw-passagedata pid="14" name="I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…" tags="alleyway" position="775,1550" size="100,100">{(set:$kind to $kind+1)}
+[[Look to the front]]</tw-passagedata><tw-passagedata pid="14" name="“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”" tags="alleyway" position="775,1550" size="100,100">{(set:$kind to $kind+1)}
 “It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
 
 Their voice stays steady, revealing little to you. 
@@ -333,7 +334,7 @@ Just come with me, we have a long way to go.
 I’m sure &#39;&#39;HER&#39;&#39; people will deal with you.”
 
 
-[[Follow their lead]]]</tw-passagedata><tw-passagedata pid="15" name="I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?" tags="alleyway" position="900,1425" size="100,100">{(set:$kind to $kind+1)}
+[[Follow their lead]]]</tw-passagedata><tw-passagedata pid="15" name="“I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?&quot;" tags="alleyway" position="900,1425" size="100,100">{(set:$kind to $kind+1)}
 The stranger removes their hand and backs away. 
 As the warmth of their hand disappears, 
 you feel cold enveloping your body once again. 
@@ -344,11 +345,11 @@ You came from Dumor, right?
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[Yes, I was on my way home. Where am I if not in Dumor?]] &lt;!--Calm choice--&gt;
+[[”Yes, I was on my way home. Where am I if not in Dumor?“]] &lt;!--Calm choice--&gt;
 
-[[What do you think? Stop stalling and tell me what’s going on!]] &lt;!--Angry choice--&gt;
+[[“What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
 
-[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="16" name="Load" tags="no_sidebar russo" position="825,425" size="100,100">Which slot do you want to load?
+[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="16" name="Load" tags="no_sidebar russo" position="825,425" size="100,100">Which slot do you want to load?
 
 
 (set: _saves to (saved-games:))\
@@ -460,7 +461,7 @@ just living your life among the endless, perfect blue patience and orderliness,
 like everyone else here.
 
 
-[[Walk home]]]</tw-passagedata><tw-passagedata pid="21" name="The end of Prototype" tags="" position="900,2300" size="100,100">{(set:$location to &quot;The end of the test&quot;)}
+[[Walk home]]]</tw-passagedata><tw-passagedata pid="21" name="The end of Prototype" tags="" position="600,2300" size="100,100">{(set:$location to &quot;The end of the test&quot;)}
 [(text-size:1.5)[Thank you for playing!]
 (text-size:1.2)[This is basicly everything we have for this test.
 But we will have a beta test version in about 1 week!
@@ -482,7 +483,7 @@ We will do better in the next version!]
 You walk home from work, 
 following the exact same route you take every other night. 
 
-[[Familiar]]</tw-passagedata><tw-passagedata pid="23" name="What do you think? Stop stalling and tell me what’s going on!" tags="alleyway" position="1025,1550" size="100,100">{(set:$angry to $angry+1)}
+[[Familiar]]</tw-passagedata><tw-passagedata pid="23" name="“What do you think? Stop stalling and tell me what’s going on!”" tags="alleyway" position="1025,1550" size="100,100">{(set:$angry to $angry+1)}
 “Okay, well, now that’s too much emotion. 
 Calm down, I don’t have time to explain right now.” 
 
@@ -492,7 +493,7 @@ which fills you with something unlike the burning red feeling resting below your
 
 Suddenly, the stranger&#39;s warm hand wraps around your own, and they pull you forward.
 
-(link:&quot;!&quot;)[You stumble, unable to see in front of you. 
+(link:&quot;!!!&quot;)[You stumble, unable to see in front of you. 
 You move to pull your hand away, but the grip tightens, locking you in place. 
 
 Moments later, the voice comments, 
@@ -514,7 +515,7 @@ Promise, you won&#39;t regret it…
 This is the first choice you make.
 Let&#39;s give you another chance.&quot;
 
-[[Go back to the entrance -&gt;Alley]]</tw-passagedata><tw-passagedata pid="25" name="Where am I?" tags="alleyway" position="775,1175" size="100,100">{(set:$guard_identity to &quot;A stranger in the alleyway&quot;)}
+[[Go back to the entrance -&gt;Alley]]</tw-passagedata><tw-passagedata pid="25" name="&quot;Where am I?&quot;" tags="alleyway" position="775,1175" size="100,100">{(set:$guard_identity to &quot;A stranger in the alleyway&quot;)}
 “You entered an alleyway, where do you think you are? 
 Do they not teach common sense over in the city of Dumor?” 
 
@@ -528,7 +529,7 @@ Nothing in this dark alleyway is following the script you were given at birth, n
 (click:&quot;Nothing is r-&quot;)[You feel a warm hand land on your upper arm,
 which rips you from the drowning &#39;&#39;panic&#39;&#39; that had completely consumed you. 
 
-You feel yourself stop breathing, waiting for the stranger to [[speak]].]</tw-passagedata><tw-passagedata pid="26" name="Yes, I was on my way home. Where am I if not in Dumor?" tags="alleyway" position="900,1550" size="100,100">{(set:$calm to $calm+1)}
+You feel yourself stop breathing, waiting for the stranger to [[speak]].]</tw-passagedata><tw-passagedata pid="26" name="”Yes, I was on my way home. Where am I if not in Dumor?“" tags="alleyway" position="900,1550" size="100,100">{(set:$calm to $calm+1)}
 “How is it possible for one to speak with so little feeling?
 Your monotony is exhausting me.” 
 
@@ -539,7 +540,7 @@ which fills you with something you choose not to think too deeply about.
 Suddenly, the stranger&#39;s warm hand wraps around your own, 
 and they pull you forward. 
 
-(link:&quot;!&quot;)[You stumble, unable to see in front of you. 
+(link:&quot;!!!&quot;)[You stumble, unable to see in front of you. 
 It startles you, but you recover quickly. 
 
 Moments later, you hear the voice comments, 
@@ -567,7 +568,16 @@ You crave learning more about this world.
 
 But even more so, you are desperate to learn how to escape. 
 
-[[The end of Prototype]]]</tw-passagedata><tw-passagedata pid="28" name="behind you" tags="alleyway" position="775,1050" size="100,100">{(set:$meet_guard to 1) 
+|1&gt;[”Where are we?“]
+
+|2&gt;[”This looks exactly like home but red, when are you going to explain?“]
+
+|3&gt;[“What is this place? It’s…beautiful…”]
+{(click: ?1)[(set: $calm to $calm + 1)+(go-to: &quot;where are we&quot;)]
+(click: ?2)[(set: $angry to $angry + 1)+(go-to: &quot;where are we&quot;)]
+(click: ?3)[(set: $kind to $kind + 1)+(go-to: &quot;where are we&quot;)]
+}
+]</tw-passagedata><tw-passagedata pid="28" name="behind you" tags="alleyway" position="775,1050" size="100,100">{(set:$meet_guard to 1) 
 (set:$guardname to &quot;???&quot;)
 (set:$guardage to &quot;???&quot;)
 (set:$guard_identity to &quot;???&quot;)
@@ -581,18 +591,18 @@ Turn around.
 turning your body in an attempt to find the owner of the voice. 
 You see nothing.
 
-Huh? Are you talking to me?
+|1&gt;[&quot;Huh? Are you talking to me?&quot;]
 
-(click: &quot;Huh? Are you talking to me?&quot;)[“Well, yeah! Who else would I be talking to, idiot?”
+(click: ?1)[“Well, yeah! Who else would I be talking to, idiot?”
 
 The voice sounds irritated, but you can’t quite understand why. 
 You can’t understand anything at the moment.
 
-(text-color:#8266ba)[~~Where the hell am I? Where are you? What is going on? ~~]&lt;!--angry--&gt;
+(text-color:#8266ba)[~~&quot;Where the hell am I? Where are you? What is going on?&quot; ~~]&lt;!--angry--&gt;
 
-(text-color:#8266ba)[~~Can you tell me what’s going on? Where are you standing? I can’t see you…~~] &lt;!--kind--&gt;
+(text-color:#8266ba)[~~&quot;Can you tell me what’s going on? Where are you standing? I can’t see you…&quot;~~] &lt;!--kind--&gt;
 
-[[Where am I?]]
+[[&quot;Where am I?&quot;]]
 ]]</tw-passagedata><tw-passagedata pid="29" name="child" tags="no_sidebar" position="200,350" size="100,100">Name: 
 Age: xxx
 Gender: xxx
@@ -605,7 +615,7 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="30" nam
 (link:&quot;......&quot;)[You are overwhelmed and confused.
 You want your ordinary routine back.
 
-(seq-link:&quot;Everything used to be decided for you in advance.&quot;, &quot;Everything used to be calm and familiar.&quot;, &quot;Everything used to be…&quot;)
+(seq-link:&quot;//Everything used to be decided for you in advance.//&quot;, &quot;//Everything used to be calm and familiar.//&quot;, &quot;//Everything used to be…//&quot;)
 
 (click:&quot;Everything used to be…&quot;)[Your thoughts are interrupted by another turn in the maze. 
 
@@ -652,7 +662,7 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="35" nam
 
 (after:3s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[&#39;&#39;[[Collection]]&#39;&#39;]
 
-(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[&#39;&#39;[[About]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="36" name="newspaper0" tags="" position="950,300" size="100,100"></tw-passagedata><tw-passagedata pid="37" name="newspaper1" tags="" position="1050,300" size="100,100"></tw-passagedata><tw-passagedata pid="38" name="newspaper2" tags="" position="1150,300" size="100,100"></tw-passagedata><tw-passagedata pid="39" name="newspaper3" tags="" position="1250,300" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="newspaper4" tags="" position="1350,300" size="100,100"></tw-passagedata><tw-passagedata pid="41" name="newspaper5" tags="" position="1450,300" size="100,100"></tw-passagedata><tw-passagedata pid="42" name="save" tags="no_sidebar russo" position="300,200" size="100,100">Which slot do you want to load?
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[&#39;&#39;[[About]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="36" name="newspaper0" tags="" position="950,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="37" name="newspaper1" tags="" position="1050,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="38" name="newspaper2" tags="" position="1150,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="39" name="newspaper3" tags="" position="1250,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="40" name="newspaper4" tags="" position="1350,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="41" name="newspaper5" tags="" position="1450,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="42" name="save" tags="no_sidebar russo" position="300,200" size="100,100">Which slot do you want to load?
 
 
 {(link-replace: &quot;Slot 1&quot;)[
@@ -679,9 +689,9 @@ That’s what you people all say,
 you can hear something in their voice, but not sure what exactly it is.&quot;
 
 
-[[Get off of me! You’re not making any sense!]]
+[[&quot;Get off of me! You’re not making any sense!&quot;]]
 
-[[I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?]]
+[[“I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?&quot;]]
 
 [[“I’m not sure what you’re talking about.”]]</tw-passagedata><tw-passagedata pid="44" name="“I’m not sure what you’re talking about.”" tags="alleyway" position="775,1425" size="100,100">{(set:$calm to $calm+1)}
 The stranger removes their hand and backs away. 
@@ -693,11 +703,183 @@ You came from Dumor, right?
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[Yes, I was on my way home. Where am I if not in Dumor?]] &lt;!--Calm choice--&gt;
+[[”Yes, I was on my way home. Where am I if not in Dumor?“]] &lt;!--Calm choice--&gt;
 
-[[What do you think? Stop stalling and tell me what’s going on!]] &lt;!--Angry choice--&gt;
+[[“What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
 
-[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] &lt;!--Kind choice--&gt;</tw-passagedata></tw-storydata>
+[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="45" name="where are we" tags="rubellite" position="900,2300" size="100,100">{
+
+}
+You turn to the figure next to you, your eyes searching for answers. 
+What you don’t expect is to see the man’s own eyes looking back at you. 
+
+(link: &quot;Look into his eyes.&quot;)[Now out of the complete darkness, 
+you can see the face of the alley’s guard. 
+
+You can see the man’s irritation pooling in his eyes, 
+and it startles you into silence.
+
+(click: &quot;silence&quot;)[“Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
+
+(link:&quot;You notice something&quot;)[As he speaks, you see a piece of paper fly closer to the two of you,
+seemingly being carried by the quiet wind.
+
+You bend down slightly, reaching for what feels like a newspaper.
+
+[[Perhaps this could be helpful]]
+]]]</tw-passagedata><tw-passagedata pid="46" name="Perhaps this could be helpful" tags="rubellite" position="900,2425" size="100,100">{
+(set: $newspapers to $newspapers +(ds:1))
+}
+You reach your hand and grab it.
+
+Once it’s in your grasp, you look back up at the person in front of you.
+
+(click: &quot;the person in front of you&quot;)[
+His face is still mostly covered by a mask,
+so you’re still unsure what he looks like.
+
+As you begin to get lost in the mystery,
+he points at something behind you.
+
+[[Turn around]]
+]</tw-passagedata><tw-passagedata pid="47" name="Turn around" tags="rubellite" position="900,2550" size="100,100">There is a small door that you would’ve never noticed without him. 
+
+You wonder what can be hidden behind that door.
+Fortunately, you don&#39;t have to wait for long to discover.
+
+The stranger solemnly opens the door for you,
+and you carefully take |1&gt;[a step further].
+
+(click: ?1)[What you can see is liveliness that is native to the citizens of this red world. 
+It is clear why they call it “Rubellite.” 
+
+[[Walk around]]
+]</tw-passagedata><tw-passagedata pid="48" name="Walk around" tags="rubellite" position="900,2675" size="100,100">You walk around, mesmerised,
+looking at the tall buildings and streets full of busy people. 
+
+Distracted, you run into a group of kids playing a ball game. 
+
+|1&gt;[&quot;Oh, I apologise, I didn’t see you.&quot;]
+
+(click: ?1)[You say as you look at your feet.
+There is a piece of paper that lies on the ground.
+It&#39;s another newspaper!
+
+[[Pick it up]]
+]</tw-passagedata><tw-passagedata pid="49" name="Pick it up" tags="rubellite" position="900,2800" size="100,100">{
+(set: $newspapers to $newspapers +(ds:2))
+}
+You suddenly feel a pain on your head.
+
+(link: &quot;Ouch!&quot;)[The ball hit you.
+
+You frown and instinctively rub the back of your head. 
+It hurts, but just a little. 
+
+The ball stops near you, and the local child comes over to pick it up.
+
+“That’s my ball! Don’t steal it!”
+
+[[What??]]
+]</tw-passagedata><tw-passagedata pid="50" name="What??" tags="rubellite" position="900,2925" size="100,100">The child comes barrelling over with a loud voice that makes your ears ring. 
+
+(link: &quot;Step back&quot;)[You take a step back and attempt to blink away the dull ache in your head.
+
+As you see the loud child pick up the ball with an angry glint in their eyes,
+you feel confusion spread through your body.
+
+[[&quot;Steal your ball? But I haven&#39;t touched it.&quot;]]
+
+[[&quot;You were the one that hit me, what do you mean don’t steal it?!&quot;]]
+
+[[&quot;I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?&quot;]]
+]</tw-passagedata><tw-passagedata pid="51" name="&quot;Steal your ball? But I haven&#39;t touched it.&quot;" tags="rubellite" position="900,3050" size="100,100">{
+(set: $calm to $calm + 1)
+}
+“Sure…you seem suspicious…you’re not from here are you?” 
+
+The child’s eyes travel over your body, inspecting the work clothes you have on. 
+
+You begin to realise how different they are from what the children in front of you are wearing. 
+
+“What are you wearing? They look so boring!”
+
+|1&gt;[&quot;Boring? How so?&quot;]
+
+(click: ?1)[You blink in confusion,
+not entirely understanding what was wrong with your clothes. 
+
+|2&gt;[They were simple, and worked well for any occasion.]
+
+(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+The loud child covers their eyes dramatically, making their friends giggle.
+
+[[You are more confused now.]]
+]]</tw-passagedata><tw-passagedata pid="52" name="&quot;I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?&quot;" tags="rubellite" position="775,3050" size="100,100">{
+(set: $kind to $kind + 1)
+}
+“Okay, you’re right I’m sorry…we should have been more careful.”
+
+The child’s eyes travel over your body, inspecting the work clothes you have on.
+
+You begin to realise how different they are from what the children in front of you are wearing.
+
+“What are you wearing? They look so boring!”
+
+|1&gt;[&quot;Boring? Why do you say that?&quot;]
+
+(click: ?1)[You blink in confusion,
+not entirely understanding what was wrong with your clothes. 
+
+|2&gt;[They were simple, and worked well for any occasion.]
+
+(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+The loud child covers their eyes dramatically, making their friends giggle.
+
+[[You are more confused now.]]
+]]</tw-passagedata><tw-passagedata pid="53" name="&quot;You were the one that hit me, what do you mean don’t steal it?!&quot;" tags="rubellite" position="1025,3050" size="100,100">{
+(set: $angry to $angry + 1)
+}
+“Jeez…I’m sorry okay…it was an accident, I swear.”
+
+The child’s eyes travel over your body, inspecting the work clothes you have on.
+
+You begin to realise how different they are from what the children in front of you are wearing.
+
+“What are you wearing? They look so boring!” 
+
+|1&gt;[&quot;Boring? Why is that?&quot;]
+
+(click: ?1)[You blink in confusion,
+not entirely understanding what was wrong with your clothes. 
+
+|2&gt;[They were simple, and worked well for any occasion.]
+
+(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+The loud child covers their eyes dramatically, making their friends giggle.
+
+[[You are more confused now.]]
+]]</tw-passagedata><tw-passagedata pid="54" name="You are more confused now." tags="rubellite" position="900,3175" size="100,100">“Look at our clothes!
+We get so many cool colours and little flappy things,
+I can’t remember what my sister called them…”
+
+The child spins around and uses their hands to show off bits of |1&gt;[their clothes].
+
+(click: ?1)[There’s a mix of a red shade similar to that of the world around them,
+with yellow and orange accents.
+
+(link: &quot;Look at the child in front of you.&quot;)[The child in front of you is dressed in dark red pants that look to have a hundred pockets,
+with a black shirt and a |2&gt;[cropped jacket] covered in a mix of yellows and oranges.
+
+(click: ?2)[On the jacket, it seems the child has pasted on random stickers of things you don&#39;t recognize.
+
+You have to admit, it does look ‘cool’,
+as the child said.
+]]]</tw-passagedata><tw-passagedata pid="55" name="home" tags="dumor" position="500,925" size="100,100">You return home from work, 
+eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
+
+
+[[What&#39;s next?]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
