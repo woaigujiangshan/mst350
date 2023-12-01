@@ -63,6 +63,121 @@ Kind: $kind
 Back (click-undo: "Back")
 
 
+:: "Get off of me! You’re not making any sense!" [alleyway] {"position":"650,1425","size":"100,100"}
+{(set:$angry to $angry +1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again.
+
+“Woah, so you //do// have some emotion in you? 
+Alright, well, let’s take a breather. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[”Yes, I was on my way home. Where am I if not in Dumor?“]] <!--Calm choice-->
+
+[[“What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
+
+[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
+
+
+:: "I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?" [rubellite] {"position":"775,3050","size":"100,100"}
+{
+(set: $kind to $kind + 1)
+}
+“Okay, you’re right I’m sorry…we should have been more careful.”
+
+The child’s eyes travel over your body, inspecting the work clothes you have on.
+
+You begin to realise how different they are from what the children in front of you are wearing.
+
+“What are you wearing? They look so boring!”
+
+|1>["Boring? Why do you say that?"]
+
+(click: ?1)[You blink in confusion,
+not entirely understanding what was wrong with your clothes. 
+
+|2>[They were simple, and worked well for any occasion.]
+
+(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+The loud child covers their eyes dramatically, making their friends giggle.
+
+[[You are more confused now.]]
+]]
+
+
+:: "Steal your ball? But I haven't touched it." [rubellite] {"position":"900,3050","size":"100,100"}
+{
+(set: $calm to $calm + 1)
+}
+“Sure…you seem suspicious…you’re not from here are you?” 
+
+The child’s eyes travel over your body, inspecting the work clothes you have on. 
+
+You begin to realise how different they are from what the children in front of you are wearing. 
+
+“What are you wearing? They look so boring!”
+
+|1>["Boring? How so?"]
+
+(click: ?1)[You blink in confusion,
+not entirely understanding what was wrong with your clothes. 
+
+|2>[They were simple, and worked well for any occasion.]
+
+(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+The loud child covers their eyes dramatically, making their friends giggle.
+
+[[You are more confused now.]]
+]]
+
+
+:: "Where am I?" [alleyway] {"position":"775,1175","size":"100,100"}
+{(set:$guard_identity to "A stranger in the alleyway")}
+“You entered an alleyway, where do you think you are? 
+Do they not teach common sense over in the city of Dumor?” 
+
+The voice let out a sigh, but didn’t seem to move any closer. 
+The stubbornness of the mysterious figure breeds a red hot emotion within you that you can’t decipher. 
+
+Nothing in this dark alleyway is following the script you were given at birth, nothing is going the way it’s supposed to...
+
+(seq-link:"//Nothing is right.//","//Nothing is right...//", "//Nothing is right......//", "//Nothing is r-//")
+
+(click:"Nothing is r-")[You feel a warm hand land on your upper arm,
+which rips you from the drowning ''panic'' that had completely consumed you. 
+
+You feel yourself stop breathing, waiting for the stranger to [[speak]].]
+
+
+:: "You were the one that hit me, what do you mean don’t steal it?!" [rubellite] {"position":"1025,3050","size":"100,100"}
+{
+(set: $angry to $angry + 1)
+}
+“Jeez…I’m sorry okay…it was an accident, I swear.”
+
+The child’s eyes travel over your body, inspecting the work clothes you have on.
+
+You begin to realise how different they are from what the children in front of you are wearing.
+
+“What are you wearing? They look so boring!” 
+
+|1>["Boring? Why is that?"]
+
+(click: ?1)[You blink in confusion,
+not entirely understanding what was wrong with your clothes. 
+
+|2>[They were simple, and worked well for any occasion.]
+
+(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+The loud child covers their eyes dramatically, making their friends giggle.
+
+[[You are more confused now.]]
+]]
+
+
 :: About [no_sidebar] {"position":"575,425","size":"100,100"}
 Credits:
 XXXX
@@ -75,19 +190,17 @@ Back (click-undo: "Back")
 
 
 :: Alley [dumor] {"position":"700,675","size":"100,100"}
-{(if:$try is 2)[Okay, now you are back.
-Do you want to get into that alley this time?]
+(if:$try is 2)[Okay, now you are back.
+Do you want to get into that alley this time?
 
-(if:$try is 3)[Let's see how stubborn you are.]
+](if:$try is 3)[Let's see how stubborn you are.
 
-(if:$try is 4)[OKAY, OKAY]
+](if:$try is 4)[OKAY, OKAY.
 
-(if:$try is 5)[That's it. 
+](if:$try is 5)[That's it. 
 Enough.
 Get in there.
 (after: 2s)[(go-to: "Get into that alleyway")]]
-
-}
 |1>[You notice an |tip>[alleyway|tiptext>[A dark and narrow alleyway, looks unusual]] you have never seen before,
 and something is telling you to explore. 
 
@@ -107,23 +220,23 @@ The choice is up to you."
 
 
 :: Collection [no_sidebar] {"position":"825,300","size":"100,100"}
-(if:$newspapers contains 0)[(link-goto:"Newspaper #0", "newspaper0")]
-(else:)[???]
+{(if:$newspapers contains 0)[(link-goto:"Newspaper #0", "newspaper0")]
+(else:)[???]}
 
-(if:$newspapers contains 1)[(link-goto:"Newspaper #1", "newspaper1")]
-(else:)[???]
+{(if:$newspapers contains 1)[(link-goto:"Newspaper #1", "newspaper1")]
+(else:)[???]}
 
-(if:$newspapers contains 2)[(link-goto:"Newspaper #2", "newspaper2")]
-(else:)[???]
+{(if:$newspapers contains 2)[(link-goto:"Newspaper #2", "newspaper2")]
+(else:)[???]}
 
-(if:$newspapers contains 3)[(link-goto:"Newspaper #3", "newspaper3")]
-(else:)[???]
+{(if:$newspapers contains 3)[(link-goto:"Newspaper #3", "newspaper3")]
+(else:)[???]}
 
-(if:$newspapers contains 4)[(link-goto:"Newspaper #4", "newspaper4")]
-(else:)[???]
+{(if:$newspapers contains 4)[(link-goto:"Newspaper #4", "newspaper4")]
+(else:)[???]}
 
-(if:$newspapers contains 5)[(link-goto:"Newspaper #5", "newspaper5")]
-(else:)[???]
+{(if:$newspapers contains 5)[(link-goto:"Newspaper #5", "newspaper5")]
+(else:)[???]}
 
 
 
@@ -194,11 +307,11 @@ Will your destination point be a Wonderland?
 Or a Horrorland? 
 
 
-|1>[Can you tell me about where we are? Where we’re going? I don’t understand…] <!--kind-->
+|1>["Can you tell me about where we are? Where we’re going? I don’t understand…"] <!--kind-->
 
-|2>[How long will we take?] <!--calm-->
+|2>["How long will we take?"] <!--calm-->
 
-|3>[How long is this going to take? Why are we moving so damn slow?]<!--angry-->]
+|3>["How long is this going to take? Why are we moving so damn slow?"]<!--angry-->]
 {(click:?1)[(set:$kind to $kind+1)(go-to:"continue")]
 (click:?2)[(set:$calm to $calm+1)(go-to:"continue")]
 (click:?3)[(set:$angry to $angry+1)(go-to:"continue")]}
@@ -211,31 +324,15 @@ Let's begin the journey to an unknown universe…
 [[Enter]]
 
 
-:: Get off of me! You’re not making any sense! [alleyway] {"position":"650,1425","size":"100,100"}
-{(set:$angry to $angry +1)}
-The stranger removes their hand and backs away. 
-As the warmth of their hand disappears, 
-you feel cold enveloping your body once again.
-
-“Woah, so you //do// have some emotion in you? 
-Alright, well, let’s take a breather. 
-You came from Dumor, right? 
-Well, as you can see, you are no longer in Dumor.”
-
-
-[[Yes, I was on my way home. Where am I if not in Dumor?]] <!--Calm choice-->
-
-[[What do you think? Stop stalling and tell me what’s going on!]] <!--Angry choice-->
-
-[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] <!--Kind choice-->
-
-
 :: Go home [dumor] {"position":"625,800","size":"100,100"}
-You return home from work, 
-eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
+(if:$newspapers contains 0)[(go-to: "home")
+](else:)[You notice something on your way home.
+It is a newspaper
 
+|1>[Pick it up and go home]
+{(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to: "home")]}
+]
 
-[[What's next?]]
 
 
 :: Here? [alleyway] {"position":"900,1925","size":"100,100"}
@@ -244,50 +341,6 @@ eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed
 The maze suddenly ends.
 
 [[Look to the front]]
-
-
-:: I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit… [alleyway] {"position":"775,1550","size":"100,100"}
-{(set:$kind to $kind+1)}
-“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
-
-Their voice stays steady, revealing little to you. 
-Whatever you heard before has evaporated,
-which fills you with something that makes your fingers tremble ever so slightly.
-
-Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
-
-(link:"!!!")[You stumble, unable to see in front of you. 
-It startles you, but you recover quickly, 
-instinctively moving closer to the body. 
-You feel as though you can trust them, but you’re not sure why. 
-
-Moments later, the voice comments, 
-
-“I’ll explain later, but we need to get going. 
-Just come with me, we have a long way to go.
-I’m sure ''HER'' people will deal with you.”
-
-
-[[Follow their lead]]]
-
-
-:: I don’t understand what you mean…I don’t understand anything…Are you going to hurt me? [alleyway] {"position":"900,1425","size":"100,100"}
-{(set:$kind to $kind+1)}
-The stranger removes their hand and backs away. 
-As the warmth of their hand disappears, 
-you feel cold enveloping your body once again. 
-
-“Hurt you? 
-I have no reason to do that, let’s calm down a bit. 
-You came from Dumor, right? 
-Well, as you can see, you are no longer in Dumor.”
-
-
-[[Yes, I was on my way home. Where am I if not in Dumor?]] <!--Calm choice-->
-
-[[What do you think? Stop stalling and tell me what’s going on!]] <!--Angry choice-->
-
-[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] <!--Kind choice-->
 
 
 :: Load [no_sidebar russo] {"position":"825,425","size":"100,100"}
@@ -361,6 +414,44 @@ This video may contain flashes of light that could trigger seizures for people w
 {(after:3s)[(go-to:"menu")]}
 
 
+:: Perhaps this could be helpful [rubellite] {"position":"900,2425","size":"100,100"}
+{
+(set: $newspapers to $newspapers +(ds:1))
+}
+You reach your hand and grab it.
+
+Once it’s in your grasp, you look back up at the person in front of you.
+
+(click: "the person in front of you")[
+His face is still mostly covered by a mask,
+so you’re still unsure what he looks like.
+
+As you begin to get lost in the mystery,
+he points at something behind you.
+
+[[Turn around]]
+]
+
+
+:: Pick it up [rubellite] {"position":"900,2800","size":"100,100"}
+{
+(set: $newspapers to $newspapers +(ds:2))
+}
+You suddenly feel a pain on your head.
+
+(link: "Ouch!")[The ball hit you.
+
+You frown and instinctively rub the back of your head. 
+It hurts, but just a little. 
+
+The ball stops near you, and the local child comes over to pick it up.
+
+“That’s my ball! Don’t steal it!”
+
+[[What??]]
+]
+
+
 :: Sidebar [footer] {"position":"0,0","size":"100,100"}
 (append: ?SideBar)[\
 (font:"Dancing Script")[
@@ -422,7 +513,7 @@ like everyone else here.
 [[Walk home]]]
 
 
-:: The end of Prototype {"position":"900,2300","size":"100,100"}
+:: The end of Prototype {"position":"600,2300","size":"100,100"}
 {(set:$location to "The end of the test")}
 [(text-size:1.5)[Thank you for playing!]
 (text-size:1.2)[This is basicly everything we have for this test.
@@ -444,36 +535,44 @@ We will do better in the next version!]
 (link-goto:"Go back to the menu.", "menu")]
 
 
+:: Turn around [rubellite] {"position":"900,2550","size":"100,100"}
+There is a small door that you would’ve never noticed without him. 
+
+You wonder what can be hidden behind that door.
+Fortunately, you don't have to wait for long to discover.
+
+The stranger solemnly opens the door for you,
+and you carefully take |1>[a step further].
+
+(click: ?1)[What you can see is liveliness that is native to the citizens of this red world. 
+It is clear why they call it “Rubellite.” 
+
+[[Walk around]]
+]
+
+
+:: Walk around [rubellite] {"position":"900,2675","size":"100,100"}
+You walk around, mesmerised,
+looking at the tall buildings and streets full of busy people. 
+
+Distracted, you run into a group of kids playing a ball game. 
+
+|1>["Oh, I apologise, I didn’t see you."]
+
+(click: ?1)[You say as you look at your feet.
+There is a piece of paper that lies on the ground.
+It's another newspaper!
+
+[[Pick it up]]
+]
+
+
 :: Walk home [dumor] {"position":"700,550","size":"100,100"}
 <img src="image\Dumor.jpg", width="780px" height="500px">
 You walk home from work, 
 following the exact same route you take every other night. 
 
 [[Familiar]]
-
-
-:: What do you think? Stop stalling and tell me what’s going on! [alleyway] {"position":"1025,1550","size":"100,100"}
-{(set:$angry to $angry+1)}
-“Okay, well, now that’s too much emotion. 
-Calm down, I don’t have time to explain right now.” 
-
-Their voice stays steady, revealing little to you. 
-Whatever you heard before has evaporated, 
-which fills you with something unlike the burning red feeling resting below your skin.
-
-Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
-
-(link:"!")[You stumble, unable to see in front of you. 
-You move to pull your hand away, but the grip tightens, locking you in place. 
-
-Moments later, the voice comments, 
-
-“I’m not going to hurt you, you’re fine. 
-Just come with me, we have a long way to go.
-I’m sure ''HER'' people will deal with you.”
-
-
-[[Follow their lead]]]
 
 
 :: What's next? [dumor] {"position":"625,925","size":"100,100"}
@@ -492,48 +591,40 @@ Let's give you another chance."
 [[Go back to the entrance ->Alley]]
 
 
-:: Where am I? [alleyway] {"position":"775,1175","size":"100,100"}
-{(set:$guard_identity to "A stranger in the alleyway")}
-“You entered an alleyway, where do you think you are? 
-Do they not teach common sense over in the city of Dumor?” 
+:: What?? [rubellite] {"position":"900,2925","size":"100,100"}
+The child comes barrelling over with a loud voice that makes your ears ring. 
 
-The voice let out a sigh, but didn’t seem to move any closer. 
-The stubbornness of the mysterious figure breeds a red hot emotion within you that you can’t decipher. 
+(link: "Step back")[You take a step back and attempt to blink away the dull ache in your head.
 
-Nothing in this dark alleyway is following the script you were given at birth, nothing is going the way it’s supposed to...
+As you see the loud child pick up the ball with an angry glint in their eyes,
+you feel confusion spread through your body.
 
-(seq-link:"//Nothing is right.//","//Nothing is right...//", "//Nothing is right......//", "//Nothing is r-//")
+[["Steal your ball? But I haven't touched it."]]
 
-(click:"Nothing is r-")[You feel a warm hand land on your upper arm,
-which rips you from the drowning ''panic'' that had completely consumed you. 
+[["You were the one that hit me, what do you mean don’t steal it?!"]]
 
-You feel yourself stop breathing, waiting for the stranger to [[speak]].]
-
-
-:: Yes, I was on my way home. Where am I if not in Dumor? [alleyway] {"position":"900,1550","size":"100,100"}
-{(set:$calm to $calm+1)}
-“How is it possible for one to speak with so little feeling?
-Your monotony is exhausting me.” 
-
-Their voice stays steady, revealing little to you. 
-Whatever you heard before has evaporated, 
-which fills you with something you choose not to think too deeply about.
-
-Suddenly, the stranger's warm hand wraps around your own, 
-and they pull you forward. 
-
-(link:"!")[You stumble, unable to see in front of you. 
-It startles you, but you recover quickly. 
-
-Moments later, you hear the voice comments, 
-
-“Barely even a flinch, I’ll never get used to how robotic you people really are. 
-Just come with me, we have a long way to go. 
-I’m sure ''HER'' people will deal with you.”
-
-
-[[Follow their lead]]
+[["I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?"]]
 ]
+
+
+:: You are more confused now. [rubellite] {"position":"900,3175","size":"100,100"}
+“Look at our clothes!
+We get so many cool colours and little flappy things,
+I can’t remember what my sister called them…”
+
+The child spins around and uses their hands to show off bits of |1>[their clothes].
+
+(click: ?1)[There’s a mix of a red shade similar to that of the world around them,
+with yellow and orange accents.
+
+(link: "Look at the child in front of you.")[The child in front of you is dressed in dark red pants that look to have a hundred pockets,
+with a black shirt and a |2>[cropped jacket] covered in a mix of yellows and oranges.
+
+(click: ?2)[On the jacket, it seems the child has pasted on random stickers of things you don't recognize.
+
+You have to admit, it does look ‘cool’,
+as the child said.
+]]]
 
 
 :: You finally realize how far from home you really are. [rubellite] {"position":"900,2175","size":"100,100"}
@@ -554,7 +645,16 @@ You crave learning more about this world.
 
 But even more so, you are desperate to learn how to escape. 
 
-[[The end of Prototype]]]
+|1>[”Where are we?“]
+
+|2>[”This looks exactly like home but red, when are you going to explain?“]
+
+|3>[“What is this place? It’s…beautiful…”]
+{(click: ?1)[(set: $calm to $calm + 1)+(go-to: "where are we")]
+(click: ?2)[(set: $angry to $angry + 1)+(go-to: "where are we")]
+(click: ?3)[(set: $kind to $kind + 1)+(go-to: "where are we")]
+}
+]
 
 
 :: behind you [alleyway] {"position":"775,1050","size":"100,100"}
@@ -572,18 +672,18 @@ Turn around.
 turning your body in an attempt to find the owner of the voice. 
 You see nothing.
 
-Huh? Are you talking to me?
+|1>["Huh? Are you talking to me?"]
 
-(click: "Huh? Are you talking to me?")[“Well, yeah! Who else would I be talking to, idiot?”
+(click: ?1)[“Well, yeah! Who else would I be talking to, idiot?”
 
 The voice sounds irritated, but you can’t quite understand why. 
 You can’t understand anything at the moment.
 
-(text-color:#8266ba)[~~Where the hell am I? Where are you? What is going on? ~~]<!--angry-->
+(text-color:#8266ba)[~~"Where the hell am I? Where are you? What is going on?" ~~]<!--angry-->
 
-(text-color:#8266ba)[~~Can you tell me what’s going on? Where are you standing? I can’t see you…~~] <!--kind-->
+(text-color:#8266ba)[~~"Can you tell me what’s going on? Where are you standing? I can’t see you…"~~] <!--kind-->
 
-[[Where am I?]]
+[["Where am I?"]]
 ]]
 
 
@@ -604,7 +704,7 @@ No response.
 (link:"......")[You are overwhelmed and confused.
 You want your ordinary routine back.
 
-(seq-link:"Everything used to be decided for you in advance.", "Everything used to be calm and familiar.", "Everything used to be…")
+(seq-link:"//Everything used to be decided for you in advance.//", "//Everything used to be calm and familiar.//", "//Everything used to be…//")
 
 (click:"Everything used to be…")[Your thoughts are interrupted by another turn in the maze. 
 
@@ -651,6 +751,14 @@ Infos: xxx
 Back (click-undo: "Back")
 
 
+:: home [dumor] {"position":"500,925","size":"100,100"}
+You return home from work, 
+eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
+
+
+[[What's next?]]
+
+
 :: menu [no_sidebar russo] {"position":"700,300","size":"100,100"}
 {(track: 'dumor', 'fadeout', 2)
 (track: 'bridge', 'fadeout', 2)
@@ -675,27 +783,27 @@ Back (click-undo: "Back")
 
 
 :: newspaper0 {"position":"950,300","size":"100,100"}
-
+Back (click-undo: "Back")
 
 
 :: newspaper1 {"position":"1050,300","size":"100,100"}
-
+Back (click-undo: "Back")
 
 
 :: newspaper2 {"position":"1150,300","size":"100,100"}
-
+Back (click-undo: "Back")
 
 
 :: newspaper3 {"position":"1250,300","size":"100,100"}
-
+Back (click-undo: "Back")
 
 
 :: newspaper4 {"position":"1350,300","size":"100,100"}
-
+Back (click-undo: "Back")
 
 
 :: newspaper5 {"position":"1450,300","size":"100,100"}
-
+Back (click-undo: "Back")
 
 
 :: save [no_sidebar russo] {"position":"300,200","size":"100,100"}
@@ -730,11 +838,54 @@ That’s what you people all say,
 you can hear something in their voice, but not sure what exactly it is."
 
 
-[[Get off of me! You’re not making any sense!]]
+[["Get off of me! You’re not making any sense!"]]
 
-[[I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?]]
+[[“I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?"]]
 
 [[“I’m not sure what you’re talking about.”]]
+
+
+:: where are we [rubellite] {"position":"900,2300","size":"100,100"}
+{
+
+}
+You turn to the figure next to you, your eyes searching for answers. 
+What you don’t expect is to see the man’s own eyes looking back at you. 
+
+(link: "Look into his eyes.")[Now out of the complete darkness, 
+you can see the face of the alley’s guard. 
+
+You can see the man’s irritation pooling in his eyes, 
+and it startles you into silence.
+
+(click: "silence")[“Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
+
+(link:"You notice something")[As he speaks, you see a piece of paper fly closer to the two of you,
+seemingly being carried by the quiet wind.
+
+You bend down slightly, reaching for what feels like a newspaper.
+
+[[Perhaps this could be helpful]]
+]]]
+
+
+:: “I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?" [alleyway] {"position":"900,1425","size":"100,100"}
+{(set:$kind to $kind+1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again. 
+
+“Hurt you? 
+I have no reason to do that, let’s calm down a bit. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[”Yes, I was on my way home. Where am I if not in Dumor?“]] <!--Calm choice-->
+
+[[“What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
+
+[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
 
 
 :: “I’m not sure what you’re talking about.” [alleyway] {"position":"775,1425","size":"100,100"}
@@ -748,11 +899,86 @@ You came from Dumor, right?
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[Yes, I was on my way home. Where am I if not in Dumor?]] <!--Calm choice-->
+[[”Yes, I was on my way home. Where am I if not in Dumor?“]] <!--Calm choice-->
 
-[[What do you think? Stop stalling and tell me what’s going on!]] <!--Angry choice-->
+[[“What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
 
-[[I am, I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…]] <!--Kind choice-->
+[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
+
+
+:: “I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…” [alleyway] {"position":"775,1550","size":"100,100"}
+{(set:$kind to $kind+1)}
+“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated,
+which fills you with something that makes your fingers tremble ever so slightly.
+
+Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+
+(link:"!!!")[You stumble, unable to see in front of you. 
+It startles you, but you recover quickly, 
+instinctively moving closer to the body. 
+You feel as though you can trust them, but you’re not sure why. 
+
+Moments later, the voice comments, 
+
+“I’ll explain later, but we need to get going. 
+Just come with me, we have a long way to go.
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]]
+
+
+:: “What do you think? Stop stalling and tell me what’s going on!” [alleyway] {"position":"1025,1550","size":"100,100"}
+{(set:$angry to $angry+1)}
+“Okay, well, now that’s too much emotion. 
+Calm down, I don’t have time to explain right now.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated, 
+which fills you with something unlike the burning red feeling resting below your skin.
+
+Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+
+(link:"!!!")[You stumble, unable to see in front of you. 
+You move to pull your hand away, but the grip tightens, locking you in place. 
+
+Moments later, the voice comments, 
+
+“I’m not going to hurt you, you’re fine. 
+Just come with me, we have a long way to go.
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]]
+
+
+:: ”Yes, I was on my way home. Where am I if not in Dumor?“ [alleyway] {"position":"900,1550","size":"100,100"}
+{(set:$calm to $calm+1)}
+“How is it possible for one to speak with so little feeling?
+Your monotony is exhausting me.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated, 
+which fills you with something you choose not to think too deeply about.
+
+Suddenly, the stranger's warm hand wraps around your own, 
+and they pull you forward. 
+
+(link:"!!!")[You stumble, unable to see in front of you. 
+It startles you, but you recover quickly. 
+
+Moments later, you hear the voice comments, 
+
+“Barely even a flinch, I’ll never get used to how robotic you people really are. 
+Just come with me, we have a long way to go. 
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]
+]
 
 
 :: StoryScript [script]
