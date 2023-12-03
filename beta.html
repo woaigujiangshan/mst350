@@ -140,21 +140,28 @@ tw-hook[name="tip"]:hover tw-hook[name="tiptext"] {
 ;!function(e){(jQuery.browser=jQuery.browser||{}).mobile=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(e)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(e.substr(0,4))}(navigator.userAgent||navigator.vendor||window.opera),function(){"use strict";window.Fast={filter:function(e,t){for(var o=e.length,n=[],a=0;a<o;a++)t(e[a],a,e)&&n.push(e[a]);return n},forEach:function(e,t){for(var o=e.length,n=0;n<o;n++)t(e[n],n,e)},map:function(e,t){for(var o=e.length,n=new Array(o),a=0;a<o;a++)n[a]=t(e[a],a,e);return n},find:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return e[n]},findIndex:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return n;return-1},some:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return!0;return!1}}}(),window.Chapel=window.Chapel||{},window.Chapel.options={preload:!0,loadDelay:0,muteOnBlur:!0,startingVol:.5,persistPrefs:!0,globalA:!0,showControls:!0,sidebarStartClosed:!0,volumeDisplay:!1,trackLoadLimit:500,totalLoadLimit:8e3,debug:!1},window.Chapel.debug=function(){Chapel.options.debug&&console.log.apply(null,arguments)},function(){"use strict";var n=$("tw-storydata"),o=/(.+?):(.+)/,t=/[\r\n]+/,a=/^["']/,r=/["']$/;function e(e){return Fast.map(Fast.filter(e.split(t),function(e){return e&&e.trim()&&e.includes(":")}),function(e){return e.trim()})}function i(e){return e.trim().replace(a,"").replace(r,"").trim()}function s(e){var t=e.match(o);return t instanceof Array?{key:i(t[1]),value:i(t[2])}:e}var u,l,c,p=n.find('tw-passagedata[name="hal.tracks"]'),d=null,p=(p.length&&(p=e(p.text()),u=[],l=[],Fast.forEach(p,function(e){var e=s(e);"string"==typeof e&&l.push(e),u.push([e.key,(e=e.value,Fast.map(e.split(","),i))])}),l.length&&console.error("Some track definitions could not be parsed:\n"+l.join("\n")+"\nPlease check these definitions and try again."),d=new Map(u)),n.find('tw-passagedata[name="hal.config"]')),m=null;function f(e){var t=n.attr("format-version");if(e)return t;var e=t.split("."),t=e[0],o=e[1],e=e[2],t=Number(t),o=Number(o);return[t=(t=Number.isNaN(t)?3:t)<1?3:t,o=Number.isNaN(o)?3:o,e=Number.isNaN(e)?0:e]}function h(){var e=f();return!(3<=e[0]&&3<=e[1])}function g(t){return function(){var e=[].slice.call(arguments).slice(1),e=t.apply(null,e);return"string"==typeof e||"boolean"==typeof e||"number"==typeof e?e:""}}p.length&&(p=e(p.text()),c={},Fast.forEach(Fast.map(p,function(e){return s(e)}),function(e){c[e.key]=e.value}),m=c),m&&Fast.forEach(Object.keys(m),function(e){var t=e,o=c[e],e=typeof Chapel.options[e];"boolean"==e?"true"===o?Chapel.options[t]=!0:"false"===o&&(Chapel.options[t]=!1):"number"==e?(o=Number(o),Number.isNaN(o)||(Chapel.options[t]=o)):"string"==e&&o&&(Chapel.options[t]=o)});var y=require("macros");if(window.Chapel=window.Chapel||{},window.Chapel.Macros={add:function(o){o&&"object"==typeof o&&Fast.forEach(Object.keys(o),function(e){var t;t=o[e=e],h()?y.add(e,g(t),y.TypeSignature.zeroOrMore(y.TypeSignature.Any)):y.add(e,"Any",g(t),y.TypeSignature.zeroOrMore(y.TypeSignature.Any))})}},window.Chapel.Get=Object.freeze({version:f(),isHarlowe3OrLater:3<=f()[0],storyTitle:n.attr("name"),IFID:n.attr("ifid"),useOldMacroAPI:h(),fromPassage:d}),Chapel.debug("Harlowe Version -> ",Chapel.Get.version.join(".")),Chapel.debug("Harlowe Major Version -> ",Chapel.Get.version[0]),Chapel.debug("Story Title -> ",Chapel.Get.storyTitle),Chapel.debug("Story IFID -> ",Chapel.Get.IFID),Chapel.Get.version[0]<2)throw new Error("The Harlowe Audio Library is only designed to work with Harlowe 2 and 3; you appear to be using Harlowe 1 or an otherwise invalid story format.","get.js -> initialization",176);Chapel.options.storagekey="%%hal-"+Chapel.Get.IFID+"-{"+Chapel.Get.storyTitle+"}",Chapel.debug("Storage Key -> ",Chapel.options.storagekey)}(),function(){"use strict";var t=Chapel.options,e=function(e,t){if(window.localStorage)try{e=""+e,"string"!=typeof t&&(t=JSON.stringify(t)),window.localStorage.setItem(e,t)}catch(e){console.error(e)}},o=function(e){if(window.localStorage)try{return e=""+e,window.localStorage.getItem(e)}catch(e){console.error(e)}},n=function(e){if(window.localStorage)try{e=""+e,window.localStorage.removeItem(e)}catch(e){console.error(e)}},a={loaded:[],classes:{},master:{volume:t.startingVol,mute:!1},groups:{playing:[],looping:[],custom:{}},mute:function(e){a.master.mute=!!e,$(document).trigger({type:":master-mute",mute:!!e})},isMuted:function(){return!!a.master.mute},volume:function(e){e=Number(e),Number.isNaN(e)||(1<e?e=1:e<0&&(e=0),a.master.volume=e),$(document).trigger({type:":master-volume",volume:e})},getVolume:function(){return a.master.volume},stopAll:function(){a.classes.Track&&Fast.forEach(a.classes.Track.list,function(e){e.stop()})},audioPlaying:function(){return!!a.groups.playing.length},savePrefs:function(){e(t.storagekey,a.master)},loadPrefs:function(){var e=o(t.storagekey);e&&"object"==typeof e&&e.hasOwnProperty("volume")&&"number"==typeof e.volume&&e.hasOwnProperty("mute")&&"boolean"==typeof e.volume&&(delete a.master,a.master=e)},clearPrefs:function(){n(t.storagekey)}},r={track:[":available",":loaded",":play",":stop",":mute",":volume"],master:[":master-mute",":master-volume"]};var i=r.track.concat(r.master);function s(e,t){if(!e||"string"!=typeof e||!e.trim())return null;e=Fast.filter(Fast.map(e.split(" "),function(e){return(e=":"!==(e=e.split(".")[0])[0]?":"+e:e)+".userland"}),function(e){return(t?i:r.track).includes(e)}).join(" ");return e&&e.trim()?e:null}a.data={parseEvent:s,bail:function(e){throw new Error(e,"audio.js -> bail()",140)}},a.on=function(e,t){t&&"function"==typeof t?(e=s(e,!0))&&$(document).on(e,t):console.error("Chapel.Audio.on() -> invalid callback")},a.one=function(e,t){t&&"function"==typeof t?(e=s(e,!0))&&$(document).one(e,t):console.error("Chapel.Audio.one() -> invalid callback")},a.off=function(e){(e=s(e,!0))&&$(document).off(e)},t.persistPrefs&&($(document).on(":master-mute",a.savePrefs),$(document).on(":master-volume",a.savePrefs)),$(document).on(":play",function(e){e.track.addToGroup("playing")}),$(document).on(":stop",function(e){e.track.removeFromGroup("playing")}),t.muteOnBlur&&$(window).on("blur",function(){a.isMuted()||(a.mute(!0),$(window).one("focus",function(){a.mute(!1)}))}),a.parseEvent=s,window.Chapel=window.Chapel||{},window.Chapel.Audio=a}(),function(){"use strict";var a=Chapel.Audio,o=a.data.pareEvent,r=a.data.bail,i=Chapel.options,t=$(document.createElement("div")).attr("id","audio-container").css("display","none").appendTo(document.body),s={aac:"audio/aac",caf:"audio/x-caf","x-caf":"audio/x-caf",mp3:'audio/mpeg; codecs="mp3"',mpeg:'audio/mpeg; codecs="mp3"',m4a:"audio/mp4",mp4:"audio/mp4","x-m4a":"audio/mp4","x-mp4":"audio/mp4",oga:"audio/ogg",ogg:"audio/ogg",opus:'audio/ogg; codecs="opus"',wav:"audio/wav",wave:"audio/wav",weba:"audio/webm",webm:"audio/webm"};function u(e,t,o){this instanceof u||r("Track: called without `new` operator"),e||r("Track: no id specified"),"string"!=typeof e&&r("Track: track id is not a string"),t&&(!Array.isArray(t)||t.length)||r("Track: no sources specified"),o?t=[].slice.call(arguments).slice(1):"string"==typeof t&&(t=[t]);var n=$(document.createElement("audio"));Fast.forEach(t,function(e){$(document.createElement("source")).attr({src:e,type:(e=(e=(e=(e=(e=e).split("."))[e.length-1]).includes("?")?e.split("?")[0]:e).toLowerCase().trim(),Object.keys(s).includes(e)||r('Track: unsupported file type "'+e+'"'),s[e])}).appendTo(n)}),n.attr({"data-track":"id","data-volume":1,"data-mute":!1}).one("canplaythrough.hal",function(){a.loaded.push(e)}),i.preload&&n.attr("preload","auto"),n[0].volume=+a.master.volume,this.id=e,this.$el=n,this.unwrap=n[0],this.sources=t}Object.assign(u,{list:[],is:function(e){return e instanceof u},has:function(t){return Fast.some(u.list,function(e){return e.id===t})},emit:function(e,t){$(document).trigger({type:e,track:t}),t.emit(e)},add:function(e,t,o){var n=new u(e,t=o?[].slice.call(arguments).slice(1):t);return u.list.push(n),n.$el.on("canplay",function(){u.emit(":available",n)}),n.$el.on("canplaythrough",function(){u.emit(":loaded",n)}),n.attach(),n},renew:function(){Fast.forEach(u.list,function(e){e.mute(e.isMuted()),e.volume(e.getVolume())})},getIdx:function(t){return Fast.findIndex(u.list,function(e){return e.id===t})},get:function(t){var e=Fast.find(u.list,function(e){return e.id===t});if(e)return e;throw new ReferenceError('There is no track with the id "'+t+'". Please check your spelling and capitalization.',"track.js -> Track.get()",155)},removeFromDOM:function(e){(e="string"==typeof e?u.get(e):e)&&u.is(e)?e.unattach():t.remove()},_runOnMultiple:function(e,t,o){e instanceof Array&&u.prototype.hasOwnProperty(t)&&Fast.forEach(e,function(e){(e=u.is(e)?e:u.get(e)||null)&&e[t].apply(e,o&&o instanceof Array?o:[])})}}),Object.assign(u.prototype,{constructor:u,emit:function(e){this.$el.trigger({type:e,track:this})},clone:function(){return new u(this.id,this.sources)},isAttached:function(){return $.contains(t[0],this.unwrap)},attach:function(){return this.isAttached()||this.$el.appendTo(t),this},unattach:function(){return this.isAttached()&&this.$el.remove(),this},isPlaying:function(){return!this.unwrap.paused},play:function(){var e=this;return this.unwrap.play(),u.emit(":play",this),this.$el.on("ended",function(){e.unwrap.loop||(e.unwrap.currentTime=0,u.emit(":stop",e))}),this},playWhenPossible:function(){var t=this;return this.unwrap.play().then(function(){u.emit(":play",t),t.$el.on("ended",function(){t.unwrap.loop||(t.unwrap.currentTime=0,u.emit(":stop",t))})},function(e){$(document).one("click mousedown keydown touchstart",function(){t.play()})}).catch(function(e){console.error(e)}),this},forcePlay:function(){var e=this,t=$(document.createElement("a")).css("display","none").appendTo(document.body).on("click",function(){e.play()});setTimeout(function(){t.trigger("click")},safeAudioStart)},pause:function(){return this.unwrap.pause(),u.emit(":pause",this),this},stop:function(){return this.unwrap.pause(),this.unwrap.currentTime=0,u.emit(":stop",this),this},mute:function(e){return this.$el.attr("data-mute",e=!!e),a.master.mute?this.unwrap.muted=!0:this.unwrap.muted=e,u.emit(":mute",this),this},isMuted:function(){var e=this.$el.attr("data-mute");return"boolean"==typeof e?e:"false"!==e},toggleMute:function(){return this.mute(!this.isMuted()),this},volume:function(e){return e=Number(e),Number.isNaN(e)||(1<e?e=1:e<0&&(e=0),this.$el.attr("data-volume",e),this.unwrap.volume=e*a.master.volume),u.emit(":volume",this),this},getVolume:function(){return Number(this.$el.attr("data-volume"))},addToGroup:function(e,t){var o=this,t=(t?a.groups.custom:a.groups)[e];return Fast.some(t,function(e){return o.id===e.id})||t.push(this),this},removeFromGroup:function(e,t){var o=this,t=(t?a.groups.custom:a.groups)[e],e=Fast.findIndex(t,function(e){return e.id&&e.id===o.id});return t.splice(e,1),this},loop:function(e){return this.unwrap.loop=!!e,this.unwrap.loop?this.addToGroup("looping"):this.removeFromGroup("looping"),this},isLooping:function(){return!!this.unwrap.loop},toggleLoop:function(){return this.loop(!this.isLooping()),this},seek:function(e){return e<0?e=this.unwrap.duration-e:e>this.unwrap.duration&&(e=this.unwrap.duration),this.unwrap.currentTime=e,this},fadeIn:function(e){var t=this,o=(e=e||1,this.getVolume());return this.volume(0),this.play(),this.$el.animate({volume:o*a.master.volume},1e3*e,function(){t.volume(o),u.emit(":volume",t),u.emit(":fade",t)}),this},fadeOut:function(e){e=e||1;var t=this,o=this.getVolume();return this.$el.animate({volume:0},1e3*e,function(){t.stop(),t.volume(o),u.emit(":volume",t),u.emit(":fade",t)}),this},fadeTo:function(e,t){var o=this;if(e=e||1,t=Number(t),!Number.isNaN(t))return 1<t?t=1:t<0&&(t=0),this.$el.animate({volume:t*a.master.volume},1e3*e,function(){o.volume(t),u.emit(":volume",o),u.emit(":fade",o)}),this;alert("ivalid volume level")},delay:function(e,t){var o=this;"function"==typeof t&&(e=Number(e),(Number.isNaN(e)||e<0)&&(e=0),setTimeout(function(){t.call(o,o,e)},e))},on:function(e,t){if(!t||"function"!=typeof t)return console.error("<track>.on() -> invalid callback"),this;(e=o(e))&&this.$el.on(e,t)},one:function(e,t){if(!t||"function"!=typeof t)return console.error("<track>.one() -> invalid callback"),this;(e=o(e))&&this.$el.one(e,t)},off:function(e){(e=o(e))&&this.$el.off(e)}}),a.classes.Track=u,a.newTrack=function(){try{return u.add.apply(null,arguments)}catch(e){console.error(e.message),alert("Error in A.newTrack() -> see the console for more information.")}},a.track=function(e){try{return u.get(e)}catch(e){console.error(e.message),alert("Error in A.track() -> see the console for more information.")}},$(document).on(":master-mute",u.renew),$(document).on(":master-volume",u.renew)}(),function(){"use strict";var n=Chapel.Audio,a=n.classes.Track,o=(n.data._extend,/(play)?list:(.+)/i);n.createGroup=function(e,t,o){o=o?[].slice.call(arguments).slice(1):t;t=e,(e=o)&&Array.isArray(e)||(e=[]),n.groups.custom[t]=Fast.map(e,function(e){return a.get(e)})},n.group=function(e){if(!(this instanceof n.group))return new n.group(e);if(Object.keys(n.groups.custom).includes(e))this.members=n.groups.custom[e];else{if(!(n.groups[e]&&n.groups[e]instanceof Array))throw new ReferenceError('There is no group with the id "'+id+'". Please check your spelling and capitalization.',"group.js -> A.group()",29);this.members=n.groups[e]}var t;o.test(e)&&(t=e.match(o)[2])&&t.trim()&&(this.members=n.playlist(t).tracks),Array.isArray(this.members)||(this.members=[],console.error('Could not find members for track group "'+e+'"!'))},Object.assign(n.group,{is:function(e){return this instanceof n.group},_runOnAll:function(e,t,o,n){null!=n?o=[].slice.call(arguments).slice(2):o instanceof Array||(o=[o]);n=[e.members,t,o];a._runOnMultiple.apply(null,n)}}),Object.assign(n.group.prototype,{constructor:n.group,_run:function(){n.group._runOnAll.apply(null,[this].concat([].slice.call(arguments)))},play:function(){return this._run("play"),this},pause:function(){return this._run("pause"),this},stop:function(){return this._run("stop"),this},mute:function(e){return this._run("mute",e),this},volume:function(e){return this._run("volume",e),this},loop:function(e){return this._run("loop",e),this}})}(),function(){"use strict";var e=Chapel.Audio,a=e.classes.Track;e.data._extend;function n(e,t){if(!(this instanceof n))return new n(e,t);this.id=e,this.tracks=t.map(function(e){return a.get(e)}),this.looping=!1,this.current="",this.playing=!1}Object.assign(n,{list:{},is:function(e){return e instanceof n},add:function(e,t,o){return o&&(t=[].slice.call(arguments).slice(1)),n.list[e]=new n(e,t),n.list[e]},_runOnAll:function(e,t,o,n){null!=n?o=[].slice.call(arguments).slice(2):o instanceof Array||(o=[o]);n=[e.tracks,t,o];a._runOnMultiple.apply(null,n)}}),Object.assign(n.prototype,{constructor:n,clone:function(){return new n(this.id,this.tracks.map(function(e){return e.id}))},_run:function(){n._runOnAll.apply(null,[this].concat([].slice.call(arguments)))},volume:function(e){return this._run("volume",e),this},mute:function(e){return this._run("mute",e),this},shuffle:function(){for(var e,t,o=this.tracks,n=o.length-1;0<n;n--)e=Math.floor(Math.random()*(n+1)),t=o[n],o[n]=o[e],o[e]=t;return this.tracks=o,this},random:function(){return this.tracks[Math.floor(Math.random()*this.tracks.length)]},isPlaying:function(){return this.playing},nowPlaying:function(){return a.get(this.current)},play:function(e){var t=this;if((e=e||(t.current?Fast.findIndex(t.tracks,function(e){return e.id===t.current}):0))>=t.tracks.length&&t.looping)e=0;else if(e>=t.tracks.length)return t.current="",void(t.playing=!1);var o=t.tracks[e],n=o.isLooping();return o.loop(!1),o.play(),t.playing=!0,setTimeout(function(){o.isPlaying()||(t.playing=!1)},20),t.current=o.id,o.$el.one("ended.playlist",function(){e++,o.loop(n),t.play(e)}),t},loop:function(e){return this.looping=!!e,this},isLooping:function(){return this.looping},stop:function(){var e;return this.current&&this.isPlaying()?(e=this.nowPlaying())&&(e.stop(),e.$el.off(".playlist")):this._run("stop"),this.current="",this.playing=!1,this},pause:function(){var e;return this.current&&this.isPlaying()&&((e=this.nowPlaying())&&e.pause()),this.playing=!1,this}}),e.classes.Playlist=n,e.createPlaylist=function(){try{n.add.apply(null,arguments)}catch(e){console.error(e.message),alert("Error in A.createPlaylist() -> see the console for more information.")}},e.playlist=function(e){try{var t=n.list[e]||null;if(t)return t;throw new ReferenceError('There is no playlist with the id "'+e+'". Please check your spelling and capitalization.',"list.js -> A.playlist()",171)}catch(e){console.error(e.message),alert("Error in A.createPlaylist() -> see the console for more information.")}}}(),function(){"use strict";var t=Chapel.Audio,o=t.classes.Track,n=t.classes.Playlist;function a(t,o){if("object"!=typeof o)throw new TypeError("Invalid extension.","extensions.js -> _extend()",8);Fast.forEach(Object.keys(o),function(e){if(void 0!==t[e])throw new Error('Invalid extension: cannot clobber existing property "'+e+'".',"extensions.js -> _extend()",8);t[e]=o[e]})}t.extend=function(e){a(Audio,e)},o.extend=function(e){a(o,e)},o.extendPrototype=function(e){a(o.prototype,e)},t.extendTrack=o.extend,t.extendTrackProto=o.extendPrototype,t.group.extend=function(e){a(t.group,e)},t.group.extendPrototype=function(e){a(t.group.prototype,e)},t.extendGroup=t.group.extend,t.extendGroupProto=t.group.extendPrototype,n.extend=function(e){a(n,e)},n.extendPrototype=function(e){a(n.prototype,e)},t.extendPlaylist=n.extend,t.extendPlaylistProto=n.extendPrototype}(),function(){"use strict";var e,t,o,n,a,r,i,s=Chapel.options;s.showControls&&(e=$(document.createElement("div")).attr("id","story-menu").css("display","none"),t=$(document.createElement("span")).attr("id","vol-title").append("Volume"),s.volumeDisplay||t.css("display","none"),o=$(document.createElement("input")).attr({id:"audio-volume",type:"range",min:1,max:99,step:1,title:"Volume"}).addClass("hal"),(a=Math.trunc(100*window.Chapel.Audio.master.volume))<0?a=0:100<a&&(a=100),o.attr("value",a),n=function(e){void 0===e&&(e=o.val()),t.empty().append("Volume "+e)},o.on("input",function(){window.Chapel.Audio.volume($(this).val()/100),n($(this).val())}),a=$(document.createElement("tw-link")).attr({id:"audio-mute",title:"Mute"}).append("Mute <span></span>").on("click",function(e){e.preventDefault(),$(this).toggleClass("muted"),Chapel.Audio.mute(!Chapel.Audio.isMuted())}),Chapel.Audio.isMuted()&&a.addClass("muted"),r=$(document.createElement("tw-link")).attr("id","audio-panel-toggle").on("click",function(e){e.preventDefault(),i.toggleClass("closed")}),i=$(document.createElement("div")).attr("id","audio-controls").append(e,t,o,a,r).appendTo(document.body),s.sidebarStartClosed&&i.addClass("closed"),window.Chapel=window.Chapel||{},window.Chapel.Audio=window.Chapel.Audio||{},window.Chapel.Audio.controls={$panel:i,$volume:o,$mute:a,$user:e,close:function(){i.addClass("closed")},open:function(){i.removeClass("closed")},toggle:function(){i.toggleClass("closed")},hide:function(){i.css("display","none")},show:function(){i.css("display","block")},updateVolume:n})}(),function(){"use strict";var s=Chapel.options,t=State,e=$(document.createElement("div")).attr("id","audio-overlay").css("display","none").appendTo(document.body);function o(){e.css("display","block").append('<div class="lds-ring"><div></div><div></div><div></div><div></div></div>')}function u(){e.fadeOut(function(){e.empty()})}window.Chapel=window.Chapel||{},window.Chapel.Audio=window.Chapel.Audio||{},window.Chapel.Audio.loadScreen={show:o,dismiss:u,kill:function(){$("#audio-overlay").remove()}},window.Chapel.Audio.$overlay=e,window.Chapel.Audio.preload=function(){var a,e,r,i;Chapel.debug("This is a mobile browser -> ",$.browser.mobile),t.pastLength||t.futureLength||$.browser.mobile||($(document).ready(function(){o()}),a=100+s.loadDelay,e=Chapel.Audio.classes.Track.list,r=Chapel.Audio.loaded,e.length?(i=Fast.map(e,function(e){return e.id}),0<s.totalLoadLimit&&setTimeout(function(){u()},s.totalLoadLimit),function e(){var t,o,n;i.length?(t=i.shift(),r.includes(t)?e():(o=Chapel.Audio.classes.Track.get(t)).unwrap.readyState<2?(n=!1,o.$el.one("canplaythrough.hal",function(){e(),n=!0}),setTimeout(function(){n||(o.$el.off("canplaythrough.hal"),e())},s.trackLoadLimit)):(r.includes(t)||r.push(t),e())):setTimeout(u,a)}()):setTimeout(u,a))}}(),function(){"use strict";var e,t,o=Chapel.options.storagekey+"_hal_restart_",n=(Chapel.debug("HAL Session Key -> ",o),window.sessionStorage?(Chapel.debug("Session Storage Available"),e=function(e,t){window.sessionStorage.setItem(o+e,t)},t=function(e){return window.sessionStorage.getItem(o+e)}):(Chapel.debug("Session Storage Unavailable"),e=function(){},t=function(){},console.warn("Session storage is unavailable...")),{save:e,load:t});window.Chapel.Audio.state={_store:n,saveTracks:function(){var e;try{e=Fast.map(Chapel.Audio.classes.Track.list,function(e){return{id:e.id,sources:e.sources}}),Chapel.debug("Session Saved (Tracks) -> ",e),e=JSON.stringify(e),n.save("tracks",e)}catch(e){console.error(e.message)}},loadTracks:function(){var e;try{e=(e=n.load("tracks"))&&JSON.parse(e),Array.isArray(e)&&e.length&&(Chapel.debug("Session Loaded (Tracks) -> ",e),Fast.forEach(e,function(e){e.id&&e.sources&&!Chapel.Audio.classes.Track.has(e.id)?Chapel.Audio.newTrack.apply(null,[e.id].concat(e.sources)):Chapel.debug("Track reloading skipped.")}))}catch(e){console.error(e.message)}},savePlaylists:function(){try{var o=Chapel.Audio.classes.Playlist.list,e=Fast.map(Object.keys(o),function(e){var t={};return t.tracks=Fast.map(o[e].tracks,function(e){return e.id}),t.id=o[e].id,t});Chapel.debug("Session Saved (Playlists) -> ",e),e=JSON.stringify(e),n.save("playlists",e)}catch(e){console.error(e.message)}},loadPlaylists:function(){var e;try{(e=(e=n.load("playlists"))&&JSON.parse(e))&&Array.isArray(e)&&e.length&&(Chapel.debug("Session Loaded (Playlists) -> ",e),Fast.forEach(e,function(e){e.id&&e.tracks&&Chapel.Audio.createPlaylist(e.id,e.tracks)}))}catch(e){console.error(e.message)}},saveGroups:function(){var t;try{t={},Fast.forEach(Object.keys(Chapel.Audio.groups.custom),function(e){t[e]=Fast.map(Chapel.Audio.groups.custom[e],function(e){return"string"==typeof e?e:e.id})}),Chapel.debug("Session Saved (Groups) -> ",t),t=JSON.stringify(t),n.save("groups",t)}catch(e){console.error(e.message)}},loadGroups:function(){var t;try{(t=(t=n.load("groups"))&&JSON.parse(t))&&"object"==typeof t&&(Chapel.debug("Session Loaded (Groups) -> ",t),Fast.forEach(Object.keys(t),function(e){Fast.map(t[e],function(e){return Chapel.Audio.classes.Track.get(e)})}),Chapel.Audio.groups.custom=t)}catch(e){console.error(e.message)}}}}(),function(){"use strict";var e=Chapel.options;e.globalA&&void 0===window.A&&(Chapel.debug("Created global A interface."),window.A=window.Chapel.Audio),Chapel.Get.fromPassage&&(Chapel.debug("Loading tracks from track def special passage -> ",Chapel.Get.fromPassage),Chapel.Get.fromPassage.forEach(function(e,t){Chapel.Audio.newTrack.apply(null,[t].concat(e))})),$(document).on("unload",function(){Chapel.debug("User Prefs Saved"),window.Chapel.Audio.savePrefs()}),Chapel.Audio.classes.Track.renew(),Chapel.Audio.controls&&Chapel.Audio.controls.updateVolume(),Chapel.Get.isHarlowe3OrLater&&($(window).on("unload",function(){Chapel.debug("HAL State Saved"),Chapel.Audio.state.saveTracks(),Chapel.Audio.state.savePlaylists(),Chapel.Audio.state.saveGroups()}),Chapel.debug("HAL State Loaded"),Chapel.Audio.state.loadTracks(),Chapel.Audio.state.loadPlaylists(),Chapel.Audio.state.loadGroups()),e.persistPrefs&&(Chapel.debug("User Prefs Loaded"),Chapel.Audio.loadPrefs())}(),function(){"use strict";var i,s,e,u,t;Chapel.options.showControls&&(i=Engine,s=Chapel.Audio.controls.$user,e=function(){return"none"!==s.css("display")},u=function(){return e()||s.css("display","block"),s},t=function(){return e()&&s.css("display","none"),s},Chapel.Audio.menu={hide:t,show:u,isShown:e,links:{add:function(e,t,o){var n,a;if(!e||"string"!=typeof e)return r="undefined",alert(r),void console.error(r);o||"function"!=typeof t?(t&&"string"==typeof t&&(n=t),o&&"function"==typeof o&&(a=o)):(a=t,n=null);var r=$(document.createElement("tw-link")).append(e).attr({tabindex:"0",name:e.toLowerCase().trim()}).on("click",function(){n&&i.goToPassage(n),a&&a()}).addClass("story-menu").appendTo(s);return u(),r},clear:function(){return s.empty(),t()},hide:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').addClass("hide")},show:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').removeClass("hide")},toggle:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').toggleClass("hide")},remove:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').remove()}}})}(),function(){"use strict";var n=Chapel.Audio;function o(e){return e&&"function"==typeof e}function a(e,t){if(!e||"string"!=typeof e)return null;switch(e=e.toLowerCase().trim()){case"isplaying":e="isPlaying";break;case"playwhenpossible":e="playWhenPossible";break;case"ismuted":e="isAMuted";break;case"togglemute":e="toggleMute";break;case"getvolume":e="getVolume";break;case"islooping":e="isLooping";break;case"toggleloop":e="toggleLoop";break;case"fadein":e="fadeIn";break;case"fadeout":e="fadeOut";break;case"fadeto":e="fadeTo";break;case"stopall":e="stopAll"}if("isPlaying"===e&&"master"===t&&(e="audioPlaying"),"group"===t){if(o(n.group.prototype[e]))return e}else if("master"===t){if(o(n[e]))return e}else if(o(n.classes[t].prototype[e]))return e;throw new ReferenceError('Cannot run the command: "'+e+'" on the API "'+t+'". The command may be invalid, or this may be a bug in HAL.',"macros.js -> getCommand()",10)}window.Chapel.Macros.add({newtrack:function(){var e=[].slice.call(arguments);try{return n.newTrack.apply(null,e)}catch(e){alert("Error in the (newtrack:) macro: "+e.message)}},newplaylist:function(e,t){t=[].slice.call(arguments).slice(1);try{return n.createPlaylist(e,t)}catch(e){alert("Error in the (newplaylist:) macro: "+e.message)}},newgroup:function(e,t){t=[].slice.call(arguments).slice(1);try{return n.createGroup(e,t)}catch(e){alert("Error in the (newgroup:) macro: "+e.message)}},masteraudio:function(e){try{return e=a(e,"master"),n[e].apply(null,[].slice.call(arguments).slice(1))}catch(e){alert("Error in the (masteraudio:) macro: "+e.message)}},track:function(e,t){try{var o=n.track(e);return o[t=a(t,"Track")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (track:) macro: "+e.message)}},playlist:function(e,t){try{var o=n.playlist(e);return o[t=a(t,"Playlist")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (playlist:) macro: "+e.message)}},group:function(e,t){try{var o=n.group(e);return o[t=a(t,"group")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (group:) macro: "+e.message)}}})}();
 /** End of HAL code */</script><tw-tag name="no_sidebar" color="green"></tw-tag><tw-tag name="info" color="orange"></tw-tag><tw-tag name="dumor" color="blue"></tw-tag><tw-tag name="rubellite" color="red"></tw-tag><tw-tag name="alleyway" color="purple"></tw-tag><tw-tag name="russo" color="orange"></tw-tag><tw-passagedata pid="1" name=" info" tags="no_sidebar russo" position="50,200" size="100,100">|1&gt;[The Guard]
 |2&gt;[Child]
-|3&gt;[HER]
+|3&gt;[Elderly Woman]
+|4&gt;[HER]
 
 
 Back (click-undo: &quot;Back&quot;)
 
 {(if:$meet_guard is not 0)[(click-goto:?1, &quot;guard&quot;)]
 (if:$meet_child is not 0)[(click-goto:?2, &quot;child&quot;)]
-(if:$meet_her  is not 0)[(click-goto:?3, &quot;her&quot;)]
+(if:$meet_woman is not 0)[(click-goto:?3, &quot;woman&quot;)]
+(if:$meet_her  is not 0)[(click-goto:?4, &quot;her&quot;)]
 
 
 
 (if:$meet_guard is 0)[(replace:?1)[???]]
-(if:$meet_guard is 1)[(replace:?1)[Strange person]]
+(if:$meet_guard is 1)[(replace:?1)[Strange person in the alley]]
+(if:$meet_guard is 2)[(replace:?1)[Strange person in the alley]]
+
 (if:$meet_child is 0)[(replace:?2)[???]]
-(if:$meet_her is 0)[(replace:?3)[???]]}</tw-passagedata><tw-passagedata pid="2" name=" inventory" tags="no_sidebar russo" position="425,200" size="100,100">(for: each _item, ...$inventory)[
+
+(if:$meet_woman is 0)[(replace:?3)[???]]
+
+(if:$meet_her is 0)[(replace:?4)[???]]}</tw-passagedata><tw-passagedata pid="2" name=" inventory" tags="no_sidebar russo" position="425,200" size="100,100">(for: each _item, ...$inventory)[
   (print: _item)
 ]
 {(click:&quot;flashlight&quot;)[
@@ -260,7 +267,11 @@ Something is at odds.
 
 
 (seq-link:&quot;You startle and turn your head. &quot;, &quot;You squint your eyes. &quot;)]
-{(click-goto: &quot;You squint your eyes.&quot;, &#39;Alley&#39;)}</tw-passagedata><tw-passagedata pid="9" name="Follow their lead" tags="alleyway" position="900,1675" size="100,100">Another strange turn in your life. 
+{(click-goto: &quot;You squint your eyes.&quot;, &#39;Alley&#39;)}</tw-passagedata><tw-passagedata pid="9" name="Follow their lead" tags="alleyway" position="900,1675" size="100,100">{(set: $meet_her to 1)
+(set: $her_name to &quot;HER&quot;)
+(set: $her_identity to &quot;???&quot;)
+(set: $her_notes to (ds:))
+}Another strange turn in your life. 
 
 You can feel the stranger’s grip on your hand.
 They slowly lead you through some dark and narrow space.
@@ -313,8 +324,9 @@ It is a newspaper
 
 The maze suddenly ends.
 
-[[Look to the front]]</tw-passagedata><tw-passagedata pid="14" name="“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”" tags="alleyway" position="775,1550" size="100,100">{(set:$kind to $kind+1)}
-“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
+[[Look to the front]]</tw-passagedata><tw-passagedata pid="14" name="“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”" tags="alleyway" position="775,1550" size="100,100">{
+(set: $kind to $kind+1)
+}“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
 
 Their voice stays steady, revealing little to you. 
 Whatever you heard before has evaporated,
@@ -388,7 +400,7 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="17" nam
 (track: &#39;rubellite&#39;, &#39;fadein&#39;, 2)
 (track: &#39;rubellite&#39;, &#39;loop&#39;, true)
 (set: $speaking to &quot;empty.png&quot;)
-(set:$guardnote to $guardnote+1)
+(set:$guard_note to $guard_note+(ds:1))
 (set:$location to &quot;A red world?&quot;)}
 &lt;img src=&quot;image\Rubellite.jpg&quot;, width=&quot;780px&quot; height=&quot;500px&quot;&gt;
 The world in front of you is bathed in an unbelievably bright light you can&#39;t stand looking at for long. 
@@ -442,6 +454,7 @@ Location:
 (set: $meet_her to 0)
 (set: $meet_guard to 0)
 (set: $meet_child to 0)
+(set: $meet_woman to 0)
 &lt;!--initialize personality types--&gt;
 (set:$kind to 0)
 (set:$angry to 0)
@@ -450,8 +463,7 @@ Location:
 (set:$save to 0)
 
 (set: $speaking to &quot;empty.png&quot;)
-}
-Everything around you is familiarly, even soothingly, blue. 
+}Everything around you is familiarly, even soothingly, blue. 
 You always loved this colour. 
 
 Why?(click: &quot;Why?&quot;)[
@@ -483,8 +495,9 @@ We will do better in the next version!]
 You walk home from work, 
 following the exact same route you take every other night. 
 
-[[Familiar]]</tw-passagedata><tw-passagedata pid="23" name="“What do you think? Stop stalling and tell me what’s going on!”" tags="alleyway" position="1025,1550" size="100,100">{(set:$angry to $angry+1)}
-“Okay, well, now that’s too much emotion. 
+[[Familiar]]</tw-passagedata><tw-passagedata pid="23" name="“What do you think? Stop stalling and tell me what’s going on!”" tags="alleyway" position="1025,1550" size="100,100">{
+(set:$angry to $angry+1)
+}“Okay, well, now that’s too much emotion. 
 Calm down, I don’t have time to explain right now.” 
 
 Their voice stays steady, revealing little to you. 
@@ -529,8 +542,9 @@ Nothing in this dark alleyway is following the script you were given at birth, n
 (click:&quot;Nothing is r-&quot;)[You feel a warm hand land on your upper arm,
 which rips you from the drowning &#39;&#39;panic&#39;&#39; that had completely consumed you. 
 
-You feel yourself stop breathing, waiting for the stranger to [[speak]].]</tw-passagedata><tw-passagedata pid="26" name="”Yes, I was on my way home. Where am I if not in Dumor?“" tags="alleyway" position="900,1550" size="100,100">{(set:$calm to $calm+1)}
-“How is it possible for one to speak with so little feeling?
+You feel yourself stop breathing, waiting for the stranger to [[speak]].]</tw-passagedata><tw-passagedata pid="26" name="”Yes, I was on my way home. Where am I if not in Dumor?“" tags="alleyway" position="900,1550" size="100,100">{
+(set:$calm to $calm+1)
+}“How is it possible for one to speak with so little feeling?
 Your monotony is exhausting me.” 
 
 Their voice stays steady, revealing little to you. 
@@ -554,8 +568,8 @@ I’m sure &#39;&#39;HER&#39;&#39; people will deal with you.”
 ]</tw-passagedata><tw-passagedata pid="27" name="You finally realize how far from home you really are." tags="rubellite" position="900,2175" size="100,100">What you see in front of you is clearly the outskirts of the city.
 
 The metal rubbish and some mechanical parts are all over the place. 
-The stranger tells you that this world is called Rubellite, 
-and you understand why. 
+The stranger tells you that this world is called //&#39;&#39;Rubellite&#39;&#39;//, 
+and you understand why.(set: $location to &quot;Rubellite&quot;)
 
 You are surrounded by Rubel red.
 
@@ -578,10 +592,9 @@ But even more so, you are desperate to learn how to escape.
 (click: ?3)[(set: $kind to $kind + 1)+(go-to: &quot;where are we&quot;)]
 }
 ]</tw-passagedata><tw-passagedata pid="28" name="behind you" tags="alleyway" position="775,1050" size="100,100">{(set:$meet_guard to 1) 
-(set:$guardname to &quot;???&quot;)
-(set:$guardage to &quot;???&quot;)
+(set:$guard_name to &quot;???&quot;)
 (set:$guard_identity to &quot;???&quot;)
-(set:$guardnote to 0)}
+(set:$guard_note to (ds:))}
 “Again?! You &#39;&#39;people&#39;&#39; never learn! 
 Just a bunch of brain-dead, soulless, robotic imbeciles.”
 
@@ -603,11 +616,17 @@ You can’t understand anything at the moment.
 (text-color:#8266ba)[~~&quot;Can you tell me what’s going on? Where are you standing? I can’t see you…&quot;~~] &lt;!--kind--&gt;
 
 [[&quot;Where am I?&quot;]]
-]]</tw-passagedata><tw-passagedata pid="29" name="child" tags="no_sidebar" position="200,350" size="100,100">Name: 
-Age: xxx
-Gender: xxx
-Personality: xxx
-Infos: xxx
+]]</tw-passagedata><tw-passagedata pid="29" name="child" tags="no_sidebar" position="375,350" size="100,100">Name: ???
+
+Identity: A Loud Child
+
+Notes:
+(if: $child_notes contains 0)[- They seem to like soccer]
+(if: $child_notes contains 1)[- They talk in a rather loud voice, with a lot of emotion]
+(if: $child_notes contains 2)[- They don’t like your clothes…]
+(if: $child_notes contains 3)[- They’re quite stubborn]
+(if: $child_notes contains 4)[	- It looks like you should have been a bit stern with them…unfortunately now you’re a bit lost]
+(if: $child_notes contains 5)[	- It looks like being stern with them worked out! Now you know where you need to go next]
 
 
 Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="30" name="continue" tags="alleyway" position="900,1800" size="100,100">No response.
@@ -622,25 +641,49 @@ You want your ordinary routine back.
 &quot;We&#39;re almost here.&quot; 
 the figure in front of you says. 
 
-[[Here?]]]]</tw-passagedata><tw-passagedata pid="31" name="guard" tags="no_sidebar" position="0,350" size="100,100">(if:$meet_guard is not 3)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
-Name: $guardname
-Age: $guardage
+[[Here?]]]]</tw-passagedata><tw-passagedata pid="31" name="guard" tags="no_sidebar" position="0,350" size="100,100">(if:$meet_guard is 1)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
+Name: $guard_name
+
 Identity: $guard_identity
-Personality: $guard_personality
 
 Notes:
-(if:$guardnote is &gt;= 1)[- Mysterious individual met in the alleyway]
-(if:$guardnote is &gt;= 2)[- Won&#39;t reveal anything, but seems to be helping]
+(if:$guard_note contains 0)[- Mysterious individual met in the alleyway]
+(if:$guard_note contains 1)[- He appears rather aggressive and rude, but he is still helping for an unknown reason]
+(if:$guard_note contains 2)[	- It seems he may just be guarded]
+(if:$guard_note contains 3)[	- Has a dark mysterious past…what could it be?]
+(if:$guard_note contains 4)[	He loved someone that came from Dumor, but that person chose safety over him, so now he guards his heart]
+(if:$guard_note contains 5)[	He gets easily flustered and is not as strong as he seems, if u say one nice thing to him he crumbles a bit]
+(if:$guard_note contains 6)[Loyal and respect to [[HER-&gt;her]]]
+(if:$guard_note contains 7)[He seems to actually have a soft heart when it comes to kids and animals]
+(if:$guard_note contains 8)[	He likes to take care of the stray animals that live by the alleyway]
+(if:$guard_note contains 9)[	He seems to give into the children easily, and plays soccer with them]
+(if:$guard_note contains 10)[He seems rather stingy…]
+(if:$guard_note contains 11)[He must not like apples very much]
+(if:$guard_note contains 12)[He seems very generous]
+
 
 
 Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="32" name="hal.config" tags="" position="575,25" size="100,100">volumeDisplay: false
 debug: true</tw-passagedata><tw-passagedata pid="33" name="hal.tracks" tags="" position="450,25" size="100,100">dumor: ./audio/dumor.mp3
 bridge: ./audio/bridge.mp3
-rubellite: ./audio/rubellite.mp3</tw-passagedata><tw-passagedata pid="34" name="her" tags="no_sidebar" position="100,350" size="100,100">Name: xxx
-Age: xxx
-Gender: xxx
-Personality: xxx
-Infos: xxx
+rubellite: ./audio/rubellite.mp3</tw-passagedata><tw-passagedata pid="34" name="her" tags="no_sidebar" position="125,350" size="100,100">Name: $her_name
+
+Identity: $her_identity
+
+Notes:
+(if: $her_notes contains 0)[- Parents seem to use HER to scare their children into behaving]
+(if: $her_notes contains 1)[- Her title is Her Exalted Regency to the people of Rubellite]
+(if: $her_notes contains 2)[- She is described as a faceless leader, whose true identity is known by no one]
+(if: $her_notes contains 3)[- Despite being slightly afraid of HER, the people of Rubellite are all grateful to HER]
+(if: $her_notes contains 4)[- She built their city from the ground up and is the reason they can all live comfortably]
+(if: $her_notes contains 5)[	- Everyone is fed three meals a day, has running water, and never has to suffer]
+(if: $her_notes contains 6)[- She looks to be in her forties, around six foot, and looks very intimidating]
+(if: $her_notes contains 7)[- She doesn’t seem very good at socialising
+	- She tends to speak too loud and fast
+    - Her intonation seems unlike other citizens of Rubellite]
+(if: $her_notes contains 8)[- She grew up too fast while building Rubellite after escaping Dumor, and so she seems to still have a childish side]
+(if: $her_notes contains 9)[- When she needs to be mature, though, she does it well]
+(if: $her_notes contains 10)[- She cares for her city and people very deeply, and would give her life to protect them]
 
 
 Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="35" name="menu" tags="no_sidebar russo" position="700,300" size="100,100">{(track: &#39;dumor&#39;, &#39;fadeout&#39;, 2)
@@ -681,9 +724,10 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="35" nam
 
 
 
-Back(click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="43" name="speak" tags="alleyway" position="775,1300" size="100,100">{(set: $speaking to &quot;guard_silhouette_transparent_half.png&quot;)
-(set:$guardnote to $guardnote+1)}
-“Alright, let’s get you out of that brain of yours. 
+Back(click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="43" name="speak" tags="alleyway" position="775,1300" size="100,100">{
+(set: $speaking to &quot;guard_silhouette_transparent_half.png&quot;)
+(set:$guard_note to $guard_note+(ds:0))
+}“Alright, let’s get you out of that brain of yours. 
 Probably freaking out about the lack of a script here, huh? 
 That’s what you people all say,
 you can hear something in their voice, but not sure what exactly it is.&quot;
@@ -717,7 +761,7 @@ What you don’t expect is to see the man’s own eyes looking back at you.
 you can see the face of the alley’s guard. 
 
 You can see the man’s irritation pooling in his eyes, 
-and it startles you into silence.
+and it startles you into silence.(set: $meet_guard to 2)
 
 (click: &quot;silence&quot;)[“Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
 
@@ -768,8 +812,8 @@ It&#39;s another newspaper!
 [[Pick it up]]
 ]</tw-passagedata><tw-passagedata pid="49" name="Pick it up" tags="rubellite" position="900,2800" size="100,100">{
 (set: $newspapers to $newspapers +(ds:2))
-}
-You suddenly feel a pain on your head.
+(set: $child_notes to (ds:))
+}You suddenly feel a pain on your head.
 
 (link: &quot;Ouch!&quot;)[The ball hit you.
 
@@ -778,12 +822,12 @@ It hurts, but just a little.
 
 The ball stops near you, and the local child comes over to pick it up.
 
-“That’s my ball! Don’t steal it!”
+“That’s my ball! Don’t steal it!”(set: $meet_child to 1)(set: $child_notes to $child_notes + (ds:0))
 
 [[What??]]
 ]</tw-passagedata><tw-passagedata pid="50" name="What??" tags="rubellite" position="900,2925" size="100,100">The child comes barrelling over with a loud voice that makes your ears ring. 
 
-(link: &quot;Step back&quot;)[You take a step back and attempt to blink away the dull ache in your head.
+(link: &quot;Step back&quot;)[You take a step back and attempt to blink away the dull ache in your head.(set: $child_notes to $child_notes + (ds:1))
 
 As you see the loud child pick up the ball with an angry glint in their eyes,
 you feel confusion spread through your body.
@@ -859,7 +903,7 @@ not entirely understanding what was wrong with your clothes.
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
-]]</tw-passagedata><tw-passagedata pid="54" name="You are more confused now." tags="rubellite" position="900,3175" size="100,100">“Look at our clothes!
+]]</tw-passagedata><tw-passagedata pid="54" name="You are more confused now." tags="rubellite" position="900,3175" size="100,100">(set: $child_notes to $child_notes + (ds:2))“Look at our clothes!
 We get so many cool colours and little flappy things,
 I can’t remember what my sister called them…”
 
@@ -873,13 +917,228 @@ with a black shirt and a |2&gt;[cropped jacket] covered in a mix of yellows and 
 
 (click: ?2)[On the jacket, it seems the child has pasted on random stickers of things you don&#39;t recognize.
 
-You have to admit, it does look ‘cool’,
-as the child said.
+[[You have to admit, it does look ‘cool’]], as the child said.
 ]]]</tw-passagedata><tw-passagedata pid="55" name="home" tags="dumor" position="500,925" size="100,100">You return home from work, 
 eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
 
 
-[[What&#39;s next?]]</tw-passagedata></tw-storydata>
+[[What&#39;s next?]]</tw-passagedata><tw-passagedata pid="56" name="You have to admit, it does look ‘cool’" tags="rubellite" position="900,3300" size="100,100">“I suppose they do look interesting.
+Perhaps while I’m here, I’ll get some new clothes.”
+
+The child smiles brightly at you.
+It fills you with warmth.
+
+You hope other people of this world are like them. 
+|1&gt;[“I’m not from around here, so we’ve never met.”]
+(click: ?1)[“Not from here? How is that possible…
+Are you just from another side of the city?”
+
+You could see the gears moving in the child’s head.
+|2&gt;[It appears they know as little about the world as you do.]
+
+(click: ?2)[“I swear I know everyone in the city…
+but I guess it is a little big…
+where else could you be from?”
+
+[[Think]]
+]]
+</tw-passagedata><tw-passagedata pid="57" name="Think" tags="rubellite" position="900,3425" size="100,100">You’re not entirely sure what you should say.(set: $child_notes to $child_notes + (ds:3))
+
+|1&gt;[Should you reveal where you’re really from?]
+(click: ?1)[
+|2&gt;[Should you introduce another world to this child just how it was introduced to yourself?]
+(click: ?2)[
+|3&gt;[Or should you let them live in blissful ignorance?]
+(click: ?3)[
+Maybe this wasn’t your choice to make, they were still too young to understand.
+
+[[“That’s not important.”]]
+
+[[“Don’t worry about it, it’s not that important, I promise.”]]
+
+[[“It’s not important, alright? Enough questions.”-&gt;next stage]]
+]]]</tw-passagedata><tw-passagedata pid="58" name="“That’s not important.”" tags="rubellite" position="900,3550" size="100,100">{(set: $calm to $calm+1)}“I don’t know…it seems kinda important…
+Did you come from outside?
+Did The Guard bring you here?
+Why weren’t you inside the walls?
+I’m not sure if I’m allowed to talk to you…”
+
+The child backed away a few steps, and you could see fear begin pooling in their eyes.
+You wondered if this is what you looked like in the alleyway.
+
+(link: &quot;The Guard...&quot;)[|1&gt;[&#39;Is //he// the guard of this place?&#39;]
+(click: ?1)[
+[[“Please calm down, you are asking too many questions.”]]
+
+[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
+
+[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”-&gt;next stage]]
+]]</tw-passagedata><tw-passagedata pid="59" name="“Don’t worry about it, it’s not that important, I promise.”" tags="rubellite" position="1025,3550" size="100,100">{(set: $kind to $kind+1)}“I don’t know…it seems kinda important…
+Did you come from outside?
+Did The Guard bring you here?
+Why weren’t you inside the walls?
+I’m not sure if I’m allowed to talk to you…”
+
+The child backed away a few steps, and you could see fear begin pooling in their eyes.
+You wondered if this is what you looked like in the alleyway.
+
+(link: &quot;The Guard...&quot;)[|1&gt;[&#39;Is //he// the guard of this place?&#39;]
+(click: ?1)[
+[[“Please calm down, you are asking too many questions.”]]
+
+[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
+
+[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”-&gt;next stage]]
+]]</tw-passagedata><tw-passagedata pid="60" name="“It’s okay, please calm down, I’m sorry for scaring you.”" tags="rubellite" position="1025,3675" size="100,100">“I should go home, mom is probably waiting for me.
+I shouldn’t talk to you,
+mom says if I talk to strangers,
+I’ll see &#39;&#39;//HER//&#39;&#39; in my closet tonight. I’m going…”
+
+The loud child’s voice quickly fell to a soft whisper,
+and you watched as they turned and ran.
+
+You took note of yet another mention of a mysterious HER,
+but the kid was gone before you could even question it.
+
+You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
+
+[[Anyway, you need to move on-&gt;moveon]]</tw-passagedata><tw-passagedata pid="61" name="next stage" tags="rubellite" position="750,3625" size="100,100">//Your stern voice wakes them up from their spiral,
+and they look at you with serious eyes.//(set: $child_notes to $child_notes + (ds:5))
+
+“You’re right,”
+they say, clearly trying to seem more mature than they really are.
+“It’s not important, and you don’t seem that scary…
+I’m sure I won’t see|1&gt;[&#39;&#39; //HER//&#39;&#39;] in my closet just because I talked to you…”(set: $her_notes to $her_notes + (ds:0))
+
+(click: ?1)[&quot;I won’t hurt you, I promise.
+About the person you said, //HER//,
+the man from the alleyway mentioned her as well…&quot;
+You try to speak ina calm voice, so as to not frighten them,
+but you make sure to keep a hint of sternness in your words.
+
+&quot;So you //do// know &#39;&#39;//The Guard//&#39;&#39;.&quot;
+
+Oh, &#39;&#39;Then //he// is the guard of this place.&#39;&#39;(set:$guard_identity to &quot;The Guard&quot;)(set:$meet_guard to 3)
+
+[[“Can you tell me where I need to go to find this HER?”]]
+]</tw-passagedata><tw-passagedata pid="62" name="“Please calm down, you are asking too many questions.”" tags="rubellite" position="900,3675" size="100,100">“I should go home, mom is probably waiting for me.
+I shouldn’t talk to you,
+mom says if I talk to strangers,
+I’ll see &#39;&#39;//HER//&#39;&#39; in my closet tonight. I’m going…”
+
+The loud child’s voice quickly fell to a soft whisper,
+and you watched as they turned and ran.
+
+You took note of yet another mention of a mysterious HER,
+but the kid was gone before you could even question it.
+
+You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
+
+[[Anyway, you need to move on-&gt;moveon]]</tw-passagedata><tw-passagedata pid="63" name="“Can you tell me where I need to go to find this HER?”" tags="rubellite" position="775,3750" size="100,100">Uhm…
+Well, if you just head straight that way,
+you’ll get to the main part of the city,
+you know, where everyone is.
+You’ll probably find something there…”
+
+You can tell the child is still a little confused and stressed.
+It’s probably time for you to leave.
+
+|1&gt;[“Thank you, I’ll try that.Enjoy the rest of your game.”]
+
+(click: ?1)[They don’t look at you as you leave, but you understand why. Regardless, it’s time for the [[next part of your journey-&gt;Heading to heart of the city]].
+]</tw-passagedata><tw-passagedata pid="64" name="Heading to heart of the city" tags="rubellite" position="825,3900" size="100,100">You head straight through the streets as the child told you.
+
+It is the first time you are |1&gt;[left alone] since you got into that alleyway.
+
+(click: ?1)[Thoughts attack and overwhelm you all of a sudden.
+Now is not the right time for reflection, you know it,
+but there are still so many questions and so few answers.
+
+(link: &quot;Continue wallking&quot;)[As you move closer to the heart of the city, 
+the streets get busier.
+
+You notice a newspaper holder on one of the sidewalks.
+The whole newspaper is better than that out-of-context piece you picked up earlier.
+
+[[Take one]]
+]]
+</tw-passagedata><tw-passagedata pid="65" name="Take one" tags="rubellite" position="825,4025" size="100,100">{
+(set: $newspapers to $newspapers +(ds:3))
+}Even the local newspapers look differently.
+You see the same red colours and bright pictures on the pages.
+
+Some pieces of news don&#39;t tell you much.
+|1&gt;[You can&#39;t even find the date on it to check how much time passed!]
+
+(click: ?1)[This place seems too chaotic, too flamboyant and too unpredictable.
+In a strange way, you like it, realisation comes,
+although you don&#39;t feel like a part of Rubellite.
+
+|2&gt;[Where do you belong, after all?..]
+
+(click: ?2)[Suddenly,
+you see the only person who can clarify something for you and help you come back.
+
+(link:&quot;The Guard!&quot;)[You can&#39;t be mistaken.
+His figure stands out too much in the crowd of regular citizens.
+You need to catch up to him before he can vanish again.
+
+[[Run to The Guard]]
+]]]</tw-passagedata><tw-passagedata pid="66" name="Run to The Guard" tags="rubellite" position="825,4150" size="100,100"></tw-passagedata><tw-passagedata pid="67" name="moveon" tags="rubellite" position="975,3900" size="100,100">You wander around.
+
+This city is much more difficult to navigate through,
+compared to your home in Dumor.
+You don’t know where exactly to go as that strange child didn&#39;t tell you anything useful.
+
+(link: &quot;You feel lost and lonely.&quot;)[It is the first time you are |1&gt;[left alone] since you got into that alleyway.
+
+(click: ?1)[Thoughts attack and overwhelm you all of a sudden.
+Now is not the right time for reflection, you know it,
+but there are still so many questions and so few answers.
+
+(link: &quot;Continue wallking&quot;)[As you move closer to the heart of the city, 
+the streets get busier.
+
+You notice a newspaper holder on one of the sidewalks.
+The whole newspaper is better than that out-of-context piece you picked up earlier.
+
+[[Take one-&gt;Take one 2]]
+]]]</tw-passagedata><tw-passagedata pid="68" name="Take one 2" tags="rubellite" position="975,4025" size="100,100">{
+(set: $newspapers to $newspapers +(ds:3))
+}Even the local newspapers look differently.
+You see the same red colours and bright pictures on the pages.
+
+Some pieces of news don&#39;t tell you much.
+|1&gt;[You can&#39;t even find the date on it to check how much time passed!]
+
+(click: ?1)[This place seems too chaotic, too flamboyant and too unpredictable.
+In a strange way, you like it, realisation comes,
+although you don&#39;t feel like a part of Rubellite.
+
+|2&gt;[Where do you belong, after all?..]
+
+(click: ?2)[Suddenly,
+you see the only person who can clarify something for you and help you come back.
+
+(link:&quot;That man!&quot;)[You can&#39;t be mistaken.
+His figure stands out too much in the crowd of regular citizens.
+You need to catch up to him before he can vanish again.
+
+[[Run to him]]
+]]]</tw-passagedata><tw-passagedata pid="69" name="Run to him" tags="rubellite" position="975,4150" size="100,100"></tw-passagedata><tw-passagedata pid="70" name="woman" tags="no_sidebar" position="250,350" size="100,100">Name: ???
+
+Identity: Elderly Woman
+
+Notes:
+(if: $woman_notes contains 0)[- She’s very soft spoken, and you have to concentrate to hear her properly]
+(if: $woman_notes contains 1)[- She knows a lot about the two worlds]
+(if: $woman_notes contains 2)[- She was alive during The Split]
+(if: $woman_notes contains 3)[- She is very easily distracted and confused when asked too many questions]
+(if: $woman_notes contains 4)[	- She’s able to stay on track with her thoughts when someone simply listens, now you know so much more about the world]
+(if: $woman_notes contains 5)[	- Questions and emotional responses seem to encourage her to go on tangents, now you know less than you’d hoped about the world]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

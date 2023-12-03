@@ -23,21 +23,28 @@ beta
 :: \ info [no_sidebar russo] {"position":"50,200","size":"100,100"}
 |1>[The Guard]
 |2>[Child]
-|3>[HER]
+|3>[Elderly Woman]
+|4>[HER]
 
 
 Back (click-undo: "Back")
 
 {(if:$meet_guard is not 0)[(click-goto:?1, "guard")]
 (if:$meet_child is not 0)[(click-goto:?2, "child")]
-(if:$meet_her  is not 0)[(click-goto:?3, "her")]
+(if:$meet_woman is not 0)[(click-goto:?3, "woman")]
+(if:$meet_her  is not 0)[(click-goto:?4, "her")]
 
 
 
 (if:$meet_guard is 0)[(replace:?1)[???]]
-(if:$meet_guard is 1)[(replace:?1)[Strange person]]
+(if:$meet_guard is 1)[(replace:?1)[Strange person in the alley]]
+(if:$meet_guard is 2)[(replace:?1)[Strange person in the alley]]
+
 (if:$meet_child is 0)[(replace:?2)[???]]
-(if:$meet_her is 0)[(replace:?3)[???]]}
+
+(if:$meet_woman is 0)[(replace:?3)[???]]
+
+(if:$meet_her is 0)[(replace:?4)[???]]}
 
 
 :: \ inventory [no_sidebar russo] {"position":"425,200","size":"100,100"}
@@ -290,7 +297,11 @@ Something is at odds.
 
 
 :: Follow their lead [alleyway] {"position":"900,1675","size":"100,100"}
-Another strange turn in your life. 
+{(set: $meet_her to 1)
+(set: $her_name to "HER")
+(set: $her_identity to "???")
+(set: $her_notes to (ds:))
+}Another strange turn in your life. 
 
 You can feel the stranger’s grip on your hand.
 They slowly lead you through some dark and narrow space.
@@ -332,6 +343,26 @@ It is a newspaper
 |1>[Pick it up and go home]
 {(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to: "home")]}
 ]
+
+
+
+:: Heading to heart of the city [rubellite] {"position":"825,3900","size":"100,100"}
+You head straight through the streets as the child told you.
+
+It is the first time you are |1>[left alone] since you got into that alleyway.
+
+(click: ?1)[Thoughts attack and overwhelm you all of a sudden.
+Now is not the right time for reflection, you know it,
+but there are still so many questions and so few answers.
+
+(link: "Continue wallking")[As you move closer to the heart of the city, 
+the streets get busier.
+
+You notice a newspaper holder on one of the sidewalks.
+The whole newspaper is better than that out-of-context piece you picked up earlier.
+
+[[Take one]]
+]]
 
 
 
@@ -387,7 +418,7 @@ Back (click-undo: "Back")
 (track: 'rubellite', 'fadein', 2)
 (track: 'rubellite', 'loop', true)
 (set: $speaking to "empty.png")
-(set:$guardnote to $guardnote+1)
+(set:$guard_note to $guard_note+(ds:1))
 (set:$location to "A red world?")}
 <img src="image\Rubellite.jpg", width="780px" height="500px">
 The world in front of you is bathed in an unbelievably bright light you can't stand looking at for long. 
@@ -436,8 +467,8 @@ he points at something behind you.
 :: Pick it up [rubellite] {"position":"900,2800","size":"100,100"}
 {
 (set: $newspapers to $newspapers +(ds:2))
-}
-You suddenly feel a pain on your head.
+(set: $child_notes to (ds:))
+}You suddenly feel a pain on your head.
 
 (link: "Ouch!")[The ball hit you.
 
@@ -446,10 +477,18 @@ It hurts, but just a little.
 
 The ball stops near you, and the local child comes over to pick it up.
 
-“That’s my ball! Don’t steal it!”
+“That’s my ball! Don’t steal it!”(set: $meet_child to 1)(set: $child_notes to $child_notes + (ds:0))
 
 [[What??]]
 ]
+
+
+:: Run to The Guard [rubellite] {"position":"825,4150","size":"100,100"}
+
+
+
+:: Run to him [rubellite] {"position":"975,4150","size":"100,100"}
+
 
 
 :: Sidebar [footer] {"position":"0,0","size":"100,100"}
@@ -491,6 +530,7 @@ Location:
 (set: $meet_her to 0)
 (set: $meet_guard to 0)
 (set: $meet_child to 0)
+(set: $meet_woman to 0)
 <!--initialize personality types-->
 (set:$kind to 0)
 (set:$angry to 0)
@@ -499,8 +539,7 @@ Location:
 (set:$save to 0)
 
 (set: $speaking to "empty.png")
-}
-Everything around you is familiarly, even soothingly, blue. 
+}Everything around you is familiarly, even soothingly, blue. 
 You always loved this colour. 
 
 Why?(click: "Why?")[
@@ -511,6 +550,58 @@ like everyone else here.
 
 
 [[Walk home]]]
+
+
+:: Take one [rubellite] {"position":"825,4025","size":"100,100"}
+{
+(set: $newspapers to $newspapers +(ds:3))
+}Even the local newspapers look differently.
+You see the same red colours and bright pictures on the pages.
+
+Some pieces of news don't tell you much.
+|1>[You can't even find the date on it to check how much time passed!]
+
+(click: ?1)[This place seems too chaotic, too flamboyant and too unpredictable.
+In a strange way, you like it, realisation comes,
+although you don't feel like a part of Rubellite.
+
+|2>[Where do you belong, after all?..]
+
+(click: ?2)[Suddenly,
+you see the only person who can clarify something for you and help you come back.
+
+(link:"The Guard!")[You can't be mistaken.
+His figure stands out too much in the crowd of regular citizens.
+You need to catch up to him before he can vanish again.
+
+[[Run to The Guard]]
+]]]
+
+
+:: Take one 2 [rubellite] {"position":"975,4025","size":"100,100"}
+{
+(set: $newspapers to $newspapers +(ds:3))
+}Even the local newspapers look differently.
+You see the same red colours and bright pictures on the pages.
+
+Some pieces of news don't tell you much.
+|1>[You can't even find the date on it to check how much time passed!]
+
+(click: ?1)[This place seems too chaotic, too flamboyant and too unpredictable.
+In a strange way, you like it, realisation comes,
+although you don't feel like a part of Rubellite.
+
+|2>[Where do you belong, after all?..]
+
+(click: ?2)[Suddenly,
+you see the only person who can clarify something for you and help you come back.
+
+(link:"That man!")[You can't be mistaken.
+His figure stands out too much in the crowd of regular citizens.
+You need to catch up to him before he can vanish again.
+
+[[Run to him]]
+]]]
 
 
 :: The end of Prototype {"position":"600,2300","size":"100,100"}
@@ -533,6 +624,25 @@ Please provide any comments or advises in the questionaire!
 We will do better in the next version!]
 
 (link-goto:"Go back to the menu.", "menu")]
+
+
+:: Think [rubellite] {"position":"900,3425","size":"100,100"}
+You’re not entirely sure what you should say.(set: $child_notes to $child_notes + (ds:3))
+
+|1>[Should you reveal where you’re really from?]
+(click: ?1)[
+|2>[Should you introduce another world to this child just how it was introduced to yourself?]
+(click: ?2)[
+|3>[Or should you let them live in blissful ignorance?]
+(click: ?3)[
+Maybe this wasn’t your choice to make, they were still too young to understand.
+
+[[“That’s not important.”]]
+
+[[“Don’t worry about it, it’s not that important, I promise.”]]
+
+[[“It’s not important, alright? Enough questions.”->next stage]]
+]]]
 
 
 :: Turn around [rubellite] {"position":"900,2550","size":"100,100"}
@@ -594,7 +704,7 @@ Let's give you another chance."
 :: What?? [rubellite] {"position":"900,2925","size":"100,100"}
 The child comes barrelling over with a loud voice that makes your ears ring. 
 
-(link: "Step back")[You take a step back and attempt to blink away the dull ache in your head.
+(link: "Step back")[You take a step back and attempt to blink away the dull ache in your head.(set: $child_notes to $child_notes + (ds:1))
 
 As you see the loud child pick up the ball with an angry glint in their eyes,
 you feel confusion spread through your body.
@@ -608,7 +718,7 @@ you feel confusion spread through your body.
 
 
 :: You are more confused now. [rubellite] {"position":"900,3175","size":"100,100"}
-“Look at our clothes!
+(set: $child_notes to $child_notes + (ds:2))“Look at our clothes!
 We get so many cool colours and little flappy things,
 I can’t remember what my sister called them…”
 
@@ -622,8 +732,7 @@ with a black shirt and a |2>[cropped jacket] covered in a mix of yellows and ora
 
 (click: ?2)[On the jacket, it seems the child has pasted on random stickers of things you don't recognize.
 
-You have to admit, it does look ‘cool’,
-as the child said.
+[[You have to admit, it does look ‘cool’]], as the child said.
 ]]]
 
 
@@ -631,8 +740,8 @@ as the child said.
 What you see in front of you is clearly the outskirts of the city.
 
 The metal rubbish and some mechanical parts are all over the place. 
-The stranger tells you that this world is called Rubellite, 
-and you understand why. 
+The stranger tells you that this world is called //''Rubellite''//, 
+and you understand why.(set: $location to "Rubellite")
 
 You are surrounded by Rubel red.
 
@@ -657,12 +766,35 @@ But even more so, you are desperate to learn how to escape.
 ]
 
 
+:: You have to admit, it does look ‘cool’ [rubellite] {"position":"900,3300","size":"100,100"}
+“I suppose they do look interesting.
+Perhaps while I’m here, I’ll get some new clothes.”
+
+The child smiles brightly at you.
+It fills you with warmth.
+
+You hope other people of this world are like them. 
+|1>[“I’m not from around here, so we’ve never met.”]
+(click: ?1)[“Not from here? How is that possible…
+Are you just from another side of the city?”
+
+You could see the gears moving in the child’s head.
+|2>[It appears they know as little about the world as you do.]
+
+(click: ?2)[“I swear I know everyone in the city…
+but I guess it is a little big…
+where else could you be from?”
+
+[[Think]]
+]]
+
+
+
 :: behind you [alleyway] {"position":"775,1050","size":"100,100"}
 {(set:$meet_guard to 1) 
-(set:$guardname to "???")
-(set:$guardage to "???")
+(set:$guard_name to "???")
 (set:$guard_identity to "???")
-(set:$guardnote to 0)}
+(set:$guard_note to (ds:))}
 “Again?! You ''people'' never learn! 
 Just a bunch of brain-dead, soulless, robotic imbeciles.”
 
@@ -687,12 +819,18 @@ You can’t understand anything at the moment.
 ]]
 
 
-:: child [no_sidebar] {"position":"200,350","size":"100,100"}
-Name: 
-Age: xxx
-Gender: xxx
-Personality: xxx
-Infos: xxx
+:: child [no_sidebar] {"position":"375,350","size":"100,100"}
+Name: ???
+
+Identity: A Loud Child
+
+Notes:
+(if: $child_notes contains 0)[- They seem to like soccer]
+(if: $child_notes contains 1)[- They talk in a rather loud voice, with a lot of emotion]
+(if: $child_notes contains 2)[- They don’t like your clothes…]
+(if: $child_notes contains 3)[- They’re quite stubborn]
+(if: $child_notes contains 4)[	- It looks like you should have been a bit stern with them…unfortunately now you’re a bit lost]
+(if: $child_notes contains 5)[	- It looks like being stern with them worked out! Now you know where you need to go next]
 
 
 Back (click-undo: "Back")
@@ -715,15 +853,26 @@ the figure in front of you says.
 
 
 :: guard [no_sidebar] {"position":"0,350","size":"100,100"}
-(if:$meet_guard is not 3)[<img src="image\guard_silhouette.png", width="200px" height="250px">]
-Name: $guardname
-Age: $guardage
+(if:$meet_guard is 1)[<img src="image\guard_silhouette.png", width="200px" height="250px">]
+Name: $guard_name
+
 Identity: $guard_identity
-Personality: $guard_personality
 
 Notes:
-(if:$guardnote is >= 1)[- Mysterious individual met in the alleyway]
-(if:$guardnote is >= 2)[- Won't reveal anything, but seems to be helping]
+(if:$guard_note contains 0)[- Mysterious individual met in the alleyway]
+(if:$guard_note contains 1)[- He appears rather aggressive and rude, but he is still helping for an unknown reason]
+(if:$guard_note contains 2)[	- It seems he may just be guarded]
+(if:$guard_note contains 3)[	- Has a dark mysterious past…what could it be?]
+(if:$guard_note contains 4)[	He loved someone that came from Dumor, but that person chose safety over him, so now he guards his heart]
+(if:$guard_note contains 5)[	He gets easily flustered and is not as strong as he seems, if u say one nice thing to him he crumbles a bit]
+(if:$guard_note contains 6)[Loyal and respect to [[HER->her]]]
+(if:$guard_note contains 7)[He seems to actually have a soft heart when it comes to kids and animals]
+(if:$guard_note contains 8)[	He likes to take care of the stray animals that live by the alleyway]
+(if:$guard_note contains 9)[	He seems to give into the children easily, and plays soccer with them]
+(if:$guard_note contains 10)[He seems rather stingy…]
+(if:$guard_note contains 11)[He must not like apples very much]
+(if:$guard_note contains 12)[He seems very generous]
+
 
 
 Back (click-undo: "Back")
@@ -740,12 +889,25 @@ bridge: ./audio/bridge.mp3
 rubellite: ./audio/rubellite.mp3
 
 
-:: her [no_sidebar] {"position":"100,350","size":"100,100"}
-Name: xxx
-Age: xxx
-Gender: xxx
-Personality: xxx
-Infos: xxx
+:: her [no_sidebar] {"position":"125,350","size":"100,100"}
+Name: $her_name
+
+Identity: $her_identity
+
+Notes:
+(if: $her_notes contains 0)[- Parents seem to use HER to scare their children into behaving]
+(if: $her_notes contains 1)[- Her title is Her Exalted Regency to the people of Rubellite]
+(if: $her_notes contains 2)[- She is described as a faceless leader, whose true identity is known by no one]
+(if: $her_notes contains 3)[- Despite being slightly afraid of HER, the people of Rubellite are all grateful to HER]
+(if: $her_notes contains 4)[- She built their city from the ground up and is the reason they can all live comfortably]
+(if: $her_notes contains 5)[	- Everyone is fed three meals a day, has running water, and never has to suffer]
+(if: $her_notes contains 6)[- She looks to be in her forties, around six foot, and looks very intimidating]
+(if: $her_notes contains 7)[- She doesn’t seem very good at socialising
+	- She tends to speak too loud and fast
+    - Her intonation seems unlike other citizens of Rubellite]
+(if: $her_notes contains 8)[- She grew up too fast while building Rubellite after escaping Dumor, and so she seems to still have a childish side]
+(if: $her_notes contains 9)[- When she needs to be mature, though, she does it well]
+(if: $her_notes contains 10)[- She cares for her city and people very deeply, and would give her life to protect them]
 
 
 Back (click-undo: "Back")
@@ -782,6 +944,29 @@ eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed
 (after:4s)+(t8n: "fade")+(transition-time: 2s)[''[[About]]'']
 
 
+:: moveon [rubellite] {"position":"975,3900","size":"100,100"}
+You wander around.
+
+This city is much more difficult to navigate through,
+compared to your home in Dumor.
+You don’t know where exactly to go as that strange child didn't tell you anything useful.
+
+(link: "You feel lost and lonely.")[It is the first time you are |1>[left alone] since you got into that alleyway.
+
+(click: ?1)[Thoughts attack and overwhelm you all of a sudden.
+Now is not the right time for reflection, you know it,
+but there are still so many questions and so few answers.
+
+(link: "Continue wallking")[As you move closer to the heart of the city, 
+the streets get busier.
+
+You notice a newspaper holder on one of the sidewalks.
+The whole newspaper is better than that out-of-context piece you picked up earlier.
+
+[[Take one->Take one 2]]
+]]]
+
+
 :: newspaper0 {"position":"950,300","size":"100,100"}
 Back (click-undo: "Back")
 
@@ -804,6 +989,29 @@ Back (click-undo: "Back")
 
 :: newspaper5 {"position":"1450,300","size":"100,100"}
 Back (click-undo: "Back")
+
+
+:: next stage [rubellite] {"position":"750,3625","size":"100,100"}
+//Your stern voice wakes them up from their spiral,
+and they look at you with serious eyes.//(set: $child_notes to $child_notes + (ds:5))
+
+“You’re right,”
+they say, clearly trying to seem more mature than they really are.
+“It’s not important, and you don’t seem that scary…
+I’m sure I won’t see|1>['' //HER//''] in my closet just because I talked to you…”(set: $her_notes to $her_notes + (ds:0))
+
+(click: ?1)["I won’t hurt you, I promise.
+About the person you said, //HER//,
+the man from the alleyway mentioned her as well…"
+You try to speak ina calm voice, so as to not frighten them,
+but you make sure to keep a hint of sternness in your words.
+
+"So you //do// know ''//The Guard//''."
+
+Oh, ''Then //he// is the guard of this place.''(set:$guard_identity to "The Guard")(set:$meet_guard to 3)
+
+[[“Can you tell me where I need to go to find this HER?”]]
+]
 
 
 :: save [no_sidebar russo] {"position":"300,200","size":"100,100"}
@@ -830,9 +1038,10 @@ Back(click-undo: "Back")
 
 
 :: speak [alleyway] {"position":"775,1300","size":"100,100"}
-{(set: $speaking to "guard_silhouette_transparent_half.png")
-(set:$guardnote to $guardnote+1)}
-“Alright, let’s get you out of that brain of yours. 
+{
+(set: $speaking to "guard_silhouette_transparent_half.png")
+(set:$guard_note to $guard_note+(ds:0))
+}“Alright, let’s get you out of that brain of yours. 
 Probably freaking out about the lack of a script here, huh? 
 That’s what you people all say,
 you can hear something in their voice, but not sure what exactly it is."
@@ -856,7 +1065,7 @@ What you don’t expect is to see the man’s own eyes looking back at you.
 you can see the face of the alley’s guard. 
 
 You can see the man’s irritation pooling in his eyes, 
-and it startles you into silence.
+and it startles you into silence.(set: $meet_guard to 2)
 
 (click: "silence")[“Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
 
@@ -867,6 +1076,59 @@ You bend down slightly, reaching for what feels like a newspaper.
 
 [[Perhaps this could be helpful]]
 ]]]
+
+
+:: woman [no_sidebar] {"position":"250,350","size":"100,100"}
+Name: ???
+
+Identity: Elderly Woman
+
+Notes:
+(if: $woman_notes contains 0)[- She’s very soft spoken, and you have to concentrate to hear her properly]
+(if: $woman_notes contains 1)[- She knows a lot about the two worlds]
+(if: $woman_notes contains 2)[- She was alive during The Split]
+(if: $woman_notes contains 3)[- She is very easily distracted and confused when asked too many questions]
+(if: $woman_notes contains 4)[	- She’s able to stay on track with her thoughts when someone simply listens, now you know so much more about the world]
+(if: $woman_notes contains 5)[	- Questions and emotional responses seem to encourage her to go on tangents, now you know less than you’d hoped about the world]
+
+
+Back (click-undo: "Back")
+
+
+:: “Can you tell me where I need to go to find this HER?” [rubellite] {"position":"775,3750","size":"100,100"}
+Uhm…
+Well, if you just head straight that way,
+you’ll get to the main part of the city,
+you know, where everyone is.
+You’ll probably find something there…”
+
+You can tell the child is still a little confused and stressed.
+It’s probably time for you to leave.
+
+|1>[“Thank you, I’ll try that.Enjoy the rest of your game.”]
+
+(click: ?1)[They don’t look at you as you leave, but you understand why. Regardless, it’s time for the [[next part of your journey->Heading to heart of the city]].
+]
+
+
+:: “Don’t worry about it, it’s not that important, I promise.” [rubellite] {"position":"1025,3550","size":"100,100"}
+{(set: $kind to $kind+1)}“I don’t know…it seems kinda important…
+Did you come from outside?
+Did The Guard bring you here?
+Why weren’t you inside the walls?
+I’m not sure if I’m allowed to talk to you…”
+
+The child backed away a few steps, and you could see fear begin pooling in their eyes.
+You wondered if this is what you looked like in the alleyway.
+
+(link: "The Guard...")[|1>['Is //he// the guard of this place?']
+(click: ?1)[
+[[“Please calm down, you are asking too many questions.”]]
+
+[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
+
+[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”->next stage]]
+]]
 
 
 :: “I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?" [alleyway] {"position":"900,1425","size":"100,100"}
@@ -888,6 +1150,23 @@ Well, as you can see, you are no longer in Dumor.”
 [[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
 
 
+:: “It’s okay, please calm down, I’m sorry for scaring you.” [rubellite] {"position":"1025,3675","size":"100,100"}
+“I should go home, mom is probably waiting for me.
+I shouldn’t talk to you,
+mom says if I talk to strangers,
+I’ll see ''//HER//'' in my closet tonight. I’m going…”
+
+The loud child’s voice quickly fell to a soft whisper,
+and you watched as they turned and ran.
+
+You took note of yet another mention of a mysterious HER,
+but the kid was gone before you could even question it.
+
+You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
+
+[[Anyway, you need to move on->moveon]]
+
+
 :: “I’m not sure what you’re talking about.” [alleyway] {"position":"775,1425","size":"100,100"}
 {(set:$calm to $calm+1)}
 The stranger removes their hand and backs away. 
@@ -907,8 +1186,9 @@ Well, as you can see, you are no longer in Dumor.”
 
 
 :: “I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…” [alleyway] {"position":"775,1550","size":"100,100"}
-{(set:$kind to $kind+1)}
-“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
+{
+(set: $kind to $kind+1)
+}“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
 
 Their voice stays steady, revealing little to you. 
 Whatever you heard before has evaporated,
@@ -931,9 +1211,47 @@ I’m sure ''HER'' people will deal with you.”
 [[Follow their lead]]]
 
 
+:: “Please calm down, you are asking too many questions.” [rubellite] {"position":"900,3675","size":"100,100"}
+“I should go home, mom is probably waiting for me.
+I shouldn’t talk to you,
+mom says if I talk to strangers,
+I’ll see ''//HER//'' in my closet tonight. I’m going…”
+
+The loud child’s voice quickly fell to a soft whisper,
+and you watched as they turned and ran.
+
+You took note of yet another mention of a mysterious HER,
+but the kid was gone before you could even question it.
+
+You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
+
+[[Anyway, you need to move on->moveon]]
+
+
+:: “That’s not important.” [rubellite] {"position":"900,3550","size":"100,100"}
+{(set: $calm to $calm+1)}“I don’t know…it seems kinda important…
+Did you come from outside?
+Did The Guard bring you here?
+Why weren’t you inside the walls?
+I’m not sure if I’m allowed to talk to you…”
+
+The child backed away a few steps, and you could see fear begin pooling in their eyes.
+You wondered if this is what you looked like in the alleyway.
+
+(link: "The Guard...")[|1>['Is //he// the guard of this place?']
+(click: ?1)[
+[[“Please calm down, you are asking too many questions.”]]
+
+[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
+
+[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”->next stage]]
+]]
+
+
 :: “What do you think? Stop stalling and tell me what’s going on!” [alleyway] {"position":"1025,1550","size":"100,100"}
-{(set:$angry to $angry+1)}
-“Okay, well, now that’s too much emotion. 
+{
+(set:$angry to $angry+1)
+}“Okay, well, now that’s too much emotion. 
 Calm down, I don’t have time to explain right now.” 
 
 Their voice stays steady, revealing little to you. 
@@ -956,8 +1274,9 @@ I’m sure ''HER'' people will deal with you.”
 
 
 :: ”Yes, I was on my way home. Where am I if not in Dumor?“ [alleyway] {"position":"900,1550","size":"100,100"}
-{(set:$calm to $calm+1)}
-“How is it possible for one to speak with so little feeling?
+{
+(set:$calm to $calm+1)
+}“How is it possible for one to speak with so little feeling?
 Your monotony is exhausting me.” 
 
 Their voice stays steady, revealing little to you. 
