@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title>beta</title>
+<title>beta 1</title>
 <style title="Twine CSS">@keyframes appear{0%{opacity:0}to{opacity:1}}@keyframes fade-in-out{0%,to{opacity:0}50%{opacity:1}}@keyframes rumble{25%{top:-0.1em}75%{top:.1em}0%,to{top:0px}}@keyframes shudder{25%{left:.1em}75%{left:-0.1em}0%,to{left:0px}}@keyframes buoy{25%{top:.25em}75%{top:-0.25em}0%,to{top:0px}}@keyframes sway{25%{left:.25em}75%{left:-0.25em}0%,to{left:0px}}@keyframes pulse{0%{transform:scale(0, 0)}20%{transform:scale(1.2, 1.2)}40%{transform:scale(0.9, 0.9)}60%{transform:scale(1.05, 1.05)}80%{transform:scale(0.925, 0.925)}to{transform:scale(1, 1)}}@keyframes zoom-in{0%{transform:scale(0, 0)}to{transform:scale(1, 1)}}@keyframes shudder-in{0%,to{transform:translateX(0em)}5%,25%,45%{transform:translateX(-1em)}15%,35%,55%{transform:translateX(1em)}65%{transform:translateX(-0.6em)}75%{transform:translateX(0.6em)}85%{transform:translateX(-0.2em)}95%{transform:translateX(0.2em)}}@keyframes rumble-in{0%,to{transform:translateY(0em)}5%,25%,45%{transform:translateY(-1em)}15%,35%,55%{transform:translateY(1em)}65%{transform:translateY(-0.6em)}75%{transform:translateY(0.6em)}85%{transform:translateY(-0.2em)}95%{transform:translateY(0.2em)}}@keyframes fidget{0%,8.1%,82.1%,31.1%,38.1%,44.1%,40.1%,47.1%,74.1%,16.1%,27.1%,72.1%,24.1%,95.1%,6.1%,36.1%,20.1%,4.1%,91.1%,14.1%,87.1%,to{left:0px;top:0px}8%,82%,31%,38%,44%{left:-1px}40%,47%,74%,16%,27%{left:1px}72%,24%,95%,6%,36%{top:-1px}20%,4%,91%,14%,87%{top:1px}}@keyframes slide-right{0%{transform:translateX(-100vw)}}@keyframes slide-left{0%{transform:translateX(100vw)}}@keyframes slide-up{0%{transform:translateY(100vh)}}@keyframes slide-down{0%{transform:translateY(-100vh)}}@keyframes fade-right{0%{opacity:0;transform:translateX(-1em)}to{opacity:1}}@keyframes fade-left{0%{opacity:0;transform:translateX(1em)}to{opacity:1}}@keyframes fade-up{0%{opacity:0;transform:translateY(1em)}to{opacity:1}}@keyframes fade-down{0%{opacity:0;transform:translateY(-1em)}to{opacity:1}}@keyframes flicker{0%,29%,31%,63%,65%,77%,79%,86%,88%,91%,93%{opacity:0}30%{opacity:.2}64%{opacity:.4}78%{opacity:.6}87%{opacity:.8}92%,to{opacity:1}}@keyframes blur{0%{filter:blur(2rem);opacity:0}25%{opacity:1}to{filter:blur(0rem);opacity:1}}.dom-debug-mode tw-story,.dom-debug-mode tw-passage,.dom-debug-mode tw-sidebar,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{outline:1px solid #f5a3da;min-height:32px;display:block !important}.dom-debug-mode tw-story::before,.dom-debug-mode tw-passage::before,.dom-debug-mode tw-sidebar::before,.dom-debug-mode tw-include::before,.dom-debug-mode tw-hook::before,.dom-debug-mode tw-expression::before,.dom-debug-mode tw-link::before,.dom-debug-mode tw-dialog::before,.dom-debug-mode tw-columns::before,.dom-debug-mode tw-column::before,.dom-debug-mode tw-align::before{position:absolute;top:0;left:0;height:16px;background-color:#f5a3da;color:#000;font-size:16px;font-weight:normal;font-style:normal;font-family:monospace;display:inline-block;line-height:100%;white-space:pre;z-index:999997}.dom-debug-mode tw-story:hover,.dom-debug-mode tw-passage:hover,.dom-debug-mode tw-sidebar:hover,.dom-debug-mode tw-include:hover,.dom-debug-mode tw-hook:hover,.dom-debug-mode tw-expression:hover,.dom-debug-mode tw-link:hover,.dom-debug-mode tw-dialog:hover,.dom-debug-mode tw-columns:hover,.dom-debug-mode tw-column:hover,.dom-debug-mode tw-align:hover{outline:1px solid #fc9}.dom-debug-mode tw-story:hover::before,.dom-debug-mode tw-passage:hover::before,.dom-debug-mode tw-sidebar:hover::before,.dom-debug-mode tw-include:hover::before,.dom-debug-mode tw-hook:hover::before,.dom-debug-mode tw-expression:hover::before,.dom-debug-mode tw-link:hover::before,.dom-debug-mode tw-dialog:hover::before,.dom-debug-mode tw-columns:hover::before,.dom-debug-mode tw-column:hover::before,.dom-debug-mode tw-align:hover::before{background-color:#fc9;transition:background-color 1s}.dom-debug-mode tw-passage,.dom-debug-mode tw-include,.dom-debug-mode tw-hook,.dom-debug-mode tw-expression,.dom-debug-mode tw-link,.dom-debug-mode tw-dialog,.dom-debug-mode tw-columns,.dom-debug-mode tw-column,.dom-debug-mode tw-align{padding:1em;margin:0}.dom-debug-mode tw-story::before{content:'<tw-story tags="' attr(tags) '">'}.dom-debug-mode tw-passage::before{top:-16px;content:'<tw-passage tags="' attr(tags) '">'}.dom-debug-mode tw-sidebar::before{top:-16px;content:"<tw-sidebar>"}.dom-debug-mode tw-hook::before{content:'<tw-hook name="' attr(name) '">'}.dom-debug-mode tw-expression::before{content:'<tw-expression name="' attr(name) '">'}.dom-debug-mode tw-link::before{content:'<tw-link name="' attr(name) '">'}.dom-debug-mode tw-dialog::before{content:"<tw-dialog>"}.dom-debug-mode tw-columns::before{content:"<tw-columns>"}.dom-debug-mode tw-column::before{content:"<tw-column>"}.dom-debug-mode tw-align::before{content:"<tw-align>"}.dom-debug-mode tw-include::before{content:'<tw-include type="' attr(type) '" name="' attr(name) '">'}tw-open-button[goto]{display:none}.debug-mode tw-open-button[replay],.debug-mode tw-open-button[goto]{display:inline}.debug-mode tw-expression{display:inline-block !important}.debug-mode tw-expression[type=variable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"$" attr(name)}.debug-mode tw-expression[type=tempVariable]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"_" attr(name)}.debug-mode tw-expression[return=boolean]{background-color:rgba(179,179,179,.2)}.debug-mode tw-expression[return=array]{background-color:rgba(255,102,102,.2)}.debug-mode tw-expression[return=dataset]{background-color:rgba(255,128,0,.2)}.debug-mode tw-expression[return=number]{background-color:rgba(255,179,102,.2)}.debug-mode tw-expression[return=datamap]{background-color:rgba(255,255,102,.2)}.debug-mode tw-expression[return=changer]{background-color:rgba(179,255,102,.2)}.debug-mode tw-expression[return=lambda]{background-color:rgba(102,255,102,.2)}.debug-mode tw-expression[return=hookname]{background-color:rgba(102,255,204,.2)}.debug-mode tw-expression[return=string]{background-color:rgba(102,255,255,.2)}.debug-mode tw-expression[return=datatype]{background-color:rgba(102,153,255,.2)}.debug-mode tw-expression[return=gradient],.debug-mode tw-expression[return=colour]{background-color:rgba(204,102,255,.2)}.debug-mode tw-expression[return=instant],.debug-mode tw-expression[return=macro]{background-color:rgba(240,117,199,.2)}.debug-mode tw-expression[return=command]{background-color:rgba(153,153,255,.2)}.debug-mode tw-expression.false{background-color:rgba(255,0,0,.2) !important}.debug-mode tw-expression[type=macro]::before{content:"(" attr(name) ":)";padding:0 .5rem;font-size:1rem;vertical-align:middle;line-height:normal;background-color:inherit;border:1px solid rgba(255,255,255,.5)}.debug-mode tw-expression[title]:not([title=""]){cursor:help}.debug-mode tw-hook{background-color:rgba(0,85,255,.1) !important}.debug-mode tw-hook::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"["}.debug-mode tw-hook::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]"}.debug-mode tw-hook[name]::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"]<" attr(name) "|"}.debug-mode tw-pseudo-hook{background-color:rgba(255,170,0,.1) !important}.debug-mode tw-collapsed::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"{"}.debug-mode tw-collapsed::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"}"}.debug-mode tw-verbatim::before,.debug-mode tw-verbatim::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:"`"}.debug-mode tw-align[style*="text-align: center"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0) 0%, hsla(14deg, 100%, 87%, 0.25) 50%, hsla(14deg, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: left"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0.25) 0%, hsla(14deg, 100%, 87%, 0) 100%)}.debug-mode tw-align[style*="text-align: right"]{background:linear-gradient(to right, hsla(14deg, 100%, 87%, 0) 0%, hsla(14deg, 100%, 87%, 0.25) 100%)}.debug-mode tw-column{background-color:rgba(189,228,255,.2)}.debug-mode tw-enchantment{animation:enchantment .5s infinite;border:1px solid}.debug-mode tw-link::after,.debug-mode tw-broken-link::after{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(passage-name)}.debug-mode tw-include{background-color:rgba(204,128,51,.1)}.debug-mode tw-include::before{font-size:.8rem;padding-left:.2rem;padding-right:.2rem;vertical-align:top;content:attr(type) ' "' attr(name) '"'}.debug-dialogs tw-backdrop:not(.eval-replay):not(.harlowe-crash){pointer-events:none;opacity:.1}tw-eval-replay tw-eval-code,tw-eval-replay tw-eval-explanation{max-height:20vh;overflow:auto;margin:10px auto}tw-eval-replay tw-eval-code{display:block;font-family:monospace;padding-bottom:1ex;border-bottom:2px solid gray}tw-eval-replay tw-eval-explanation{display:block;text-align:center}tw-eval-replay tw-eval-explanation>code{white-space:pre-wrap}tw-eval-replay tw-eval-explanation>code.from-block{width:40%;display:inline-block;text-align:left;max-height:4em;overflow-wrap:anywhere;overflow-y:scroll}tw-eval-replay tw-eval-explanation>code.from-block~.to-desc{width:calc(40% - 2em);margin-left:2em;display:inline-block}tw-eval-replay tw-eval-explanation>code.from-block+span::after{content:"..."}tw-eval-replay tw-eval-explanation>code.from-inline{text-align:right}tw-eval-replay tw-eval-explanation>:nth-child(2){white-space:pre}tw-eval-replay tw-eval-explanation>.to-desc{text-align:left}tw-eval-replay tw-eval-explanation>table{width:100%;margin-top:1em}tw-eval-replay tw-eval-explanation>table td{white-space:pre-wrap !important;word-wrap:anywhere}tw-eval-replay tw-eval-reason{text-align:center;font-size:80%;font-style:italic;display:block}tw-eval-replay tw-eval-it{text-align:center;font-size:80%;display:block}tw-eval-replay tw-dialog-links{display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around}@keyframes enchantment{0%,to{border-color:#ffb366}50%{border-color:#6fc}}tw-debugger{position:fixed;box-sizing:border-box;bottom:0;right:0;z-index:999999;min-width:14em;min-height:1em;padding:0em .5em .5em 1em;font-size:1.25em;font-family:sans-serif;color:#262626;background-color:#fff;border-left:solid #262626 2px;border-top:solid #262626 2px;border-top-left-radius:.5em;opacity:1}tw-debugger.fade-panel:not(:hover){opacity:.33}tw-debugger.theme-dark{color:#d9d9d9;background-color:#000}tw-debugger.theme-dark{border-color:#d9d9d9 rgba(0,0,0,0) rgba(0,0,0,0) #d9d9d9}tw-debugger select{margin-right:1em;width:12em}tw-debugger button,tw-debugger tw-link{border-radius:3px;border:solid #999 1px;margin:auto 4px;color:#262626;background-color:#fff;cursor:pointer}tw-debugger button.enabled,tw-debugger tw-link.enabled{color:#000;background-color:#d9d9d9;box-shadow:inset #999 3px 5px .5em}tw-debugger.theme-dark button,tw-debugger.theme-dark tw-link{color:#d9d9d9;background-color:#000;border-color:#666}tw-debugger.theme-dark button.enabled,tw-debugger.theme-dark tw-link.enabled{color:#e6e6e6;background-color:#424242;box-shadow:inset #666 3px 5px .5em}tw-debugger button{font-size:1em;overflow-x:hidden;text-overflow:ellipsis;white-space:pre}tw-debugger tw-link{font-size:1.25em;border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}tw-debugger tw-link:hover{border-color:#262626;color:#262626}tw-debugger.theme-dark tw-link:hover{border-color:#d9d9d9;color:#d9d9d9}tw-debugger tw-dialog{background-color:#fff;color:#000;font-size:1.25em}tw-debugger.theme-dark tw-dialog{background-color:#000;color:#e6e6e6}tw-debugger .panel{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;position:absolute;bottom:100%;left:-2px;right:0;padding:1em;overflow-y:scroll;overflow-x:hidden;border:inherit;box-sizing:content-box;background-color:#fff;border-bottom:solid #999 2px;border-top-left-radius:.5em;border-bottom-left-radius:.5em;font-size:.8em}tw-debugger .panel:empty,tw-debugger .panel[hidden]{display:none}tw-debugger.theme-dark .panel{background-color:#000;border-bottom-color:#666}tw-debugger .panel-source .panel-row-buttons{width:2rem}tw-debugger .panel-source .source-tags{width:20%;font-style:italic}tw-debugger .panel-row-source td{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere;max-height:8rem;padding:1rem}tw-debugger .panel-rows{width:100%;overflow-x:scroll}tw-debugger .panel-rows>*{display:table-row}tw-debugger .panel-rows>div:nth-of-type(2n){background-color:#e6e6e6}tw-debugger .panel-tools .panel-rows>*,tw-debugger .panel-options .panel-rows>*{margin-top:.4rem;display:block}tw-debugger.theme-dark .panel-rows>div:nth-of-type(2n){background-color:#212121}tw-debugger .panel-row-buttons{text-align:right}tw-debugger .panel-variables .panel-rows:empty::before{content:"~ No variables ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-enchantments .panel-rows:empty::before{content:"~ No enchantments ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty::before{content:"~ No errors... for now. ~";font-style:italic;color:#575757;text-align:center}tw-debugger .panel-errors .panel-rows:empty+.panel-errors-bottom{display:none}tw-debugger.theme-dark .panel-variables .panel-rows:empty::before,tw-debugger.theme-dark .panel-enchantments .panel-rows:empty::before,tw-debugger.theme-dark .panel-errors .panel-rows:empty::before{color:#a8a8a8}tw-debugger .panel-rows:empty+.panel-variables-bottom{display:none}tw-debugger th[data-col]{text-decoration:underline;cursor:pointer}tw-debugger th[data-col][data-order=asc]::after{content:"↓"}tw-debugger th[data-col][data-order=desc]::after{content:"↑"}tw-debugger .panel-storylets:not(.panel-exclusive) .storylet-exclusive,tw-debugger .panel-storylets:not(.panel-urgent) .storylet-urgent{display:none}tw-debugger .storylet-exclusive,tw-debugger .storylet-urgent,tw-debugger .storylet-open{text-align:center}tw-debugger .panel-variables-bottom{padding-top:5px}tw-debugger .enchantment-row{min-height:1.5em}tw-debugger .variable-path{opacity:.4}tw-debugger .temporary-variable-scope,tw-debugger .enchantment-local{font-family:sans-serif;font-weight:normal;opacity:.8;font-size:.75em}tw-debugger .temporary-variable-scope:not(:empty)::before,tw-debugger .enchantment-local:not(:empty)::before{content:" in "}tw-debugger .variable-name,tw-debugger .enchantment-name{font-family:monospace;font-weight:bold}tw-debugger .variable-type{color:#575757;font-weight:normal;text-overflow:ellipsis;overflow:hidden;max-width:10em}tw-debugger.theme-dark .variable-type{color:#a8a8a8}tw-debugger .error-row{display:table-row;background-color:rgba(230,101,204,.3)}tw-debugger .error-row:nth-of-type(2n){background-color:rgba(237,145,219,.3)}tw-debugger .error-row>*{display:table-cell;padding:.25em .5em}tw-debugger .error-row .error-message[title]:not([title=""]){cursor:help}tw-debugger .error-row .error-passage{color:#575757}tw-debugger.theme-dark .error-row .error-passage{color:#a8a8a8}tw-debugger .storylet-row{background-color:rgba(193,240,225,.3)}tw-debugger .storylet-row:nth-child(2n){background-color:rgba(152,231,204,.3)}tw-debugger .storylet-row.storylet-closed{font-style:italic;background-color:#fff}tw-debugger .storylet-row.storylet-closed:nth-child(2n){background-color:#e6e6e6}tw-debugger .storylet-row.storylet-closed>:not(.storylet-lambda){opacity:.6}.storylet-error tw-debugger .storylet-row{background-color:rgba(230,101,204,.3)}.storylet-error tw-debugger .storylet-row:nth-child(2n){background-color:rgba(237,145,219,.3)}tw-debugger .storylet-row .storylet-name,tw-debugger .storylet-row .storylet-value{display:inline-block;width:50%}tw-debugger .storylet-row .storylet-lambda{font-family:monospace;font-size:1rem;white-space:pre-wrap;overflow-wrap:anywhere}tw-debugger.theme-dark .storylet-row.storylet-closed{background-color:#000}tw-debugger.theme-dark .storylet-row.storylet-closed:nth-child(2n){background-color:#212121}tw-debugger .tabs{padding-bottom:.5em}tw-debugger .tab{border-radius:0px 0px .5em .5em;border-top:none;top:-2px}tw-debugger .resizer-h{position:absolute;height:14em;border-left:2px solid #999;border-right:2px solid #999;top:10px;left:4px;width:8px;cursor:ew-resize}tw-debugger.theme-dark .resizer-h{border-color:rgba(0,0,0,0) #666}tw-debugger .resizer-v{position:absolute;height:8px;border-top:2px solid #999;border-bottom:2px solid #999;margin-bottom:4px;top:4px;left:10px;width:95%;cursor:ns-resize;box-sizing:border-box}tw-debugger.theme-dark .resizer-v{border-color:#666 rgba(0,0,0,0)}tw-debugger mark{color:inherit;background-color:rgba(101,230,230,.3) !important}tw-dialog{z-index:999997;border:#fff solid 2px;padding:2em;color:#fff;background-color:#000;display:block}@media(min-width: 576px){tw-dialog{max-width:50vw}}tw-dialog input[type=text]{font-size:inherit;width:100%;border:solid #fff !important}tw-dialog-links{text-align:right;display:-ms-flexbox;display:flex;-ms-flex-pack:end;justify-content:flex-end}tw-backdrop{z-index:999996;position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.8);display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center}tw-backdrop~tw-backdrop{display:none}tw-link,.enchantment-link{cursor:pointer;color:#4169e1;font-weight:bold;text-decoration:none;transition:color .2s ease-in-out}tw-passage [style^=color] tw-link:not(:hover),tw-passage [style*=" color"] tw-link:not(:hover),tw-passage [style^=color][hover=true] tw-link:hover,tw-passage [style*=" color"][hover=true] tw-link:hover,tw-passage [style^=color] .enchantment-link:not(:hover),tw-passage [style*=" color"] .enchantment-link:not(:hover),tw-passage [style^=color][hover=true] .enchantment-link:hover,tw-passage [style*=" color"][hover=true] .enchantment-link:hover{color:inherit}tw-link:hover,.enchantment-link:hover{color:#00bfff}tw-link:active,.enchantment-link:active{color:#dd4b39}.visited{color:#6941e1}tw-passage [style^=color] .visited:not(:hover),tw-passage [style*=" color"] .visited:not(:hover),tw-passage [style^=color][hover=true] .visited:hover,tw-passage [style*=" color"][hover=true] .visited:hover{color:inherit}.visited:hover{color:#e3e}tw-broken-link{color:#933;border-bottom:2px solid #933;cursor:not-allowed}tw-passage [style^=color] tw-broken-link:not(:hover),tw-passage [style*=" color"] tw-broken-link:not(:hover),tw-passage [style^=color][hover=true] tw-broken-link:hover,tw-passage [style*=" color"][hover=true] tw-broken-link:hover{color:inherit}tw-link.enchantment-mouseover,.link.enchantment-mouseover,tw-expression.enchantment-mouseover>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border-bottom:2px dashed #999}tw-link.enchantment-mouseover:hover,tw-link.enchantment-mouseover:active,.link.enchantment-mouseover:hover,.link.enchantment-mouseover:active,tw-expression.enchantment-mouseover>tw-link:hover,tw-expression.enchantment-mouseover>tw-link:active{color:inherit}tw-link.enchantment-mouseover.enchantment-button,.link.enchantment-mouseover.enchantment-button,tw-expression.enchantment-mouseover>tw-link.enchantment-button{border-style:dashed}tw-link.enchantment-mouseout,.link.enchantment-mouseout,tw-expression.enchantment-mouseout>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;border:rgba(64,149,191,.6) 1px solid;border-radius:.2em}tw-link.enchantment-mouseout:hover,tw-link.enchantment-mouseout:active,.link.enchantment-mouseout:hover,.link.enchantment-mouseout:active,tw-expression.enchantment-mouseout>tw-link:hover,tw-expression.enchantment-mouseout>tw-link:active{color:inherit}tw-link.enchantment-mouseout:hover,.link.enchantment-mouseout:hover,tw-expression.enchantment-mouseout>tw-link:hover{background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 1px solid}tw-link.enchantment-dblclick,.link.enchantment-dblclick,tw-expression.enchantment-dblclick>tw-link{color:inherit;font-weight:inherit;transition:none;cursor:inherit;cursor:pointer;border:2px solid #999;border-radius:0}tw-link.enchantment-dblclick:hover,tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:hover,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:hover,tw-expression.enchantment-dblclick>tw-link:active{color:inherit}tw-link.enchantment-dblclick:active,.link.enchantment-dblclick:active,tw-expression.enchantment-dblclick>tw-link:active{background-color:#999}tw-link.enchantment-button,.link.enchantment-button,.enchantment-button:not(.link) tw-link,.enchantment-button:not(.link) .link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block}.enchantment-button{display:block}.enchantment-clickblock{cursor:pointer;width:100%;height:100%;display:block}.enchantment-clickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;color:rgba(65,105,225,.5);transition:color .2s ease-in-out}.enchantment-clickblock>:not(tw-enchantment):hover::after{color:rgba(0,191,255,.5)}.enchantment-clickblock>:not(tw-enchantment):active::after{color:rgba(222,78,59,.5)}.enchantment-clickblock>:not(tw-enchantment)::after{box-shadow:inset 0 0 0 .5vmax}.enchantment-clickblock>tw-passage::after,.enchantment-clickblock>tw-sidebar::after{box-shadow:0 0 0 .5vmax}.enchantment-mouseoverblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:2px dashed #999}.enchantment-mouseoutblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;border:rgba(64,149,191,.6) 2px solid}.enchantment-mouseoutblock:hover>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;background-color:rgba(175,197,207,.75);border:rgba(0,0,0,0) 2px solid;border-radius:.2em}.enchantment-dblclickblock>:not(tw-enchantment)::after{content:"";width:100%;height:100%;top:0;left:0;display:block;box-sizing:border-box;position:absolute;pointer-events:none;cursor:pointer;border:2px solid #999}tw-dialog-links{padding-top:1.5em}tw-dialog-links tw-link{border-radius:16px;border-style:solid;border-width:2px;text-align:center;padding:0px 8px;display:block;display:inline-block}html{margin:0;height:100%;overflow-x:hidden}*,:before,:after{position:relative;box-sizing:inherit}body{margin:0;height:100%}tw-storydata{display:none}tw-story{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;font:100% Georgia,serif;box-sizing:border-box;width:100%;min-height:100%;font-size:1.5em;line-height:1.5em;padding:5% 5%;overflow:hidden;background-color:#000;color:#fff}tw-story [style*=content-box] *{box-sizing:border-box}@media(min-width: 576px){tw-story{padding:5% 20%}}tw-story tw-consecutive-br{display:block;height:1.6ex;visibility:hidden}tw-story select{background-color:rgba(0,0,0,0);font:inherit;border-style:solid;padding:2px}tw-story select:not([disabled]){color:inherit}tw-story textarea{resize:none;background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none;padding:2px}tw-story input[type=text]{background-color:rgba(0,0,0,0);font:inherit;color:inherit;border-style:none}tw-story input[type=checkbox]{transform:scale(1.5);margin:0 .5em .5em .5em;vertical-align:middle}tw-story tw-noscript{animation:appear .8s}tw-passage{display:block}tw-sidebar{text-align:center;display:-ms-flexbox;display:flex;-ms-flex-pack:justify;justify-content:space-between}@media(min-width: 576px){tw-sidebar{left:-5em;width:3em;position:absolute;-ms-flex-direction:column;flex-direction:column}tw-enchantment[style*=width]>tw-sidebar{width:inherit}}tw-icon{display:inline-block;margin:.5em 0;font-size:66px;font-family:"Verdana",sans-serif}tw-icon[alt]{opacity:.2;cursor:pointer}tw-icon[alt]:hover{opacity:.4}tw-icon[data-label]::after{font-weight:bold;content:attr(data-label);font-size:20px;bottom:-20px;left:-50%;white-space:nowrap}tw-meter{display:block}tw-hook:empty,tw-expression:empty{display:none}tw-error{display:inline-block;border-radius:.2em;padding:.2em;font-size:1rem;cursor:help;white-space:pre-wrap}tw-error.error{background-color:rgba(223,58,190,.6);color:#fff}tw-error.warning{background-color:rgba(223,140,58,.6);color:#fff;display:none}.debug-mode tw-error.warning{display:inline}tw-error-explanation{display:block;font-size:.8rem;line-height:1rem}tw-open-button,tw-folddown{cursor:pointer;line-height:0em;border-radius:4px;border:1px solid rgba(255,255,255,.5);font-size:.8rem;margin:0 .2rem;padding:3px;white-space:pre}tw-folddown::after{content:"▶"}tw-folddown.open::after{content:"▼"}tw-open-button[replay]{display:none}tw-error tw-open-button,tw-eval-replay tw-open-button{display:inline !important}tw-open-button::after{content:attr(label)}tw-notifier{border-radius:.2em;padding:.2em;font-size:1rem;background-color:rgba(223,182,58,.4);display:none}.debug-mode tw-notifier{display:inline}tw-notifier::before{content:attr(message)}tw-colour{border:1px solid #000;display:inline-block;width:1em;height:1em}tw-enchantment:empty{display:none}h1{font-size:3em}h2{font-size:2.25em}h3{font-size:1.75em}h1,h2,h3,h4,h5,h6{line-height:1em;margin:.3em 0 .6em 0}pre{font-size:1rem;line-height:initial}small{font-size:70%}big{font-size:120%}mark{color:rgba(0,0,0,.6);background-color:#ff9}ins{color:rgba(0,0,0,.6);background-color:rgba(255,242,204,.5);border-radius:.5em;box-shadow:0em 0em .2em #ffe699;text-decoration:none}center{text-align:center;margin:0 auto;width:60%}blink{text-decoration:none;animation:fade-in-out 1s steps(1, end) infinite alternate}tw-align{display:block}tw-columns{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}.transition-in{animation:appear 0ms step-start}.transition-out{animation:appear 0ms step-end}[data-t8n^=dissolve].transition-in,[data-t8n=fade].transition-in{animation:appear .8s}[data-t8n^=dissolve].transition-out,[data-t8n=fade].transition-out{animation:appear .8s reverse}[data-t8n^=shudder].transition-in{display:inline-block !important;animation:shudder-in .8s}[data-t8n^=shudder].transition-out{display:inline-block !important;animation:shudder-in .8s reverse}[data-t8n^=rumble].transition-in{display:inline-block !important;animation:rumble-in .8s}[data-t8n^=rumble].transition-out{display:inline-block !important;animation:rumble-in .8s reverse}[data-t8n^=pulse].transition-in{animation:pulse .8s;display:inline-block !important}[data-t8n^=pulse].transition-out{animation:pulse .8s reverse;display:inline-block !important}[data-t8n^=zoom].transition-in{animation:zoom-in .8s;display:inline-block !important}[data-t8n^=zoom].transition-out{animation:zoom-in .8s reverse;display:inline-block !important}[data-t8n^=blur].transition-in{animation:blur .8s;display:inline-block !important}[data-t8n^=blur].transition-out{animation:blur .8s reverse;display:inline-block !important}[data-t8n^=slideleft].transition-in{animation:slide-left .8s;display:inline-block !important}[data-t8n^=slideleft].transition-out{animation:slide-right .8s reverse;display:inline-block !important}[data-t8n^=slideright].transition-in{animation:slide-right .8s;display:inline-block !important}[data-t8n^=slideright].transition-out{animation:slide-left .8s reverse;display:inline-block !important}[data-t8n^=slideup].transition-in{animation:slide-up .8s;display:inline-block !important}[data-t8n^=slideup].transition-out{animation:slide-down .8s reverse;display:inline-block !important}[data-t8n^=slidedown].transition-in{animation:slide-down .8s;display:inline-block !important}[data-t8n^=slidedown].transition-out{animation:slide-up .8s reverse;display:inline-block !important}[data-t8n^=fadeleft].transition-in{animation:fade-left .8s;display:inline-block !important}[data-t8n^=fadeleft].transition-out{animation:fade-right .8s reverse;display:inline-block !important}[data-t8n^=faderight].transition-in{animation:fade-right .8s;display:inline-block !important}[data-t8n^=faderight].transition-out{animation:fade-left .8s reverse;display:inline-block !important}[data-t8n^=fadeup].transition-in{animation:fade-up .8s;display:inline-block !important}[data-t8n^=fadeup].transition-out{animation:fade-down .8s reverse;display:inline-block !important}[data-t8n^=fadedown].transition-in{animation:fade-down .8s;display:inline-block !important}[data-t8n^=fadedown].transition-out{animation:fade-up .8s reverse;display:inline-block !important}[data-t8n^=flicker].transition-in{animation:flicker .8s}[data-t8n^=flicker].transition-out{animation:flicker .8s reverse}
 </style>
 </head>
 <body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play beta.</tw-noscript></noscript></tw-story>
-<tw-storydata name="beta" startnode="18" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="f22c44bf-7636-4559-8966-59e066b1193c" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=Russo One');
+<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play beta 1.</tw-noscript></noscript></tw-story>
+<tw-storydata name="beta 1" startnode="18" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="613f1607-2fce-453f-8cd6-2225d3cebb04" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css?family=Russo One');
 @import url('https://fonts.googleapis.com/css?family=Spectral');
 @import url('https://fonts.googleapis.com/css?family=Dancing Script');
 
@@ -268,8 +268,8 @@ Something is at odds.
 
 (seq-link:&quot;You startle and turn your head. &quot;, &quot;You squint your eyes. &quot;)]
 {(click-goto: &quot;You squint your eyes.&quot;, &#39;Alley&#39;)}</tw-passagedata><tw-passagedata pid="9" name="Follow their lead" tags="alleyway" position="900,1675" size="100,100">{(set: $meet_her to 1)
-(set: $her_name to &quot;HER&quot;)
-(set: $her_identity to &quot;???&quot;)
+(set: $her_name to &quot;???&quot;)
+(set: $her_identity to &quot;HER&quot;)
 (set: $her_notes to (ds:))
 }Another strange turn in your life. 
 
@@ -303,30 +303,29 @@ The stranger removes their hand and backs away.
 As the warmth of their hand disappears, 
 you feel cold enveloping your body once again.
 
-“Woah, so you //do// have some emotion in you? 
+&quot;Woah, so you //do// have some emotion in you? 
 Alright, well, let’s take a breather. 
 You came from Dumor, right? 
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[”Yes, I was on my way home. Where am I if not in Dumor?“]] &lt;!--Calm choice--&gt;
+[[”Yes, I was on my way home. Where am I if not in Dumor?&quot;]] &lt;!--Calm choice--&gt;
 
-[[“What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
+[[&quot;What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
 
-[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="12" name="Go home" tags="dumor" position="625,800" size="100,100">(if:$newspapers contains 0)[(go-to: &quot;home&quot;)
+[[&quot;I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="12" name="Go home" tags="dumor" position="525,800" size="100,100">(if:$newspapers contains 0)[(go-to: &quot;home&quot;)
 ](else:)[You notice something on your way home.
 It is a newspaper
 
 |1&gt;[Pick it up and go home]
-{(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to: &quot;home&quot;)]}
-]
-</tw-passagedata><tw-passagedata pid="13" name="Here?" tags="alleyway" position="900,1925" size="100,100">&#39;&#39;&quot;Here&quot;&#39;&#39; means where exactly?
+{(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to:&quot;home&quot;)]}
+]</tw-passagedata><tw-passagedata pid="13" name="Here?" tags="alleyway" position="900,1925" size="100,100">&#39;&#39;&quot;Here&quot;&#39;&#39; means where exactly?
 
 The maze suddenly ends.
 
-[[Look to the front]]</tw-passagedata><tw-passagedata pid="14" name="“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”" tags="alleyway" position="775,1550" size="100,100">{
+[[Look to the front]]</tw-passagedata><tw-passagedata pid="14" name="&quot;I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”" tags="alleyway" position="775,1550" size="100,100">{
 (set: $kind to $kind+1)
-}“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
+}&quot;It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
 
 Their voice stays steady, revealing little to you. 
 Whatever you heard before has evaporated,
@@ -341,27 +340,27 @@ You feel as though you can trust them, but you’re not sure why.
 
 Moments later, the voice comments, 
 
-“I’ll explain later, but we need to get going. 
+&quot;I’ll explain later, but we need to get going. 
 Just come with me, we have a long way to go.
 I’m sure &#39;&#39;HER&#39;&#39; people will deal with you.”
 
 
-[[Follow their lead]]]</tw-passagedata><tw-passagedata pid="15" name="“I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?&quot;" tags="alleyway" position="900,1425" size="100,100">{(set:$kind to $kind+1)}
+[[Follow their lead]]]</tw-passagedata><tw-passagedata pid="15" name="&quot;I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?&quot;" tags="alleyway" position="900,1425" size="100,100">{(set:$kind to $kind+1)}
 The stranger removes their hand and backs away. 
 As the warmth of their hand disappears, 
 you feel cold enveloping your body once again. 
 
-“Hurt you? 
+&quot;Hurt you? 
 I have no reason to do that, let’s calm down a bit. 
 You came from Dumor, right? 
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[”Yes, I was on my way home. Where am I if not in Dumor?“]] &lt;!--Calm choice--&gt;
+[[”Yes, I was on my way home. Where am I if not in Dumor?&quot;]] &lt;!--Calm choice--&gt;
 
-[[“What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
+[[&quot;What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
 
-[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="16" name="Load" tags="no_sidebar russo" position="825,425" size="100,100">Which slot do you want to load?
+[[&quot;I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="16" name="Load" tags="no_sidebar russo" position="825,425" size="100,100">Which slot do you want to load?
 
 
 (set: _saves to (saved-games:))\
@@ -399,7 +398,6 @@ Well, as you can see, you are no longer in Dumor.”
 Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="17" name="Look to the front" tags="rubellite" position="900,2050" size="100,100">{(track: &#39;bridge&#39;, &#39;fadeout&#39;, 2)
 (track: &#39;rubellite&#39;, &#39;fadein&#39;, 2)
 (track: &#39;rubellite&#39;, &#39;loop&#39;, true)
-(set: $speaking to &quot;empty.png&quot;)
 (set:$guard_note to $guard_note+(ds:1))
 (set:$location to &quot;A red world?&quot;)}
 &lt;img src=&quot;image\Rubellite.jpg&quot;, width=&quot;780px&quot; height=&quot;500px&quot;&gt;
@@ -473,31 +471,13 @@ just living your life among the endless, perfect blue patience and orderliness,
 like everyone else here.
 
 
-[[Walk home]]]</tw-passagedata><tw-passagedata pid="21" name="The end of Prototype" tags="" position="600,2300" size="100,100">{(set:$location to &quot;The end of the test&quot;)}
-[(text-size:1.5)[Thank you for playing!]
-(text-size:1.2)[This is basicly everything we have for this test.
-But we will have a beta test version in about 1 week!
-We will have most stories, arts, and mechanics done for that version.
-(Including the inventory system that you may found empty all the time)
-Please come to play if you are interested! We will publish it on discord.
-
-Here is your personality traits report at this point!
-
-Calm: $calm
-Angry: $angry
-Kind: $kind
-
-Please provide any comments or advises in the questionaire!
-
-We will do better in the next version!]
-
-(link-goto:&quot;Go back to the menu.&quot;, &quot;menu&quot;)]</tw-passagedata><tw-passagedata pid="22" name="Walk home" tags="dumor" position="700,550" size="100,100">&lt;img src=&quot;image\Dumor.jpg&quot;, width=&quot;780px&quot; height=&quot;500px&quot;&gt;
+[[Walk home]]]</tw-passagedata><tw-passagedata pid="21" name="Walk home" tags="dumor" position="700,550" size="100,100">&lt;img src=&quot;image\Dumor.jpg&quot;, width=&quot;780px&quot; height=&quot;500px&quot;&gt;
 You walk home from work, 
 following the exact same route you take every other night. 
 
-[[Familiar]]</tw-passagedata><tw-passagedata pid="23" name="“What do you think? Stop stalling and tell me what’s going on!”" tags="alleyway" position="1025,1550" size="100,100">{
+[[Familiar]]</tw-passagedata><tw-passagedata pid="22" name="&quot;What do you think? Stop stalling and tell me what’s going on!”" tags="alleyway" position="1025,1550" size="100,100">{
 (set:$angry to $angry+1)
-}“Okay, well, now that’s too much emotion. 
+}&quot;Okay, well, now that’s too much emotion. 
 Calm down, I don’t have time to explain right now.” 
 
 Their voice stays steady, revealing little to you. 
@@ -511,12 +491,12 @@ You move to pull your hand away, but the grip tightens, locking you in place.
 
 Moments later, the voice comments, 
 
-“I’m not going to hurt you, you’re fine. 
+&quot;I’m not going to hurt you, you’re fine. 
 Just come with me, we have a long way to go.
 I’m sure &#39;&#39;HER&#39;&#39; people will deal with you.”
 
 
-[[Follow their lead]]]</tw-passagedata><tw-passagedata pid="24" name="What&#39;s next?" tags="dumor" position="625,925" size="100,100">{(set:$try to $try+1)}
+[[Follow their lead]]]</tw-passagedata><tw-passagedata pid="23" name="What&#39;s next?" tags="dumor" position="625,925" size="100,100">{(set:$try to $try+1)}
 Oops! Nothing next.
 The game is over. 
 
@@ -528,8 +508,8 @@ Promise, you won&#39;t regret it…
 This is the first choice you make.
 Let&#39;s give you another chance.&quot;
 
-[[Go back to the entrance -&gt;Alley]]</tw-passagedata><tw-passagedata pid="25" name="&quot;Where am I?&quot;" tags="alleyway" position="775,1175" size="100,100">{(set:$guard_identity to &quot;A stranger in the alleyway&quot;)}
-“You entered an alleyway, where do you think you are? 
+[[Go back to the entrance -&gt;Alley]]</tw-passagedata><tw-passagedata pid="24" name="&quot;Where am I?&quot;" tags="alleyway" position="775,1175" size="100,100">{(set:$guard_identity to &quot;A stranger in the alleyway&quot;)}
+&quot;You entered an alleyway, where do you think you are? 
 Do they not teach common sense over in the city of Dumor?” 
 
 The voice let out a sigh, but didn’t seem to move any closer. 
@@ -542,9 +522,9 @@ Nothing in this dark alleyway is following the script you were given at birth, n
 (click:&quot;Nothing is r-&quot;)[You feel a warm hand land on your upper arm,
 which rips you from the drowning &#39;&#39;panic&#39;&#39; that had completely consumed you. 
 
-You feel yourself stop breathing, waiting for the stranger to [[speak]].]</tw-passagedata><tw-passagedata pid="26" name="”Yes, I was on my way home. Where am I if not in Dumor?“" tags="alleyway" position="900,1550" size="100,100">{
+You feel yourself stop breathing, waiting for the stranger to [[speak]].]</tw-passagedata><tw-passagedata pid="25" name="”Yes, I was on my way home. Where am I if not in Dumor?&quot;" tags="alleyway" position="900,1550" size="100,100">{
 (set:$calm to $calm+1)
-}“How is it possible for one to speak with so little feeling?
+}&quot;How is it possible for one to speak with so little feeling?
 Your monotony is exhausting me.” 
 
 Their voice stays steady, revealing little to you. 
@@ -559,13 +539,13 @@ It startles you, but you recover quickly.
 
 Moments later, you hear the voice comments, 
 
-“Barely even a flinch, I’ll never get used to how robotic you people really are. 
+&quot;Barely even a flinch, I’ll never get used to how robotic you people really are. 
 Just come with me, we have a long way to go. 
 I’m sure &#39;&#39;HER&#39;&#39; people will deal with you.”
 
 
 [[Follow their lead]]
-]</tw-passagedata><tw-passagedata pid="27" name="You finally realize how far from home you really are." tags="rubellite" position="900,2175" size="100,100">What you see in front of you is clearly the outskirts of the city.
+]</tw-passagedata><tw-passagedata pid="26" name="You finally realize how far from home you really are." tags="rubellite" position="900,2175" size="100,100">What you see in front of you is clearly the outskirts of the city.
 
 The metal rubbish and some mechanical parts are all over the place. 
 The stranger tells you that this world is called //&#39;&#39;Rubellite&#39;&#39;//, 
@@ -582,20 +562,20 @@ You crave learning more about this world.
 
 But even more so, you are desperate to learn how to escape. 
 
-|1&gt;[”Where are we?“]
+|1&gt;[”Where are we?&quot;]
 
-|2&gt;[”This looks exactly like home but red, when are you going to explain?“]
+|2&gt;[”This looks exactly like home but red, when are you going to explain?&quot;]
 
-|3&gt;[“What is this place? It’s…beautiful…”]
+|3&gt;[&quot;What is this place? It’s…beautiful…”]
 {(click: ?1)[(set: $calm to $calm + 1)+(go-to: &quot;where are we&quot;)]
 (click: ?2)[(set: $angry to $angry + 1)+(go-to: &quot;where are we&quot;)]
 (click: ?3)[(set: $kind to $kind + 1)+(go-to: &quot;where are we&quot;)]
 }
-]</tw-passagedata><tw-passagedata pid="28" name="behind you" tags="alleyway" position="775,1050" size="100,100">{(set:$meet_guard to 1) 
+]</tw-passagedata><tw-passagedata pid="27" name="behind you" tags="alleyway" position="775,1050" size="100,100">{(set:$meet_guard to 1) 
 (set:$guard_name to &quot;???&quot;)
 (set:$guard_identity to &quot;???&quot;)
 (set:$guard_note to (ds:))}
-“Again?! You &#39;&#39;people&#39;&#39; never learn! 
+&quot;Again?! You &#39;&#39;people&#39;&#39; never learn! 
 Just a bunch of brain-dead, soulless, robotic imbeciles.”
 
 Turn around.
@@ -606,7 +586,7 @@ You see nothing.
 
 |1&gt;[&quot;Huh? Are you talking to me?&quot;]
 
-(click: ?1)[“Well, yeah! Who else would I be talking to, idiot?”
+(click: ?1)[&quot;Well, yeah! Who else would I be talking to, idiot?”
 
 The voice sounds irritated, but you can’t quite understand why. 
 You can’t understand anything at the moment.
@@ -616,7 +596,7 @@ You can’t understand anything at the moment.
 (text-color:#8266ba)[~~&quot;Can you tell me what’s going on? Where are you standing? I can’t see you…&quot;~~] &lt;!--kind--&gt;
 
 [[&quot;Where am I?&quot;]]
-]]</tw-passagedata><tw-passagedata pid="29" name="child" tags="no_sidebar" position="375,350" size="100,100">Name: ???
+]]</tw-passagedata><tw-passagedata pid="28" name="child" tags="no_sidebar" position="375,350" size="100,100">Name: ???
 
 Identity: A Loud Child
 
@@ -629,7 +609,7 @@ Notes:
 (if: $child_notes contains 5)[	- It looks like being stern with them worked out! Now you know where you need to go next]
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="30" name="continue" tags="alleyway" position="900,1800" size="100,100">No response.
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="29" name="continue" tags="alleyway" position="900,1800" size="100,100">No response.
 
 (link:&quot;......&quot;)[You are overwhelmed and confused.
 You want your ordinary routine back.
@@ -641,7 +621,13 @@ You want your ordinary routine back.
 &quot;We&#39;re almost here.&quot; 
 the figure in front of you says. 
 
-[[Here?]]]]</tw-passagedata><tw-passagedata pid="31" name="guard" tags="no_sidebar" position="0,350" size="100,100">(if:$meet_guard is 1)[&lt;img src=&quot;image\guard_silhouette.png&quot;, width=&quot;200px&quot; height=&quot;250px&quot;&gt;]
+[[Here?]]]]</tw-passagedata><tw-passagedata pid="30" name="guard" tags="no_sidebar" position="0,350" size="100,100">{
+(if:$meet_guard is 1)[&lt;img src=&quot;image\guard_shadow.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;]
+(if:$meet_guard is 2)[&lt;img src=&quot;image\guard_mask_purple.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;]
+(if:$meet_guard is 3)[&lt;img src=&quot;image\guard_mask_purple.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;]
+(if:$meet_guard is 4)[&lt;img src=&quot;image\guard_nomask.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;]
+}
+
 Name: $guard_name
 
 Identity: $guard_identity
@@ -663,10 +649,15 @@ Notes:
 
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="32" name="hal.config" tags="" position="575,25" size="100,100">volumeDisplay: false
-debug: true</tw-passagedata><tw-passagedata pid="33" name="hal.tracks" tags="" position="450,25" size="100,100">dumor: ./audio/dumor.mp3
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="31" name="hal.config" tags="" position="575,25" size="100,100">volumeDisplay: false
+debug: true</tw-passagedata><tw-passagedata pid="32" name="hal.tracks" tags="" position="450,25" size="100,100">dumor: ./audio/dumor.mp3
 bridge: ./audio/bridge.mp3
-rubellite: ./audio/rubellite.mp3</tw-passagedata><tw-passagedata pid="34" name="her" tags="no_sidebar" position="125,350" size="100,100">Name: $her_name
+rubellite: ./audio/rubellite.mp3</tw-passagedata><tw-passagedata pid="33" name="her" tags="no_sidebar" position="125,350" size="100,100">{
+(if:$meet_her is 1)[&lt;img src=&quot;image\her_shadow.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;]
+(if:$meet_her is 2)[&lt;img src=&quot;image\her.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;]
+}
+
+Name: $her_name
 
 Identity: $her_identity
 
@@ -686,7 +677,7 @@ Notes:
 (if: $her_notes contains 10)[- She cares for her city and people very deeply, and would give her life to protect them]
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="35" name="menu" tags="no_sidebar russo" position="700,300" size="100,100">{(track: &#39;dumor&#39;, &#39;fadeout&#39;, 2)
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="34" name="menu" tags="no_sidebar russo" position="700,300" size="100,100">{(track: &#39;dumor&#39;, &#39;fadeout&#39;, 2)
 (track: &#39;bridge&#39;, &#39;fadeout&#39;, 2)
 (track: &#39;rubellite&#39;, &#39;fadeout&#39;, 2)}
 
@@ -705,7 +696,67 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="35" nam
 
 (after:3s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[&#39;&#39;[[Collection]]&#39;&#39;]
 
-(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[&#39;&#39;[[About]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="36" name="newspaper0" tags="" position="950,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="37" name="newspaper1" tags="" position="1050,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="38" name="newspaper2" tags="" position="1150,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="39" name="newspaper3" tags="" position="1250,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="40" name="newspaper4" tags="" position="1350,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="41" name="newspaper5" tags="" position="1450,300" size="100,100">Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="42" name="save" tags="no_sidebar russo" position="300,200" size="100,100">Which slot do you want to load?
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[&#39;&#39;[[About]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="35" name="newspaper0" tags="no_sidebar" position="950,300" size="100,100">(b4r:&quot;solid&quot;,&quot;dashed&quot;)+(b4r-colour:white)[(text-size:2)[&#39;&#39;  Dumor Wall Continues Glitching!  &#39;&#39;]
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+It seems the Dumor Wall is still glitching, despite reassurance
+that it is fixed. Some people have reported seeing a mysterious
+alleyway that calls to them. This alleyway, and many other 
+glitches are believed to be signs of the end of Dumor. Please
+stay safe, and always follow the path set for you, in order to
+avoid any danger.]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="36" name="newspaper1" tags="no_sidebar" position="1050,300" size="100,100">(b4r:&quot;solid&quot;,&quot;dashed&quot;)+(b4r-colour:white)[(text-size:2)[&#39;&#39;  Mysterious Bridge Opens Again!  &#39;&#39;]
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+It seems the bridge between Rubellite and Dumor has opened
+again, bringing another Dumorian through. Some citizens have
+begun to express their worries about this bridge, wondering if it
+could cause some conflict between the two cities. In a message
+shared by HER, she warns all citizens of Rubellite to stay away
+from the alleyway for their safety. Please stay within the walls
+of the city!]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="37" name="newspaper2" tags="no_sidebar" position="1150,300" size="100,100">(b4r:&quot;solid&quot;,&quot;dashed&quot;)+(b4r-colour:white)[(text-size:2)[&#39;&#39;  Rubellite High Wins Championship
+against Red Rubel  &#39;&#39;]
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+At the weekend championship soccer tournament, Rubellite
+High comes out on top. It was a close fight between the two
+highschools, but Red Rubel unfortunately failed to defend
+their championship win from last year. Congrats to the
+Rubellite High soccer team!]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="38" name="newspaper3" tags="no_sidebar" position="1250,300" size="100,100">(b4r:&quot;solid&quot;,&quot;dashed&quot;)+(b4r-colour:white)[(text-size:2)[&#39;&#39;  New Cafe Opens in Heart of Rubellite!  &#39;&#39;]
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Another cafe opens in the heart of the city, offering a variety
+of never before seen drinks and snacks. One of our reporters
+went to try it out, and they highly recommend it! The treats
+were well made and well priced. Make sure to check it out
+when you can!]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="39" name="newspaper4" tags="no_sidebar" position="1350,300" size="100,100">(b4r:&quot;solid&quot;,&quot;dashed&quot;)+(b4r-colour:white)[(text-size:2)[&#39;&#39;  HER Spotted at a Local Shop!  &#39;&#39;]
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Rubellite’s beloved leader seems to enjoy some snacks and
+drinks at a local cafe with an unknown elderly lady. Citizens
+of Rubellite seem to appreciate seeing their leader enjoying
+a simple treat with a normal person. One person even told
+Rubellite News that it made them “less afraid” of their leader,
+knowing that she is “just another person like them.”]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="40" name="newspaper5" tags="no_sidebar" position="1450,300" size="100,100">(b4r:&quot;solid&quot;,&quot;dashed&quot;)+(b4r-colour:white)[(text-size:2)[&#39;&#39;  Dumorian Spotted Entering the Palace!  &#39;&#39;]
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+A local citizen claims they spotted a Dumorian entering the
+palace. They are unsure how the Dumorian is in Rubellite,
+but it is believed to be related to bridge glitch spoken about
+in HER recent message. We still don’t know much about the
+situation, but we suggest that you keep yourself safe in these
+uncertain times.”]
+
+
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="41" name="save" tags="no_sidebar russo" position="300,200" size="100,100">Which slot do you want to load?
 
 
 {(link-replace: &quot;Slot 1&quot;)[
@@ -724,10 +775,10 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="35" nam
 
 
 
-Back(click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="43" name="speak" tags="alleyway" position="775,1300" size="100,100">{
-(set: $speaking to &quot;guard_silhouette_transparent_half.png&quot;)
+Back(click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="42" name="speak" tags="alleyway" position="775,1300" size="100,100">{
+(set: $speaking to &quot;guard_shadow_half.png&quot;)
 (set:$guard_note to $guard_note+(ds:0))
-}“Alright, let’s get you out of that brain of yours. 
+}&quot;Alright, let’s get you out of that brain of yours. 
 Probably freaking out about the lack of a script here, huh? 
 That’s what you people all say,
 you can hear something in their voice, but not sure what exactly it is.&quot;
@@ -735,24 +786,24 @@ you can hear something in their voice, but not sure what exactly it is.&quot;
 
 [[&quot;Get off of me! You’re not making any sense!&quot;]]
 
-[[“I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?&quot;]]
+[[&quot;I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?&quot;]]
 
-[[“I’m not sure what you’re talking about.”]]</tw-passagedata><tw-passagedata pid="44" name="“I’m not sure what you’re talking about.”" tags="alleyway" position="775,1425" size="100,100">{(set:$calm to $calm+1)}
+[[&quot;I’m not sure what you’re talking about.”]]</tw-passagedata><tw-passagedata pid="43" name="&quot;I’m not sure what you’re talking about.”" tags="alleyway" position="775,1425" size="100,100">{(set:$calm to $calm+1)}
 The stranger removes their hand and backs away. 
 As the warmth of their hand disappears, 
 you feel cold enveloping your body once again. 
 
-“Of course you don’t. 
+&quot;Of course you don’t. 
 You came from Dumor, right? 
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[”Yes, I was on my way home. Where am I if not in Dumor?“]] &lt;!--Calm choice--&gt;
+[[”Yes, I was on my way home. Where am I if not in Dumor?&quot;]] &lt;!--Calm choice--&gt;
 
-[[“What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
+[[&quot;What do you think? Stop stalling and tell me what’s going on!”]] &lt;!--Angry choice--&gt;
 
-[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="45" name="where are we" tags="rubellite" position="900,2300" size="100,100">{
-
+[[&quot;I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] &lt;!--Kind choice--&gt;</tw-passagedata><tw-passagedata pid="44" name="where are we" tags="rubellite" position="900,2300" size="100,100">{
+(set: $speaking to &quot;guard_mask_purple_half.png&quot;)
 }
 You turn to the figure next to you, your eyes searching for answers. 
 What you don’t expect is to see the man’s own eyes looking back at you. 
@@ -763,7 +814,7 @@ you can see the face of the alley’s guard.
 You can see the man’s irritation pooling in his eyes, 
 and it startles you into silence.(set: $meet_guard to 2)
 
-(click: &quot;silence&quot;)[“Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
+(click: &quot;silence&quot;)[&quot;Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
 
 (link:&quot;You notice something&quot;)[As he speaks, you see a piece of paper fly closer to the two of you,
 seemingly being carried by the quiet wind.
@@ -771,7 +822,7 @@ seemingly being carried by the quiet wind.
 You bend down slightly, reaching for what feels like a newspaper.
 
 [[Perhaps this could be helpful]]
-]]]</tw-passagedata><tw-passagedata pid="46" name="Perhaps this could be helpful" tags="rubellite" position="900,2425" size="100,100">{
+]]]</tw-passagedata><tw-passagedata pid="45" name="Perhaps this could be helpful" tags="rubellite" position="900,2425" size="100,100">{
 (set: $newspapers to $newspapers +(ds:1))
 }
 You reach your hand and grab it.
@@ -786,7 +837,7 @@ As you begin to get lost in the mystery,
 he points at something behind you.
 
 [[Turn around]]
-]</tw-passagedata><tw-passagedata pid="47" name="Turn around" tags="rubellite" position="900,2550" size="100,100">There is a small door that you would’ve never noticed without him. 
+]</tw-passagedata><tw-passagedata pid="46" name="Turn around" tags="rubellite" position="900,2550" size="100,100">There is a small door that you would’ve never noticed without him. 
 
 You wonder what can be hidden behind that door.
 Fortunately, you don&#39;t have to wait for long to discover.
@@ -795,11 +846,12 @@ The stranger solemnly opens the door for you,
 and you carefully take |1&gt;[a step further].
 
 (click: ?1)[What you can see is liveliness that is native to the citizens of this red world. 
-It is clear why they call it “Rubellite.” 
+It is clear why they call it &quot;Rubellite.” (set: $speaking to &quot;empty.png&quot;)
 
 [[Walk around]]
-]</tw-passagedata><tw-passagedata pid="48" name="Walk around" tags="rubellite" position="900,2675" size="100,100">You walk around, mesmerised,
+]</tw-passagedata><tw-passagedata pid="47" name="Walk around" tags="rubellite" position="900,2675" size="100,100">You walk around, mesmerised,
 looking at the tall buildings and streets full of busy people. 
+You didn&#39;t notice when he disappeared.
 
 Distracted, you run into a group of kids playing a ball game. 
 
@@ -810,7 +862,7 @@ There is a piece of paper that lies on the ground.
 It&#39;s another newspaper!
 
 [[Pick it up]]
-]</tw-passagedata><tw-passagedata pid="49" name="Pick it up" tags="rubellite" position="900,2800" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="48" name="Pick it up" tags="rubellite" position="900,2800" size="100,100">{
 (set: $newspapers to $newspapers +(ds:2))
 (set: $child_notes to (ds:))
 }You suddenly feel a pain on your head.
@@ -822,10 +874,10 @@ It hurts, but just a little.
 
 The ball stops near you, and the local child comes over to pick it up.
 
-“That’s my ball! Don’t steal it!”(set: $meet_child to 1)(set: $child_notes to $child_notes + (ds:0))
+&quot;That’s my ball! Don’t steal it!”(set: $meet_child to 1)(set: $child_notes to $child_notes + (ds:0))
 
 [[What??]]
-]</tw-passagedata><tw-passagedata pid="50" name="What??" tags="rubellite" position="900,2925" size="100,100">The child comes barrelling over with a loud voice that makes your ears ring. 
+]</tw-passagedata><tw-passagedata pid="49" name="What??" tags="rubellite" position="900,2925" size="100,100">The child comes barrelling over with a loud voice that makes your ears ring. 
 
 (link: &quot;Step back&quot;)[You take a step back and attempt to blink away the dull ache in your head.(set: $child_notes to $child_notes + (ds:1))
 
@@ -837,16 +889,16 @@ you feel confusion spread through your body.
 [[&quot;You were the one that hit me, what do you mean don’t steal it?!&quot;]]
 
 [[&quot;I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?&quot;]]
-]</tw-passagedata><tw-passagedata pid="51" name="&quot;Steal your ball? But I haven&#39;t touched it.&quot;" tags="rubellite" position="900,3050" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="50" name="&quot;Steal your ball? But I haven&#39;t touched it.&quot;" tags="rubellite" position="900,3050" size="100,100">{
 (set: $calm to $calm + 1)
 }
-“Sure…you seem suspicious…you’re not from here are you?” 
+&quot;Sure…you seem suspicious…you’re not from here are you?” 
 
 The child’s eyes travel over your body, inspecting the work clothes you have on. 
 
 You begin to realise how different they are from what the children in front of you are wearing. 
 
-“What are you wearing? They look so boring!”
+&quot;What are you wearing? They look so boring!”
 
 |1&gt;[&quot;Boring? How so?&quot;]
 
@@ -855,20 +907,20 @@ not entirely understanding what was wrong with your clothes.
 
 |2&gt;[They were simple, and worked well for any occasion.]
 
-(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+(click: ?2)[&quot;There’s no colour! The plain grey is hurting my eyes!”
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
-]]</tw-passagedata><tw-passagedata pid="52" name="&quot;I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?&quot;" tags="rubellite" position="775,3050" size="100,100">{
+]]</tw-passagedata><tw-passagedata pid="51" name="&quot;I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?&quot;" tags="rubellite" position="775,3050" size="100,100">{
 (set: $kind to $kind + 1)
 }
-“Okay, you’re right I’m sorry…we should have been more careful.”
+&quot;Okay, you’re right I’m sorry…we should have been more careful.”
 
 The child’s eyes travel over your body, inspecting the work clothes you have on.
 
 You begin to realise how different they are from what the children in front of you are wearing.
 
-“What are you wearing? They look so boring!”
+&quot;What are you wearing? They look so boring!”
 
 |1&gt;[&quot;Boring? Why do you say that?&quot;]
 
@@ -877,20 +929,20 @@ not entirely understanding what was wrong with your clothes.
 
 |2&gt;[They were simple, and worked well for any occasion.]
 
-(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+(click: ?2)[&quot;There’s no colour! The plain grey is hurting my eyes!”
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
-]]</tw-passagedata><tw-passagedata pid="53" name="&quot;You were the one that hit me, what do you mean don’t steal it?!&quot;" tags="rubellite" position="1025,3050" size="100,100">{
+]]</tw-passagedata><tw-passagedata pid="52" name="&quot;You were the one that hit me, what do you mean don’t steal it?!&quot;" tags="rubellite" position="1025,3050" size="100,100">{
 (set: $angry to $angry + 1)
 }
-“Jeez…I’m sorry okay…it was an accident, I swear.”
+&quot;Jeez…I’m sorry okay…it was an accident, I swear.”
 
 The child’s eyes travel over your body, inspecting the work clothes you have on.
 
 You begin to realise how different they are from what the children in front of you are wearing.
 
-“What are you wearing? They look so boring!” 
+&quot;What are you wearing? They look so boring!” 
 
 |1&gt;[&quot;Boring? Why is that?&quot;]
 
@@ -899,11 +951,11 @@ not entirely understanding what was wrong with your clothes.
 
 |2&gt;[They were simple, and worked well for any occasion.]
 
-(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+(click: ?2)[&quot;There’s no colour! The plain grey is hurting my eyes!”
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
-]]</tw-passagedata><tw-passagedata pid="54" name="You are more confused now." tags="rubellite" position="900,3175" size="100,100">(set: $child_notes to $child_notes + (ds:2))“Look at our clothes!
+]]</tw-passagedata><tw-passagedata pid="53" name="You are more confused now." tags="rubellite" position="900,3175" size="100,100">(set: $child_notes to $child_notes + (ds:2))&quot;Look at our clothes!
 We get so many cool colours and little flappy things,
 I can’t remember what my sister called them…”
 
@@ -918,31 +970,37 @@ with a black shirt and a |2&gt;[cropped jacket] covered in a mix of yellows and 
 (click: ?2)[On the jacket, it seems the child has pasted on random stickers of things you don&#39;t recognize.
 
 [[You have to admit, it does look ‘cool’]], as the child said.
-]]]</tw-passagedata><tw-passagedata pid="55" name="home" tags="dumor" position="500,925" size="100,100">You return home from work, 
+]]]</tw-passagedata><tw-passagedata pid="54" name="home" tags="dumor" position="500,925" size="100,100">{
+(if:$newspapers contains 0)[
+[[Take a look a the newspaper-&gt;newspaper0]]
+]
+}
+
+You return home from work, 
 eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
 
 
-[[What&#39;s next?]]</tw-passagedata><tw-passagedata pid="56" name="You have to admit, it does look ‘cool’" tags="rubellite" position="900,3300" size="100,100">“I suppose they do look interesting.
+[[What&#39;s next?]]</tw-passagedata><tw-passagedata pid="55" name="You have to admit, it does look ‘cool’" tags="rubellite" position="900,3300" size="100,100">&quot;I suppose they do look interesting.
 Perhaps while I’m here, I’ll get some new clothes.”
 
 The child smiles brightly at you.
 It fills you with warmth.
 
 You hope other people of this world are like them. 
-|1&gt;[“I’m not from around here, so we’ve never met.”]
-(click: ?1)[“Not from here? How is that possible…
+|1&gt;[&quot;I’m not from around here, so we’ve never met.”]
+(click: ?1)[&quot;Not from here? How is that possible…
 Are you just from another side of the city?”
 
 You could see the gears moving in the child’s head.
 |2&gt;[It appears they know as little about the world as you do.]
 
-(click: ?2)[“I swear I know everyone in the city…
+(click: ?2)[&quot;I swear I know everyone in the city…
 but I guess it is a little big…
 where else could you be from?”
 
 [[Think]]
 ]]
-</tw-passagedata><tw-passagedata pid="57" name="Think" tags="rubellite" position="900,3425" size="100,100">You’re not entirely sure what you should say.(set: $child_notes to $child_notes + (ds:3))
+</tw-passagedata><tw-passagedata pid="56" name="Think" tags="rubellite" position="900,3425" size="100,100">You’re not entirely sure what you should say.(set: $child_notes to $child_notes + (ds:3))
 
 |1&gt;[Should you reveal where you’re really from?]
 (click: ?1)[
@@ -952,12 +1010,12 @@ where else could you be from?”
 (click: ?3)[
 Maybe this wasn’t your choice to make, they were still too young to understand.
 
-[[“That’s not important.”]]
+[[&quot;That’s not important.”]]
 
-[[“Don’t worry about it, it’s not that important, I promise.”]]
+[[&quot;Don’t worry about it, it’s not that important, I promise.”]]
 
-[[“It’s not important, alright? Enough questions.”-&gt;next stage]]
-]]]</tw-passagedata><tw-passagedata pid="58" name="“That’s not important.”" tags="rubellite" position="900,3550" size="100,100">{(set: $calm to $calm+1)}“I don’t know…it seems kinda important…
+[[&quot;It’s not important, alright? Enough questions.”-&gt;next stage]]
+]]]</tw-passagedata><tw-passagedata pid="57" name="&quot;That’s not important.”" tags="rubellite" position="900,3550" size="100,100">{(set: $calm to $calm+1)}&quot;I don’t know…it seems kinda important…
 Did you come from outside?
 Did The Guard bring you here?
 Why weren’t you inside the walls?
@@ -968,12 +1026,12 @@ You wondered if this is what you looked like in the alleyway.
 
 (link: &quot;The Guard...&quot;)[|1&gt;[&#39;Is //he// the guard of this place?&#39;]
 (click: ?1)[
-[[“Please calm down, you are asking too many questions.”]]
+[[&quot;Please calm down, you are asking too many questions.”]]
 
-[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
+[[&quot;It’s okay, please calm down, I’m sorry for scaring you.”]]
 
-[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”-&gt;next stage]]
-]]</tw-passagedata><tw-passagedata pid="59" name="“Don’t worry about it, it’s not that important, I promise.”" tags="rubellite" position="1025,3550" size="100,100">{(set: $kind to $kind+1)}“I don’t know…it seems kinda important…
+[[&quot;Alright, you need to calm down, no more questions. You’re only freaking yourself out!”-&gt;next stage]]
+]]</tw-passagedata><tw-passagedata pid="58" name="&quot;Don’t worry about it, it’s not that important, I promise.”" tags="rubellite" position="1025,3550" size="100,100">{(set: $kind to $kind+1)}&quot;I don’t know…it seems kinda important…
 Did you come from outside?
 Did The Guard bring you here?
 Why weren’t you inside the walls?
@@ -984,15 +1042,15 @@ You wondered if this is what you looked like in the alleyway.
 
 (link: &quot;The Guard...&quot;)[|1&gt;[&#39;Is //he// the guard of this place?&#39;]
 (click: ?1)[
-[[“Please calm down, you are asking too many questions.”]]
+[[&quot;Please calm down, you are asking too many questions.”]]
 
-[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
+[[&quot;It’s okay, please calm down, I’m sorry for scaring you.”]]
 
-[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”-&gt;next stage]]
-]]</tw-passagedata><tw-passagedata pid="60" name="“It’s okay, please calm down, I’m sorry for scaring you.”" tags="rubellite" position="1025,3675" size="100,100">“I should go home, mom is probably waiting for me.
+[[&quot;Alright, you need to calm down, no more questions. You’re only freaking yourself out!”-&gt;next stage]]
+]]</tw-passagedata><tw-passagedata pid="59" name="&quot;It’s okay, please calm down, I’m sorry for scaring you.”" tags="rubellite" position="1025,3675" size="100,100">&quot;I should go home, mom is probably waiting for me.
 I shouldn’t talk to you,
 mom says if I talk to strangers,
-I’ll see &#39;&#39;//HER//&#39;&#39; in my closet tonight. I’m going…”
+I’ll see &#39;&#39;//HER//&#39;&#39; in my closet tonight. I’m going…”(set: $her_notes to $her_notes + (ds:0))
 
 The loud child’s voice quickly fell to a soft whisper,
 and you watched as they turned and ran.
@@ -1002,12 +1060,12 @@ but the kid was gone before you could even question it.
 
 You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
 
-[[Anyway, you need to move on-&gt;moveon]]</tw-passagedata><tw-passagedata pid="61" name="next stage" tags="rubellite" position="750,3625" size="100,100">//Your stern voice wakes them up from their spiral,
+[[Anyway, you need to move on-&gt;moveon]]</tw-passagedata><tw-passagedata pid="60" name="next stage" tags="rubellite" position="750,3625" size="100,100">//Your stern voice wakes them up from their spiral,
 and they look at you with serious eyes.//(set: $child_notes to $child_notes + (ds:5))
 
-“You’re right,”
+&quot;You’re right,”
 they say, clearly trying to seem more mature than they really are.
-“It’s not important, and you don’t seem that scary…
+&quot;It’s not important, and you don’t seem that scary…
 I’m sure I won’t see|1&gt;[&#39;&#39; //HER//&#39;&#39;] in my closet just because I talked to you…”(set: $her_notes to $her_notes + (ds:0))
 
 (click: ?1)[&quot;I won’t hurt you, I promise.
@@ -1020,11 +1078,11 @@ but you make sure to keep a hint of sternness in your words.
 
 Oh, &#39;&#39;Then //he// is the guard of this place.&#39;&#39;(set:$guard_identity to &quot;The Guard&quot;)(set:$meet_guard to 3)
 
-[[“Can you tell me where I need to go to find this HER?”]]
-]</tw-passagedata><tw-passagedata pid="62" name="“Please calm down, you are asking too many questions.”" tags="rubellite" position="900,3675" size="100,100">“I should go home, mom is probably waiting for me.
+[[&quot;Can you tell me where I need to go to find this HER?”]]
+]</tw-passagedata><tw-passagedata pid="61" name="&quot;Please calm down, you are asking too many questions.”" tags="rubellite" position="900,3675" size="100,100">&quot;I should go home, mom is probably waiting for me.
 I shouldn’t talk to you,
 mom says if I talk to strangers,
-I’ll see &#39;&#39;//HER//&#39;&#39; in my closet tonight. I’m going…”
+I’ll see &#39;&#39;//HER//&#39;&#39; in my closet tonight. I’m going…”(set: $her_notes to $her_notes + (ds:0))
 
 The loud child’s voice quickly fell to a soft whisper,
 and you watched as they turned and ran.
@@ -1034,7 +1092,7 @@ but the kid was gone before you could even question it.
 
 You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
 
-[[Anyway, you need to move on-&gt;moveon]]</tw-passagedata><tw-passagedata pid="63" name="“Can you tell me where I need to go to find this HER?”" tags="rubellite" position="775,3750" size="100,100">Uhm…
+[[Anyway, you need to move on-&gt;moveon]]</tw-passagedata><tw-passagedata pid="62" name="&quot;Can you tell me where I need to go to find this HER?”" tags="rubellite" position="775,3750" size="100,100">Uhm…
 Well, if you just head straight that way,
 you’ll get to the main part of the city,
 you know, where everyone is.
@@ -1043,10 +1101,10 @@ You’ll probably find something there…”
 You can tell the child is still a little confused and stressed.
 It’s probably time for you to leave.
 
-|1&gt;[“Thank you, I’ll try that.Enjoy the rest of your game.”]
+|1&gt;[&quot;Thank you, I’ll try that.Enjoy the rest of your game.”]
 
 (click: ?1)[They don’t look at you as you leave, but you understand why. Regardless, it’s time for the [[next part of your journey-&gt;Heading to heart of the city]].
-]</tw-passagedata><tw-passagedata pid="64" name="Heading to heart of the city" tags="rubellite" position="825,3900" size="100,100">You head straight through the streets as the child told you.
+]</tw-passagedata><tw-passagedata pid="63" name="Heading to heart of the city" tags="rubellite" position="825,3900" size="100,100">You head straight through the streets as the child told you.(set:$location to &quot;Street&quot;)
 
 It is the first time you are |1&gt;[left alone] since you got into that alleyway.
 
@@ -1062,7 +1120,7 @@ The whole newspaper is better than that out-of-context piece you picked up earli
 
 [[Take one]]
 ]]
-</tw-passagedata><tw-passagedata pid="65" name="Take one" tags="rubellite" position="825,4025" size="100,100">{
+</tw-passagedata><tw-passagedata pid="64" name="Take one" tags="rubellite" position="825,4025" size="100,100">{
 (set: $newspapers to $newspapers +(ds:3))
 }Even the local newspapers look differently.
 You see the same red colours and bright pictures on the pages.
@@ -1084,7 +1142,21 @@ His figure stands out too much in the crowd of regular citizens.
 You need to catch up to him before he can vanish again.
 
 [[Run to The Guard]]
-]]]</tw-passagedata><tw-passagedata pid="66" name="Run to The Guard" tags="rubellite" position="825,4150" size="100,100"></tw-passagedata><tw-passagedata pid="67" name="moveon" tags="rubellite" position="975,3900" size="100,100">You wander around.
+]]]</tw-passagedata><tw-passagedata pid="65" name="Run to The Guard" tags="rubellite" position="700,4100" size="100,100">{
+(set:$speaking to &quot;guard_nomask_half.png&quot;)
+}|1&gt;[&quot;Hey! Are you–?!”]
+
+(click:?1)[&quot;You again? I thought I’d sent you on your way already.”
+The guard turns to look at you, with the same irritated expression as earlier.
+
+This time, however, he isn’t wearing his mask.
+You feel yourself pause, not quite prepared for the sudden revealing of his face.(set:$meet_guard to 4)
+
+You almost miss his mask, though,
+as his anger is even more clear on his face now. 
+
+You notice the bag of food in his arms,
+and you start to realise [[how hungry you actually are]].]</tw-passagedata><tw-passagedata pid="66" name="moveon" tags="rubellite" position="975,3900" size="100,100">You wander around.
 
 This city is much more difficult to navigate through,
 compared to your home in Dumor.
@@ -1103,7 +1175,7 @@ You notice a newspaper holder on one of the sidewalks.
 The whole newspaper is better than that out-of-context piece you picked up earlier.
 
 [[Take one-&gt;Take one 2]]
-]]]</tw-passagedata><tw-passagedata pid="68" name="Take one 2" tags="rubellite" position="975,4025" size="100,100">{
+]]]</tw-passagedata><tw-passagedata pid="67" name="Take one 2" tags="rubellite" position="975,4025" size="100,100">{
 (set: $newspapers to $newspapers +(ds:3))
 }Even the local newspapers look differently.
 You see the same red colours and bright pictures on the pages.
@@ -1124,8 +1196,8 @@ you see the only person who can clarify something for you and help you come back
 His figure stands out too much in the crowd of regular citizens.
 You need to catch up to him before he can vanish again.
 
-[[Run to him]]
-]]]</tw-passagedata><tw-passagedata pid="69" name="Run to him" tags="rubellite" position="975,4150" size="100,100"></tw-passagedata><tw-passagedata pid="70" name="woman" tags="no_sidebar" position="250,350" size="100,100">Name: ???
+[[Run to him-&gt;Run to The Guard]]
+]]]</tw-passagedata><tw-passagedata pid="68" name="Run to him" tags="rubellite" position="975,4150" size="100,100"></tw-passagedata><tw-passagedata pid="69" name="woman" tags="no_sidebar" position="250,350" size="100,100">Name: ???
 
 Identity: Elderly Woman
 
@@ -1138,7 +1210,1396 @@ Notes:
 (if: $woman_notes contains 5)[	- Questions and emotional responses seem to encourage her to go on tangents, now you know less than you’d hoped about the world]
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata></tw-storydata>
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="70" name="at palace" tags="rubellite" position="625,7275" size="100,100">The inside of the large palace easily takes your breath away.
+
+The walls seem to go up forever,
+and are covered in various paintings.
+
+You aren’t given much time to admire your surroundings,
+as you hear a voice break through your trance.
+
+&quot;Hello, you must be the Dumorian I was told of?
+Please come with me, she is waiting for you.”
+
+The stranger stands in front of you, waiting for you to move.
+
+You can hear your blood thrumming in your ears – you’re finally meeting HER… 
+
+[[Take a deep breath and move to follow them]]
+</tw-passagedata><tw-passagedata pid="71" name="Take a deep breath and move to follow them" tags="rubellite" position="625,7400" size="100,100">You walk through the echoing corridors.
+You would definitely get lost here on your own.
+
+It was a good idea to send someone who would accompany you.
+This HER seems to be very thoughtful and perhaps even calculating…
+
+Dull lighting scatters, 
+creating a sense of mystery that is about to be revealed.
+
+Are you ready?
+
+It seems that your uncertain steps match your heartbeats.
+You wonder if the stranger can hear it.
+
+As sudden as it was before, they stop in front of [[one of the doors]].</tw-passagedata><tw-passagedata pid="72" name="one of the doors" tags="rubellite" position="625,7525" size="100,100">Now at the last obstacle between you and HER.
+
+The person who brought you here has already gone on their way.
+
+All that’s left to do is open the door.
+
+You |1&gt;[take a deep breath], before you finally make your decision.
+(click: ?1)[
+[[Open the door]]
+[[Don’t open the door]]
+]</tw-passagedata><tw-passagedata pid="73" name="Don’t open the door" tags="rubellite" position="750,7650" size="100,100">&quot;Now come on…
+
+You&#39;ve come this far, you can’t be afraid.”
+
+[[Open the door]]
+(text-color: #db7073)[&#39;&#39;~~Don’t open the door~~&#39;&#39;]</tw-passagedata><tw-passagedata pid="74" name="Open the door" tags="rubellite" position="625,7650" size="100,100">The door opens quietly.
+
+(link:&quot;Step into the bright office&quot;)[It takes a moment for your eyes to adjust to the change in lighting.
+When they do, you notice how different the inside of the room is from the rest of the palace. 
+
+While the rest of the building was covered in various shades of red,
+this room is drowning in comforting blues not unlike those of your home.
+
+There’s a black, wooden desk placed in the middle.
+You can see various plants scattered everywhere.
+
+To your left, there’s a navy blue sofa with light blue pillows,
+which remind you of the ones at your workplace.
+
+You wonder how this person could have possibly gotten one of her own.
+[[Navigate]]
+]</tw-passagedata><tw-passagedata pid="75" name="Navigate" tags="rubellite" position="625,7775" size="100,100">Your eyes follow along the dark blue walls,
+seeing several different art pieces full of a mix of red and blue shades.
+
+As you reach the far wall, you finally see the tall bookshelves,
+and the //person// standing in front of them.
+
+You’re not sure if they haven’t yet noticed you,
+or if they’re choosing not to acknowledge you.
+
+But regardless it sends [[a shiver down your spine]].
+</tw-passagedata><tw-passagedata pid="76" name="a shiver down your spine" tags="rubellite" position="625,7900" size="100,100">&lt;img src=&quot;image/her.png&quot;, width=&quot;550px&quot; height=&quot;600px&quot;&gt;
+The person is incredibly tall in stature,
+but you feel their aura is more intimidating.(set:$speaking to &quot;her_half.png&quot;)
+
+[[You’re not even sure if you’re allowed to speak.]]</tw-passagedata><tw-passagedata pid="77" name="You’re not even sure if you’re allowed to speak." tags="rubellite" position="625,8025" size="100,100">The silence slowly becomes deafening.(set:$her_notes to $her_notes+(ds:6))
+
+The figure seems to be looking for something on the shelves,
+their strong fingers gliding across the spines of the unfamiliar books.
+
+Their dark, curly hair is casually sitting on their shoulders,
+and you wonder how someone who looks so normal could feel so frightening at the same time.
+
+You were quickly understanding why the loud child was so afraid of HER,
+if that’s who was in front of you.
+
+And yet you can’t help but remember the Elderly Woman’s words,
+how she spoke fondly of her, [[without a hint of fear]].
+</tw-passagedata><tw-passagedata pid="78" name="without a hint of fear" tags="rubellite" position="625,8150" size="100,100">Before you could follow that thread,
+though,
+a firm voice floods the room.
+
+Your eyes widen.
+Every one of your senses pause as you hear,
+
+&quot;So, how long were you planning on not announcing your presence?
+Staring is a little creepy, you know.”
+
+Her words are laced with amusement.
+You can see a small smirk on her face as she turns to [[face you]].</tw-passagedata><tw-passagedata pid="79" name="face you" tags="rubellite" position="625,8275" size="100,100">(set:$meet_her to 2)Her dark eyes seem to see right through you.
+You’re not quite sure if you were at all ready for this.
+
+Maybe you should have stayed at the shop a little longer,
+or talked to Xavier more.
+
+You didn’t have nearly enough time to prepare to come face to face with such a strong presence.
+
+&quot;Do they not teach you how to speak over in Dumor anymore?
+Goodness, is there something on my face?”
+
+Her hand reaches up to brush nothing off her face,
+amusement still dancing in her eyes.
+
+&quot;You are the one who crossed the bridge last night, aren’t you?
+I’m HER, if you’ve heard of me from my people.”
+
+She smiles, and it completely contrasts her intimidating aura,
+which only further confuses you.
+
+[[&quot;Yes, I am&quot;]]
+
+[[&quot;And how do you know that?”]]
+
+[[&quot;I am, did the people who brought me here tell you?&quot;]]</tw-passagedata><tw-passagedata pid="80" name="&quot;Yes, I am&quot;" tags="rubellite" position="625,8400" size="100,100">{
+(set:$calm to $calm+1)
+}&quot;Ah, so you do speak, and you certainly sound like a Dumorian.”
+
+You can hear a hint of disappointment in her voice,
+You wonder if maybe she was hoping that you sounded different.
+
+What was so wrong about how you were?
+This felt safe, like something you knew.
+
+&quot;I can’t help but wish my city could have changed you.”
+
+[[&quot;&quot;How do you know what the people of Dumor are like?&quot;]]</tw-passagedata><tw-passagedata pid="81" name="&quot;And how do you know that?”" tags="rubellite" position="750,8400" size="100,100">{
+(set:$angry to $angry+1)
+}&quot;Hey now, there’s no need for all that.
+It seems my city has already changed you.”
+
+Pride is evident in her voice,
+but the wording makes you feel a little defensive.
+
+What does she mean by ‘//changed you?//’
+What was so different about you?
+
+&quot;To answer your question, you speak with a lot more emotion.
+Trust me, I know what Dumorians sound like.”
+
+[[&quot;&quot;How do you know what the people of Dumor are like?&quot;]]</tw-passagedata><tw-passagedata pid="82" name="&quot;I am, did the people who brought me here tell you?&quot;" tags="rubellite" position="500,8400" size="100,100">{
+(set:$kind to $kind+1)
+}&quot;Well, I certainly wasn’t expecting that reaction.
+It seems my city has already changed you.”
+
+Pride is evident in her voice.
+It fills you with your own sense of pride.
+
+You do feel different now,
+so much so that you almost don&#39;t recognise the version of you before you crossed the bridge.
+
+&quot;You speak with a lot more emotion now.
+Trust me, I know what Dumorians are like.”
+
+[[&quot;&quot;How do you know what the people of Dumor are like?&quot;]]</tw-passagedata><tw-passagedata pid="83" name="&quot;&quot;How do you know what the people of Dumor are like?&quot;" tags="rubellite" position="625,8525" size="100,100">Your confusion bleeds through your voice,
+and it mixes with a sense of curiosity.
+
+How does she know so much?
+Did she learn it from past travellers?
+Does it come with being a leader?
+
+&quot;Hm, I’m not quite sure if I should reveal my secrets so soon.
+This seems fun!”
+
+You thought you were hearing things when she |1&gt;[giggled].
+
+(click: ?1)[//Giggled. //
+The big bad scary HER is giggling?
+Because she thinks being mysterious is //fun//?
+
+[[&quot;You’re having fun?”]]
+]</tw-passagedata><tw-passagedata pid="84" name="&quot;You’re having fun?”" tags="rubellite" position="625,8650" size="100,100">&quot;Of course!
+No one ever comes to visit my office, it&#39;s so boring here.
+I couldn’t even find a book to read,
+I’ve read them all probably three times.
+Come, sit, let’s talk about your time here in the city of Rubellite.”
+
+She sits on the blue sofa,
+pats the spot next to her,
+looking up at you expectantly.
+
+She spoke so quickly you were barely able to comprehend any of her words.(set:$her_notes to $her_notes+(ds:7))
+
+Part of you was hesitant to move closer.
+
+[[Sit next to her]]
+
+[[Stay where you are]]
+</tw-passagedata><tw-passagedata pid="85" name="Stay where you are" tags="rubellite" position="750,8725" size="100,100">&quot;Come on! I swear I don’t bite.”
+
+You can hear a pout in her voice.
+You realise exactly what the Elderly Woman meant when she said this woman was still a child at heart.
+
+&quot;If you want to stay there, feel free, but I wouldn’t want you to be uncomfortable.
+I’m sure you’re tired…”
+
+[[Sit next to her]]</tw-passagedata><tw-passagedata pid="86" name="Sit next to her" tags="rubellite" position="625,8775" size="100,100">You step closer,
+your overwhelming curiosity taking over any fear you felt.
+
+Once you’re sat on the–admittedly comfy–couch,
+you see bright excitement pooling in her eyes.
+
+&quot;This is so exciting!
+None of the guards ever speak to me, and I can hardly go outside.
+Everyone’s either scared of me, or respects me too much just to hang out!”
+
+You can see a childlike glee in her eyes,(set:$her_notes to $her_notes+(ds:8))
+and [[her words]] still seem to barrel past her lips at a speed you’re not used to.</tw-passagedata><tw-passagedata pid="87" name="her words" tags="rubellite" position="625,8900" size="100,100">After her encouragement, you start to explain the day you’ve had.
+
+You start by recounting your first choice to enter the alleyway.
+You make your way down the path of conversations you had with some locals.
+
+At times, the woman next to you would jump in,
+but throughout your entire speech,
+you can see her brown eyes nearly shaking in excitement. 
+
+When you get to the end of your story,
+you turn back to look at her.
+
+You see her leaning back on the sofa.
+Her eyes are focused on the light blue ceiling,
+and you can see a soft smile on her face.
+
+She seems happy, peaceful,
+entirely [[unlike the scary version of her you built up in your head]].</tw-passagedata><tw-passagedata pid="88" name="unlike the scary version of her you built up in your head" tags="rubellite" position="625,9025" size="100,100">&quot;Isn’t the city just wonderful?
+I love it so dearly. Sometimes I wonder what it’d be like if I never came here,
+but I know I’d choose Rubellite every time.”
+
+You stop in confusion at her words, wondering if maybe you’d misheard her.
+
+|1&gt;[&quot;If you…never came here?”]
+
+(click:?1)[&quot;Ah…it seems I’m not very good at being mysterious, huh?”
+
+She chuckles lightly and sits up again, focusing her eyes back on your own.
+
+&quot;You’ve heard lots about me from my people, haven’t you?
+The feared and respected leader of Rubellite who would do anything for her people.”
+
+[[&quot;Well…yes. I was told you were called Her Exalted Regency.”]]
+]</tw-passagedata><tw-passagedata pid="89" name="&quot;Well…yes. I was told you were called Her Exalted Regency.”" tags="rubellite" position="625,9150" size="100,100">&quot;Yes, well, my real name is //Ametrine//.”(set:$her_name to &quot;Ametrine&quot;)
+
+Her voice is hesitant,
+and you admire how quickly she transitioned from childlike to serious.(set:$her_notes to $her_notes+(ds:9))
+
+Your breath hitches at the reveal of her true name.
+
+//Ametrine.//
+
+It reminds you of home, in some way.
+
+Could it be…
+
+[[&quot;It sounds…”]]
+</tw-passagedata><tw-passagedata pid="90" name="&quot;It sounds…”" tags="rubellite" position="625,9275" size="100,100">&quot;Dumorian? Well, I am from there, so it makes sense.”
+
+Amusement fills her eyes again,
+and yet your breath is still stuck in your throat.
+
+She’s from Dumor?
+
+Like you are?
+
+&quot;I’m sensing some tension from you right now…”
+
+[[&quot;No shit! What do you mean you’re from Dumor? How? Why are you here?”]]
+
+[[&quot;I’m just confused. Why would you choose here over home?”]]
+
+[[&quot;I just…I don’t understand…Why are you here?”]]</tw-passagedata><tw-passagedata pid="91" name="&quot;No shit! What do you mean you’re from Dumor? How? Why are you here?”" tags="" position="625,9400" size="100,100">(set:$angry to $angry +1)
+(go-to:&quot;no&quot;)</tw-passagedata><tw-passagedata pid="92" name="&quot;I just…I don’t understand…Why are you here?”" tags="" position="750,9400" size="100,100">(set:$kind to $kind+1)
+(go-to:&quot;no&quot;)</tw-passagedata><tw-passagedata pid="93" name="&quot;I’m just confused. Why would you choose here over home?”" tags="" position="500,9400" size="100,100">(set:$calm to $calm +1)
+(go-to:&quot;no&quot;)</tw-passagedata><tw-passagedata pid="94" name="no" tags="rubellite" position="625,9525" size="100,100">&quot;I’ll explain, I promise.
+But first, you’re probably curious about the two cities, right?
+I’m sure you had no idea Rubellite existed before today, am I correct?”
+
+When you nod your head, she smiles lightly before continuing.
+
+&quot;I know you’ve heard a bit about Rubellite while you’ve been here,
+and I’m almost positive you know enough about Dumor.
+But you have more questions, don’t you?”
+
+She looks at you expectantly,
+and you feel the question fall past your lips before you can hesitate.
+
+[[&quot;Why did the cities split?”]]</tw-passagedata><tw-passagedata pid="95" name="&quot;Why did the cities split?”" tags="rubellite" position="625,9650" size="100,100">&quot;There it is.”
+
+She says quietly, her smile growing wider.
+
+You don’t understand why your question makes her so happy,
+but you just feel relieved that you’ll finally know everything about the world.
+
+&quot;This is going to be a long story, just to warn you.
+Once I get started I struggle to stop.
+So…I’m afraid there’s no going back.”
+
+[[Listen]]
+
+(cycling-link: &quot;Don&#39;t listen&quot;, &quot;Come on, it&#39;s now already&quot;, &quot;See how far have you been&quot;, &quot;YOU SURE YOU DON&#39;T WANT TO LISTEN?&quot;)</tw-passagedata><tw-passagedata pid="96" name="Listen" tags="rubellite" position="625,9775" size="100,100">&quot;Perfect, I’ll start from the beginning, alright?”
+
+You nod once, feeling a mixture of fear and excitement.
+
+However,
+you’re not given any time to actually prepare yourself before she begins telling her own story.
+
+&quot;I’ll start before The Split.
+I know you’ve heard of it vaguely, but Dumor and Rubellite used to be one country.
+
+It was way before I was even born, and before my parents were born.
+I don’t actually know what it was like at that point,
+but I imagine it was a nice balance between our two worlds.
+
+Back then, the country was united under a royal family, which had [[twin heirs]].</tw-passagedata><tw-passagedata pid="97" name="twin heirs" tags="rubellite" position="625,9900" size="100,100">The one twin, //Azure//,
+was known to be very calculated and serious,
+and always followed a predetermined script.
+
+They never strayed from the path set out for them,
+so they spent every waking moment preparing to lead the country.
+
+The other twin, //Rowan//,
+was known to be carefree and passionate,
+and was so full of emotions and curiosity.
+
+It was impossible to comprehend the two were related, let alone twins.
+
+When Azure used plain words,
+Rowan spoke colourfully.
+When Azure kept their emotions in check,
+Rowan expressed themselves freely.
+
+They were complete opposites, and so they [[disliked each other]].</tw-passagedata><tw-passagedata pid="98" name="disliked each other" tags="rubellite" position="625,10025" size="100,100">They irritated each other endlessly,
+and both twins were aware they’d never be able to lead the country together.
+
+Rowan didn’t even want to be a leader to start with,
+but if they had to, they would do it without Azure.
+
+When their parents passed unexpectedly,
+they were left with the kingdom and very little instructions.
+
+They hadn’t even had time to make plans on how they’d lead.
+
+At first, they attempted to compromise,
+to include a little bit of both of them in their world.
+
+But they would quickly realise this would be impossible.
+
+[[Their values and wants for the country were far too different]].</tw-passagedata><tw-passagedata pid="99" name="Their values and wants for the country were far too different" tags="rubellite" position="625,10150" size="100,100">That’s how &#39;&#39;//The Split//&#39;&#39; happened.
+
+They couldn’t lead together,
+so they tore the country apart into two separate worlds that reflected their leaders.
+
+The blue world, your home, was named //Dumor//,
+and was seemingly programmed to follow exact scripts written by Azure.
+They always took leading very seriously,
+and promptly dealt with individuals who strayed from the path written for them.
+
+The red world, however, collapsed soon after The Split.
+Rowan was never built to lead,
+and they realised quickly that doing so without the help of their twin would not be as easy as they hoped.
+They had felt so overwhelmed with everything that they left.
+[[They disappeared]].</tw-passagedata><tw-passagedata pid="100" name="They disappeared" tags="rubellite" position="625,10275" size="100,100">Before The Split officially happened,
+the people were asked to choose where they would go.
+
+A majority of them followed Azure,
+but those who had chosen Rowan would soon regret it.
+
+After their leader abandoned them,
+they were left homeless, stuck in the middle.
+
+Azure had made sure that no one from the outside would be able to enter Dumor,
+and that no one could leave either.
+
+They’d built tall walls around the perimeter of the city,
+powered by technology they created.
+
+The programming kept the doors locked shut,
+and built a forcefield around the entire city.
+
+Sometimes, however, the programming glitches.
+A&#39;&#39;//‘bridge’//&#39;&#39; is created to connect to the outside of the walls.&quot;
+
+[[&quot;......&quot;]]
+</tw-passagedata><tw-passagedata pid="101" name="&quot;......&quot;" tags="rubellite" position="625,10400" size="100,100">&quot;This is where I came in!
+In Dumor they didn’t even tell the new generations that there was anything outside.
+If you were caught speaking or even thinking about the outside,
+you’d be dealt with.
+
+Regardless, I always felt like something was missing.
+I wasn’t sure what, but I never spoke on it in fear of what would happen to me.
+
+One day, I was walking home from school,
+on the exact same path I assume you were following.
+That day, the bridge had opened, and I was convinced it was a sign from the universe.
+
+I believed that this bridge was proof that there was something else,
+something out there that I was missing.
+
+So, without hesitation, I crossed the bridge into the unknown.&quot;
+
+[[&quot;......&quot;-&gt;next]]</tw-passagedata><tw-passagedata pid="102" name="next" tags="rubellite" position="625,10525" size="100,100">{
+(set:$question to (ds:))
+}&quot;When I got here, it was still abandoned,
+and there were packs of people scattered around everywhere.
+
+It had been quite a few years since The Split,
+so any saved up stocks of food and other necessities had run dry.
+
+I knew I had to do something.
+And that’s how //Rubellite// was born.”(set:$her_notes to $her_notes+(ds:10))
+
+You take a moment to breathe,
+trying to comprehend everything you just heard.
+
+You’d never known your leader had a twin.
+You hadn’t even known there was an entire other world.
+
+You weren’t sure how you felt about any of it yet,
+but you needed to [[know more]].
+</tw-passagedata><tw-passagedata pid="103" name="know more" tags="rubellite" position="625,10650" size="100,100">[[&quot;Do you ever regret leaving?”]]
+
+[[&quot;Did you like it in Dumor?”]]
+
+[[&quot;Why did you leave?”]]
+
+[[&quot;How do you feel about Azure?”]]
+
+[[&quot;How do you feel about Rowan?”]]
+(if: $question contains 1)[
+[[&quot;Family?”-&gt;family]]
+]
+
+(if:$question contains 1 and 2 and 3 and 4 and 5 and 6)[
+[[You’d run out of questions]]]</tw-passagedata><tw-passagedata pid="104" name="&quot;Do you ever regret leaving?”" tags="rubellite" position="500,10775" size="100,100">{
+(set:$question to $question + (ds:1))
+}&quot;Sometimes, yes, I think so.
+Maybe a little.
+
+Being a leader can be exhausting,
+and I do miss how easy it was.
+
+You never had to think,
+because someone else thought for you.
+
+And I miss my family.”
+
+[[&quot;......&quot;-&gt;know more]]</tw-passagedata><tw-passagedata pid="105" name="&quot;Did you like it in Dumor?”" tags="rubellite" position="625,10775" size="100,100">{
+(set:$question to $question + (ds:2))
+}&quot;At times, sure.
+
+I mean, it was my home for the first 12 years of my life,
+so of course I liked it to some extent.
+
+I do know I enjoyed going to school and learning,
+but I do wish I learned more.
+
+I didn’t have many friends,
+but, well, I don’t have many friends here either.”
+
+[[&quot;......&quot;-&gt;know more]]</tw-passagedata><tw-passagedata pid="106" name="&quot;Why did you leave?”" tags="rubellite" position="750,10775" size="100,100">{
+(set:$question to $question + (ds:3))
+}&quot;Easy just isn’t for me, really.
+
+It was nice at times, but I like the challenge.
+
+Some people aren’t built for that, though, I know.”
+
+[[&quot;......&quot;-&gt;know more]]</tw-passagedata><tw-passagedata pid="107" name="&quot;How do you feel about Azure?”" tags="rubellite" position="500,10900" size="100,100">{
+(set:$question to $question + (ds:4))
+}&quot;Well, that’s certainly a loaded question.
+I have plenty of opinions on that person.
+
+They make me angry, because they didn’t let me reach my full potential.
+
+But I know they care deeply for their people,
+that they believe they’re doing the right thing.
+
+As a leader, I can’t blame them for that.”
+
+[[&quot;......&quot;-&gt;know more]]</tw-passagedata><tw-passagedata pid="108" name="&quot;How do you feel about Rowan?”" tags="rubellite" position="625,10900" size="100,100">{
+(set:$question to $question + (ds:5))
+}&quot;While I understand that not everyone is built for leading,
+I can’t help but resent them.
+
+They shouldn’t have brought people to their side if they were going to abandon them.
+
+I’ll never forget the state my people were in when I first arrived,
+it still makes me sick to this day.”
+
+[[&quot;......&quot;-&gt;know more]]</tw-passagedata><tw-passagedata pid="109" name="family" tags="rubellite" position="750,10900" size="100,100">{
+(set:$question to $question + (ds:6))
+}&quot;Yes, I know, the big scary HER has a family.
+Well, at least I think I do.
+Did. I hope…
+
+Sorry, I’m rambling, I don’t often have the opportunity to talk about my Dumor life.”
+
+|1&gt;[&quot;It’s alright. You can go on.”]
+
+(click:?1)[&quot;I’ve been here so long, I don’t remember much of my life back there.
+
+I can picture an older sister, but I can’t tell if they’re real.
+Sometimes I like to picture my mother whenever I need someone to talk to.
+
+Wow…
+that sounds a lot more sad when I say it out loud,
+my bad.”
+
+[[&quot;......&quot;-&gt;know more]]]</tw-passagedata><tw-passagedata pid="110" name="You’d run out of questions" tags="rubellite" position="625,11025" size="100,100">You weren’t sure if you felt entirely satisfied.
+You knew there was more to learn,
+but it was impossible to know everything after one conversation.
+
+You also didn’t know if you wanted to learn more…
+
+Maybe it would be easier just to go home and forget any of this ever happened.
+But would you be able to forget it?
+
+[[Your normal life would be enough, wouldn&#39;t it?]]</tw-passagedata><tw-passagedata pid="111" name="Your normal life would be enough, wouldn&#39;t it?" tags="rubellite" position="625,11150" size="100,100">&quot;There’s plenty more to learn about this world,
+but I understand this is a //choice// you must make.”
+
+Ametrine’s voice startles you out of your thoughts.
+You look towards her.
+
+(link:&quot;Choice?&quot;)[Will you have to make a choice?
+
+&quot;The bridge will reopen in a week’s time.
+
+You can stay in the palace until then, and return home,
+if you’d like to.
+We’ll take good care of you, and make sure you get back home safely.”
+
+You wait with bated breath,
+your curiosity nearly overwhelming you.
+
+(link:&quot;What was the other option?&quot;)[&quot;Or,”
+she continues,
+&quot;you can stay here.”
+
+[[&quot;Stay?&quot;]]
+]]</tw-passagedata><tw-passagedata pid="112" name="&quot;Stay?&quot;" tags="rubellite" position="625,11275" size="100,100">&quot;Yes.
+
+You can become a citizen of Rubellite.
+
+Make a new home, a new life.
+
+Leave Dumor behind,
+and continue changing and being changed.
+
+What do you say?”
+
+You turn your eyes to the floor, |1&gt;[the two choices] swimming around in your head.
+
+(click:?1)[Of all the decisions you made today, this seems like the most important.
+You can’t make it too easily, you have to think.
+
+Do you want safety or excitement?
+
+Home or mystery?
+
+Your old life or a new one?(set: $speaking to &quot;empty.png&quot;)
+
+[[The choice is up to you]].
+(No save and load chance ahead)
+]</tw-passagedata><tw-passagedata pid="113" name="The choice is up to you" tags="rubellite no_sidebar" position="625,11400" size="100,100">
+
+
+
+
+
+
+
+
+
+
+(text-size:1.3)[(t8n: &quot;fade&quot;)+(transition-time: 3s)[&#39;&#39;[[Go home.-&gt;dumor ending]]&#39;&#39;]
+
+(after:1s)[(t8n: &quot;fade&quot;)+(transition-time: 3s)[&#39;&#39;[[Make a new home.-&gt;rubellite ending]]&#39;&#39;]]]
+</tw-passagedata><tw-passagedata pid="114" name="rubellite ending" tags="rubellite no_sidebar" position="700,11525" size="100,100">
+
+
+
+
+
+
+
+
+&quot;I’m so glad!
+I really hope you enjoy it here, let’s go!”
+
+[[Go with her-&gt;ending2]]</tw-passagedata><tw-passagedata pid="115" name="dumor ending" tags="rubellite no_sidebar" position="550,11525" size="100,100">
+
+
+
+
+
+
+
+&quot;I understand,
+though part of me wishes my city could have changed you.
+We’ll get you set up in a room to stay in for the week, let’s go.”
+
+[[Go with her-&gt;ending1]]</tw-passagedata><tw-passagedata pid="116" name="ending1" tags="rubellite no_sidebar" position="550,11650" size="100,100">(t8n: &quot;fade&quot;)+(transition-time: 3s)[Now it&#39;s time to go home.
+You feel overwhelmed after talking to Ametrine.
+She almost shattered your idea of what constitutes your familiar reality,
+and there is a relief of coming back to it.]
+
+(after:2s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[&quot;Though part of me wishes my city could have changed you...”
+Ametrene&#39;s voice suddenly echoes in your ears.]
+
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[Apparently, all of this wasn&#39;t enough to change you.
+Is it good or bad?]
+
+(after:6s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[&#39;&#39;[[Will you miss Rubellite?]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="117" name="ending2" tags="rubellite no_sidebar" position="700,11650" size="100,100">(t8n: &quot;fade&quot;)+(transition-time: 3s)[Now you have to start your life from scratch in the Rubellite.
+It is scary, but somewhere deep inside,
+you know that it will be worth it.]
+
+(after:2s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[Maybe Ametrine was right,
+this city has already changed you…
+Change doesn&#39;t necessarily mean something bad.
+You can ascertain it after such a long journey.
+Change means discoveries and possibilities.]
+
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[New adventures and unexpected turns await you,
+especially now that all pieces of the broken puzzle have come together.]
+
+(after:6s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[&#39;&#39;[[Will you miss Dumor?]]&#39;&#39;]
+
+</tw-passagedata><tw-passagedata pid="118" name="Will you miss Dumor?" tags="rubellite no_sidebar" position="700,11775" size="100,100">(t8n: &quot;fade&quot;)+(transition-time: 3s)[You will miss Dumor, that&#39;s for sure,
+just like Ametrine does sometimes.]
+
+(after:2s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[At the same time, you know that,
+after learning how right it feels to manage your own life,
+make decisions and mistakes
+–have emotions, for Goodness sake!–
+you can&#39;t just come back and pretend that nothing happened.
+It wouldn&#39;t feel right.]
+
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[After all, who knows,
+maybe there is still a chance that the two worlds would become one again…
+But that’s something to think about later.]
+
+(after:6s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[&#39;&#39;[[You&#39;ve got plenty of time.]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="119" name="You&#39;ve got plenty of time." tags="rubellite no_sidebar" position="700,11900" size="100,100">
+
+
+
+
+
+
+
+
+
+(t8n: &quot;fade&quot;)+(transition-time: 3s)[Welcome to your new home.]
+
+(after:3s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)+(text-size:1.3)[Welcome to &#39;&#39;Rubellite.&#39;&#39;]
+
+
+
+
+(after:5s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[
+[[Continue]]]</tw-passagedata><tw-passagedata pid="120" name="Will you miss Rubellite?" tags="dumor no_sidebar" position="550,11775" size="100,100">(t8n: &quot;fade&quot;)+(transition-time: 3s)[Will you miss it,
+its red colours and chaotic order?]
+
+(after:2s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[You don&#39;t know.
+Time will show.]
+
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[After all, who knows,
+maybe there is still a chance that the two worlds would become one again…
+But that’s something to think about later.]
+
+(after:6s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[&#39;&#39;[[You&#39;ve got plenty of time.-&gt;endingd]]&#39;&#39;]</tw-passagedata><tw-passagedata pid="121" name="endingd" tags="dumor no_sidebar" position="550,11900" size="100,100">
+
+
+
+
+
+
+
+
+
+(t8n: &quot;fade&quot;)+(transition-time: 3s)[Welcome back home.]
+
+(after:3s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[(text-size:1.3)[Welcome to &#39;&#39;Dumor.&#39;&#39;]]
+
+
+
+
+(after:5s)+(t8n: &quot;fade&quot;)+(transition-time: 2s)[
+[[Continue]]]</tw-passagedata><tw-passagedata pid="122" name="Continue" tags="no_sidebar" position="625,12075" size="100,100">{
+(set: _max to (max:$calm, $angry, $kind))
+
+(if:$calm is $angry and $calm is $kind)[
+	(set:$type to &quot;Balanced Soul&quot;)
+] (else-if:$calm is $kind)[
+	(set:$type to &quot;True Dumorian&quot;)
+] (else-if:$calm is $angry)[
+	(set:$type to &quot;Quiet Sun&quot;)
+] (else-if:$angry is $kind)[
+	(set:$type to &quot;Balanced Soul&quot;)
+] (else:)[
+	(if:_max is $angry)[
+    	(set:$type to &quot;Rubel Red&quot;)
+    ] (else-if:_max is $calm)[
+    	(set:$type to &quot;True Dumorian&quot;)
+    ] (else-if:_max is $kind)[
+    	(set:$type to &quot;Tender Spirit&quot;)
+    ]
+]}Your Personality Type is:
+
+
+
+
+|1&gt;[$type]{
+(click-goto:?1, &quot;type&quot;)
+}</tw-passagedata><tw-passagedata pid="123" name="type" tags="" position="625,12200" size="100,100">(if:$type is &quot;Rubel Red&quot;)[(go-to:&quot;red&quot;)]
+(if:$type is &quot;Quiet Sun&quot;)[(go-to:&quot;sun&quot;)]
+(if:$type is &quot;True Dumorian&quot;)[(go-to:&quot;true&quot;)]
+(if:$type is &quot;Gentle Moon&quot;)[(go-to:&quot;moon&quot;)]
+(if:$type is &quot;Tender Spirit&quot;)[(go-to:&quot;spirit&quot;)]
+(if:$type is &quot;Balanced Soul&quot;)[(go-to:&quot;soul&quot;)]</tw-passagedata><tw-passagedata pid="124" name="&quot;Fine, I understand.”" tags="rubellite" position="825,4275" size="100,100">{
+(set:$calm to $calm+1)
+}&quot;Well, that was certainly easy.
+You haven’t changed much, huh?”
+
+He smirks, but he doesn’t seem all that amused.
+
+You feel slightly confused at his words–
+
+[[Why would you have changed?-&gt;guard leave]]</tw-passagedata><tw-passagedata pid="125" name="&quot;Come on, you can’t even share a crumb? I don’t know where to get food!”" tags="rubellite" position="950,4275" size="100,100">{
+(set:$anger to $anger+1)
+}&quot;You’ve barely been here a few hours,
+and you’re already so different.
+I’m almost proud despite the fact that you’re trying to steal my food right now.
+
+You can see a hint of amusement dancing in his eyes,
+and it only [[makes the anger in your veins burn brighter-&gt;guard leave]].</tw-passagedata><tw-passagedata pid="126" name="&quot;Okay, could you tell me where to get food? Except…I don’t have any money here…”" tags="rubellite" position="700,4275" size="100,100">{
+(set:$kind to $kind+1)
+}&quot;You’re not even gonna try to take my food?
+Interesting…you seem different from when we met in the alleyway.
+Rubellite’s treating you kindly I gather?”
+
+It’s the first time you see something other than anger or irritation in his eyes.
+
+You’re not sure you understand how you’ve changed,
+but you feel almost proud of yourself.
+
+[[Maybe the change is a good thing?-&gt;guard leave]]</tw-passagedata><tw-passagedata pid="127" name="guard leave" tags="rubellite" position="825,4400" size="100,100">{
+(set:$question_g to (ds:))
+}&quot;Alright, well, it was lovely seeing you again, but I really need to–”
+
+|1&gt;[&quot;Wait!” ]
+
+(click:?1)[You speak before thinking,
+not wanting him to leave you there stranded.
+
+You needed to know where to go, what to do.
+Maybe he’d give you |2&gt;[the answers] you needed about this unfamiliar world.
+
+(click:?2)[&quot;You really are persistent, aren’t you? 
+What do you want?!”
+
+He sounds exasperated, but you can’t bring yourself to care.
+
+[[This is your chance.]]
+]]</tw-passagedata><tw-passagedata pid="128" name="This is your chance." tags="rubellite" position="825,4525" size="100,100">[[&quot;Who exactly is HER?]]
+
+[[&quot;What is this world?”]]
+
+[[&quot;What do you do in the alleyway?”]]
+
+[[&quot;The child I spoke to earlier mentioned you, how do they know you?”]]
+
+(if:$question_g contains 1 and 2 and 3 and 4)[(go-to:&quot;guard continue&quot;)]</tw-passagedata><tw-passagedata pid="129" name="&quot;Who exactly is HER?" tags="rubellite" position="750,4650" size="100,100">{
+(set:$question_g to $question_g+(ds:1))
+(set:$guard_note to $guard_note+(ds:6))
+}&quot;She’s the leader of Rubellite,
+//Her Exalted Regency//.
+
+Get it?
+
+H E R.
+
+I honestly don’t know much about her other than that,
+but I don’t really need to.
+I know I can trust her.
+
+No one’s really seen her face,
+and I know a lot of people are scared of her.
+I’ve never really understood why,
+but to each their own, I suppose.”
+
+[[&quot;......&quot;-&gt;This is your chance.]]</tw-passagedata><tw-passagedata pid="130" name="&quot;What is this world?”" tags="rubellite" position="900,4650" size="100,100">{
+(set:$question_g to $question_g+(ds:2))
+}&quot;I already told you, you’re in&#39;&#39; Rubellite&#39;&#39; now.
+
+I still don’t really understand how you people get here,
+or why you come here.
+But you’re here, so whatever.
+
+I personally believe our worlds are kept separate for a reason,
+so I never questioned it.”
+
+[[&quot;......&quot;-&gt;This is your chance.]]</tw-passagedata><tw-passagedata pid="131" name="&quot;What do you do in the alleyway?”" tags="rubellite" position="750,4775" size="100,100">{
+(set:$question_g to $question_g+(ds:3))
+(set:$guard_note to $guard_note+(ds:7))
+(set:$guard_note to $guard_note+(ds:8))
+}&quot;I mostly spend my time there making sure no one crosses the bridge,
+but as you can see,
+I’m not the best at that job.(set:$guard_identity to &quot;The Guard&quot;)
+
+I live nearby,
+and there are some stray animals there that I take care of. 
+
+...Don’t look at me like that, it’s weird.”
+
+[[&quot;......&quot;-&gt;This is your chance.]]</tw-passagedata><tw-passagedata pid="132" name="&quot;The child I spoke to earlier mentioned you, how do they know you?”" tags="rubellite" position="900,4775" size="100,100">{
+(set:$question_g to $question_g+(ds:4))
+(set:$guard_note to $guard_note+(ds:9))
+}&quot;Ah, the ones that play ball together?
+
+I play with them sometimes.
+I’m not the best at refusing them…
+
+It’s fun, but they tend to play for way too long…”
+
+[[&quot;......&quot;-&gt;This is your chance.]]</tw-passagedata><tw-passagedata pid="133" name="guard continue" tags="rubellite" position="825,4900" size="100,100">&quot;So is this all you needed from me?”
+
+He looks like he knows you want more information,
+but he’s not happy about it.
+
+[[&quot;Are you ever going to tell me who you are? I don’t even know your name!”]]
+
+[[&quot;Could you tell me what I’m supposed to be doing at this time?”]]
+
+[[&quot;You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”]]</tw-passagedata><tw-passagedata pid="134" name="&quot;Are you ever going to tell me who you are? I don’t even know your name!”" tags="rubellite" position="825,5025" size="100,100">{
+(set:$angry to $angry + 1)
+}&quot;As if I’ll tell you.”
+
+You see his eyes burning with irritation,
+but you still don’t back down.
+
+In fact, it only encourages you to continue further.
+Why does this guard act so entitled?
+
+&quot;Why is my name even important to you?
+Just go to the shop down the street,
+and I’ll tell HER people to meet you there.”
+
+|1&gt;[&quot;And how will I know if I’m going with the right people?&quot;]
+
+(click:?1)[|2&gt;[&quot;What if I end up following some random people?”]
+
+(click:?2)[Your voice starts rising as your eyes narrow.
+Your patience was quickly [[running thin]].]]</tw-passagedata><tw-passagedata pid="135" name="&quot;Could you tell me what I’m supposed to be doing at this time?”" tags="rubellite" position="950,5025" size="100,100">{
+(set:$kind to $kind+1)
+}He looks almost confused at your words,
+as if he wasn’t at all expecting your kindness.
+
+&quot;Yeah…I’ll tell them to meet you at the shop down the street.
+I trust you’ll find your way there.
+You can tell them that //Xavier// sent you.”
+
+You smile lightly, surprised by the reveal of his name.(set:$guard_name to &quot;Xavier&quot;)
+You hadn’t really thought about it that much,
+but you were happy that he trusted you enough to tell you.
+
+[[&quot;Your name is Xavier?”]]
+</tw-passagedata><tw-passagedata pid="136" name="&quot;You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”" tags="rubellite" position="700,5025" size="100,100">{
+(set:$calm to $calm+1)
+}&quot;You can’t do anything on your own, can you.”
+
+He rolls his eyes at you,
+and you can’t help but wonder how he was so expressive.
+
+&quot;I’ll get some people to meet you at the shop down the street, alright?
+Just tell them //Xavier// sent you.”
+
+You hadn’t expected him to reveal his name so soon.
+
+[[&quot;Xavier?” ]]</tw-passagedata><tw-passagedata pid="137" name="running thin" tags="rubellite" position="825,5150" size="100,100">&quot;I feel like that’s more of a you problem.
+You can’t even prevent your own kidnapping?”
+
+He rolls his eyes and turns to leave again,
+but you’re quick to speak again.
+
+|1&gt;[&quot;Is it really such a big deal for you? It’s just a name!”]
+
+(click:?1)[&quot;//Xavier//!
+It’s Xavier, alright.
+Happy now? You’re so annoying.”(set:$guard_name to &quot;Xavier&quot;)
+
+His [[anger]] is clear on his face,
+and you wonder if you looked similar to him right now.]
+</tw-passagedata><tw-passagedata pid="138" name="anger" tags="rubellite" position="825,5275" size="100,100">Despite getting his name, you still don’t feel satisfied.
+
+You want to know more about this random stranger.
+Maybe it’ll help you understand what was going on,
+or where you even were.
+
+You are tired of being kept in the dark.
+
+(text-color:#db7073)[~~&quot;Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”~~]
+
+[[&quot;Why are you so damn angry? It’s pissing me off.]]
+
+(text-color:#db7073)[~~&quot;Why are you so angry?”~~]</tw-passagedata><tw-passagedata pid="139" name="&quot;Why are you so damn angry? It’s pissing me off." tags="rubellite" position="825,5400" size="100,100">&quot;You ask a lot of questions, don’t you?
+I don’t need to explain myself to you,
+and I certainly don’t want to after this conversation.”
+His eyes challenge you to continue speaking, to continue the argument over nothing.
+
+|1&gt;[&quot;Fine! Be like that, I do not care. I’ll let the people know that the //lovely Xavier// sent me.”]
+
+(click:?1)[As you turn to go, Xavier throws a small paper bag at you,
+and you barely manage to catch it.
+
+You look down at it in confusion,
+and notice a //soggy cracker// inside it.
+
+A soggy cracker.
+
+Of all the food he had, all he could muster up was a wet cracker.(set:$guard_note to $guard_note+(ds:10))
+
+You make sure to send him one last mean look before you finally turn to leave,
+going towards the [[next part of your journey]].]</tw-passagedata><tw-passagedata pid="140" name="next part of your journey" tags="rubellite" position="825,5525" size="100,100">{
+(set:$speaking to &quot;empty.png&quot;)
+(set:$guard_note to $guard_note+(ds:5))
+}It seems like you’re not the one to make choices here.
+
+You have to follow The Guard&#39;s instructions and go to the shop to see what happens next.
+
+You pass a couple of blocks before you notice a signboard.
+You push the door and hear the bell ringing.
+
+The shop is almost empty at this hour.
+
+You look at the coloured walls and notice a vacant table in the corner.
+Something lies on its surface.
+You come closer.
+
+Now you can see that it is another //newspaper//.
+
+[[Pick it up-&gt;pick]]</tw-passagedata><tw-passagedata pid="141" name="&quot;Xavier?” " tags="rubellite" position="700,5150" size="100,100">&quot;Yeah, surprise!(set:$guard_name to &quot;Xavier&quot;)
+I have a name. Now is that all you needed?
+This conversation is getting incredibly boring.”
+
+Your eyes widen slightly,
+not quite understanding why he was so bored, or angry.
+
+(text-color:#db7073)[~~&quot;Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”~~]
+
+(text-color:#db7073)[~~&quot;Why are you so damn angry? It’s pissing me off.&quot;~~]
+
+[[&quot;Why are you so angry?”]]</tw-passagedata><tw-passagedata pid="142" name="&quot;Why are you so angry?”" tags="rubellite" position="700,5275" size="100,100">&quot;I don’t really think I need to explain myself to you.”
+He raises an eyebrow at your question,
+and makes no move to continue speaking.
+
+|1&gt;[&quot;I’m only curious.”]
+
+(click:?1)[&quot;Yeah, well, you can be curious all you’d like.
+Maybe if you weren’t so //robotic//,
+I’d tell you about my// totally exciting past//.”
+
+The sarcasm is clear in his voice, but you can’t quite catch onto it.
+
+So he has a past? And it’s exciting?(set:$guard_note to $guard_note+(ds:3))
+That sounds…scary…
+
+[[&quot;Robotic?”]]
+]</tw-passagedata><tw-passagedata pid="143" name="&quot;Robotic?”" tags="rubellite" position="700,5400" size="100,100">&quot;Wow, I’ll never get over that.
+You sound just like you did in that alleyway.”
+
+He tosses an //apple// at you,
+and you just barely manage to catch it.
+
+An apple isn’t much, but it’s certainly better than nothing.(set:$guard_note to $guard_note+(ds:11))
+
+&quot;I’m tired of this, so just take the apple and head down the street, alright?
+You’ll be picked up from there.”
+
+After one last glance at Xavier,
+you turn to leave,
+heading to your [[next destination-&gt;next part of your journey]].
+</tw-passagedata><tw-passagedata pid="144" name="&quot;Your name is Xavier?”" tags="rubellite" position="950,5150" size="100,100">&quot;Yeah, so you don’t need to call me The Guard or whatever you were referring to me as.
+Now, I really should go.
+Good luck on your journey.”
+
+As he turns to leave, you feel a push to ask another question.
+
+[[&quot;Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”]]
+
+(text-color:#db7073)[~~&quot;Why are you so damn angry? It’s pissing me off.&quot;~~]
+
+(text-color:#db7073)[~~&quot;Why are you so angry?”~~]</tw-passagedata><tw-passagedata pid="145" name="&quot;Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”" tags="rubellite" position="1075,5225" size="100,100">&quot;Huh…well now I feel compelled to explain myself to you.
+Is this some sort of manipulation tactic they teach in Dumor?
+&#39;&#39;//I’m not fallin’ for it again.//&#39;&#39;”
+
+|1&gt;[&quot;Again?”]
+
+(click:?1)[&quot;Yeah, again. Someone just like you did the same thing.
+They crossed the bridge, showed me some kindness,
+then left.
+They made me think they’d changed,
+and then they still chose Dumor over me.
+So really, I cannot do this shit again.”(set:$guard_note to $guard_note+(ds:4))
+
+[[&quot;Who were they? They sound…&quot;]]
+]</tw-passagedata><tw-passagedata pid="146" name="&quot;Who were they? They sound…&quot;" tags="rubellite" position="950,5275" size="100,100">You’re not quite sure what to say.
+You feel bad for pushing for information,
+but your curiosity feels as though it is burning you.
+
+&quot;They’re not important.
+I fell for the wrong person, and I faced the consequences.”
+
+He pauses before looking at you seriously.
+
+&quot;Now, that does not mean I’m falling for you.
+Don’t get any ideas.”
+
+[[“I didn’t even say anything!”]]</tw-passagedata><tw-passagedata pid="147" name="“I didn’t even say anything!”" tags="rubellite" position="950,5400" size="100,100">He chuckles, and it makes you feel a little proud of yourself.
+Maybe you could have a friend in this unfamiliar place.
+
+“Alright, this is getting way too vulnerable,
+I need to go before I spill all my deep secrets.
+Here, I bought an //extra sandwich//, you can take it.”
+
+He hands you a sandwich in a bag, and turns to leave after offering a hesitant smile.(set:$guard_note to $guard_note+(ds:12))
+
+|1&gt;[“Thank you, maybe we can hang out again.”]
+
+(click:?1)[“I wouldn’t count on that.”
+
+And with that, you turn to leave, heading to the [[next part of your journey]].
+]</tw-passagedata><tw-passagedata pid="148" name="pick" tags="rubellite" position="825,5650" size="100,100">{
+(set:$location to &quot;Shop&quot;)
+(set: $newspapers to $newspapers +(ds:4))
+}You sit at the table, still holding the newspaper in your hands.
+They are slightly trembling, almost like the wings of a butterfly.
+
+You feel nervous.
+These HER people seem to know what to do.
+They should help you.
+
+But do you really want to get this help…?
+[[All you can do for now is think and wait.]]</tw-passagedata><tw-passagedata pid="149" name="All you can do for now is think and wait." tags="rubellite" position="825,5775" size="100,100">{
+(set:$meet_woman to 1)
+(set:$woman_notes to (ds:))
+}You end up staring out the window as you wait,
+inspecting the people that pass by.
+
+The buildings outside are eerily similar to your home,
+but they still feel different.
+
+A I startles you out of your thoughts,
+and you just barely hear what it says.(set:$woman_notes to $woman_notes+(ds:0))
+
+“Is anyone sitting here, dear?”
+
+(link:&quot;Look up&quot;)[You see an elderly woman pointing towards the chair across from you.
+You’re confused as to why she’d choose here of all the empty spots in the shop,
+but you nod anyway.
+
+[[It’d be rude to refuse.]]]</tw-passagedata><tw-passagedata pid="150" name="It’d be rude to refuse." tags="rubellite" position="825,5900" size="100,100">“Thank you, sweetheart.(set:$meet_woman to 1)
+Something told me I needed to talk to you, and I never deny the universe!
+This gut feeling of mine is what got me a nice home in the City of Rubellite.”
+
+She smiles kindly at you as she settles down in the chair.
+Your eyes widen a bit at her words.
+What could she mean by that?
+
+[[“The universe? Really? You’re trusting the universe?&quot;]]
+
+[[“How does one deny the universe? What does that mean?”]]
+
+[[“The universe? How do you know what the universe is telling you?”]]</tw-passagedata><tw-passagedata pid="151" name="“The universe? Really? You’re trusting the universe?&quot;" tags="rubellite" position="825,6025" size="100,100">{
+(set:$angry to $angry+1)
+}“You kids are all the same.
+Have some faith, will you?”
+
+Her smile is still kind despite your harsh words.
+
+The unconditional kindness from the woman confuses you.
+Everything in this city confuses you.
+
+“You don’t look like you’re from here, you must be from Dumor, then?”
+
+[[“You know about Dumor?”]]</tw-passagedata><tw-passagedata pid="152" name="“How does one deny the universe? What does that mean?”" tags="rubellite" position="950,6025" size="100,100">{
+(set:$calm to $calm+1)
+}“Ah, you must be from over there, then.
+Dumor.
+I’ve heard lots about it.”
+
+Her smile is still kind, which confuses you.
+Everything in this city confuses you.
+People here are too emotional.
+
+[[“You know about Dumor?”]]</tw-passagedata><tw-passagedata pid="153" name="“The universe? How do you know what the universe is telling you?”" tags="rubellite" position="700,6025" size="100,100">{
+(set:$kind to $kiind+1)
+}“Maybe I’ll teach you how to listen.”
+
+Her smile is still kind, which makes you feel warm.
+
+You don’t understand anything about this world,
+but the unconditional kindness from the woman comforts you.
+
+“You don’t look like you’re from here, you must be from Dumor, then?”
+
+[[“You know about Dumor?”]]</tw-passagedata><tw-passagedata pid="154" name="“You know about Dumor?”" tags="rubellite" position="825,6150" size="100,100">“Why, of course I do!
+You know, back in my day, there was //no Dumor and Rubellite.//”(set:$woman_notes to $woman_notes+(ds:1))(set:$woman_notes to $woman_notes+(ds:2))
+
+Her smile widened as she stared off into space.
+
+You weren’t entirely sure what she was doing,
+but you didn’t spend much time thinking about it.
+You were too busy wondering what she meant by ‘no Dumor and Rubellite.’
+
+Your confusion must be clear on your face,
+so when the woman turns back to you, she laughs.
+
+“I suppose I should explain, hm? I’ll tell you a little.”
+
+[[Listen-&gt;listen to her]]
+
+[[“Will this take long? I’m supposed to meet someone here.”]]
+
+[[“I’m supposed to meet someone, but I can listen until then.”]]</tw-passagedata><tw-passagedata pid="155" name="listen to her" tags="rubellite" position="650,6275" size="100,100">{
+(set:$calm to $calm+1)
+(set:$woman_notes to $woman_notes+(ds:4))
+(set:$her_notes to $her_notes+(ds:1))
+}“I’m quite old, so my memory is not all there anymore, I’m afraid.
+But that also means that I was here during //The Split.//
+
+We used to be &#39;&#39;one country&#39;&#39;!
+It was nice back then, but I don’t really remember the specifics.
+
+Then one day, everything changed.
+There were suddenly two separate worlds, both completely different from each other.
+
+I remember the universe told me to come to this place,
+and every day I am glad I listened.
+
+It wasn’t always good, in fact it was pretty awful at the beginning.
+I remember that I often wished the worlds hadn’t split, that we were still united.
+
+It was so difficult trying to get by, and after a few years we were slowly running out of food and water.
+
+But luckily, we were saved by HER.
+
+[[&quot;......&quot;-&gt;lady1]]</tw-passagedata><tw-passagedata pid="156" name="lady1" tags="rubellite" position="650,6400" size="100,100">She was only twelve when we met, but she was already so mature.
+
+She’s the one who built our beautiful city.
+
+I know a lot of people are rather afraid of her,
+but I know she’s still a child at heart.(set:$her_notes to $her_notes+(ds:2))(set:$her_notes to $her_notes+(ds:3))
+
+She grew up so quickly, and it shows sometimes in the way she interacts with others.
+
+I could never be afraid of her, not really. She’s so–”
+
+|1&gt;[Creak--]
+
+(click:?1)[The woman’s voice is cut off by the door opening.
+It distracts her and she turns to look at the new visitors.
+
+There’s two of them, both dressed in black cargo pants, and dark jackets.(set:$her_notes to $her_notes+(ds:4))(set:$her_notes to $her_notes+(ds:5))
+
+[[Are they coming for you?]]]</tw-passagedata><tw-passagedata pid="157" name="“I’m supposed to meet someone, but I can listen until then.”" tags="" position="825,6275" size="100,100">
+(set:$kind to $kind+1)
+(go-to:&quot;lady2&quot;)</tw-passagedata><tw-passagedata pid="158" name="“Will this take long? I’m supposed to meet someone here.”" tags="" position="950,6275" size="100,100">
+(set:$angry to $angry+1)
+(go-to:&quot;lady2&quot;)</tw-passagedata><tw-passagedata pid="159" name="lady2" tags="rubellite" position="900,6400" size="100,100">“Oh! You’re meeting someone? Who is it?”
+
+She quickly changes the subject,(set:$woman_notes to $woman_notes+(ds:3))
+and you feel yourself become curious about what she was originally going to tell you.
+
+[[“I’m meeting some people under…HER? That’s what I’ve been told.”]]
+
+[[“Is that really important?”]]
+
+[[“I’m not exactly sure who, but…are you meeting someone too?”]]</tw-passagedata><tw-passagedata pid="160" name="“I’m meeting some people under…HER? That’s what I’ve been told.”" tags="rubellite" position="900,6525" size="100,100">{
+(set:$calm to $calm+1)
+}“Oh! You’re meeting with HER people?
+Speaking of HER, let me tell you about the time before The Split.”
+
+[[Listen-&gt;listen to her]]</tw-passagedata><tw-passagedata pid="161" name="“Is that really important?”" tags="rubellite" position="1025,6525" size="100,100">{
+(set:$angry to $angry+1)
+}“Well, I suppose not really, but I’m curious!”
+
+You notice how she goes off topic again,
+and you wonder if your questions are confusing her.
+
+Maybe you can try to get her back on track?
+
+|1&gt;[“Alright, well, I don’t know who they are exactly, but I was told they were HER people.”]
+
+(click:?1)[“Oh! You’re meeting with HER people?
+Speaking of HER, let me tell you about the time before The Split.”
+
+[[Listen-&gt;listen to her]]]</tw-passagedata><tw-passagedata pid="162" name="“I’m not exactly sure who, but…are you meeting someone too?”" tags="rubellite" position="775,6525" size="100,100">{
+(set:$kind to $kiind+1)
+}“Oh, I’m not meeting anyone.
+I just like to sit here sometimes, it’s a lot nicer than staying at home.”
+
+You notice how she goes off topic again,
+and you wonder if your questions are confusing her.
+
+Maybe you can try to get her back on track?
+
+|1&gt;[“Alright, well, I don’t know who they are exactly, but I was told they were HER people.”]
+
+(click:?1)[“Oh! You’re meeting with HER people?
+Speaking of HER, let me tell you about the time before The Split.”
+
+[[Listen-&gt;listen to her]]]</tw-passagedata><tw-passagedata pid="163" name="Are they coming for you?" tags="rubellite" position="650,6525" size="100,100">The two individuals look around the inside of the shop until their eyes land on you.
+Without hesitation, they walk closer to you and the elderly woman,
+and you feel a rush of anxiety fill your veins.
+
+Are these the people you were waiting for?
+
+Once the two of them get to your table, they speak firmly.
+
+“Are you the one from Dumor?”
+
+You look back at them and nod, feeling your heartbeat pick up.
+
+[[“Are you the people Xavier sent?”]]</tw-passagedata><tw-passagedata pid="164" name="“Are you the people Xavier sent?”" tags="rubellite" position="650,6650" size="100,100">“Yes, we’ll take you to the palace to speak with HER.
+Please come with us.”
+
+The one speaking nods at the woman across from you,
+and takes a step back to give you space to stand.
+
+After saying your goodbyes to the elderly woman,
+you turn to leave with the two strangers.(set:$location to &quot;Way to the Palace&quot;)
+
+[[Next stop would be the palace]].</tw-passagedata><tw-passagedata pid="165" name="Next stop would be the palace" tags="rubellite" position="650,6775" size="100,100">The road to the palace is short enough but exhausting.
+No one speaks to you, and the silence feels tense.
+
+What is HER like?
+What is she going to say?
+What are you supposed to say?
+
+It is hard to stop guessing, but you need to get a hold of yourself.
+[[You are both tired and excited.]]</tw-passagedata><tw-passagedata pid="166" name="You are both tired and excited." tags="rubellite" position="650,6900" size="100,100">For the millionth time today, you study your surroundings.
+Not a lot changes as the same rubel red and similar buildings follow you everywhere.
+
+Something different catches your eye though,
+and you see into the skyline to have a better look.
+
+There is a prominent tall building that you approach so quickly.
+It’s nothing like what you&#39;ve seen before.
+The palace must be spectacular.
+It looks majestic.
+Is it what HER is like, too?..
+
+Your thoughts are interrupted as your silent companions suddenly stop.
+You stumble clumsily and almost fall down.
+
+You feel embarrassed but your clumsiness is rewarded when you notice a //newspaper//.
+
+[[Pick it up-&gt;pick5]]</tw-passagedata><tw-passagedata pid="167" name="pick5" tags="rubellite" position="650,7025" size="100,100">{
+(set: $newspapers to $newspapers +(ds:5))
+}You straighten up to notice that you all stand in front of the heavy doors,
+and everyone is waiting for you.
+
+One of your guides opens the door for you without saying a word.
+You shiver and step forward.(set:$location to &quot;Palace&quot;)
+
+[[Get inside the palace-&gt;at palace]]</tw-passagedata><tw-passagedata pid="168" name="how hungry you actually are" tags="rubellite" position="825,4150" size="100,100">He notices your eyes focused on his food and holds the bag closer to him.(set:$guard_note to $guard_note+(ds:2))
+
+&quot;Hey, this is mine alright. Go get your own food, alright?”
+
+You can hear how defensive he is in his voice,
+and it causes you to step back.
+
+Getting into a fight over food with the guard is probably not a smart decision.
+
+[[&quot;Fine, I understand.”]]
+
+[[&quot;Come on, you can’t even share a crumb? I don’t know where to get food!”]]
+
+[[&quot;Okay, could you tell me where to get food? Except…I don’t have any money here…”]]</tw-passagedata><tw-passagedata pid="169" name="red" tags="no_sidebar" position="300,12350" size="100,100">(text-size:1.3)[&#39;&#39;Rubel Red&#39;&#39;]
+
+
+You are quick to anger regardless of the situation.
+You find comfort in your anger, and struggle to exist without it.
+You may also believe that being kind is a weakness.
+You are good at speaking up for yourself, and will never let people walk all over you.
+Many others wish they had your strength.
+
+
+&#39;&#39;In-game characters with the same type&#39;&#39;:
+//The Guard (Xavier)//, the one you met in the alleyway.
+
+
+&#39;&#39;Compatibility with other types:&#39;&#39;
+Your red hot personality goes perfectly with others of the same type, or with &#39;&#39;Quiet Suns&#39;&#39;.
+&#39;&#39;True Dumorians&#39;&#39; and &#39;&#39;Gentle Moons&#39;&#39; often frustrate you,
+but Tender Spirits can be good to bring you calm.
+
+
+(link-goto:&quot;Go back to Main Menu&quot;, &quot;menu&quot;)</tw-passagedata><tw-passagedata pid="170" name="sun" tags="no_sidebar" position="425,12350" size="100,100">(text-size:1.3)[&#39;&#39;Quiet Sun&#39;&#39;]
+
+
+You have an even mix of anger and calm within you, similar to that of the sun.
+At times you are warm and gentle, but at other times you burn bright with anger.
+You are able to stand up for yourself, but you do not allow yourself to drown in your anger.
+
+
+&#39;&#39;In-game characters with the same type&#39;&#39;:
+//The Loud Child//, you met them when you first entered Rubellite.
+
+
+&#39;&#39;Compatibility with other types:&#39;&#39;
+You work best with &#39;&#39;Tender Spirits&#39;&#39; and&#39;&#39; Gentle Moons&#39;&#39;, as their kind personality can bring out your warm side.
+Being around &#39;&#39;Rubel Reds&#39;&#39; tends to make your sun burn up, which may not always be a good thing.
+
+
+(link-goto:&quot;Go back to Main Menu&quot;, &quot;menu&quot;)</tw-passagedata><tw-passagedata pid="171" name="true" tags="no_sidebar" position="550,12350" size="100,100">(text-size:1.3)[&#39;&#39;True Dumorian&#39;&#39;]
+
+
+You are the type of person meant to live in Dumor.
+You often feel calm and neutral even in situations of distress.
+You very rarely express any type of emotions if ever.
+
+
+&#39;&#39;In-game characters with the same type&#39;&#39;:
+//Azure//, the leader of Dumor.
+
+
+&#39;&#39;Compatibility with other types:&#39;&#39;
+You tend to only mix well with other &#39;&#39;True Dumorians&#39;&#39;.
+
+
+(link-goto:&quot;Go back to Main Menu&quot;, &quot;menu&quot;)</tw-passagedata><tw-passagedata pid="172" name="moon" tags="no_sidebar" position="675,12350" size="100,100">(text-size:1.3)[&#39;&#39;Gentle Moon&#39;&#39;]
+
+
+You have an even mix of calm and kind within you.
+You are rather timid in some cases, and you avoid conflicts when possible.
+Your presence is similar to that of the waves the Moon pushes and pulls, something peaceful and calming.
+
+
+&#39;&#39;In-game characters with the same type&#39;&#39;:
+//HER (Ametrine)//, the leader of Rubellite.
+
+
+&#39;&#39;Compatibility with other types:&#39;&#39;
+You work best with &#39;&#39;Tender Spirits&#39;&#39; or &#39;&#39;Quiet Suns,&#39;&#39; both of which bring out your peaceful and nurturing sides.
+Your gentle personality does not mix well with &#39;&#39;Rubel Red&#39;&#39;’s, as their anger can overwhelm or stress you out.
+
+
+(link-goto:&quot;Go back to Main Menu&quot;, &quot;menu&quot;)</tw-passagedata><tw-passagedata pid="173" name="spirit" tags="no_sidebar" position="800,12350" size="100,100">(text-size:1.3)[&#39;&#39;Tender Spirit&#39;&#39;]
+
+
+You have a kind spirit that prioritises the well-being of others.
+You approach conflict with a level-headed and understanding attitude.
+You are good at comforting others, and are a very reliable friend.
+
+
+&#39;&#39;In-game characters with the same type&#39;&#39;:
+//The Elderly Woman//, you met her at the shop.
+
+
+&#39;&#39;Compatibility with other types:&#39;&#39;
+Your tender spirit works well with others of the same type, as well as&#39;&#39; Gentle Moons&#39;&#39; and &#39;&#39;Quiet Suns&#39;&#39;.
+At times, your spirit can be good for &#39;&#39;Rubel Reds&#39;&#39;, but you shouldn’t surround yourself with them.
+
+
+(link-goto:&quot;Go back to Main Menu&quot;, &quot;menu&quot;)</tw-passagedata><tw-passagedata pid="174" name="soul" tags="no_sidebar" position="925,12350" size="100,100">(text-size:1.3)[&#39;&#39;Balanced Soul&#39;&#39;]
+
+
+You are a perfect balance.
+You are comfortable expressing a variety of emotions depending on the situation.
+You know when to be angry, or to be kind, or calm, and how to use those emotions for your own benefit.
+
+
+&#39;&#39;In-game characters with the same type&#39;&#39;:
+//Rowan//, the failed leader of Rubellite.
+
+
+&#39;&#39;Compatibility with other types:&#39;&#39;
+The balance in your soul allows you to mix well with any other type.
+
+
+(link-goto:&quot;Go back to Main Menu&quot;, &quot;menu&quot;)</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

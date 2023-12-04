@@ -1,10 +1,10 @@
 :: StoryTitle
-beta
+beta 1
 
 
 :: StoryData
 {
-  "ifid": "f22c44bf-7636-4559-8966-59e066b1193c",
+  "ifid": "613f1607-2fce-453f-8cd6-2225d3cebb04",
   "format": "Harlowe",
   "format-version": "3.3.7",
   "start": "Notice",
@@ -70,36 +70,303 @@ Kind: $kind
 Back (click-undo: "Back")
 
 
+:: ""How do you know what the people of Dumor are like?" [rubellite] {"position":"625,8525","size":"100,100"}
+Your confusion bleeds through your voice,
+and it mixes with a sense of curiosity.
+
+How does she know so much?
+Did she learn it from past travellers?
+Does it come with being a leader?
+
+"Hm, I’m not quite sure if I should reveal my secrets so soon.
+This seems fun!”
+
+You thought you were hearing things when she |1>[giggled].
+
+(click: ?1)[//Giggled. //
+The big bad scary HER is giggling?
+Because she thinks being mysterious is //fun//?
+
+[["You’re having fun?”]]
+]
+
+
+:: "......" [rubellite] {"position":"625,10400","size":"100,100"}
+"This is where I came in!
+In Dumor they didn’t even tell the new generations that there was anything outside.
+If you were caught speaking or even thinking about the outside,
+you’d be dealt with.
+
+Regardless, I always felt like something was missing.
+I wasn’t sure what, but I never spoke on it in fear of what would happen to me.
+
+One day, I was walking home from school,
+on the exact same path I assume you were following.
+That day, the bridge had opened, and I was convinced it was a sign from the universe.
+
+I believed that this bridge was proof that there was something else,
+something out there that I was missing.
+
+So, without hesitation, I crossed the bridge into the unknown."
+
+[["......"->next]]
+
+
+:: "And how do you know that?” [rubellite] {"position":"750,8400","size":"100,100"}
+{
+(set:$angry to $angry+1)
+}"Hey now, there’s no need for all that.
+It seems my city has already changed you.”
+
+Pride is evident in her voice,
+but the wording makes you feel a little defensive.
+
+What does she mean by ‘//changed you?//’
+What was so different about you?
+
+"To answer your question, you speak with a lot more emotion.
+Trust me, I know what Dumorians sound like.”
+
+[[""How do you know what the people of Dumor are like?"]]
+
+
+:: "Are you ever going to tell me who you are? I don’t even know your name!” [rubellite] {"position":"825,5025","size":"100,100"}
+{
+(set:$angry to $angry + 1)
+}"As if I’ll tell you.”
+
+You see his eyes burning with irritation,
+but you still don’t back down.
+
+In fact, it only encourages you to continue further.
+Why does this guard act so entitled?
+
+"Why is my name even important to you?
+Just go to the shop down the street,
+and I’ll tell HER people to meet you there.”
+
+|1>["And how will I know if I’m going with the right people?"]
+
+(click:?1)[|2>["What if I end up following some random people?”]
+
+(click:?2)[Your voice starts rising as your eyes narrow.
+Your patience was quickly [[running thin]].]]
+
+
+:: "Can you tell me where I need to go to find this HER?” [rubellite] {"position":"775,3750","size":"100,100"}
+Uhm…
+Well, if you just head straight that way,
+you’ll get to the main part of the city,
+you know, where everyone is.
+You’ll probably find something there…”
+
+You can tell the child is still a little confused and stressed.
+It’s probably time for you to leave.
+
+|1>["Thank you, I’ll try that.Enjoy the rest of your game.”]
+
+(click: ?1)[They don’t look at you as you leave, but you understand why. Regardless, it’s time for the [[next part of your journey->Heading to heart of the city]].
+]
+
+
+:: "Come on, you can’t even share a crumb? I don’t know where to get food!” [rubellite] {"position":"950,4275","size":"100,100"}
+{
+(set:$anger to $anger+1)
+}"You’ve barely been here a few hours,
+and you’re already so different.
+I’m almost proud despite the fact that you’re trying to steal my food right now.
+
+You can see a hint of amusement dancing in his eyes,
+and it only [[makes the anger in your veins burn brighter->guard leave]].
+
+
+:: "Could you tell me what I’m supposed to be doing at this time?” [rubellite] {"position":"950,5025","size":"100,100"}
+{
+(set:$kind to $kind+1)
+}He looks almost confused at your words,
+as if he wasn’t at all expecting your kindness.
+
+"Yeah…I’ll tell them to meet you at the shop down the street.
+I trust you’ll find your way there.
+You can tell them that //Xavier// sent you.”
+
+You smile lightly, surprised by the reveal of his name.(set:$guard_name to "Xavier")
+You hadn’t really thought about it that much,
+but you were happy that he trusted you enough to tell you.
+
+[["Your name is Xavier?”]]
+
+
+
+:: "Did you like it in Dumor?” [rubellite] {"position":"625,10775","size":"100,100"}
+{
+(set:$question to $question + (ds:2))
+}"At times, sure.
+
+I mean, it was my home for the first 12 years of my life,
+so of course I liked it to some extent.
+
+I do know I enjoyed going to school and learning,
+but I do wish I learned more.
+
+I didn’t have many friends,
+but, well, I don’t have many friends here either.”
+
+[["......"->know more]]
+
+
+:: "Do you ever regret leaving?” [rubellite] {"position":"500,10775","size":"100,100"}
+{
+(set:$question to $question + (ds:1))
+}"Sometimes, yes, I think so.
+Maybe a little.
+
+Being a leader can be exhausting,
+and I do miss how easy it was.
+
+You never had to think,
+because someone else thought for you.
+
+And I miss my family.”
+
+[["......"->know more]]
+
+
+:: "Don’t worry about it, it’s not that important, I promise.” [rubellite] {"position":"1025,3550","size":"100,100"}
+{(set: $kind to $kind+1)}"I don’t know…it seems kinda important…
+Did you come from outside?
+Did The Guard bring you here?
+Why weren’t you inside the walls?
+I’m not sure if I’m allowed to talk to you…”
+
+The child backed away a few steps, and you could see fear begin pooling in their eyes.
+You wondered if this is what you looked like in the alleyway.
+
+(link: "The Guard...")[|1>['Is //he// the guard of this place?']
+(click: ?1)[
+[["Please calm down, you are asking too many questions.”]]
+
+[["It’s okay, please calm down, I’m sorry for scaring you.”]]
+
+[["Alright, you need to calm down, no more questions. You’re only freaking yourself out!”->next stage]]
+]]
+
+
+:: "Fine, I understand.” [rubellite] {"position":"825,4275","size":"100,100"}
+{
+(set:$calm to $calm+1)
+}"Well, that was certainly easy.
+You haven’t changed much, huh?”
+
+He smirks, but he doesn’t seem all that amused.
+
+You feel slightly confused at his words–
+
+[[Why would you have changed?->guard leave]]
+
+
 :: "Get off of me! You’re not making any sense!" [alleyway] {"position":"650,1425","size":"100,100"}
 {(set:$angry to $angry +1)}
 The stranger removes their hand and backs away. 
 As the warmth of their hand disappears, 
 you feel cold enveloping your body once again.
 
-“Woah, so you //do// have some emotion in you? 
+"Woah, so you //do// have some emotion in you? 
 Alright, well, let’s take a breather. 
 You came from Dumor, right? 
 Well, as you can see, you are no longer in Dumor.”
 
 
-[[”Yes, I was on my way home. Where am I if not in Dumor?“]] <!--Calm choice-->
+[[”Yes, I was on my way home. Where am I if not in Dumor?"]] <!--Calm choice-->
 
-[[“What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
+[["What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
 
-[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
+[["I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
+
+
+:: "How do you feel about Azure?” [rubellite] {"position":"500,10900","size":"100,100"}
+{
+(set:$question to $question + (ds:4))
+}"Well, that’s certainly a loaded question.
+I have plenty of opinions on that person.
+
+They make me angry, because they didn’t let me reach my full potential.
+
+But I know they care deeply for their people,
+that they believe they’re doing the right thing.
+
+As a leader, I can’t blame them for that.”
+
+[["......"->know more]]
+
+
+:: "How do you feel about Rowan?” [rubellite] {"position":"625,10900","size":"100,100"}
+{
+(set:$question to $question + (ds:5))
+}"While I understand that not everyone is built for leading,
+I can’t help but resent them.
+
+They shouldn’t have brought people to their side if they were going to abandon them.
+
+I’ll never forget the state my people were in when I first arrived,
+it still makes me sick to this day.”
+
+[["......"->know more]]
+
+
+:: "I am, did the people who brought me here tell you?" [rubellite] {"position":"500,8400","size":"100,100"}
+{
+(set:$kind to $kind+1)
+}"Well, I certainly wasn’t expecting that reaction.
+It seems my city has already changed you.”
+
+Pride is evident in her voice.
+It fills you with your own sense of pride.
+
+You do feel different now,
+so much so that you almost don't recognise the version of you before you crossed the bridge.
+
+"You speak with a lot more emotion now.
+Trust me, I know what Dumorians are like.”
+
+[[""How do you know what the people of Dumor are like?"]]
+
+
+:: "I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?" [alleyway] {"position":"900,1425","size":"100,100"}
+{(set:$kind to $kind+1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again. 
+
+"Hurt you? 
+I have no reason to do that, let’s calm down a bit. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[”Yes, I was on my way home. Where am I if not in Dumor?"]] <!--Calm choice-->
+
+[["What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
+
+[["I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
+
+
+:: "I just…I don’t understand…Why are you here?” {"position":"750,9400","size":"100,100"}
+(set:$kind to $kind+1)
+(go-to:"no")
 
 
 :: "I wouldn’t steal your ball, please don’t worry. You were the one who hit me, isn’t that right?" [rubellite] {"position":"775,3050","size":"100,100"}
 {
 (set: $kind to $kind + 1)
 }
-“Okay, you’re right I’m sorry…we should have been more careful.”
+"Okay, you’re right I’m sorry…we should have been more careful.”
 
 The child’s eyes travel over your body, inspecting the work clothes you have on.
 
 You begin to realise how different they are from what the children in front of you are wearing.
 
-“What are you wearing? They look so boring!”
+"What are you wearing? They look so boring!”
 
 |1>["Boring? Why do you say that?"]
 
@@ -108,24 +375,192 @@ not entirely understanding what was wrong with your clothes.
 
 |2>[They were simple, and worked well for any occasion.]
 
-(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+(click: ?2)["There’s no colour! The plain grey is hurting my eyes!”
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
 ]]
 
 
+:: "It sounds…” [rubellite] {"position":"625,9275","size":"100,100"}
+"Dumorian? Well, I am from there, so it makes sense.”
+
+Amusement fills her eyes again,
+and yet your breath is still stuck in your throat.
+
+She’s from Dumor?
+
+Like you are?
+
+"I’m sensing some tension from you right now…”
+
+[["No shit! What do you mean you’re from Dumor? How? Why are you here?”]]
+
+[["I’m just confused. Why would you choose here over home?”]]
+
+[["I just…I don’t understand…Why are you here?”]]
+
+
+:: "It’s okay, please calm down, I’m sorry for scaring you.” [rubellite] {"position":"1025,3675","size":"100,100"}
+"I should go home, mom is probably waiting for me.
+I shouldn’t talk to you,
+mom says if I talk to strangers,
+I’ll see ''//HER//'' in my closet tonight. I’m going…”(set: $her_notes to $her_notes + (ds:0))
+
+The loud child’s voice quickly fell to a soft whisper,
+and you watched as they turned and ran.
+
+You took note of yet another mention of a mysterious HER,
+but the kid was gone before you could even question it.
+
+You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
+
+[[Anyway, you need to move on->moveon]]
+
+
+:: "I’m just confused. Why would you choose here over home?” {"position":"500,9400","size":"100,100"}
+(set:$calm to $calm +1)
+(go-to:"no")
+
+
+:: "I’m not sure what you’re talking about.” [alleyway] {"position":"775,1425","size":"100,100"}
+{(set:$calm to $calm+1)}
+The stranger removes their hand and backs away. 
+As the warmth of their hand disappears, 
+you feel cold enveloping your body once again. 
+
+"Of course you don’t. 
+You came from Dumor, right? 
+Well, as you can see, you are no longer in Dumor.”
+
+
+[[”Yes, I was on my way home. Where am I if not in Dumor?"]] <!--Calm choice-->
+
+[["What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
+
+[["I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
+
+
+:: "I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…” [alleyway] {"position":"775,1550","size":"100,100"}
+{
+(set: $kind to $kind+1)
+}"It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated,
+which fills you with something that makes your fingers tremble ever so slightly.
+
+Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+
+(link:"!!!")[You stumble, unable to see in front of you. 
+It startles you, but you recover quickly, 
+instinctively moving closer to the body. 
+You feel as though you can trust them, but you’re not sure why. 
+
+Moments later, the voice comments, 
+
+"I’ll explain later, but we need to get going. 
+Just come with me, we have a long way to go.
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]]
+
+
+:: "No shit! What do you mean you’re from Dumor? How? Why are you here?” {"position":"625,9400","size":"100,100"}
+(set:$angry to $angry +1)
+(go-to:"no")
+
+
+:: "Okay, could you tell me where to get food? Except…I don’t have any money here…” [rubellite] {"position":"700,4275","size":"100,100"}
+{
+(set:$kind to $kind+1)
+}"You’re not even gonna try to take my food?
+Interesting…you seem different from when we met in the alleyway.
+Rubellite’s treating you kindly I gather?”
+
+It’s the first time you see something other than anger or irritation in his eyes.
+
+You’re not sure you understand how you’ve changed,
+but you feel almost proud of yourself.
+
+[[Maybe the change is a good thing?->guard leave]]
+
+
+:: "Please calm down, you are asking too many questions.” [rubellite] {"position":"900,3675","size":"100,100"}
+"I should go home, mom is probably waiting for me.
+I shouldn’t talk to you,
+mom says if I talk to strangers,
+I’ll see ''//HER//'' in my closet tonight. I’m going…”(set: $her_notes to $her_notes + (ds:0))
+
+The loud child’s voice quickly fell to a soft whisper,
+and you watched as they turned and ran.
+
+You took note of yet another mention of a mysterious HER,
+but the kid was gone before you could even question it.
+
+You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
+
+[[Anyway, you need to move on->moveon]]
+
+
+:: "Robotic?” [rubellite] {"position":"700,5400","size":"100,100"}
+"Wow, I’ll never get over that.
+You sound just like you did in that alleyway.”
+
+He tosses an //apple// at you,
+and you just barely manage to catch it.
+
+An apple isn’t much, but it’s certainly better than nothing.(set:$guard_note to $guard_note+(ds:11))
+
+"I’m tired of this, so just take the apple and head down the street, alright?
+You’ll be picked up from there.”
+
+After one last glance at Xavier,
+you turn to leave,
+heading to your [[next destination->next part of your journey]].
+
+
+
+:: "Stay?" [rubellite] {"position":"625,11275","size":"100,100"}
+"Yes.
+
+You can become a citizen of Rubellite.
+
+Make a new home, a new life.
+
+Leave Dumor behind,
+and continue changing and being changed.
+
+What do you say?”
+
+You turn your eyes to the floor, |1>[the two choices] swimming around in your head.
+
+(click:?1)[Of all the decisions you made today, this seems like the most important.
+You can’t make it too easily, you have to think.
+
+Do you want safety or excitement?
+
+Home or mystery?
+
+Your old life or a new one?(set: $speaking to "empty.png")
+
+[[The choice is up to you]].
+(No save and load chance ahead)
+]
+
+
 :: "Steal your ball? But I haven't touched it." [rubellite] {"position":"900,3050","size":"100,100"}
 {
 (set: $calm to $calm + 1)
 }
-“Sure…you seem suspicious…you’re not from here are you?” 
+"Sure…you seem suspicious…you’re not from here are you?” 
 
 The child’s eyes travel over your body, inspecting the work clothes you have on. 
 
 You begin to realise how different they are from what the children in front of you are wearing. 
 
-“What are you wearing? They look so boring!”
+"What are you wearing? They look so boring!”
 
 |1>["Boring? How so?"]
 
@@ -134,16 +569,125 @@ not entirely understanding what was wrong with your clothes.
 
 |2>[They were simple, and worked well for any occasion.]
 
-(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+(click: ?2)["There’s no colour! The plain grey is hurting my eyes!”
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
 ]]
 
 
+:: "That’s not important.” [rubellite] {"position":"900,3550","size":"100,100"}
+{(set: $calm to $calm+1)}"I don’t know…it seems kinda important…
+Did you come from outside?
+Did The Guard bring you here?
+Why weren’t you inside the walls?
+I’m not sure if I’m allowed to talk to you…”
+
+The child backed away a few steps, and you could see fear begin pooling in their eyes.
+You wondered if this is what you looked like in the alleyway.
+
+(link: "The Guard...")[|1>['Is //he// the guard of this place?']
+(click: ?1)[
+[["Please calm down, you are asking too many questions.”]]
+
+[["It’s okay, please calm down, I’m sorry for scaring you.”]]
+
+[["Alright, you need to calm down, no more questions. You’re only freaking yourself out!”->next stage]]
+]]
+
+
+:: "The child I spoke to earlier mentioned you, how do they know you?” [rubellite] {"position":"900,4775","size":"100,100"}
+{
+(set:$question_g to $question_g+(ds:4))
+(set:$guard_note to $guard_note+(ds:9))
+}"Ah, the ones that play ball together?
+
+I play with them sometimes.
+I’m not the best at refusing them…
+
+It’s fun, but they tend to play for way too long…”
+
+[["......"->This is your chance.]]
+
+
+:: "Well…yes. I was told you were called Her Exalted Regency.” [rubellite] {"position":"625,9150","size":"100,100"}
+"Yes, well, my real name is //Ametrine//.”(set:$her_name to "Ametrine")
+
+Her voice is hesitant,
+and you admire how quickly she transitioned from childlike to serious.(set:$her_notes to $her_notes+(ds:9))
+
+Your breath hitches at the reveal of her true name.
+
+//Ametrine.//
+
+It reminds you of home, in some way.
+
+Could it be…
+
+[["It sounds…”]]
+
+
+
+:: "What do you do in the alleyway?” [rubellite] {"position":"750,4775","size":"100,100"}
+{
+(set:$question_g to $question_g+(ds:3))
+(set:$guard_note to $guard_note+(ds:7))
+(set:$guard_note to $guard_note+(ds:8))
+}"I mostly spend my time there making sure no one crosses the bridge,
+but as you can see,
+I’m not the best at that job.(set:$guard_identity to "The Guard")
+
+I live nearby,
+and there are some stray animals there that I take care of. 
+
+...Don’t look at me like that, it’s weird.”
+
+[["......"->This is your chance.]]
+
+
+:: "What do you think? Stop stalling and tell me what’s going on!” [alleyway] {"position":"1025,1550","size":"100,100"}
+{
+(set:$angry to $angry+1)
+}"Okay, well, now that’s too much emotion. 
+Calm down, I don’t have time to explain right now.” 
+
+Their voice stays steady, revealing little to you. 
+Whatever you heard before has evaporated, 
+which fills you with something unlike the burning red feeling resting below your skin.
+
+Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+
+(link:"!!!")[You stumble, unable to see in front of you. 
+You move to pull your hand away, but the grip tightens, locking you in place. 
+
+Moments later, the voice comments, 
+
+"I’m not going to hurt you, you’re fine. 
+Just come with me, we have a long way to go.
+I’m sure ''HER'' people will deal with you.”
+
+
+[[Follow their lead]]]
+
+
+:: "What is this world?” [rubellite] {"position":"900,4650","size":"100,100"}
+{
+(set:$question_g to $question_g+(ds:2))
+}"I already told you, you’re in'' Rubellite'' now.
+
+I still don’t really understand how you people get here,
+or why you come here.
+But you’re here, so whatever.
+
+I personally believe our worlds are kept separate for a reason,
+so I never questioned it.”
+
+[["......"->This is your chance.]]
+
+
 :: "Where am I?" [alleyway] {"position":"775,1175","size":"100,100"}
 {(set:$guard_identity to "A stranger in the alleyway")}
-“You entered an alleyway, where do you think you are? 
+"You entered an alleyway, where do you think you are? 
 Do they not teach common sense over in the city of Dumor?” 
 
 The voice let out a sigh, but didn’t seem to move any closer. 
@@ -159,17 +703,192 @@ which rips you from the drowning ''panic'' that had completely consumed you.
 You feel yourself stop breathing, waiting for the stranger to [[speak]].]
 
 
+:: "Who exactly is HER? [rubellite] {"position":"750,4650","size":"100,100"}
+{
+(set:$question_g to $question_g+(ds:1))
+(set:$guard_note to $guard_note+(ds:6))
+}"She’s the leader of Rubellite,
+//Her Exalted Regency//.
+
+Get it?
+
+H E R.
+
+I honestly don’t know much about her other than that,
+but I don’t really need to.
+I know I can trust her.
+
+No one’s really seen her face,
+and I know a lot of people are scared of her.
+I’ve never really understood why,
+but to each their own, I suppose.”
+
+[["......"->This is your chance.]]
+
+
+:: "Who were they? They sound…" [rubellite] {"position":"950,5275","size":"100,100"}
+You’re not quite sure what to say.
+You feel bad for pushing for information,
+but your curiosity feels as though it is burning you.
+
+"They’re not important.
+I fell for the wrong person, and I faced the consequences.”
+
+He pauses before looking at you seriously.
+
+"Now, that does not mean I’m falling for you.
+Don’t get any ideas.”
+
+[[“I didn’t even say anything!”]]
+
+
+:: "Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…” [rubellite] {"position":"1075,5225","size":"100,100"}
+"Huh…well now I feel compelled to explain myself to you.
+Is this some sort of manipulation tactic they teach in Dumor?
+''//I’m not fallin’ for it again.//''”
+
+|1>["Again?”]
+
+(click:?1)["Yeah, again. Someone just like you did the same thing.
+They crossed the bridge, showed me some kindness,
+then left.
+They made me think they’d changed,
+and then they still chose Dumor over me.
+So really, I cannot do this shit again.”(set:$guard_note to $guard_note+(ds:4))
+
+[["Who were they? They sound…"]]
+]
+
+
+:: "Why are you so angry?” [rubellite] {"position":"700,5275","size":"100,100"}
+"I don’t really think I need to explain myself to you.”
+He raises an eyebrow at your question,
+and makes no move to continue speaking.
+
+|1>["I’m only curious.”]
+
+(click:?1)["Yeah, well, you can be curious all you’d like.
+Maybe if you weren’t so //robotic//,
+I’d tell you about my// totally exciting past//.”
+
+The sarcasm is clear in his voice, but you can’t quite catch onto it.
+
+So he has a past? And it’s exciting?(set:$guard_note to $guard_note+(ds:3))
+That sounds…scary…
+
+[["Robotic?”]]
+]
+
+
+:: "Why are you so damn angry? It’s pissing me off. [rubellite] {"position":"825,5400","size":"100,100"}
+"You ask a lot of questions, don’t you?
+I don’t need to explain myself to you,
+and I certainly don’t want to after this conversation.”
+His eyes challenge you to continue speaking, to continue the argument over nothing.
+
+|1>["Fine! Be like that, I do not care. I’ll let the people know that the //lovely Xavier// sent me.”]
+
+(click:?1)[As you turn to go, Xavier throws a small paper bag at you,
+and you barely manage to catch it.
+
+You look down at it in confusion,
+and notice a //soggy cracker// inside it.
+
+A soggy cracker.
+
+Of all the food he had, all he could muster up was a wet cracker.(set:$guard_note to $guard_note+(ds:10))
+
+You make sure to send him one last mean look before you finally turn to leave,
+going towards the [[next part of your journey]].]
+
+
+:: "Why did the cities split?” [rubellite] {"position":"625,9650","size":"100,100"}
+"There it is.”
+
+She says quietly, her smile growing wider.
+
+You don’t understand why your question makes her so happy,
+but you just feel relieved that you’ll finally know everything about the world.
+
+"This is going to be a long story, just to warn you.
+Once I get started I struggle to stop.
+So…I’m afraid there’s no going back.”
+
+[[Listen]]
+
+(cycling-link: "Don't listen", "Come on, it's now already", "See how far have you been", "YOU SURE YOU DON'T WANT TO LISTEN?")
+
+
+:: "Why did you leave?” [rubellite] {"position":"750,10775","size":"100,100"}
+{
+(set:$question to $question + (ds:3))
+}"Easy just isn’t for me, really.
+
+It was nice at times, but I like the challenge.
+
+Some people aren’t built for that, though, I know.”
+
+[["......"->know more]]
+
+
+:: "Xavier?”\  [rubellite] {"position":"700,5150","size":"100,100"}
+"Yeah, surprise!(set:$guard_name to "Xavier")
+I have a name. Now is that all you needed?
+This conversation is getting incredibly boring.”
+
+Your eyes widen slightly,
+not quite understanding why he was so bored, or angry.
+
+(text-color:#db7073)[~~"Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”~~]
+
+(text-color:#db7073)[~~"Why are you so damn angry? It’s pissing me off."~~]
+
+[["Why are you so angry?”]]
+
+
+:: "Yes, I am" [rubellite] {"position":"625,8400","size":"100,100"}
+{
+(set:$calm to $calm+1)
+}"Ah, so you do speak, and you certainly sound like a Dumorian.”
+
+You can hear a hint of disappointment in her voice,
+You wonder if maybe she was hoping that you sounded different.
+
+What was so wrong about how you were?
+This felt safe, like something you knew.
+
+"I can’t help but wish my city could have changed you.”
+
+[[""How do you know what the people of Dumor are like?"]]
+
+
+:: "You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…” [rubellite] {"position":"700,5025","size":"100,100"}
+{
+(set:$calm to $calm+1)
+}"You can’t do anything on your own, can you.”
+
+He rolls his eyes at you,
+and you can’t help but wonder how he was so expressive.
+
+"I’ll get some people to meet you at the shop down the street, alright?
+Just tell them //Xavier// sent you.”
+
+You hadn’t expected him to reveal his name so soon.
+
+[["Xavier?” ]]
+
+
 :: "You were the one that hit me, what do you mean don’t steal it?!" [rubellite] {"position":"1025,3050","size":"100,100"}
 {
 (set: $angry to $angry + 1)
 }
-“Jeez…I’m sorry okay…it was an accident, I swear.”
+"Jeez…I’m sorry okay…it was an accident, I swear.”
 
 The child’s eyes travel over your body, inspecting the work clothes you have on.
 
 You begin to realise how different they are from what the children in front of you are wearing.
 
-“What are you wearing? They look so boring!” 
+"What are you wearing? They look so boring!” 
 
 |1>["Boring? Why is that?"]
 
@@ -178,11 +897,46 @@ not entirely understanding what was wrong with your clothes.
 
 |2>[They were simple, and worked well for any occasion.]
 
-(click: ?2)[“There’s no colour! The plain grey is hurting my eyes!”
+(click: ?2)["There’s no colour! The plain grey is hurting my eyes!”
 The loud child covers their eyes dramatically, making their friends giggle.
 
 [[You are more confused now.]]
 ]]
+
+
+:: "Your name is Xavier?” [rubellite] {"position":"950,5150","size":"100,100"}
+"Yeah, so you don’t need to call me The Guard or whatever you were referring to me as.
+Now, I really should go.
+Good luck on your journey.”
+
+As he turns to leave, you feel a push to ask another question.
+
+[["Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”]]
+
+(text-color:#db7073)[~~"Why are you so damn angry? It’s pissing me off."~~]
+
+(text-color:#db7073)[~~"Why are you so angry?”~~]
+
+
+:: "You’re having fun?” [rubellite] {"position":"625,8650","size":"100,100"}
+"Of course!
+No one ever comes to visit my office, it's so boring here.
+I couldn’t even find a book to read,
+I’ve read them all probably three times.
+Come, sit, let’s talk about your time here in the city of Rubellite.”
+
+She sits on the blue sofa,
+pats the spot next to her,
+looking up at you expectantly.
+
+She spoke so quickly you were barely able to comprehend any of her words.(set:$her_notes to $her_notes+(ds:7))
+
+Part of you was hesitant to move closer.
+
+[[Sit next to her]]
+
+[[Stay where you are]]
+
 
 
 :: About [no_sidebar] {"position":"575,425","size":"100,100"}
@@ -194,6 +948,28 @@ XXX
 
 
 Back (click-undo: "Back")
+
+
+:: All you can do for now is think and wait. [rubellite] {"position":"825,5775","size":"100,100"}
+{
+(set:$meet_woman to 1)
+(set:$woman_notes to (ds:))
+}You end up staring out the window as you wait,
+inspecting the people that pass by.
+
+The buildings outside are eerily similar to your home,
+but they still feel different.
+
+A I startles you out of your thoughts,
+and you just barely hear what it says.(set:$woman_notes to $woman_notes+(ds:0))
+
+“Is anyone sitting here, dear?”
+
+(link:"Look up")[You see an elderly woman pointing towards the chair across from you.
+You’re confused as to why she’d choose here of all the empty spots in the shop,
+but you nod anyway.
+
+[[It’d be rude to refuse.]]]
 
 
 :: Alley [dumor] {"position":"700,675","size":"100,100"}
@@ -226,6 +1002,22 @@ The choice is up to you."
 }
 
 
+:: Are they coming for you? [rubellite] {"position":"650,6525","size":"100,100"}
+The two individuals look around the inside of the shop until their eyes land on you.
+Without hesitation, they walk closer to you and the elderly woman,
+and you feel a rush of anxiety fill your veins.
+
+Are these the people you were waiting for?
+
+Once the two of them get to your table, they speak firmly.
+
+“Are you the one from Dumor?”
+
+You look back at them and nod, feeling your heartbeat pick up.
+
+[[“Are you the people Xavier sent?”]]
+
+
 :: Collection [no_sidebar] {"position":"825,300","size":"100,100"}
 {(if:$newspapers contains 0)[(link-goto:"Newspaper #0", "newspaper0")]
 (else:)[???]}
@@ -248,6 +1040,45 @@ The choice is up to you."
 
 
 Back (click-undo: "Back")
+
+
+:: Continue [no_sidebar] {"position":"625,12075","size":"100,100"}
+{
+(set: _max to (max:$calm, $angry, $kind))
+
+(if:$calm is $angry and $calm is $kind)[
+	(set:$type to "Balanced Soul")
+] (else-if:$calm is $kind)[
+	(set:$type to "True Dumorian")
+] (else-if:$calm is $angry)[
+	(set:$type to "Quiet Sun")
+] (else-if:$angry is $kind)[
+	(set:$type to "Balanced Soul")
+] (else:)[
+	(if:_max is $angry)[
+    	(set:$type to "Rubel Red")
+    ] (else-if:_max is $calm)[
+    	(set:$type to "True Dumorian")
+    ] (else-if:_max is $kind)[
+    	(set:$type to "Tender Spirit")
+    ]
+]}Your Personality Type is:
+
+
+
+
+|1>[$type]{
+(click-goto:?1, "type")
+}
+
+
+:: Don’t open the door [rubellite] {"position":"750,7650","size":"100,100"}
+"Now come on…
+
+You've come this far, you can’t be afraid.”
+
+[[Open the door]]
+(text-color: #db7073)[''~~Don’t open the door~~'']
 
 
 :: Enter [alleyway] {"position":"775,925","size":"100,100"}
@@ -298,8 +1129,8 @@ Something is at odds.
 
 :: Follow their lead [alleyway] {"position":"900,1675","size":"100,100"}
 {(set: $meet_her to 1)
-(set: $her_name to "HER")
-(set: $her_identity to "???")
+(set: $her_name to "???")
+(set: $her_identity to "HER")
 (set: $her_notes to (ds:))
 }Another strange turn in your life. 
 
@@ -335,19 +1166,18 @@ Let's begin the journey to an unknown universe…
 [[Enter]]
 
 
-:: Go home [dumor] {"position":"625,800","size":"100,100"}
+:: Go home [dumor] {"position":"525,800","size":"100,100"}
 (if:$newspapers contains 0)[(go-to: "home")
 ](else:)[You notice something on your way home.
 It is a newspaper
 
 |1>[Pick it up and go home]
-{(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to: "home")]}
+{(click: ?1)[(set: $newspapers to $newspapers +(ds:0))+(go-to:"home")]}
 ]
 
 
-
 :: Heading to heart of the city [rubellite] {"position":"825,3900","size":"100,100"}
-You head straight through the streets as the child told you.
+You head straight through the streets as the child told you.(set:$location to "Street")
 
 It is the first time you are |1>[left alone] since you got into that alleyway.
 
@@ -372,6 +1202,40 @@ The whole newspaper is better than that out-of-context piece you picked up earli
 The maze suddenly ends.
 
 [[Look to the front]]
+
+
+:: It’d be rude to refuse. [rubellite] {"position":"825,5900","size":"100,100"}
+“Thank you, sweetheart.(set:$meet_woman to 1)
+Something told me I needed to talk to you, and I never deny the universe!
+This gut feeling of mine is what got me a nice home in the City of Rubellite.”
+
+She smiles kindly at you as she settles down in the chair.
+Your eyes widen a bit at her words.
+What could she mean by that?
+
+[[“The universe? Really? You’re trusting the universe?"]]
+
+[[“How does one deny the universe? What does that mean?”]]
+
+[[“The universe? How do you know what the universe is telling you?”]]
+
+
+:: Listen [rubellite] {"position":"625,9775","size":"100,100"}
+"Perfect, I’ll start from the beginning, alright?”
+
+You nod once, feeling a mixture of fear and excitement.
+
+However,
+you’re not given any time to actually prepare yourself before she begins telling her own story.
+
+"I’ll start before The Split.
+I know you’ve heard of it vaguely, but Dumor and Rubellite used to be one country.
+
+It was way before I was even born, and before my parents were born.
+I don’t actually know what it was like at that point,
+but I imagine it was a nice balance between our two worlds.
+
+Back then, the country was united under a royal family, which had [[twin heirs]].
 
 
 :: Load [no_sidebar russo] {"position":"825,425","size":"100,100"}
@@ -417,13 +1281,38 @@ Back (click-undo: "Back")
 {(track: 'bridge', 'fadeout', 2)
 (track: 'rubellite', 'fadein', 2)
 (track: 'rubellite', 'loop', true)
-(set: $speaking to "empty.png")
 (set:$guard_note to $guard_note+(ds:1))
 (set:$location to "A red world?")}
 <img src="image\Rubellite.jpg", width="780px" height="500px">
 The world in front of you is bathed in an unbelievably bright light you can't stand looking at for long. 
 
 [[You finally realize how far from home you really are.]]
+
+
+:: Navigate [rubellite] {"position":"625,7775","size":"100,100"}
+Your eyes follow along the dark blue walls,
+seeing several different art pieces full of a mix of red and blue shades.
+
+As you reach the far wall, you finally see the tall bookshelves,
+and the //person// standing in front of them.
+
+You’re not sure if they haven’t yet noticed you,
+or if they’re choosing not to acknowledge you.
+
+But regardless it sends [[a shiver down your spine]].
+
+
+
+:: Next stop would be the palace [rubellite] {"position":"650,6775","size":"100,100"}
+The road to the palace is short enough but exhausting.
+No one speaks to you, and the silence feels tense.
+
+What is HER like?
+What is she going to say?
+What are you supposed to say?
+
+It is hard to stop guessing, but you need to get a hold of yourself.
+[[You are both tired and excited.]]
 
 
 :: Notice [no_sidebar] {"position":"700,175","size":"100,100"}
@@ -443,6 +1332,26 @@ The world in front of you is bathed in an unbelievably bright light you can't st
 
 This video may contain flashes of light that could trigger seizures for people with visual sensitives.]
 {(after:3s)[(go-to:"menu")]}
+
+
+:: Open the door [rubellite] {"position":"625,7650","size":"100,100"}
+The door opens quietly.
+
+(link:"Step into the bright office")[It takes a moment for your eyes to adjust to the change in lighting.
+When they do, you notice how different the inside of the room is from the rest of the palace. 
+
+While the rest of the building was covered in various shades of red,
+this room is drowning in comforting blues not unlike those of your home.
+
+There’s a black, wooden desk placed in the middle.
+You can see various plants scattered everywhere.
+
+To your left, there’s a navy blue sofa with light blue pillows,
+which remind you of the ones at your workplace.
+
+You wonder how this person could have possibly gotten one of her own.
+[[Navigate]]
+]
 
 
 :: Perhaps this could be helpful [rubellite] {"position":"900,2425","size":"100,100"}
@@ -477,14 +1386,28 @@ It hurts, but just a little.
 
 The ball stops near you, and the local child comes over to pick it up.
 
-“That’s my ball! Don’t steal it!”(set: $meet_child to 1)(set: $child_notes to $child_notes + (ds:0))
+"That’s my ball! Don’t steal it!”(set: $meet_child to 1)(set: $child_notes to $child_notes + (ds:0))
 
 [[What??]]
 ]
 
 
-:: Run to The Guard [rubellite] {"position":"825,4150","size":"100,100"}
+:: Run to The Guard [rubellite] {"position":"700,4100","size":"100,100"}
+{
+(set:$speaking to "guard_nomask_half.png")
+}|1>["Hey! Are you–?!”]
 
+(click:?1)["You again? I thought I’d sent you on your way already.”
+The guard turns to look at you, with the same irritated expression as earlier.
+
+This time, however, he isn’t wearing his mask.
+You feel yourself pause, not quite prepared for the sudden revealing of his face.(set:$meet_guard to 4)
+
+You almost miss his mask, though,
+as his anger is even more clear on his face now. 
+
+You notice the bag of food in his arms,
+and you start to realise [[how hungry you actually are]].]
 
 
 :: Run to him [rubellite] {"position":"975,4150","size":"100,100"}
@@ -520,6 +1443,21 @@ Location:
 ]
 
 
+:: Sit next to her [rubellite] {"position":"625,8775","size":"100,100"}
+You step closer,
+your overwhelming curiosity taking over any fear you felt.
+
+Once you’re sat on the–admittedly comfy–couch,
+you see bright excitement pooling in her eyes.
+
+"This is so exciting!
+None of the guards ever speak to me, and I can hardly go outside.
+Everyone’s either scared of me, or respects me too much just to hang out!”
+
+You can see a childlike glee in her eyes,(set:$her_notes to $her_notes+(ds:8))
+and [[her words]] still seem to barrel past her lips at a speed you’re not used to.
+
+
 :: Start [dumor] {"position":"700,425","size":"100,100"}
 {(track: 'dumor', 'fadein', 2)
 (track: 'dumor', 'loop', true)
@@ -550,6 +1488,36 @@ like everyone else here.
 
 
 [[Walk home]]]
+
+
+:: Stay where you are [rubellite] {"position":"750,8725","size":"100,100"}
+"Come on! I swear I don’t bite.”
+
+You can hear a pout in her voice.
+You realise exactly what the Elderly Woman meant when she said this woman was still a child at heart.
+
+"If you want to stay there, feel free, but I wouldn’t want you to be uncomfortable.
+I’m sure you’re tired…”
+
+[[Sit next to her]]
+
+
+:: Take a deep breath and move to follow them [rubellite] {"position":"625,7400","size":"100,100"}
+You walk through the echoing corridors.
+You would definitely get lost here on your own.
+
+It was a good idea to send someone who would accompany you.
+This HER seems to be very thoughtful and perhaps even calculating…
+
+Dull lighting scatters, 
+creating a sense of mystery that is about to be revealed.
+
+Are you ready?
+
+It seems that your uncertain steps match your heartbeats.
+You wonder if the stranger can hear it.
+
+As sudden as it was before, they stop in front of [[one of the doors]].
 
 
 :: Take one [rubellite] {"position":"825,4025","size":"100,100"}
@@ -600,30 +1568,70 @@ you see the only person who can clarify something for you and help you come back
 His figure stands out too much in the crowd of regular citizens.
 You need to catch up to him before he can vanish again.
 
-[[Run to him]]
+[[Run to him->Run to The Guard]]
 ]]]
 
 
-:: The end of Prototype {"position":"600,2300","size":"100,100"}
-{(set:$location to "The end of the test")}
-[(text-size:1.5)[Thank you for playing!]
-(text-size:1.2)[This is basicly everything we have for this test.
-But we will have a beta test version in about 1 week!
-We will have most stories, arts, and mechanics done for that version.
-(Including the inventory system that you may found empty all the time)
-Please come to play if you are interested! We will publish it on discord.
+:: The choice is up to you [rubellite no_sidebar] {"position":"625,11400","size":"100,100"}
 
-Here is your personality traits report at this point!
 
-Calm: $calm
-Angry: $angry
-Kind: $kind
 
-Please provide any comments or advises in the questionaire!
 
-We will do better in the next version!]
 
-(link-goto:"Go back to the menu.", "menu")]
+
+
+
+
+
+
+(text-size:1.3)[(t8n: "fade")+(transition-time: 3s)[''[[Go home.->dumor ending]]'']
+
+(after:1s)[(t8n: "fade")+(transition-time: 3s)[''[[Make a new home.->rubellite ending]]'']]]
+
+
+
+:: Their values and wants for the country were far too different [rubellite] {"position":"625,10150","size":"100,100"}
+That’s how ''//The Split//'' happened.
+
+They couldn’t lead together,
+so they tore the country apart into two separate worlds that reflected their leaders.
+
+The blue world, your home, was named //Dumor//,
+and was seemingly programmed to follow exact scripts written by Azure.
+They always took leading very seriously,
+and promptly dealt with individuals who strayed from the path written for them.
+
+The red world, however, collapsed soon after The Split.
+Rowan was never built to lead,
+and they realised quickly that doing so without the help of their twin would not be as easy as they hoped.
+They had felt so overwhelmed with everything that they left.
+[[They disappeared]].
+
+
+:: They disappeared [rubellite] {"position":"625,10275","size":"100,100"}
+Before The Split officially happened,
+the people were asked to choose where they would go.
+
+A majority of them followed Azure,
+but those who had chosen Rowan would soon regret it.
+
+After their leader abandoned them,
+they were left homeless, stuck in the middle.
+
+Azure had made sure that no one from the outside would be able to enter Dumor,
+and that no one could leave either.
+
+They’d built tall walls around the perimeter of the city,
+powered by technology they created.
+
+The programming kept the doors locked shut,
+and built a forcefield around the entire city.
+
+Sometimes, however, the programming glitches.
+A''//‘bridge’//'' is created to connect to the outside of the walls."
+
+[["......"]]
+
 
 
 :: Think [rubellite] {"position":"900,3425","size":"100,100"}
@@ -637,12 +1645,24 @@ You’re not entirely sure what you should say.(set: $child_notes to $child_note
 (click: ?3)[
 Maybe this wasn’t your choice to make, they were still too young to understand.
 
-[[“That’s not important.”]]
+[["That’s not important.”]]
 
-[[“Don’t worry about it, it’s not that important, I promise.”]]
+[["Don’t worry about it, it’s not that important, I promise.”]]
 
-[[“It’s not important, alright? Enough questions.”->next stage]]
+[["It’s not important, alright? Enough questions.”->next stage]]
 ]]]
+
+
+:: This is your chance. [rubellite] {"position":"825,4525","size":"100,100"}
+[["Who exactly is HER?]]
+
+[["What is this world?”]]
+
+[["What do you do in the alleyway?”]]
+
+[["The child I spoke to earlier mentioned you, how do they know you?”]]
+
+(if:$question_g contains 1 and 2 and 3 and 4)[(go-to:"guard continue")]
 
 
 :: Turn around [rubellite] {"position":"900,2550","size":"100,100"}
@@ -655,7 +1675,7 @@ The stranger solemnly opens the door for you,
 and you carefully take |1>[a step further].
 
 (click: ?1)[What you can see is liveliness that is native to the citizens of this red world. 
-It is clear why they call it “Rubellite.” 
+It is clear why they call it "Rubellite.” (set: $speaking to "empty.png")
 
 [[Walk around]]
 ]
@@ -664,6 +1684,7 @@ It is clear why they call it “Rubellite.”
 :: Walk around [rubellite] {"position":"900,2675","size":"100,100"}
 You walk around, mesmerised,
 looking at the tall buildings and streets full of busy people. 
+You didn't notice when he disappeared.
 
 Distracted, you run into a group of kids playing a ball game. 
 
@@ -717,8 +1738,61 @@ you feel confusion spread through your body.
 ]
 
 
+:: Will you miss Dumor? [rubellite no_sidebar] {"position":"700,11775","size":"100,100"}
+(t8n: "fade")+(transition-time: 3s)[You will miss Dumor, that's for sure,
+just like Ametrine does sometimes.]
+
+(after:2s)+(t8n: "fade")+(transition-time: 3s)[At the same time, you know that,
+after learning how right it feels to manage your own life,
+make decisions and mistakes
+–have emotions, for Goodness sake!–
+you can't just come back and pretend that nothing happened.
+It wouldn't feel right.]
+
+(after:4s)+(t8n: "fade")+(transition-time: 3s)[After all, who knows,
+maybe there is still a chance that the two worlds would become one again…
+But that’s something to think about later.]
+
+(after:6s)+(t8n: "fade")+(transition-time: 3s)[''[[You've got plenty of time.]]'']
+
+
+:: Will you miss Rubellite? [dumor no_sidebar] {"position":"550,11775","size":"100,100"}
+(t8n: "fade")+(transition-time: 3s)[Will you miss it,
+its red colours and chaotic order?]
+
+(after:2s)+(t8n: "fade")+(transition-time: 3s)[You don't know.
+Time will show.]
+
+(after:4s)+(t8n: "fade")+(transition-time: 3s)[After all, who knows,
+maybe there is still a chance that the two worlds would become one again…
+But that’s something to think about later.]
+
+(after:6s)+(t8n: "fade")+(transition-time: 3s)[''[[You've got plenty of time.->endingd]]'']
+
+
+:: You are both tired and excited. [rubellite] {"position":"650,6900","size":"100,100"}
+For the millionth time today, you study your surroundings.
+Not a lot changes as the same rubel red and similar buildings follow you everywhere.
+
+Something different catches your eye though,
+and you see into the skyline to have a better look.
+
+There is a prominent tall building that you approach so quickly.
+It’s nothing like what you've seen before.
+The palace must be spectacular.
+It looks majestic.
+Is it what HER is like, too?..
+
+Your thoughts are interrupted as your silent companions suddenly stop.
+You stumble clumsily and almost fall down.
+
+You feel embarrassed but your clumsiness is rewarded when you notice a //newspaper//.
+
+[[Pick it up->pick5]]
+
+
 :: You are more confused now. [rubellite] {"position":"900,3175","size":"100,100"}
-(set: $child_notes to $child_notes + (ds:2))“Look at our clothes!
+(set: $child_notes to $child_notes + (ds:2))"Look at our clothes!
 We get so many cool colours and little flappy things,
 I can’t remember what my sister called them…”
 
@@ -754,11 +1828,11 @@ You crave learning more about this world.
 
 But even more so, you are desperate to learn how to escape. 
 
-|1>[”Where are we?“]
+|1>[”Where are we?"]
 
-|2>[”This looks exactly like home but red, when are you going to explain?“]
+|2>[”This looks exactly like home but red, when are you going to explain?"]
 
-|3>[“What is this place? It’s…beautiful…”]
+|3>["What is this place? It’s…beautiful…”]
 {(click: ?1)[(set: $calm to $calm + 1)+(go-to: "where are we")]
 (click: ?2)[(set: $angry to $angry + 1)+(go-to: "where are we")]
 (click: ?3)[(set: $kind to $kind + 1)+(go-to: "where are we")]
@@ -767,21 +1841,21 @@ But even more so, you are desperate to learn how to escape.
 
 
 :: You have to admit, it does look ‘cool’ [rubellite] {"position":"900,3300","size":"100,100"}
-“I suppose they do look interesting.
+"I suppose they do look interesting.
 Perhaps while I’m here, I’ll get some new clothes.”
 
 The child smiles brightly at you.
 It fills you with warmth.
 
 You hope other people of this world are like them. 
-|1>[“I’m not from around here, so we’ve never met.”]
-(click: ?1)[“Not from here? How is that possible…
+|1>["I’m not from around here, so we’ve never met.”]
+(click: ?1)["Not from here? How is that possible…
 Are you just from another side of the city?”
 
 You could see the gears moving in the child’s head.
 |2>[It appears they know as little about the world as you do.]
 
-(click: ?2)[“I swear I know everyone in the city…
+(click: ?2)["I swear I know everyone in the city…
 but I guess it is a little big…
 where else could you be from?”
 
@@ -790,12 +1864,134 @@ where else could you be from?”
 
 
 
+:: You've got plenty of time. [rubellite no_sidebar] {"position":"700,11900","size":"100,100"}
+
+
+
+
+
+
+
+
+
+
+(t8n: "fade")+(transition-time: 3s)[Welcome to your new home.]
+
+(after:3s)+(t8n: "fade")+(transition-time: 3s)+(text-size:1.3)[Welcome to ''Rubellite.'']
+
+
+
+
+(after:5s)+(t8n: "fade")+(transition-time: 2s)[
+[[Continue]]]
+
+
+:: Your normal life would be enough, wouldn't it? [rubellite] {"position":"625,11150","size":"100,100"}
+"There’s plenty more to learn about this world,
+but I understand this is a //choice// you must make.”
+
+Ametrine’s voice startles you out of your thoughts.
+You look towards her.
+
+(link:"Choice?")[Will you have to make a choice?
+
+"The bridge will reopen in a week’s time.
+
+You can stay in the palace until then, and return home,
+if you’d like to.
+We’ll take good care of you, and make sure you get back home safely.”
+
+You wait with bated breath,
+your curiosity nearly overwhelming you.
+
+(link:"What was the other option?")["Or,”
+she continues,
+"you can stay here.”
+
+[["Stay?"]]
+]]
+
+
+:: You’d run out of questions [rubellite] {"position":"625,11025","size":"100,100"}
+You weren’t sure if you felt entirely satisfied.
+You knew there was more to learn,
+but it was impossible to know everything after one conversation.
+
+You also didn’t know if you wanted to learn more…
+
+Maybe it would be easier just to go home and forget any of this ever happened.
+But would you be able to forget it?
+
+[[Your normal life would be enough, wouldn't it?]]
+
+
+:: You’re not even sure if you’re allowed to speak. [rubellite] {"position":"625,8025","size":"100,100"}
+The silence slowly becomes deafening.(set:$her_notes to $her_notes+(ds:6))
+
+The figure seems to be looking for something on the shelves,
+their strong fingers gliding across the spines of the unfamiliar books.
+
+Their dark, curly hair is casually sitting on their shoulders,
+and you wonder how someone who looks so normal could feel so frightening at the same time.
+
+You were quickly understanding why the loud child was so afraid of HER,
+if that’s who was in front of you.
+
+And yet you can’t help but remember the Elderly Woman’s words,
+how she spoke fondly of her, [[without a hint of fear]].
+
+
+
+:: a shiver down your spine [rubellite] {"position":"625,7900","size":"100,100"}
+<img src="image/her.png", width="550px" height="600px">
+The person is incredibly tall in stature,
+but you feel their aura is more intimidating.(set:$speaking to "her_half.png")
+
+[[You’re not even sure if you’re allowed to speak.]]
+
+
+:: anger [rubellite] {"position":"825,5275","size":"100,100"}
+Despite getting his name, you still don’t feel satisfied.
+
+You want to know more about this random stranger.
+Maybe it’ll help you understand what was going on,
+or where you even were.
+
+You are tired of being kept in the dark.
+
+(text-color:#db7073)[~~"Why are you always so angry? I know we only just met, but I’ve still only seen anger in your eyes…”~~]
+
+[["Why are you so damn angry? It’s pissing me off.]]
+
+(text-color:#db7073)[~~"Why are you so angry?”~~]
+
+
+:: at palace [rubellite] {"position":"625,7275","size":"100,100"}
+The inside of the large palace easily takes your breath away.
+
+The walls seem to go up forever,
+and are covered in various paintings.
+
+You aren’t given much time to admire your surroundings,
+as you hear a voice break through your trance.
+
+"Hello, you must be the Dumorian I was told of?
+Please come with me, she is waiting for you.”
+
+The stranger stands in front of you, waiting for you to move.
+
+You can hear your blood thrumming in your ears – you’re finally meeting HER… 
+
+[[Take a deep breath and move to follow them]]
+
+
+
 :: behind you [alleyway] {"position":"775,1050","size":"100,100"}
 {(set:$meet_guard to 1) 
 (set:$guard_name to "???")
 (set:$guard_identity to "???")
 (set:$guard_note to (ds:))}
-“Again?! You ''people'' never learn! 
+"Again?! You ''people'' never learn! 
 Just a bunch of brain-dead, soulless, robotic imbeciles.”
 
 Turn around.
@@ -806,7 +2002,7 @@ You see nothing.
 
 |1>["Huh? Are you talking to me?"]
 
-(click: ?1)[“Well, yeah! Who else would I be talking to, idiot?”
+(click: ?1)["Well, yeah! Who else would I be talking to, idiot?”
 
 The voice sounds irritated, but you can’t quite understand why. 
 You can’t understand anything at the moment.
@@ -852,8 +2048,157 @@ the figure in front of you says.
 [[Here?]]]]
 
 
+:: disliked each other [rubellite] {"position":"625,10025","size":"100,100"}
+They irritated each other endlessly,
+and both twins were aware they’d never be able to lead the country together.
+
+Rowan didn’t even want to be a leader to start with,
+but if they had to, they would do it without Azure.
+
+When their parents passed unexpectedly,
+they were left with the kingdom and very little instructions.
+
+They hadn’t even had time to make plans on how they’d lead.
+
+At first, they attempted to compromise,
+to include a little bit of both of them in their world.
+
+But they would quickly realise this would be impossible.
+
+[[Their values and wants for the country were far too different]].
+
+
+:: dumor ending [rubellite no_sidebar] {"position":"550,11525","size":"100,100"}
+
+
+
+
+
+
+
+
+"I understand,
+though part of me wishes my city could have changed you.
+We’ll get you set up in a room to stay in for the week, let’s go.”
+
+[[Go with her->ending1]]
+
+
+:: ending1 [rubellite no_sidebar] {"position":"550,11650","size":"100,100"}
+(t8n: "fade")+(transition-time: 3s)[Now it's time to go home.
+You feel overwhelmed after talking to Ametrine.
+She almost shattered your idea of what constitutes your familiar reality,
+and there is a relief of coming back to it.]
+
+(after:2s)+(t8n: "fade")+(transition-time: 3s)["Though part of me wishes my city could have changed you...”
+Ametrene's voice suddenly echoes in your ears.]
+
+(after:4s)+(t8n: "fade")+(transition-time: 3s)[Apparently, all of this wasn't enough to change you.
+Is it good or bad?]
+
+(after:6s)+(t8n: "fade")+(transition-time: 3s)[''[[Will you miss Rubellite?]]'']
+
+
+:: ending2 [rubellite no_sidebar] {"position":"700,11650","size":"100,100"}
+(t8n: "fade")+(transition-time: 3s)[Now you have to start your life from scratch in the Rubellite.
+It is scary, but somewhere deep inside,
+you know that it will be worth it.]
+
+(after:2s)+(t8n: "fade")+(transition-time: 3s)[Maybe Ametrine was right,
+this city has already changed you…
+Change doesn't necessarily mean something bad.
+You can ascertain it after such a long journey.
+Change means discoveries and possibilities.]
+
+(after:4s)+(t8n: "fade")+(transition-time: 3s)[New adventures and unexpected turns await you,
+especially now that all pieces of the broken puzzle have come together.]
+
+(after:6s)+(t8n: "fade")+(transition-time: 3s)[''[[Will you miss Dumor?]]'']
+
+
+
+
+:: endingd [dumor no_sidebar] {"position":"550,11900","size":"100,100"}
+
+
+
+
+
+
+
+
+
+
+(t8n: "fade")+(transition-time: 3s)[Welcome back home.]
+
+(after:3s)+(t8n: "fade")+(transition-time: 3s)[(text-size:1.3)[Welcome to ''Dumor.'']]
+
+
+
+
+(after:5s)+(t8n: "fade")+(transition-time: 2s)[
+[[Continue]]]
+
+
+:: face you [rubellite] {"position":"625,8275","size":"100,100"}
+(set:$meet_her to 2)Her dark eyes seem to see right through you.
+You’re not quite sure if you were at all ready for this.
+
+Maybe you should have stayed at the shop a little longer,
+or talked to Xavier more.
+
+You didn’t have nearly enough time to prepare to come face to face with such a strong presence.
+
+"Do they not teach you how to speak over in Dumor anymore?
+Goodness, is there something on my face?”
+
+Her hand reaches up to brush nothing off her face,
+amusement still dancing in her eyes.
+
+"You are the one who crossed the bridge last night, aren’t you?
+I’m HER, if you’ve heard of me from my people.”
+
+She smiles, and it completely contrasts her intimidating aura,
+which only further confuses you.
+
+[["Yes, I am"]]
+
+[["And how do you know that?”]]
+
+[["I am, did the people who brought me here tell you?"]]
+
+
+:: family [rubellite] {"position":"750,10900","size":"100,100"}
+{
+(set:$question to $question + (ds:6))
+}"Yes, I know, the big scary HER has a family.
+Well, at least I think I do.
+Did. I hope…
+
+Sorry, I’m rambling, I don’t often have the opportunity to talk about my Dumor life.”
+
+|1>["It’s alright. You can go on.”]
+
+(click:?1)["I’ve been here so long, I don’t remember much of my life back there.
+
+I can picture an older sister, but I can’t tell if they’re real.
+Sometimes I like to picture my mother whenever I need someone to talk to.
+
+Wow…
+that sounds a lot more sad when I say it out loud,
+my bad.”
+
+[["......"->know more]]]
+
+
 :: guard [no_sidebar] {"position":"0,350","size":"100,100"}
-(if:$meet_guard is 1)[<img src="image\guard_silhouette.png", width="200px" height="250px">]
+{
+(if:$meet_guard is 1)[<img src="image\guard_shadow.png", width="550px" height="600px">]
+(if:$meet_guard is 2)[<img src="image\guard_mask_purple.png", width="550px" height="600px">]
+(if:$meet_guard is 3)[<img src="image\guard_mask_purple.png", width="550px" height="600px">]
+(if:$meet_guard is 4)[<img src="image\guard_nomask.png", width="550px" height="600px">]
+}
+
 Name: $guard_name
 
 Identity: $guard_identity
@@ -878,6 +2223,41 @@ Notes:
 Back (click-undo: "Back")
 
 
+:: guard continue [rubellite] {"position":"825,4900","size":"100,100"}
+"So is this all you needed from me?”
+
+He looks like he knows you want more information,
+but he’s not happy about it.
+
+[["Are you ever going to tell me who you are? I don’t even know your name!”]]
+
+[["Could you tell me what I’m supposed to be doing at this time?”]]
+
+[["You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”]]
+
+
+:: guard leave [rubellite] {"position":"825,4400","size":"100,100"}
+{
+(set:$question_g to (ds:))
+}"Alright, well, it was lovely seeing you again, but I really need to–”
+
+|1>["Wait!” ]
+
+(click:?1)[You speak before thinking,
+not wanting him to leave you there stranded.
+
+You needed to know where to go, what to do.
+Maybe he’d give you |2>[the answers] you needed about this unfamiliar world.
+
+(click:?2)["You really are persistent, aren’t you? 
+What do you want?!”
+
+He sounds exasperated, but you can’t bring yourself to care.
+
+[[This is your chance.]]
+]]
+
+
 :: hal.config {"position":"575,25","size":"100,100"}
 volumeDisplay: false
 debug: true
@@ -890,6 +2270,11 @@ rubellite: ./audio/rubellite.mp3
 
 
 :: her [no_sidebar] {"position":"125,350","size":"100,100"}
+{
+(if:$meet_her is 1)[<img src="image\her_shadow.png", width="550px" height="600px">]
+(if:$meet_her is 2)[<img src="image\her.png", width="550px" height="600px">]
+}
+
 Name: $her_name
 
 Identity: $her_identity
@@ -913,12 +2298,136 @@ Notes:
 Back (click-undo: "Back")
 
 
+:: her words [rubellite] {"position":"625,8900","size":"100,100"}
+After her encouragement, you start to explain the day you’ve had.
+
+You start by recounting your first choice to enter the alleyway.
+You make your way down the path of conversations you had with some locals.
+
+At times, the woman next to you would jump in,
+but throughout your entire speech,
+you can see her brown eyes nearly shaking in excitement. 
+
+When you get to the end of your story,
+you turn back to look at her.
+
+You see her leaning back on the sofa.
+Her eyes are focused on the light blue ceiling,
+and you can see a soft smile on her face.
+
+She seems happy, peaceful,
+entirely [[unlike the scary version of her you built up in your head]].
+
+
 :: home [dumor] {"position":"500,925","size":"100,100"}
+{
+(if:$newspapers contains 0)[
+[[Take a look a the newspaper->newspaper0]]
+]
+}
+
 You return home from work, 
 eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed… 
 
 
 [[What's next?]]
+
+
+:: how hungry you actually are [rubellite] {"position":"825,4150","size":"100,100"}
+He notices your eyes focused on his food and holds the bag closer to him.(set:$guard_note to $guard_note+(ds:2))
+
+"Hey, this is mine alright. Go get your own food, alright?”
+
+You can hear how defensive he is in his voice,
+and it causes you to step back.
+
+Getting into a fight over food with the guard is probably not a smart decision.
+
+[["Fine, I understand.”]]
+
+[["Come on, you can’t even share a crumb? I don’t know where to get food!”]]
+
+[["Okay, could you tell me where to get food? Except…I don’t have any money here…”]]
+
+
+:: know more [rubellite] {"position":"625,10650","size":"100,100"}
+[["Do you ever regret leaving?”]]
+
+[["Did you like it in Dumor?”]]
+
+[["Why did you leave?”]]
+
+[["How do you feel about Azure?”]]
+
+[["How do you feel about Rowan?”]]
+(if: $question contains 1)[
+[["Family?”->family]]
+]
+
+(if:$question contains 1 and 2 and 3 and 4 and 5 and 6)[
+[[You’d run out of questions]]]
+
+
+:: lady1 [rubellite] {"position":"650,6400","size":"100,100"}
+She was only twelve when we met, but she was already so mature.
+
+She’s the one who built our beautiful city.
+
+I know a lot of people are rather afraid of her,
+but I know she’s still a child at heart.(set:$her_notes to $her_notes+(ds:2))(set:$her_notes to $her_notes+(ds:3))
+
+She grew up so quickly, and it shows sometimes in the way she interacts with others.
+
+I could never be afraid of her, not really. She’s so–”
+
+|1>[Creak--]
+
+(click:?1)[The woman’s voice is cut off by the door opening.
+It distracts her and she turns to look at the new visitors.
+
+There’s two of them, both dressed in black cargo pants, and dark jackets.(set:$her_notes to $her_notes+(ds:4))(set:$her_notes to $her_notes+(ds:5))
+
+[[Are they coming for you?]]]
+
+
+:: lady2 [rubellite] {"position":"900,6400","size":"100,100"}
+“Oh! You’re meeting someone? Who is it?”
+
+She quickly changes the subject,(set:$woman_notes to $woman_notes+(ds:3))
+and you feel yourself become curious about what she was originally going to tell you.
+
+[[“I’m meeting some people under…HER? That’s what I’ve been told.”]]
+
+[[“Is that really important?”]]
+
+[[“I’m not exactly sure who, but…are you meeting someone too?”]]
+
+
+:: listen to her [rubellite] {"position":"650,6275","size":"100,100"}
+{
+(set:$calm to $calm+1)
+(set:$woman_notes to $woman_notes+(ds:4))
+(set:$her_notes to $her_notes+(ds:1))
+}“I’m quite old, so my memory is not all there anymore, I’m afraid.
+But that also means that I was here during //The Split.//
+
+We used to be ''one country''!
+It was nice back then, but I don’t really remember the specifics.
+
+Then one day, everything changed.
+There were suddenly two separate worlds, both completely different from each other.
+
+I remember the universe told me to come to this place,
+and every day I am glad I listened.
+
+It wasn’t always good, in fact it was pretty awful at the beginning.
+I remember that I often wished the worlds hadn’t split, that we were still united.
+
+It was so difficult trying to get by, and after a few years we were slowly running out of food and water.
+
+But luckily, we were saved by HER.
+
+[["......"->lady1]]
 
 
 :: menu [no_sidebar russo] {"position":"700,300","size":"100,100"}
@@ -944,6 +2453,27 @@ eat your usual, familiar, boring dinner, watch your favourite TV show, go to bed
 (after:4s)+(t8n: "fade")+(transition-time: 2s)[''[[About]]'']
 
 
+:: moon [no_sidebar] {"position":"675,12350","size":"100,100"}
+(text-size:1.3)[''Gentle Moon'']
+
+
+You have an even mix of calm and kind within you.
+You are rather timid in some cases, and you avoid conflicts when possible.
+Your presence is similar to that of the waves the Moon pushes and pulls, something peaceful and calming.
+
+
+''In-game characters with the same type'':
+//HER (Ametrine)//, the leader of Rubellite.
+
+
+''Compatibility with other types:''
+You work best with ''Tender Spirits'' or ''Quiet Suns,'' both of which bring out your peaceful and nurturing sides.
+Your gentle personality does not mix well with ''Rubel Red''’s, as their anger can overwhelm or stress you out.
+
+
+(link-goto:"Go back to Main Menu", "menu")
+
+
 :: moveon [rubellite] {"position":"975,3900","size":"100,100"}
 You wander around.
 
@@ -967,37 +2497,142 @@ The whole newspaper is better than that out-of-context piece you picked up earli
 ]]]
 
 
-:: newspaper0 {"position":"950,300","size":"100,100"}
+:: newspaper0 [no_sidebar] {"position":"950,300","size":"100,100"}
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[''  Dumor Wall Continues Glitching!  '']
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+It seems the Dumor Wall is still glitching, despite reassurance
+that it is fixed. Some people have reported seeing a mysterious
+alleyway that calls to them. This alleyway, and many other 
+glitches are believed to be signs of the end of Dumor. Please
+stay safe, and always follow the path set for you, in order to
+avoid any danger.]
+
+
 Back (click-undo: "Back")
 
 
-:: newspaper1 {"position":"1050,300","size":"100,100"}
+:: newspaper1 [no_sidebar] {"position":"1050,300","size":"100,100"}
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[''  Mysterious Bridge Opens Again!  '']
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+It seems the bridge between Rubellite and Dumor has opened
+again, bringing another Dumorian through. Some citizens have
+begun to express their worries about this bridge, wondering if it
+could cause some conflict between the two cities. In a message
+shared by HER, she warns all citizens of Rubellite to stay away
+from the alleyway for their safety. Please stay within the walls
+of the city!]
+
+
 Back (click-undo: "Back")
 
 
-:: newspaper2 {"position":"1150,300","size":"100,100"}
+:: newspaper2 [no_sidebar] {"position":"1150,300","size":"100,100"}
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[''  Rubellite High Wins Championship
+against Red Rubel  '']
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+At the weekend championship soccer tournament, Rubellite
+High comes out on top. It was a close fight between the two
+highschools, but Red Rubel unfortunately failed to defend
+their championship win from last year. Congrats to the
+Rubellite High soccer team!]
+
+
 Back (click-undo: "Back")
 
 
-:: newspaper3 {"position":"1250,300","size":"100,100"}
+:: newspaper3 [no_sidebar] {"position":"1250,300","size":"100,100"}
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[''  New Cafe Opens in Heart of Rubellite!  '']
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Another cafe opens in the heart of the city, offering a variety
+of never before seen drinks and snacks. One of our reporters
+went to try it out, and they highly recommend it! The treats
+were well made and well priced. Make sure to check it out
+when you can!]
+
+
 Back (click-undo: "Back")
 
 
-:: newspaper4 {"position":"1350,300","size":"100,100"}
+:: newspaper4 [no_sidebar] {"position":"1350,300","size":"100,100"}
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[''  HER Spotted at a Local Shop!  '']
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Rubellite’s beloved leader seems to enjoy some snacks and
+drinks at a local cafe with an unknown elderly lady. Citizens
+of Rubellite seem to appreciate seeing their leader enjoying
+a simple treat with a normal person. One person even told
+Rubellite News that it made them “less afraid” of their leader,
+knowing that she is “just another person like them.”]
+
+
 Back (click-undo: "Back")
 
 
-:: newspaper5 {"position":"1450,300","size":"100,100"}
+:: newspaper5 [no_sidebar] {"position":"1450,300","size":"100,100"}
+(b4r:"solid","dashed")+(b4r-colour:white)[(text-size:2)[''  Dumorian Spotted Entering the Palace!  '']
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+A local citizen claims they spotted a Dumorian entering the
+palace. They are unsure how the Dumorian is in Rubellite,
+but it is believed to be related to bridge glitch spoken about
+in HER recent message. We still don’t know much about the
+situation, but we suggest that you keep yourself safe in these
+uncertain times.”]
+
+
 Back (click-undo: "Back")
+
+
+:: next [rubellite] {"position":"625,10525","size":"100,100"}
+{
+(set:$question to (ds:))
+}"When I got here, it was still abandoned,
+and there were packs of people scattered around everywhere.
+
+It had been quite a few years since The Split,
+so any saved up stocks of food and other necessities had run dry.
+
+I knew I had to do something.
+And that’s how //Rubellite// was born.”(set:$her_notes to $her_notes+(ds:10))
+
+You take a moment to breathe,
+trying to comprehend everything you just heard.
+
+You’d never known your leader had a twin.
+You hadn’t even known there was an entire other world.
+
+You weren’t sure how you felt about any of it yet,
+but you needed to [[know more]].
+
+
+
+:: next part of your journey [rubellite] {"position":"825,5525","size":"100,100"}
+{
+(set:$speaking to "empty.png")
+(set:$guard_note to $guard_note+(ds:5))
+}It seems like you’re not the one to make choices here.
+
+You have to follow The Guard's instructions and go to the shop to see what happens next.
+
+You pass a couple of blocks before you notice a signboard.
+You push the door and hear the bell ringing.
+
+The shop is almost empty at this hour.
+
+You look at the coloured walls and notice a vacant table in the corner.
+Something lies on its surface.
+You come closer.
+
+Now you can see that it is another //newspaper//.
+
+[[Pick it up->pick]]
 
 
 :: next stage [rubellite] {"position":"750,3625","size":"100,100"}
 //Your stern voice wakes them up from their spiral,
 and they look at you with serious eyes.//(set: $child_notes to $child_notes + (ds:5))
 
-“You’re right,”
+"You’re right,”
 they say, clearly trying to seem more mature than they really are.
-“It’s not important, and you don’t seem that scary…
+"It’s not important, and you don’t seem that scary…
 I’m sure I won’t see|1>['' //HER//''] in my closet just because I talked to you…”(set: $her_notes to $her_notes + (ds:0))
 
 (click: ?1)["I won’t hurt you, I promise.
@@ -1010,8 +2645,124 @@ but you make sure to keep a hint of sternness in your words.
 
 Oh, ''Then //he// is the guard of this place.''(set:$guard_identity to "The Guard")(set:$meet_guard to 3)
 
-[[“Can you tell me where I need to go to find this HER?”]]
+[["Can you tell me where I need to go to find this HER?”]]
 ]
+
+
+:: no [rubellite] {"position":"625,9525","size":"100,100"}
+"I’ll explain, I promise.
+But first, you’re probably curious about the two cities, right?
+I’m sure you had no idea Rubellite existed before today, am I correct?”
+
+When you nod your head, she smiles lightly before continuing.
+
+"I know you’ve heard a bit about Rubellite while you’ve been here,
+and I’m almost positive you know enough about Dumor.
+But you have more questions, don’t you?”
+
+She looks at you expectantly,
+and you feel the question fall past your lips before you can hesitate.
+
+[["Why did the cities split?”]]
+
+
+:: one of the doors [rubellite] {"position":"625,7525","size":"100,100"}
+Now at the last obstacle between you and HER.
+
+The person who brought you here has already gone on their way.
+
+All that’s left to do is open the door.
+
+You |1>[take a deep breath], before you finally make your decision.
+(click: ?1)[
+[[Open the door]]
+[[Don’t open the door]]
+]
+
+
+:: pick [rubellite] {"position":"825,5650","size":"100,100"}
+{
+(set:$location to "Shop")
+(set: $newspapers to $newspapers +(ds:4))
+}You sit at the table, still holding the newspaper in your hands.
+They are slightly trembling, almost like the wings of a butterfly.
+
+You feel nervous.
+These HER people seem to know what to do.
+They should help you.
+
+But do you really want to get this help…?
+[[All you can do for now is think and wait.]]
+
+
+:: pick5 [rubellite] {"position":"650,7025","size":"100,100"}
+{
+(set: $newspapers to $newspapers +(ds:5))
+}You straighten up to notice that you all stand in front of the heavy doors,
+and everyone is waiting for you.
+
+One of your guides opens the door for you without saying a word.
+You shiver and step forward.(set:$location to "Palace")
+
+[[Get inside the palace->at palace]]
+
+
+:: red [no_sidebar] {"position":"300,12350","size":"100,100"}
+(text-size:1.3)[''Rubel Red'']
+
+
+You are quick to anger regardless of the situation.
+You find comfort in your anger, and struggle to exist without it.
+You may also believe that being kind is a weakness.
+You are good at speaking up for yourself, and will never let people walk all over you.
+Many others wish they had your strength.
+
+
+''In-game characters with the same type'':
+//The Guard (Xavier)//, the one you met in the alleyway.
+
+
+''Compatibility with other types:''
+Your red hot personality goes perfectly with others of the same type, or with ''Quiet Suns''.
+''True Dumorians'' and ''Gentle Moons'' often frustrate you,
+but Tender Spirits can be good to bring you calm.
+
+
+(link-goto:"Go back to Main Menu", "menu")
+
+
+:: rubellite ending [rubellite no_sidebar] {"position":"700,11525","size":"100,100"}
+
+
+
+
+
+
+
+
+
+"I’m so glad!
+I really hope you enjoy it here, let’s go!”
+
+[[Go with her->ending2]]
+
+
+:: running thin [rubellite] {"position":"825,5150","size":"100,100"}
+"I feel like that’s more of a you problem.
+You can’t even prevent your own kidnapping?”
+
+He rolls his eyes and turns to leave again,
+but you’re quick to speak again.
+
+|1>["Is it really such a big deal for you? It’s just a name!”]
+
+(click:?1)["//Xavier//!
+It’s Xavier, alright.
+Happy now? You’re so annoying.”(set:$guard_name to "Xavier")
+
+His [[anger]] is clear on his face,
+and you wonder if you looked similar to him right now.]
+
 
 
 :: save [no_sidebar russo] {"position":"300,200","size":"100,100"}
@@ -1037,11 +2788,31 @@ Which slot do you want to load?
 Back(click-undo: "Back")
 
 
+:: soul [no_sidebar] {"position":"925,12350","size":"100,100"}
+(text-size:1.3)[''Balanced Soul'']
+
+
+You are a perfect balance.
+You are comfortable expressing a variety of emotions depending on the situation.
+You know when to be angry, or to be kind, or calm, and how to use those emotions for your own benefit.
+
+
+''In-game characters with the same type'':
+//Rowan//, the failed leader of Rubellite.
+
+
+''Compatibility with other types:''
+The balance in your soul allows you to mix well with any other type.
+
+
+(link-goto:"Go back to Main Menu", "menu")
+
+
 :: speak [alleyway] {"position":"775,1300","size":"100,100"}
 {
-(set: $speaking to "guard_silhouette_transparent_half.png")
+(set: $speaking to "guard_shadow_half.png")
 (set:$guard_note to $guard_note+(ds:0))
-}“Alright, let’s get you out of that brain of yours. 
+}"Alright, let’s get you out of that brain of yours. 
 Probably freaking out about the lack of a script here, huh? 
 That’s what you people all say,
 you can hear something in their voice, but not sure what exactly it is."
@@ -1049,14 +2820,127 @@ you can hear something in their voice, but not sure what exactly it is."
 
 [["Get off of me! You’re not making any sense!"]]
 
-[[“I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?"]]
+[["I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?"]]
 
-[[“I’m not sure what you’re talking about.”]]
+[["I’m not sure what you’re talking about.”]]
+
+
+:: spirit [no_sidebar] {"position":"800,12350","size":"100,100"}
+(text-size:1.3)[''Tender Spirit'']
+
+
+You have a kind spirit that prioritises the well-being of others.
+You approach conflict with a level-headed and understanding attitude.
+You are good at comforting others, and are a very reliable friend.
+
+
+''In-game characters with the same type'':
+//The Elderly Woman//, you met her at the shop.
+
+
+''Compatibility with other types:''
+Your tender spirit works well with others of the same type, as well as'' Gentle Moons'' and ''Quiet Suns''.
+At times, your spirit can be good for ''Rubel Reds'', but you shouldn’t surround yourself with them.
+
+
+(link-goto:"Go back to Main Menu", "menu")
+
+
+:: sun [no_sidebar] {"position":"425,12350","size":"100,100"}
+(text-size:1.3)[''Quiet Sun'']
+
+
+You have an even mix of anger and calm within you, similar to that of the sun.
+At times you are warm and gentle, but at other times you burn bright with anger.
+You are able to stand up for yourself, but you do not allow yourself to drown in your anger.
+
+
+''In-game characters with the same type'':
+//The Loud Child//, you met them when you first entered Rubellite.
+
+
+''Compatibility with other types:''
+You work best with ''Tender Spirits'' and'' Gentle Moons'', as their kind personality can bring out your warm side.
+Being around ''Rubel Reds'' tends to make your sun burn up, which may not always be a good thing.
+
+
+(link-goto:"Go back to Main Menu", "menu")
+
+
+:: true [no_sidebar] {"position":"550,12350","size":"100,100"}
+(text-size:1.3)[''True Dumorian'']
+
+
+You are the type of person meant to live in Dumor.
+You often feel calm and neutral even in situations of distress.
+You very rarely express any type of emotions if ever.
+
+
+''In-game characters with the same type'':
+//Azure//, the leader of Dumor.
+
+
+''Compatibility with other types:''
+You tend to only mix well with other ''True Dumorians''.
+
+
+(link-goto:"Go back to Main Menu", "menu")
+
+
+:: twin heirs [rubellite] {"position":"625,9900","size":"100,100"}
+The one twin, //Azure//,
+was known to be very calculated and serious,
+and always followed a predetermined script.
+
+They never strayed from the path set out for them,
+so they spent every waking moment preparing to lead the country.
+
+The other twin, //Rowan//,
+was known to be carefree and passionate,
+and was so full of emotions and curiosity.
+
+It was impossible to comprehend the two were related, let alone twins.
+
+When Azure used plain words,
+Rowan spoke colourfully.
+When Azure kept their emotions in check,
+Rowan expressed themselves freely.
+
+They were complete opposites, and so they [[disliked each other]].
+
+
+:: type {"position":"625,12200","size":"100,100"}
+(if:$type is "Rubel Red")[(go-to:"red")]
+(if:$type is "Quiet Sun")[(go-to:"sun")]
+(if:$type is "True Dumorian")[(go-to:"true")]
+(if:$type is "Gentle Moon")[(go-to:"moon")]
+(if:$type is "Tender Spirit")[(go-to:"spirit")]
+(if:$type is "Balanced Soul")[(go-to:"soul")]
+
+
+:: unlike the scary version of her you built up in your head [rubellite] {"position":"625,9025","size":"100,100"}
+"Isn’t the city just wonderful?
+I love it so dearly. Sometimes I wonder what it’d be like if I never came here,
+but I know I’d choose Rubellite every time.”
+
+You stop in confusion at her words, wondering if maybe you’d misheard her.
+
+|1>["If you…never came here?”]
+
+(click:?1)["Ah…it seems I’m not very good at being mysterious, huh?”
+
+She chuckles lightly and sits up again, focusing her eyes back on your own.
+
+"You’ve heard lots about me from my people, haven’t you?
+The feared and respected leader of Rubellite who would do anything for her people.”
+
+[["Well…yes. I was told you were called Her Exalted Regency.”]]
+]
 
 
 :: where are we [rubellite] {"position":"900,2300","size":"100,100"}
 {
-
+(set: $speaking to "guard_mask_purple_half.png")
 }
 You turn to the figure next to you, your eyes searching for answers. 
 What you don’t expect is to see the man’s own eyes looking back at you. 
@@ -1067,7 +2951,7 @@ you can see the face of the alley’s guard.
 You can see the man’s irritation pooling in his eyes, 
 and it startles you into silence.(set: $meet_guard to 2)
 
-(click: "silence")[“Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
+(click: "silence")["Welcome to Rubellite. Get comfortable, you’re stuck here for now.”
 
 (link:"You notice something")[As he speaks, you see a piece of paper fly closer to the two of you,
 seemingly being carried by the quiet wind.
@@ -1076,6 +2960,21 @@ You bend down slightly, reaching for what feels like a newspaper.
 
 [[Perhaps this could be helpful]]
 ]]]
+
+
+:: without a hint of fear [rubellite] {"position":"625,8150","size":"100,100"}
+Before you could follow that thread,
+though,
+a firm voice floods the room.
+
+Your eyes widen.
+Every one of your senses pause as you hear,
+
+"So, how long were you planning on not announcing your presence?
+Staring is a little creepy, you know.”
+
+Her words are laced with amusement.
+You can see a small smirk on her face as she turns to [[face you]].
 
 
 :: woman [no_sidebar] {"position":"250,350","size":"100,100"}
@@ -1095,188 +2994,166 @@ Notes:
 Back (click-undo: "Back")
 
 
-:: “Can you tell me where I need to go to find this HER?” [rubellite] {"position":"775,3750","size":"100,100"}
-Uhm…
-Well, if you just head straight that way,
-you’ll get to the main part of the city,
-you know, where everyone is.
-You’ll probably find something there…”
+:: “Are you the people Xavier sent?” [rubellite] {"position":"650,6650","size":"100,100"}
+“Yes, we’ll take you to the palace to speak with HER.
+Please come with us.”
 
-You can tell the child is still a little confused and stressed.
-It’s probably time for you to leave.
+The one speaking nods at the woman across from you,
+and takes a step back to give you space to stand.
 
-|1>[“Thank you, I’ll try that.Enjoy the rest of your game.”]
+After saying your goodbyes to the elderly woman,
+you turn to leave with the two strangers.(set:$location to "Way to the Palace")
 
-(click: ?1)[They don’t look at you as you leave, but you understand why. Regardless, it’s time for the [[next part of your journey->Heading to heart of the city]].
+[[Next stop would be the palace]].
+
+
+:: “How does one deny the universe? What does that mean?” [rubellite] {"position":"950,6025","size":"100,100"}
+{
+(set:$calm to $calm+1)
+}“Ah, you must be from over there, then.
+Dumor.
+I’ve heard lots about it.”
+
+Her smile is still kind, which confuses you.
+Everything in this city confuses you.
+People here are too emotional.
+
+[[“You know about Dumor?”]]
+
+
+:: “I didn’t even say anything!” [rubellite] {"position":"950,5400","size":"100,100"}
+He chuckles, and it makes you feel a little proud of yourself.
+Maybe you could have a friend in this unfamiliar place.
+
+“Alright, this is getting way too vulnerable,
+I need to go before I spill all my deep secrets.
+Here, I bought an //extra sandwich//, you can take it.”
+
+He hands you a sandwich in a bag, and turns to leave after offering a hesitant smile.(set:$guard_note to $guard_note+(ds:12))
+
+|1>[“Thank you, maybe we can hang out again.”]
+
+(click:?1)[“I wouldn’t count on that.”
+
+And with that, you turn to leave, heading to the [[next part of your journey]].
 ]
 
 
-:: “Don’t worry about it, it’s not that important, I promise.” [rubellite] {"position":"1025,3550","size":"100,100"}
-{(set: $kind to $kind+1)}“I don’t know…it seems kinda important…
-Did you come from outside?
-Did The Guard bring you here?
-Why weren’t you inside the walls?
-I’m not sure if I’m allowed to talk to you…”
-
-The child backed away a few steps, and you could see fear begin pooling in their eyes.
-You wondered if this is what you looked like in the alleyway.
-
-(link: "The Guard...")[|1>['Is //he// the guard of this place?']
-(click: ?1)[
-[[“Please calm down, you are asking too many questions.”]]
-
-[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
-
-[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”->next stage]]
-]]
-
-
-:: “I don’t understand what you mean…I don’t understand anything…Are you going to hurt me?" [alleyway] {"position":"900,1425","size":"100,100"}
-{(set:$kind to $kind+1)}
-The stranger removes their hand and backs away. 
-As the warmth of their hand disappears, 
-you feel cold enveloping your body once again. 
-
-“Hurt you? 
-I have no reason to do that, let’s calm down a bit. 
-You came from Dumor, right? 
-Well, as you can see, you are no longer in Dumor.”
-
-
-[[”Yes, I was on my way home. Where am I if not in Dumor?“]] <!--Calm choice-->
-
-[[“What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
-
-[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
-
-
-:: “It’s okay, please calm down, I’m sorry for scaring you.” [rubellite] {"position":"1025,3675","size":"100,100"}
-“I should go home, mom is probably waiting for me.
-I shouldn’t talk to you,
-mom says if I talk to strangers,
-I’ll see ''//HER//'' in my closet tonight. I’m going…”
-
-The loud child’s voice quickly fell to a soft whisper,
-and you watched as they turned and ran.
-
-You took note of yet another mention of a mysterious HER,
-but the kid was gone before you could even question it.
-
-You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
-
-[[Anyway, you need to move on->moveon]]
-
-
-:: “I’m not sure what you’re talking about.” [alleyway] {"position":"775,1425","size":"100,100"}
-{(set:$calm to $calm+1)}
-The stranger removes their hand and backs away. 
-As the warmth of their hand disappears, 
-you feel cold enveloping your body once again. 
-
-“Of course you don’t. 
-You came from Dumor, right? 
-Well, as you can see, you are no longer in Dumor.”
-
-
-[[”Yes, I was on my way home. Where am I if not in Dumor?“]] <!--Calm choice-->
-
-[[“What do you think? Stop stalling and tell me what’s going on!”]] <!--Angry choice-->
-
-[[“I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…”]] <!--Kind choice-->
-
-
-:: “I’m not sure why I came down here, and I need to get back. Could you help? I don’t see any exit…” [alleyway] {"position":"775,1550","size":"100,100"}
-{
-(set: $kind to $kind+1)
-}“It’s okay, I’ll help, but I’m afraid the exit is gone now.” 
-
-Their voice stays steady, revealing little to you. 
-Whatever you heard before has evaporated,
-which fills you with something that makes your fingers tremble ever so slightly.
-
-Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
-
-(link:"!!!")[You stumble, unable to see in front of you. 
-It startles you, but you recover quickly, 
-instinctively moving closer to the body. 
-You feel as though you can trust them, but you’re not sure why. 
-
-Moments later, the voice comments, 
-
-“I’ll explain later, but we need to get going. 
-Just come with me, we have a long way to go.
-I’m sure ''HER'' people will deal with you.”
-
-
-[[Follow their lead]]]
-
-
-:: “Please calm down, you are asking too many questions.” [rubellite] {"position":"900,3675","size":"100,100"}
-“I should go home, mom is probably waiting for me.
-I shouldn’t talk to you,
-mom says if I talk to strangers,
-I’ll see ''//HER//'' in my closet tonight. I’m going…”
-
-The loud child’s voice quickly fell to a soft whisper,
-and you watched as they turned and ran.
-
-You took note of yet another mention of a mysterious HER,
-but the kid was gone before you could even question it.
-
-You’d not only freaked the child out, but now you had no idea where you were, or where to go next.(set: $child_notes to $child_notes + (ds:4))
-
-[[Anyway, you need to move on->moveon]]
-
-
-:: “That’s not important.” [rubellite] {"position":"900,3550","size":"100,100"}
-{(set: $calm to $calm+1)}“I don’t know…it seems kinda important…
-Did you come from outside?
-Did The Guard bring you here?
-Why weren’t you inside the walls?
-I’m not sure if I’m allowed to talk to you…”
-
-The child backed away a few steps, and you could see fear begin pooling in their eyes.
-You wondered if this is what you looked like in the alleyway.
-
-(link: "The Guard...")[|1>['Is //he// the guard of this place?']
-(click: ?1)[
-[[“Please calm down, you are asking too many questions.”]]
-
-[[“It’s okay, please calm down, I’m sorry for scaring you.”]]
-
-[[“Alright, you need to calm down, no more questions. You’re only freaking yourself out!”->next stage]]
-]]
-
-
-:: “What do you think? Stop stalling and tell me what’s going on!” [alleyway] {"position":"1025,1550","size":"100,100"}
+:: “Is that really important?” [rubellite] {"position":"1025,6525","size":"100,100"}
 {
 (set:$angry to $angry+1)
-}“Okay, well, now that’s too much emotion. 
-Calm down, I don’t have time to explain right now.” 
+}“Well, I suppose not really, but I’m curious!”
 
-Their voice stays steady, revealing little to you. 
-Whatever you heard before has evaporated, 
-which fills you with something unlike the burning red feeling resting below your skin.
+You notice how she goes off topic again,
+and you wonder if your questions are confusing her.
 
-Suddenly, the stranger's warm hand wraps around your own, and they pull you forward.
+Maybe you can try to get her back on track?
 
-(link:"!!!")[You stumble, unable to see in front of you. 
-You move to pull your hand away, but the grip tightens, locking you in place. 
+|1>[“Alright, well, I don’t know who they are exactly, but I was told they were HER people.”]
 
-Moments later, the voice comments, 
+(click:?1)[“Oh! You’re meeting with HER people?
+Speaking of HER, let me tell you about the time before The Split.”
 
-“I’m not going to hurt you, you’re fine. 
-Just come with me, we have a long way to go.
-I’m sure ''HER'' people will deal with you.”
+[[Listen->listen to her]]]
 
 
-[[Follow their lead]]]
-
-
-:: ”Yes, I was on my way home. Where am I if not in Dumor?“ [alleyway] {"position":"900,1550","size":"100,100"}
+:: “I’m meeting some people under…HER? That’s what I’ve been told.” [rubellite] {"position":"900,6525","size":"100,100"}
 {
 (set:$calm to $calm+1)
-}“How is it possible for one to speak with so little feeling?
+}“Oh! You’re meeting with HER people?
+Speaking of HER, let me tell you about the time before The Split.”
+
+[[Listen->listen to her]]
+
+
+:: “I’m not exactly sure who, but…are you meeting someone too?” [rubellite] {"position":"775,6525","size":"100,100"}
+{
+(set:$kind to $kiind+1)
+}“Oh, I’m not meeting anyone.
+I just like to sit here sometimes, it’s a lot nicer than staying at home.”
+
+You notice how she goes off topic again,
+and you wonder if your questions are confusing her.
+
+Maybe you can try to get her back on track?
+
+|1>[“Alright, well, I don’t know who they are exactly, but I was told they were HER people.”]
+
+(click:?1)[“Oh! You’re meeting with HER people?
+Speaking of HER, let me tell you about the time before The Split.”
+
+[[Listen->listen to her]]]
+
+
+:: “I’m supposed to meet someone, but I can listen until then.” {"position":"825,6275","size":"100,100"}
+
+(set:$kind to $kind+1)
+(go-to:"lady2")
+
+
+:: “The universe? How do you know what the universe is telling you?” [rubellite] {"position":"700,6025","size":"100,100"}
+{
+(set:$kind to $kiind+1)
+}“Maybe I’ll teach you how to listen.”
+
+Her smile is still kind, which makes you feel warm.
+
+You don’t understand anything about this world,
+but the unconditional kindness from the woman comforts you.
+
+“You don’t look like you’re from here, you must be from Dumor, then?”
+
+[[“You know about Dumor?”]]
+
+
+:: “The universe? Really? You’re trusting the universe?" [rubellite] {"position":"825,6025","size":"100,100"}
+{
+(set:$angry to $angry+1)
+}“You kids are all the same.
+Have some faith, will you?”
+
+Her smile is still kind despite your harsh words.
+
+The unconditional kindness from the woman confuses you.
+Everything in this city confuses you.
+
+“You don’t look like you’re from here, you must be from Dumor, then?”
+
+[[“You know about Dumor?”]]
+
+
+:: “Will this take long? I’m supposed to meet someone here.” {"position":"950,6275","size":"100,100"}
+
+(set:$angry to $angry+1)
+(go-to:"lady2")
+
+
+:: “You know about Dumor?” [rubellite] {"position":"825,6150","size":"100,100"}
+“Why, of course I do!
+You know, back in my day, there was //no Dumor and Rubellite.//”(set:$woman_notes to $woman_notes+(ds:1))(set:$woman_notes to $woman_notes+(ds:2))
+
+Her smile widened as she stared off into space.
+
+You weren’t entirely sure what she was doing,
+but you didn’t spend much time thinking about it.
+You were too busy wondering what she meant by ‘no Dumor and Rubellite.’
+
+Your confusion must be clear on your face,
+so when the woman turns back to you, she laughs.
+
+“I suppose I should explain, hm? I’ll tell you a little.”
+
+[[Listen->listen to her]]
+
+[[“Will this take long? I’m supposed to meet someone here.”]]
+
+[[“I’m supposed to meet someone, but I can listen until then.”]]
+
+
+:: ”Yes, I was on my way home. Where am I if not in Dumor?" [alleyway] {"position":"900,1550","size":"100,100"}
+{
+(set:$calm to $calm+1)
+}"How is it possible for one to speak with so little feeling?
 Your monotony is exhausting me.” 
 
 Their voice stays steady, revealing little to you. 
@@ -1291,7 +3168,7 @@ It startles you, but you recover quickly.
 
 Moments later, you hear the voice comments, 
 
-“Barely even a flinch, I’ll never get used to how robotic you people really are. 
+"Barely even a flinch, I’ll never get used to how robotic you people really are. 
 Just come with me, we have a long way to go. 
 I’m sure ''HER'' people will deal with you.”
 
