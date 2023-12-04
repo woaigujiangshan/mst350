@@ -180,24 +180,6 @@ You can see a hint of amusement dancing in his eyes,
 and it only [[makes the anger in your veins burn brighter->guard leave]].
 
 
-:: "Could you tell me what I’m supposed to be doing at this time?” [rubellite] {"position":"950,5025","size":"100,100"}
-{
-(set:$kind to $kind+1)
-}He looks almost confused at your words,
-as if he wasn’t at all expecting your kindness.
-
-"Yeah…I’ll tell them to meet you at the shop down the street.
-I trust you’ll find your way there.
-You can tell them that //Xavier// sent you.”
-
-You smile lightly, surprised by the reveal of his name.(set:$guard_name to "Xavier")
-You hadn’t really thought about it that much,
-but you were happy that he trusted you enough to tell you.
-
-[["Your name is Xavier?”]]
-
-
-
 :: "Did you like it in Dumor?” [rubellite] {"position":"625,10775","size":"100,100"}
 {
 (set:$question to $question + (ds:2))
@@ -860,22 +842,6 @@ This felt safe, like something you knew.
 "I can’t help but wish my city could have changed you.”
 
 [[""How do you know what the people of Dumor are like?"]]
-
-
-:: "You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…” [rubellite] {"position":"700,5025","size":"100,100"}
-{
-(set:$calm to $calm+1)
-}"You can’t do anything on your own, can you.”
-
-He rolls his eyes at you,
-and you can’t help but wonder how he was so expressive.
-
-"I’ll get some people to meet you at the shop down the street, alright?
-Just tell them //Xavier// sent you.”
-
-You hadn’t expected him to reveal his name so soon.
-
-[["Xavier?” ]]
 
 
 :: "You were the one that hit me, what do you mean don’t steal it?!" [rubellite] {"position":"1025,3050","size":"100,100"}
@@ -2015,6 +1981,22 @@ You can’t understand anything at the moment.
 ]]
 
 
+:: calm [rubellite] {"position":"700,5025","size":"100,100"}
+{
+(set:$calmto $calm+1)
+}"You can’t do anything on your own, can you.”
+
+He rolls his eyes at you,
+and you can’t help but wonder how he was so expressive.
+
+"I’ll get some people to meet you at the shop down the street, alright?
+Just tell them //Xavier// sent you.”
+
+You hadn’t expected him to reveal his name so soon.
+
+[["Xavier?” ]]
+
+
 :: child [no_sidebar] {"position":"375,350","size":"100,100"}
 Name: ???
 
@@ -2231,9 +2213,9 @@ but he’s not happy about it.
 
 [["Are you ever going to tell me who you are? I don’t even know your name!”]]
 
-[["Could you tell me what I’m supposed to be doing at this time?”]]
+[["Could you tell me what I’m supposed to be doing at this time?”->calm]]
 
-[["You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”]]
+[["You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”->kind]]
 
 
 :: guard leave [rubellite] {"position":"825,4400","size":"100,100"}
@@ -2348,6 +2330,24 @@ Getting into a fight over food with the guard is probably not a smart decision.
 [["Come on, you can’t even share a crumb? I don’t know where to get food!”]]
 
 [["Okay, could you tell me where to get food? Except…I don’t have any money here…”]]
+
+
+:: kind [rubellite] {"position":"950,5025","size":"100,100"}
+{
+(set:$kind to $kind+1)
+}He looks almost confused at your words,
+as if he wasn’t at all expecting your kindness.
+
+"Yeah…I’ll tell them to meet you at the shop down the street.
+I trust you’ll find your way there.
+You can tell them that //Xavier// sent you.”
+
+You smile lightly, surprised by the reveal of his name.(set:$guard_name to "Xavier")
+You hadn’t really thought about it that much,
+but you were happy that he trusted you enough to tell you.
+
+[["Your name is Xavier?”]]
+
 
 
 :: know more [rubellite] {"position":"625,10650","size":"100,100"}
@@ -2766,7 +2766,20 @@ and you wonder if you looked similar to him right now.]
 
 
 :: save [no_sidebar russo] {"position":"300,200","size":"100,100"}
-Which slot do you want to load?
+{
+(unless: (track: 'dumor', 'isplaying') or (track: 'bridge', 'isplaying') or (track: 'rubellite', 'isplaying'))[
+	(if:$location is "Dumor")[
+    	(track: 'dumor', 'fadein', 2)
+		(track: 'dumor', 'loop', true)
+    ] (else-if:$location is "Alleyway")[
+    	(track: 'bridge', 'fadein', 2)
+		(track: 'bridge', 'loop', true)
+    ] (else:)[
+    	(track: 'rubellite', 'fadein', 2)
+		(track: 'rubellite', 'loop', true)
+    ]
+]
+}Which slot do you want to save?
 
 
 {(link-replace: "Slot 1")[
@@ -2780,7 +2793,7 @@ Which slot do you want to load?
 
 
 {(link-replace: "Slot 3")[
-	(savegame: "Slot 2", $location)
+	(savegame: "Slot 3", $location)
 	You saved the game.]}
 
 

@@ -756,7 +756,20 @@ situation, but we suggest that you keep yourself safe in these
 uncertain times.”]
 
 
-Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="41" name="save" tags="no_sidebar russo" position="300,200" size="100,100">Which slot do you want to load?
+Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="41" name="save" tags="no_sidebar russo" position="300,200" size="100,100">{
+(unless: (track: &#39;dumor&#39;, &#39;isplaying&#39;) or (track: &#39;bridge&#39;, &#39;isplaying&#39;) or (track: &#39;rubellite&#39;, &#39;isplaying&#39;))[
+	(if:$location is &quot;Dumor&quot;)[
+    	(track: &#39;dumor&#39;, &#39;fadein&#39;, 2)
+		(track: &#39;dumor&#39;, &#39;loop&#39;, true)
+    ] (else-if:$location is &quot;Alleyway&quot;)[
+    	(track: &#39;bridge&#39;, &#39;fadein&#39;, 2)
+		(track: &#39;bridge&#39;, &#39;loop&#39;, true)
+    ] (else:)[
+    	(track: &#39;rubellite&#39;, &#39;fadein&#39;, 2)
+		(track: &#39;rubellite&#39;, &#39;loop&#39;, true)
+    ]
+]
+}Which slot do you want to save?
 
 
 {(link-replace: &quot;Slot 1&quot;)[
@@ -770,7 +783,7 @@ Back (click-undo: &quot;Back&quot;)</tw-passagedata><tw-passagedata pid="41" nam
 
 
 {(link-replace: &quot;Slot 3&quot;)[
-	(savegame: &quot;Slot 2&quot;, $location)
+	(savegame: &quot;Slot 3&quot;, $location)
 	You saved the game.]}
 
 
@@ -2049,9 +2062,9 @@ but he’s not happy about it.
 
 [[&quot;Are you ever going to tell me who you are? I don’t even know your name!”]]
 
-[[&quot;Could you tell me what I’m supposed to be doing at this time?”]]
+[[&quot;Could you tell me what I’m supposed to be doing at this time?”-&gt;calm]]
 
-[[&quot;You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”]]</tw-passagedata><tw-passagedata pid="134" name="&quot;Are you ever going to tell me who you are? I don’t even know your name!”" tags="rubellite" position="825,5025" size="100,100">{
+[[&quot;You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”-&gt;kind]]</tw-passagedata><tw-passagedata pid="134" name="&quot;Are you ever going to tell me who you are? I don’t even know your name!”" tags="rubellite" position="825,5025" size="100,100">{
 (set:$angry to $angry + 1)
 }&quot;As if I’ll tell you.”
 
@@ -2070,7 +2083,7 @@ and I’ll tell HER people to meet you there.”
 (click:?1)[|2&gt;[&quot;What if I end up following some random people?”]
 
 (click:?2)[Your voice starts rising as your eyes narrow.
-Your patience was quickly [[running thin]].]]</tw-passagedata><tw-passagedata pid="135" name="&quot;Could you tell me what I’m supposed to be doing at this time?”" tags="rubellite" position="950,5025" size="100,100">{
+Your patience was quickly [[running thin]].]]</tw-passagedata><tw-passagedata pid="135" name="kind" tags="rubellite" position="950,5025" size="100,100">{
 (set:$kind to $kind+1)
 }He looks almost confused at your words,
 as if he wasn’t at all expecting your kindness.
@@ -2084,8 +2097,8 @@ You hadn’t really thought about it that much,
 but you were happy that he trusted you enough to tell you.
 
 [[&quot;Your name is Xavier?”]]
-</tw-passagedata><tw-passagedata pid="136" name="&quot;You mentioned that HER people would help me, do you know where I could find them? I’m not sure where to go next…”" tags="rubellite" position="700,5025" size="100,100">{
-(set:$calm to $calm+1)
+</tw-passagedata><tw-passagedata pid="136" name="calm" tags="rubellite" position="700,5025" size="100,100">{
+(set:$calmto $calm+1)
 }&quot;You can’t do anything on your own, can you.”
 
 He rolls his eyes at you,
