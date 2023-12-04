@@ -1937,12 +1937,21 @@ But that’s something to think about later.]
     ] (else-if:_max is $kind)[
     	(set:$type to &quot;Tender Spirit&quot;)
     ]
-]}Your Personality Type is:
+]}(t8n: &quot;fade&quot;)+(transition-time: 3s)[Your Final Personality Points:]
 
 
+(after:2s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[Calm: $calm
+
+Angry: $angry
+
+Kind: $kind]
 
 
-|1&gt;[$type]{
+(after:4s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)[Your Personality Type is:]
+
+
+(after:7s)+(t8n: &quot;fade&quot;)+(transition-time: 3s)+(text-size:1.3)[|1&gt;[$type]]
+{
 (click-goto:?1, &quot;type&quot;)
 }</tw-passagedata><tw-passagedata pid="123" name="type" tags="" position="625,12200" size="100,100">(if:$type is &quot;Rubel Red&quot;)[(go-to:&quot;red&quot;)]
 (if:$type is &quot;Quiet Sun&quot;)[(go-to:&quot;sun&quot;)]
