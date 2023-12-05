@@ -1992,7 +1992,7 @@ You can’t understand anything at the moment.
 
 :: calm [rubellite] {"position":"700,5025","size":"100,100"}
 {
-(set:$calmto $calm+1)
+(set:$calm to $calm+1)
 }"You can’t do anything on your own, can you.”
 
 He rolls his eyes at you,
