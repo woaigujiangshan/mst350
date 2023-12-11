@@ -909,18 +909,18 @@ looking up at you expectantly.]
 You have so many questions,
 but you don't think this one will be so easily answered.
 
-Your current situation reminds you of a story you heard as a child. One of a girl that fell into an unknown universe.
+(click:"so easily")[Your current situation reminds you of a story you heard as a child. One of a girl that fell into an unknown universe.]
 
-Will this new world be full of the dangers you were taught to avoid?
-Or will it be kind to you?
+(click:"unknown universe")[Will this new world be full of the dangers you were taught to avoid?
+Or will it be kind to you?]
 
-You feel conflicted, stuck between curiousity and fear. You struggle to contain the feelings as they bubble up into your throat.
+(click:"avoid")[You feel conflicted, stuck between curiousity and fear. You struggle to contain the feelings as they bubble up into your throat.
 
 |1>["Can you tell me about where we are? Where we’re going? I don’t understand…"] <!--kind-->
 
 |2>["How long will we take?"] <!--calm-->
 
-|3>["How long is this going to take? Why are we moving so damn slow?"]<!--angry-->
+|3>["How long is this going to take? Why are we moving so damn slow?"]<!--angry-->]
 {(click:?1)[(set:$kind to $kind+1)(go-to:"continue")]
 (click:?2)[(set:$calm to $calm+1)(go-to:"continue")]
 (click:?3)[(set:$angry to $angry+1)(go-to:"continue")]}
